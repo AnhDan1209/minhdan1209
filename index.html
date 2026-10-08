@@ -375,13 +375,21 @@
         });
 
         // --- SIUUU Real Audio Sound ---
-        const siuuuAudio = new Audio('https://www.myinstants.com/media/sounds/cr7_siu.mp3');
+     // Khai báo file âm thanh siuuu.mp3 cùng thư mục
+const siuuuAudio = new Audio('siuuu.mp3');
 
-        function playSiuuuSound() {
-            siuuuAudio.currentTime = 0;
-            siuuuAudio.play().catch(e => console.log("Lỗi phát âm thanh:", e));
-            drawVisualizerWave();
-        }
+function playSiuuuSound() {
+    // Đặt lại thời gian về 0 để có thể ấn liên tục
+    siuuuAudio.currentTime = 0;
+    
+    // Phát âm thanh
+    siuuuAudio.play().catch(e => {
+        console.log("Lỗi phát âm thanh:", e);
+        alert("Không thể phát âm thanh. Vui lòng kiểm tra lại file siuuu.mp3 trong thư mục!");
+    });
+    
+    drawVisualizerWave();
+}
 
         function drawVisualizerWave() {
             const canvas = document.getElementById('audio-canvas');
