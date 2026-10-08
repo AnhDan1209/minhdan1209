@@ -82,577 +82,8 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-gold-500 selection:text-black">
 
-    <!-- Navigation Header (Đã đổi thành màu đỏ đô) -->
-   <header class="sticky top-0 z-50 backdrop-blur-md bg-[#800000]/90 border-b border-red-900/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="font-display text-4xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-amber-200 to-gold-600 gold-text-glow">CR7</span>
-                <span class="text-xs uppercase tracking-widest text-slate-400 border-l border-slate-700 pl-3 hidden sm:inline-block">The Living Legend</span>
-            </div>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
-                <a href="#hero" class="hover:text-gold-400 transition-colors">OVERVIEW</a>
-                <a href="#timeline" class="hover:text-gold-400 transition-colors">CAREER</a>
-                <a href="#trophies" class="hover:text-gold-400 transition-colors">TROPHIES</a>
-                <a href="#siuuu" class="hover:text-gold-400 transition-colors">SIUUU!</a>
-                <a href="#quiz" class="hover:text-gold-400 transition-colors">TRIVIA QUIZ</a>
-            </nav>
-
-            <a href="#siuuu" class="bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold px-5 py-2.5 rounded-full shadow-lg shadow-gold-500/20 transform hover:-translate-y-0.5 transition-all flex items-center gap-2">
-                <i class="fa-solid fa-bolt"></i>
-                <span>SIUUU EXPERIENCE</span>
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-slate-800/50 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(11, 15, 23, 0.85), rgba(11, 15, 23, 0.95)), url('background1.jpg');">
-        <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
-        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-0 w-96 h-96 bg-accentTeal/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left: Info & Narrative -->
-                <div class="md:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider">
-                        <i class="fa-solid fa-crown"></i> Greatest Of All Time
-                    </div>
-                    
-                    <h1 class="text-5xl sm:text-7xl font-extrabold font-display tracking-tight text-white uppercase leading-none">
-                        Cristiano <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-yellow-200 to-amber-500 gold-text-glow">Ronaldo</span>
-                    </h1>
-                    
-                    <p class="text-slate-300 text-lg max-w-xl font-light leading-relaxed">
-                        An unmatched athletic force, ruthless goalscorer, and relentless worker. From the streets of Madeira to global domination across Europe and Asia.
-                    </p>
-
-                    <!-- Stat Counters -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
-                        <div class="bg-cardbg/80 border border-slate-800 p-4 rounded-xl text-center hover:border-gold-500/40 transition-all">
-                            <span class="block font-display text-3xl sm:text-4xl font-bold text-gold-400" id="stat-goals">900+</span>
-                            <span class="text-xs uppercase text-slate-400 tracking-wider">Career Goals</span>
-                        </div>
-                        <div class="bg-cardbg/80 border border-slate-800 p-4 rounded-xl text-center hover:border-gold-500/40 transition-all">
-                            <span class="block font-display text-3xl sm:text-4xl font-bold text-gold-400">5×</span>
-                            <span class="text-xs uppercase text-slate-400 tracking-wider">Ballon d'Or</span>
-                        </div>
-                        <div class="bg-cardbg/80 border border-slate-800 p-4 rounded-xl text-center hover:border-gold-500/40 transition-all">
-                            <span class="block font-display text-3xl sm:text-4xl font-bold text-gold-400">5×</span>
-                            <span class="text-xs uppercase text-slate-400 tracking-wider">UCL Titles</span>
-                        </div>
-                        <div class="bg-cardbg/80 border border-slate-800 p-4 rounded-xl text-center hover:border-gold-500/40 transition-all">
-                            <span class="block font-display text-3xl sm:text-4xl font-bold text-gold-400">130+</span>
-                            <span class="text-xs uppercase text-slate-400 tracking-wider">Int'l Goals</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Visual Avatar Display -->
-                <div class="md:col-span-5 flex justify-center">
-                    <div class="relative group max-w-sm w-full">
-                        <!-- Hiệu ứng viền phát sáng -->
-                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-accentTeal rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
-                        
-                        <!-- Ảnh thẻ mới của bạn -->
-                        <img src="cr7.jpg" 
-                             alt="Cristiano Ronaldo" 
-                             class="relative w-full h-[420px] rounded-2xl border border-slate-700 gold-glow object-cover shadow-2xl">
-                    </div>
-                </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Timeline Section (Đã thêm class để đổi màu click) -->
-    <section id="timeline" class="py-20 border-b border-slate-800/50 relative transition-colors duration-700 ease-in-out" style="background-color: transparent;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-semibold text-gold-400 tracking-widest mb-2">The Odyssey</h2>
-                <p class="font-display text-4xl font-bold uppercase text-white">Career Milestones & Clubs</p>
-                <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <!-- Timeline Cards Grid -->
-            <div class="grid md:grid-cols-3 gap-6">
-                
-                <!-- Sporting CP -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" data-color="#064e3b">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-bold">2002 - 2003</span>
-                        <i class="fa-solid fa-shirt text-2xl text-emerald-400"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Sporting CP</h3>
-                    <p class="text-xs text-slate-400 mb-4">The Launchpad in Lisbon</p>
-                    <p class="text-sm text-slate-300">Debuted at age 17. Caught Sir Alex Ferguson's eye in an iconic friendly, leading to his instant acquisition by Manchester United.</p>
-                </div>
-
-                <!-- Manchester United -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-red-500/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]" data-color="#7f1d1d">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-red-500/10 text-red-400 border border-red-500/30 rounded-full text-xs font-bold">2003 - 2009</span>
-                        <i class="fa-solid fa-trophy text-2xl text-red-400"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Manchester United</h3>
-                    <p class="text-xs text-slate-400 mb-4">Becoming World Class</p>
-                    <p class="text-sm text-slate-300">Won 3 Premier League titles, his first Champions League, and his first Ballon d'Or in 2008 as a winger.</p>
-                </div>
-
-                <!-- Real Madrid -->
-                <div class="club-card cursor-pointer bg-cardbg border border-gold-500/30 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] gold-glow" data-color="#422006">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-gold-500/10 text-gold-400 border border-gold-500/30 rounded-full text-xs font-bold">2009 - 2018</span>
-                        <i class="fa-solid fa-crown text-2xl text-gold-400"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Real Madrid</h3>
-                    <p class="text-xs text-slate-400 mb-4">Peak Dominance & Golden Era</p>
-                    <p class="text-sm text-slate-300">450 goals in 438 games. Won 4 Champions League titles (including 3-in-a-row) and 4 Ballons d'Or in Madrid white.</p>
-                </div>
-
-                <!-- Juventus -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-slate-400/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]" data-color="#000000">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-slate-500/10 text-slate-300 border border-slate-500/30 rounded-full text-xs font-bold">2018 - 2021</span>
-                        <i class="fa-solid fa-shield-halved text-2xl text-slate-300"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Juventus</h3>
-                    <p class="text-xs text-slate-400 mb-4">Italian Conquest</p>
-                    <p class="text-sm text-slate-300">Secured 2 Serie A titles and became the fastest player to reach 100 goals in Juventus club history.</p>
-                </div>
-
-                <!-- Al Nassr -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-blue-500/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(30,58,138,0.3)]" data-color="#1e3a8a">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-bold">2023 - Present</span>
-                        <i class="fa-solid fa-sun text-2xl text-yellow-400"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Al Nassr</h3>
-                    <p class="text-xs text-slate-400 mb-4">Pioneering Saudi Pro League</p>
-                    <p class="text-sm text-slate-300">Spearheaded the growth of Asian football while continuing his pursuit of 1,000 official career goals.</p>
-                </div>
-
-                <!-- Portugal -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-red-600/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(229,9,20,0.2)]" data-color="#450a0a">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-cr7red/10 text-cr7red border border-cr7red/30 rounded-full text-xs font-bold">2003 - Present</span>
-                        <i class="fa-solid fa-flag text-2xl text-cr7red"></i>
-                    </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Portugal</h3>
-                    <p class="text-xs text-slate-400 mb-4">National Hero</p>
-                    <p class="text-sm text-slate-300">Captained Portugal to UEFA Euro 2016 glory and the 2019 UEFA Nations League. All-time highest international goalscorer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trophy Cabinet Section -->
-    <section id="trophies" class="py-20 border-b border-slate-800/50 bg-slate-950/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-xs uppercase font-semibold text-gold-400 tracking-widest mb-2">Accolades</h2>
-                    <p class="font-display text-4xl font-bold uppercase text-white">Interactive Trophy Cabinet</p>
-                </div>
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="trophy-filters">
-                    <button data-filter="all" class="px-4 py-2 rounded-lg text-sm font-semibold bg-gold-500 text-black shadow-md transition-all">All</button>
-                    <button data-filter="individual" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Individual</button>
-                    <button data-filter="club" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Club Titles</button>
-                    <button data-filter="international" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">International</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="trophy-container"></div>
-        </div>
-    </section>
-
-    <!-- Signature Celebration Section -->
-    <section id="siuuu" class="py-20 border-b border-slate-800/50 relative overflow-hidden bg-gradient-to-b from-darkbg via-cardbg to-darkbg">
-        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-            <span class="px-3 py-1 bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest rounded-full">Iconic Moment</span>
-            <h2 class="font-display text-5xl sm:text-6xl font-extrabold uppercase text-white mt-4 mb-4">The "SIUUU" Celebration</h2>
-            <p class="text-slate-300 max-w-xl mx-auto mb-10">Click the button below to trigger Ronaldo's signature celebration sound and shockwave effect!</p>
-
-            <div class="relative inline-block my-6">
-                <div id="shockwave-target" class="absolute inset-0 rounded-full pointer-events-none"></div>
-
-                <button id="siuuu-btn" class="relative group w-48 h-48 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 p-1.5 shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 gold-glow focus:outline-none">
-                    <div class="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center border border-gold-400/50 group-hover:bg-slate-900 transition-colors">
-                        <i class="fa-solid fa-volume-high text-4xl text-gold-400 mb-2 group-hover:animate-bounce"></i>
-                        <span class="font-display text-3xl font-black text-white tracking-widest">SIUUU!</span>
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Tap To Celebrate</span>
-                    </div>
-                </button>
-            </div>
-
-            <div class="mt-8 flex justify-center">
-                <canvas id="audio-canvas" width="300" height="40" class="rounded-lg opacity-80"></canvas>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Quiz Section -->
-    <section id="quiz" class="py-20 border-b border-slate-800/50">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="text-center mb-10">
-                <h2 class="text-xs uppercase font-semibold text-gold-400 tracking-widest mb-2">Test Your Knowledge</h2>
-                <p class="font-display text-4xl font-bold uppercase text-white">CR7 Trivia Quiz</p>
-            </div>
-
-            <div class="bg-cardbg border border-slate-800 rounded-2xl p-6 sm:p-8 gold-glow relative">
-                <div id="quiz-container">
-                    <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
-                        <span class="text-xs font-semibold text-gold-400 uppercase tracking-wider" id="quiz-progress">Question 1 / 4</span>
-                        <span class="text-xs text-slate-400" id="quiz-score-badge">Score: 0</span>
-                    </div>
-
-                    <h3 class="text-xl font-bold text-white mb-6" id="quiz-question">Loading Question...</h3>
-
-                    <div class="space-y-3" id="quiz-options"></div>
-
-                    <div class="mt-8 flex justify-between items-center">
-                        <p id="quiz-feedback" class="text-sm font-semibold"></p>
-                        <button id="quiz-next-btn" class="hidden bg-gold-500 hover:bg-gold-400 text-black font-bold px-6 py-2.5 rounded-lg text-sm transition-all">Next Question <i class="fa-solid fa-arrow-right ml-1"></i></button>
-                    </div>
-                </div>
-
-                <div id="quiz-results" class="hidden text-center py-8">
-                    <i class="fa-solid fa-trophy text-6xl text-gold-400 mb-4 animate-bounce"></i>
-                    <h3 class="font-display text-3xl font-bold text-white mb-2">Quiz Completed!</h3>
-                    <p class="text-slate-300 mb-6" id="quiz-final-score">You scored 4 out of 4!</p>
-                    <button id="quiz-restart-btn" class="bg-gold-500 hover:bg-gold-400 text-black font-bold px-8 py-3 rounded-xl transition-all shadow-lg">Try Again</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 py-10 border-t border-slate-800/80 text-center text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <p class="font-display text-2xl font-bold text-gold-400">CR7 SHOWCASE</p>
-            <p>© 2026 Interactive Tribute App. Built with passion for football excellence.</p>
-        </div>
-    </footer>
-
-    <script>
-        // --- Trophy Cabinet Items ---
-        const trophies = [
-            { id: 1, title: "Ballon d'Or", count: "5×", category: "individual", year: "2008, 2013, 2014, 2016, 2017", icon: "fa-award" },
-            { id: 2, title: "UEFA Champions League", count: "5×", category: "club", year: "2008, 2014, 2016, 2017, 2018", icon: "fa-trophy" },
-            { id: 3, title: "European Championship", count: "1×", category: "international", year: "2016 (Portugal)", icon: "fa-flag" },
-            { id: 4, title: "European Golden Shoe", count: "4×", category: "individual", year: "2008, 2011, 2014, 2015", icon: "fa-shoe-prints" },
-            { id: 5, title: "FIFA Club World Cup", count: "4×", category: "club", year: "2008, 2014, 2016, 2017", icon: "fa-earth-americas" },
-            { id: 6, title: "UEFA Nations League", count: "1×", category: "international", year: "2019 (Portugal)", icon: "fa-shield-cat" },
-            { id: 7, title: "Premier League Titles", count: "3×", category: "club", year: "2007, 2008, 2009", icon: "fa-crown" },
-            { id: 8, title: "La Liga Titles", count: "2×", category: "club", year: "2012, 2017", icon: "fa-shield" }
-        ];
-
-        function renderTrophies(filter = 'all') {
-            const container = document.getElementById('trophy-container');
-            container.innerHTML = '';
-            
-            const filtered = filter === 'all' ? trophies : trophies.filter(t => t.category === filter);
-            
-            filtered.forEach(t => {
-                const card = document.createElement('div');
-                card.className = "bg-cardbg border border-slate-800 hover:border-gold-500/40 p-6 rounded-2xl flex flex-col justify-between transition-all transform hover:-translate-y-1";
-                card.innerHTML = `
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <i class="fa-solid ${t.icon} text-3xl text-gold-400"></i>
-                            <span class="font-display text-3xl font-extrabold text-white">${t.count}</span>
-                        </div>
-                        <h4 class="font-bold text-white text-lg mb-1">${t.title}</h4>
-                        <p class="text-xs text-slate-400">${t.year}</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-800/60 flex justify-between items-center">
-                        <span class="text-[10px] uppercase font-semibold text-slate-500">${t.category}</span>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        document.getElementById('trophy-filters').addEventListener('click', (e) => {
-            if (e.target.tagName === 'BUTTON') {
-                document.querySelectorAll('#trophy-filters button').forEach(btn => {
-                    btn.className = "px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all";
-                });
-                e.target.className = "px-4 py-2 rounded-lg text-sm font-semibold bg-gold-500 text-black shadow-md transition-all";
-                renderTrophies(e.target.dataset.filter);
-            }
-        });
-
-        // --- SIUUU Audio & Visual Effect ---
-        function playSiuuuSound() {
-            try {
-                const AudioCtx = window.AudioContext || window.webkitAudioContext;
-                const ctx = new AudioCtx();
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-
-                osc.type = 'sawtooth';
-                const now = ctx.currentTime;
-                osc.frequency.setValueAtTime(150, now);
-                osc.frequency.exponentialRampToValueAtTime(320, now + 0.2);
-                osc.frequency.exponentialRampToValueAtTime(110, now + 0.9);
-
-                gain.gain.setValueAtTime(0.01, now);
-                gain.gain.linearRampToValueAtTime(0.5, now + 0.1);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.9);
-
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-
-                osc.start(now);
-                osc.stop(now + 0.9);
-
-                drawVisualizerWave();
-            } catch(e) {
-                console.log("Audio Context error", e);
-            }
-        }
-
-        function drawVisualizerWave() {
-            const canvas = document.getElementById('audio-canvas');
-            const ctx = canvas.getContext('2d');
-            let frame = 0;
-            
-            function animateCanvas() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = '#EAB308';
-                
-                for(let i = 0; i < 20; i++) {
-                    const h = Math.sin(frame * 0.2 + i) * 15 + 20;
-                    ctx.fillRect(i * 15, (canvas.height - h)/2, 8, h);
-                }
-                
-                frame++;
-                if(frame < 30) requestAnimationFrame(animateCanvas);
-                else ctx.clearRect(0, 0, canvas.width, canvas.height);
-            }
-            animateCanvas();
-        }
-
-        const siuuuBtn = document.getElementById('siuuu-btn');
-        const shockwaveTarget = document.getElementById('shockwave-target');
-
-        siuuuBtn.addEventListener('click', () => {
-            playSiuuuSound();
-
-            const wave = document.createElement('div');
-            wave.className = 'absolute inset-0 rounded-full border-4 border-gold-400 animate-shockwave';
-            shockwaveTarget.appendChild(wave);
-
-            setTimeout(() => wave.remove(), 800);
-        });
-
-        // --- Trivia Quiz System ---
-        const quizData = [
-            {
-                question: "Which club did Cristiano Ronaldo join from Sporting CP in 2003?",
-                options: ["Real Madrid", "Juventus", "Manchester United", "Paris Saint-Germain"],
-                correct: 2
-            },
-            {
-                question: "How many Ballon d'Or awards has Cristiano Ronaldo won?",
-                options: ["3", "4", "5", "6"],
-                correct: 2
-            },
-            {
-                question: "In which year did Ronaldo lead Portugal to win UEFA Euro glory?",
-                options: ["2008", "2012", "2016", "2020"],
-                correct: 2
-            },
-            {
-                question: "How many career UEFA Champions League titles has Ronaldo won?",
-                options: ["3", "4", "5", "6"],
-                correct: 2
-            }
-        ];
-
-        let currentQ = 0;
-        let score = 0;
-
-        function loadQuestion() {
-            const q = quizData[currentQ];
-            document.getElementById('quiz-progress').innerText = `Question ${currentQ + 1} / ${quizData.length}`;
-            document.getElementById('quiz-question').innerText = q.question;
-            document.getElementById('quiz-score-badge').innerText = `Score: ${score}`;
-            document.getElementById('quiz-feedback').innerText = '';
-            document.getElementById('quiz-next-btn').classList.add('hidden');
-
-            const optsContainer = document.getElementById('quiz-options');
-            optsContainer.innerHTML = '';
-
-            q.options.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = "w-full text-left p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-gold-500/50 text-slate-200 text-sm font-medium transition-all flex justify-between items-center";
-                btn.innerText = opt;
-                btn.onclick = () => checkAnswer(idx, btn);
-                optsContainer.appendChild(btn);
-            });
-        }
-
-        function checkAnswer(selectedIdx, selectedBtn) {
-            const q = quizData[currentQ];
-            const optsButtons = document.querySelectorAll('#quiz-options button');
-            
-            optsButtons.forEach(btn => btn.disabled = true);
-            
-            if (selectedIdx === q.correct) {
-                score++;
-                selectedBtn.classList.remove('bg-slate-900/80', 'border-slate-800');
-                selectedBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
-                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-check text-emerald-400 ml-2"></i>';
-                document.getElementById('quiz-feedback').innerText = "Chính xác! SIUUU!";
-                document.getElementById('quiz-feedback').className = "text-sm font-semibold text-emerald-400";
-            } else {
-                selectedBtn.classList.remove('bg-slate-900/80', 'border-slate-800');
-                selectedBtn.classList.add('bg-red-500/20', 'border-red-500', 'text-red-400');
-                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-xmark text-red-400 ml-2"></i>';
-                
-                const correctBtn = optsButtons[q.correct];
-                correctBtn.classList.remove('bg-slate-900/80', 'border-slate-800');
-                correctBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
-                
-                document.getElementById('quiz-feedback').innerText = `Chưa đúng! Đáp án đúng là: ${q.options[q.correct]}`;
-                document.getElementById('quiz-feedback').className = "text-sm font-semibold text-red-400";
-            }
-            
-            document.getElementById('quiz-score-badge').innerText = `Score: ${score}`;
-            document.getElementById('quiz-next-btn').classList.remove('hidden');
-        }
-
-        document.getElementById('quiz-next-btn').addEventListener('click', () => {
-            currentQ++;
-            if (currentQ < quizData.length) {
-                loadQuestion();
-            } else {
-                document.getElementById('quiz-container').classList.add('hidden');
-                document.getElementById('quiz-results').classList.remove('hidden');
-                document.getElementById('quiz-final-score').innerText = `Bạn đã đạt ${score} / ${quizData.length} điểm!`;
-            }
-        });
-
-        document.getElementById('quiz-restart-btn').addEventListener('click', () => {
-            currentQ = 0;
-            score = 0;
-            document.getElementById('quiz-results').classList.add('hidden');
-            document.getElementById('quiz-container').classList.remove('hidden');
-            loadQuestion();
-        });
-        
-        // --- Club Background Change Effect ---
-        const timelineSection = document.getElementById('timeline');
-        const clubCards = document.querySelectorAll('.club-card');
-
-        clubCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const newColor = card.getAttribute('data-color');
-                
-                // Nếu click lại vào card đang chọn, trả về màu nền mặc định
-                if (timelineSection.style.backgroundColor === newColor) {
-                    timelineSection.style.backgroundColor = 'transparent';
-                    clubCards.forEach(c => c.style.borderColor = ''); 
-                } else {
-                    // Đổi màu nền của khu vực Timeline
-                    timelineSection.style.backgroundColor = newColor;
-                    
-                    // Làm nổi bật viền của Card đang được click, các card khác mờ viChắc chắn rồi! Dưới đây là toàn bộ đoạn code đã được mình cập nhật đầy đủ các tính năng: **đổi thanh bar thành màu đỏ đậm**, **giữ nguyên ảnh nền** và **thêm hiệu ứng click đổi màu nền cho từng đội bóng** ở phần sự nghiệp. Mình không xóa bất kỳ phần nào của bạn cả.
-
-Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `index.html` của bạn trên GitHub, ấn **Commit changes** rồi chờ khoảng 2 phút và ấn **`Ctrl + Shift + R`** để xem kết quả nhé:
-
-```html
-<!DOCTYPE html>
-<html lang="en" class="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR7 - The Legend | Cristiano Ronaldo Showcase</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            DEFAULT: '#FFD700',
-                            400: '#FACC15',
-                            500: '#EAB308',
-                            600: '#CA8A04',
-                            700: '#A16207',
-                        },
-                        cr7red: '#E50914',
-                        darkbg: '#0B0F17',
-                        cardbg: '#161F30',
-                        accentTeal: '#00F2FE'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Oswald', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Fonts & Icons -->
-    <link href="[https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0B0F17;
-            color: #F3F4F6;
-            overflow-x: hidden;
-        }
-        .font-display {
-            font-family: 'Oswald', sans-serif;
-        }
-        .gold-glow {
-            box-shadow: 0 0 25px rgba(250, 204, 21, 0.25);
-        }
-        .gold-text-glow {
-            text-shadow: 0 0 12px rgba(250, 204, 21, 0.5);
-        }
-        @keyframes shockwave {
-            0% {
-                transform: scale(0.8);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(2.5);
-                opacity: 0;
-            }
-        }
-        .animate-shockwave {
-            animation: shockwave 0.8s cubic-bezier(0, 0, 0.2, 1) forwards;
-        }
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0B0F17;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1E293B;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #EAB308;
-        }
-    </style>
-</head>
-<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-gold-500 selection:text-black">
-
     <!-- Navigation Header -->
-   <header class="sticky top-0 z-50 backdrop-blur-md bg-[#800000]/90 border-b border-red-900/50">
+   <header class="sticky top-0 z-50 backdrop-blur-md bg-darkbg/80 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <span class="font-display text-4xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-amber-200 to-gold-600 gold-text-glow">CR7</span>
@@ -720,35 +151,36 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
                 </div>
 
                 <!-- Right: Visual Avatar Display -->
+<!-- Right: Visual Avatar Display -->
                 <div class="md:col-span-5 flex justify-center">
                     <div class="relative group max-w-sm w-full">
                         <!-- Hiệu ứng viền phát sáng -->
                         <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-accentTeal rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
                         
-                        <!-- Ảnh thẻ -->
+                        <!-- Ảnh thẻ mới của bạn (Thay TÊN_FILE_ẢNH.jpg bằng tên file bạn vừa upload) -->
                         <img src="cr7.jpg" 
                              alt="Cristiano Ronaldo" 
                              class="relative w-full h-[420px] rounded-2xl border border-slate-700 gold-glow object-cover shadow-2xl">
                     </div>
                 </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Career Timeline Section -->
-    <section id="timeline" class="py-20 border-b border-slate-800/50 relative transition-colors duration-700 ease-in-out" style="background-color: transparent;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="timeline" class="py-20 border-b border-slate-800/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <h2 class="text-xs uppercase font-semibold text-gold-400 tracking-widest mb-2">The Odyssey</h2>
                 <p class="font-display text-4xl font-bold uppercase text-white">Career Milestones & Clubs</p>
                 <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
-                <p class="text-sm text-slate-400 mt-4 italic">Click vào thẻ của từng đội bóng để xem màu chủ đạo tương ứng.</p>
             </div>
 
             <!-- Timeline Cards Grid -->
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Sporting CP -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]" data-color="#064e3b">
+                <div class="bg-cardbg border border-slate-800 hover:border-gold-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-bold">2002 - 2003</span>
                         <i class="fa-solid fa-shirt text-2xl text-emerald-400"></i>
@@ -758,8 +190,7 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
                     <p class="text-sm text-slate-300">Debuted at age 17. Caught Sir Alex Ferguson's eye in an iconic friendly, leading to his instant acquisition by Manchester United.</p>
                 </div>
 
-                <!-- Manchester United -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-red-500/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(239,68,68,0.2)]" data-color="#7f1d1d">
+                <div class="bg-cardbg border border-slate-800 hover:border-gold-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-red-500/10 text-red-400 border border-red-500/30 rounded-full text-xs font-bold">2003 - 2009</span>
                         <i class="fa-solid fa-trophy text-2xl text-red-400"></i>
@@ -769,8 +200,7 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
                     <p class="text-sm text-slate-300">Won 3 Premier League titles, his first Champions League, and his first Ballon d'Or in 2008 as a winger.</p>
                 </div>
 
-                <!-- Real Madrid -->
-                <div class="club-card cursor-pointer bg-cardbg border border-gold-500/30 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] gold-glow" data-color="#422006">
+                <div class="bg-cardbg border border-gold-500/30 p-6 rounded-2xl transition-all hover:-translate-y-1 gold-glow">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-gold-500/10 text-gold-400 border border-gold-500/30 rounded-full text-xs font-bold">2009 - 2018</span>
                         <i class="fa-solid fa-crown text-2xl text-gold-400"></i>
@@ -780,8 +210,7 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
                     <p class="text-sm text-slate-300">450 goals in 438 games. Won 4 Champions League titles (including 3-in-a-row) and 4 Ballons d'Or in Madrid white.</p>
                 </div>
 
-                <!-- Juventus -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-slate-400/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]" data-color="#000000">
+                <div class="bg-cardbg border border-slate-800 hover:border-gold-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-slate-500/10 text-slate-300 border border-slate-500/30 rounded-full text-xs font-bold">2018 - 2021</span>
                         <i class="fa-solid fa-shield-halved text-2xl text-slate-300"></i>
@@ -791,8 +220,7 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
                     <p class="text-sm text-slate-300">Secured 2 Serie A titles and became the fastest player to reach 100 goals in Juventus club history.</p>
                 </div>
 
-                <!-- Al Nassr -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-blue-500/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(30,58,138,0.3)]" data-color="#1e3a8a">
+                <div class="bg-cardbg border border-slate-800 hover:border-gold-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-bold">2023 - Present</span>
                         <i class="fa-solid fa-sun text-2xl text-yellow-400"></i>
@@ -802,8 +230,7 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
                     <p class="text-sm text-slate-300">Spearheaded the growth of Asian football while continuing his pursuit of 1,000 official career goals.</p>
                 </div>
 
-                <!-- Portugal -->
-                <div class="club-card cursor-pointer bg-cardbg border border-slate-800 hover:border-red-600/50 p-6 rounded-2xl transition-all hover:-translate-y-2 hover:shadow-[0_0_20px_rgba(229,9,20,0.2)]" data-color="#450a0a">
+                <div class="bg-cardbg border border-slate-800 hover:border-gold-500/50 p-6 rounded-2xl transition-all hover:-translate-y-1">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-cr7red/10 text-cr7red border border-cr7red/30 rounded-full text-xs font-bold">2003 - Present</span>
                         <i class="fa-solid fa-flag text-2xl text-cr7red"></i>
@@ -1111,29 +538,6 @@ Bạn chỉ cần **copy toàn bộ code bên dưới**, dán đè lên file `in
             document.getElementById('quiz-results').classList.add('hidden');
             document.getElementById('quiz-container').classList.remove('hidden');
             loadQuestion();
-        });
-
-        // --- Club Background Change Effect ---
-        const timelineSection = document.getElementById('timeline');
-        const clubCards = document.querySelectorAll('.club-card');
-
-        clubCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const newColor = card.getAttribute('data-color');
-                
-                // Nếu click lại vào card đang chọn, trả về màu nền mặc định
-                if (timelineSection.style.backgroundColor === newColor) {
-                    timelineSection.style.backgroundColor = 'transparent';
-                    clubCards.forEach(c => c.style.borderColor = ''); 
-                } else {
-                    // Đổi màu nền của khu vực Timeline
-                    timelineSection.style.backgroundColor = newColor;
-                    
-                    // Làm nổi bật viền của Card đang được click, các card khác mờ viền đi
-                    clubCards.forEach(c => c.style.borderColor = ''); 
-                    card.style.borderColor = '#FFD700'; // Đổi viền thẻ được chọn thành màu Vàng
-                }
-            });
         });
 
         // Initialize
