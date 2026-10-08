@@ -151,48 +151,18 @@
                 </div>
 
                 <!-- Right: Visual Avatar Display -->
+<!-- Right: Visual Avatar Display -->
                 <div class="md:col-span-5 flex justify-center">
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-accentTeal rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative group max-w-sm w-full">
+                        <!-- Hiệu ứng viền phát sáng -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-accentTeal rounded-2xl blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
                         
-                        <div class="relative bg-cardbg rounded-2xl border border-slate-700 p-3 gold-glow overflow-hidden">
-                            <!-- Image Canvas / Player Card -->
-                            <div class="w-full h-[420px] bg-slate-900 rounded-xl relative overflow-hidden flex flex-col justify-between p-6">
-                                <div class="flex justify-between items-start">
-                                    <span class="font-display text-2xl font-bold text-gold-400">#7</span>
-                                    <span class="px-2.5 py-1 bg-cr7red/20 text-cr7red border border-cr7red/40 rounded text-xs font-bold uppercase">Captain</span>
-                                </div>
-                                
-                                <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40">
-                                    <svg class="w-72 h-72 text-gold-500/20" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                    </svg>
-                                </div>
-                                
-                                <!-- Frame ảnh đại diện Ronaldo + Cờ Bồ Đào Nha -->
-                                <div class="relative z-10 text-center my-auto">
-                                    <div class="relative w-32 h-32 mx-auto mb-4">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" 
-                                             alt="Cristiano Ronaldo" 
-                                             class="w-32 h-32 rounded-full object-cover border-4 border-gold-400 shadow-[0_0_25px_rgba(255,215,0,0.4)]">
-                                        <div class="absolute bottom-0 right-0 w-8 h-8 rounded-full border-2 border-slate-900 overflow-hidden shadow-md">
-                                            <img src="https://flagcdn.com/w80/pt.png" alt="Portugal Flag" class="w-full h-full object-cover">
-                                        </div>
-                                    </div>
-                                    <h3 class="font-display text-2xl font-bold uppercase tracking-wider text-white">Cristiano Ronaldo</h3>
-                                    <p class="text-xs text-slate-400 mt-1">Dos Santos Aveiro</p>
-                                </div>
-
-                                <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-800 pt-3 relative z-10">
-                                    <span>POS: Forward</span>
-                                    <span class="flex items-center gap-1.5">
-                                        NAT: Portugal 
-                                        <img src="https://flagcdn.com/w80/pt.png" alt="PT" class="w-4 h-3 rounded-sm object-cover">
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Ảnh thẻ mới của bạn (Thay TÊN_FILE_ẢNH.jpg bằng tên file bạn vừa upload) -->
+                        <img src="cr7.jpg" 
+                             alt="Cristiano Ronaldo" 
+                             class="relative w-full h-[420px] rounded-2xl border border-slate-700 gold-glow object-cover shadow-2xl">
                     </div>
+                </div>
                 </div>
 
             </div>
