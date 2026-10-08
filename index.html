@@ -355,30 +355,36 @@
 
     <script>
         // --- Header Theme & Club Card Selection Logic ---
-        const clubThemes = {
+       const clubThemes = {
             sporting: {
                 bg: 'repeating-linear-gradient(90deg, #046A38, #046A38 30px, #ffffff 30px, #ffffff 60px)',
-                lightText: true
+                lightText: true,
+                logo: 'https://upload.wikimedia.org/wikipedia/en/e/e1/Sporting_Clube_de_Portugal_%28logo%29.svg'
             },
             manutd: {
                 bg: '#FF4D4D',
-                lightText: false
+                lightText: false,
+                logo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg'
             },
             realmadrid: {
                 bg: '#FFFFFF',
-                lightText: true
+                lightText: true,
+                logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg'
             },
             juventus: {
                 bg: 'repeating-linear-gradient(90deg, #000000, #000000 30px, #ffffff 30px, #ffffff 60px)',
-                lightText: true
+                lightText: true,
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Juventus_FC_2017_logo.svg'
             },
             alnassr: {
                 bg: '#FFCC00',
-                lightText: true
+                lightText: true,
+                logo: 'https://upload.wikimedia.org/wikipedia/en/c/c5/Al_Nassr_FC.svg'
             },
             portugal: {
                 bg: 'linear-gradient(90deg, #046A38 0%, #046A38 33.33%, #DA291C 33.33%, #DA291C 100%)',
-                lightText: false
+                lightText: false,
+                logo: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Portuguese_Football_Federation.svg'
             }
         };
 
@@ -393,7 +399,6 @@
                 const clubKey = card.getAttribute('data-club');
                 const logoImg = card.querySelector('.club-logo');
 
-                // Nếu nhấn lại vào card đang chọn -> Reset về trạng thái ban đầu
                 if (activeClub === clubKey) {
                     activeClub = null;
                     header.style.background = '';
@@ -402,21 +407,18 @@
                     card.classList.remove('ring-4', 'ring-gold-400', 'border-gold-400');
                     if (logoImg) logoImg.classList.add('hidden');
                 } else {
-                    // Xóa trạng thái active cũ của các card khác
                     clubCards.forEach(c => {
                         c.classList.remove('ring-4', 'ring-gold-400', 'border-gold-400');
                         const l = c.querySelector('.club-logo');
                         if (l) l.classList.add('hidden');
                     });
 
-                    // Đổi sang đội mới
                     activeClub = clubKey;
                     const theme = clubThemes[clubKey];
 
                     if (theme) {
                         header.style.background = theme.bg;
                         
-                        // Xử lý độ tương phản chữ trên Header khi nền sáng/sọc
                         if (theme.lightText) {
                             navLinks.forEach(link => {
                                 link.style.color = '#000000';
@@ -431,11 +433,15 @@
                             });
                             if (headerSubtext) headerSubtext.style.color = '#CBD5E1';
                         }
+
+                        // Cập nhật nguồn ảnh logo
+                        if (logoImg) {
+                            logoImg.src = theme.logo;
+                            logoImg.classList.remove('hidden');
+                        }
                     }
 
-                    // Đánh dấu card active và hiện logo PNG
                     card.classList.add('ring-4', 'ring-gold-400', 'border-gold-400');
-                    if (logoImg) logoImg.classList.remove('hidden');
                 }
             });
         });
