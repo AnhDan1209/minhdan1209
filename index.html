@@ -106,45 +106,60 @@
 
     <!-- Navigation Header -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-tBg/80 border-b border-tBorder shadow-lg transition-colors duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl theme-gradient-bg flex items-center justify-center shadow-md">
-                    <span class="font-display text-2xl font-black">7</span>
-                </div>
-                <div>
-                    <span class="font-display text-3xl font-extrabold tracking-wider theme-gradient-text theme-text-glow block leading-none">CR7</span>
-                    <span class="text-[9px] uppercase tracking-[0.25em] text-tMuted font-bold block mt-0.5">The Living Legend</span>
-                </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl theme-gradient-bg flex items-center justify-center shadow-md">
+                <span class="font-display text-2xl font-black">7</span>
             </div>
-            
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
-                <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
-                <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
-                <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
-                <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
-                <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
-            </nav>
-
-            <div class="flex items-center gap-2 sm:gap-4">
-                <!-- Bảng chọn theme màu (Mặt trăng / Mặt trời) -->
-                <div class="flex items-center gap-2 bg-tCard px-2.5 py-1.5 rounded-full border border-tBorder shadow-sm">
-                    <!-- Mode Base: Mặt trăng -->
-                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm (Base: Black & Gold)">
-                        <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
-                    </button>
-                    <!-- Mode White: Mặt trời -->
-                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày (Trắng Cam)">
-                        <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
-                    </button>
-                </div>
-
-                <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
-                    <i class="fa-solid fa-bolt animate-pulse"></i>
-                    <span class="hidden sm:inline">SIUUU!</span>
-                </a>
+            <div>
+                <span class="font-display text-3xl font-extrabold tracking-wider theme-gradient-text theme-text-glow block leading-none">CR7</span>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-tMuted font-bold block mt-0.5">The Living Legend</span>
             </div>
         </div>
-    </header>
+        
+        <!-- Menu Desktop (Tự ẩn trên Mobile) -->
+        <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
+            <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
+            <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
+            <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
+            <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
+            <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
+        </nav>
+
+        <!-- Right Side: Theme + SIUUU + Mobile Menu Button -->
+        <div class="flex items-center gap-2 sm:gap-4">
+            <!-- Theme Toggle -->
+            <div class="flex items-center gap-1.5 bg-tCard px-2 py-1.5 sm:px-2.5 rounded-full border border-tBorder shadow-sm">
+                <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm">
+                    <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
+                </button>
+                <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày">
+                    <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
+                </button>
+            </div>
+
+            <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
+                <i class="fa-solid fa-bolt animate-pulse"></i>
+                <span class="hidden sm:inline">SIUUU!</span>
+            </a>
+
+            <!-- Nút 3 gạch mở Menu trên Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-base"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menu Xổ Xuống trên Mobile khi bấm nút 3 gạch -->
+    <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
+        <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
+        <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
+        <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
+        <a href="#quiz" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Phát Hiện Ricon</a>
+        <a href="game.html" class="block py-2 text-amber-500 font-black hover:text-tAccent transition-colors"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-tBorder bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: linear-gradient(to bottom, var(--hero-overlay), var(--c-bg)), url('image/background1.jpg');">
@@ -725,6 +740,30 @@
         if (restartBtn) {
             restartBtn.addEventListener('click', () => {
                 initQuiz();
+            });
+        }
+
+        const restartBtn = document.getElementById('quiz-restart-btn');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', () => {
+                initQuiz();
+            });
+        }
+
+        // --- LOGIC MỞ MENU MOBILE ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Tự đóng menu khi bấm chuyển trang/mục
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
             });
         }
 
