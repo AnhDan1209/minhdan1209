@@ -41,14 +41,13 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #070A10;
-            color: #F3F4F6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .font-display {
             font-family: 'Oswald', sans-serif;
         }
-        /* Hiệu ứng phát sáng ánh vàng nâng cao */
+        /* Hiệu ứng phát sáng */
         .gold-glow {
             box-shadow: 0 0 30px rgba(234, 179, 8, 0.22);
         }
@@ -71,7 +70,7 @@
         .animate-shockwave {
             animation: shockwave 0.8s cubic-bezier(0, 0, 0.2, 1) forwards;
         }
-        /* Thanh cuộn cao cấp */
+        /* Thanh cuộn */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -87,33 +86,40 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-gold-500 selection:text-black">
+<body class="min-h-screen flex flex-col justify-between antialiased bg-slate-50 dark:bg-darkbg text-slate-900 dark:text-slate-100 selection:bg-gold-500 selection:text-black">
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkbg/85 border-b border-slate-800/80 shadow-2xl">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-darkbg/85 border-b border-slate-200 dark:border-slate-800/80 shadow-md dark:shadow-2xl transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <span class="font-display text-4xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-amber-200 to-gold-600 gold-text-glow">CR7</span>
-                <span class="text-xs uppercase tracking-widest text-slate-400 border-l border-slate-700 pl-3 hidden sm:inline-block">The Living Legend</span>
+                <span class="font-display text-4xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold-500 via-amber-400 to-gold-600 dark:from-gold-300 dark:via-amber-200 dark:to-gold-600 gold-text-glow">CR7</span>
+                <span class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 border-l border-slate-300 dark:border-slate-700 pl-3 hidden sm:inline-block">The Living Legend</span>
             </div>
             
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wider">
-                <a href="#hero" class="hover:text-gold-400 transition-colors">TỔNG QUAN</a>
-                <a href="#timeline" class="hover:text-gold-400 transition-colors">SỰ NGHIỆP</a>
-                <a href="#trophies" class="hover:text-gold-400 transition-colors">DANH HIỆU</a>
-                <a href="#quiz" class="hover:text-gold-400 transition-colors">PHÁT HIỆN RICON</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-bold tracking-wider text-slate-700 dark:text-slate-200">
+                <a href="#hero" class="hover:text-gold-500 dark:hover:text-gold-400 transition-colors">TỔNG QUAN</a>
+                <a href="#timeline" class="hover:text-gold-500 dark:hover:text-gold-400 transition-colors">SỰ NGHIỆP</a>
+                <a href="#trophies" class="hover:text-gold-500 dark:hover:text-gold-400 transition-colors">DANH HIỆU</a>
+                <a href="#quiz" class="hover:text-gold-500 dark:hover:text-gold-400 transition-colors">PHÁT HIỆN RICON</a>
             </nav>
 
-            <a href="#siuuu" class="bg-gradient-to-r from-gold-500 via-amber-400 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold px-5 py-2.5 rounded-full shadow-lg shadow-gold-500/25 transform hover:-translate-y-0.5 transition-all flex items-center gap-2">
-                <i class="fa-solid fa-bolt animate-pulse"></i>
-                <span>ÂM THANH CỦA GOAT!!!</span>
-            </a>
+            <div class="flex items-center gap-3">
+                <!-- Nút chuyển Dark/Light Mode -->
+                <button id="theme-toggle" class="p-2.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-gold-400 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all focus:outline-none" title="Chuyển chế độ Sáng/Tối">
+                    <i id="theme-toggle-icon" class="fa-solid fa-sun text-lg"></i>
+                </button>
+
+                <a href="#siuuu" class="bg-gradient-to-r from-gold-500 via-amber-400 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold px-4 sm:px-5 py-2.5 rounded-full shadow-lg shadow-gold-500/25 transform hover:-translate-y-0.5 transition-all flex items-center gap-2 text-xs sm:text-sm">
+                    <i class="fa-solid fa-bolt animate-pulse"></i>
+                    <span>ÂM THANH CỦA GOAT!</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-slate-800/60 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(7, 10, 16, 0.88), rgba(7, 10, 16, 0.96)), url('image/background1.jpg');">
-        <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
+    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-slate-200 dark:border-slate-800/60 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(7, 10, 16, 0.82), rgba(7, 10, 16, 0.94)), url('image/background1.jpg');">
+        <div class="absolute inset-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px] opacity-25"></div>
         <div class="absolute top-1/4 -left-20 w-96 h-96 bg-gold-500/15 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-10 right-0 w-96 h-96 bg-accentTeal/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -122,7 +128,7 @@
                 
                 <!-- Left: Info & Narrative -->
                 <div class="md:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-md">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/20 dark:bg-gold-500/10 border border-gold-500/40 dark:border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-md">
                         <i class="fa-solid fa-crown text-gold-400"></i> Cầu Thủ Vĩ Đại Nhất Lịch Sử
                     </div>
                     
@@ -131,27 +137,27 @@
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-yellow-200 to-amber-500 gold-text-glow">Ronaldo</span>
                     </h1>
                     
-                    <p class="text-slate-300 text-lg max-w-xl font-light leading-relaxed">
+                    <p class="text-slate-200 text-lg max-w-xl font-light leading-relaxed">
                         Biểu tượng thể thao vĩ đại, cỗ máy săn bàn thượng hạng và tấm gương nỗ lực không ngừng nghỉ. Từ hòn đảo Madeira đến đỉnh cao thế giới.
                     </p>
 
                     <!-- Stat Counters -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
-                        <div class="bg-cardbg/90 border border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
-                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400" id="stat-goals">979</span>
-                            <span class="text-[11px] font-semibold uppercase text-slate-400 tracking-wider">Bàn thắng</span>
+                        <div class="bg-white/90 dark:bg-cardbg/90 border border-slate-200 dark:border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
+                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-600 dark:text-gold-400" id="stat-goals">979</span>
+                            <span class="text-[11px] font-bold uppercase text-slate-600 dark:text-slate-400 tracking-wider">Bàn thắng</span>
                         </div>
-                        <div class="bg-cardbg/90 border border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
-                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">5×</span>
-                            <span class="text-[11px] font-semibold uppercase text-slate-400 tracking-wider">Quả Bóng Vàng</span>
+                        <div class="bg-white/90 dark:bg-cardbg/90 border border-slate-200 dark:border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
+                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-600 dark:text-gold-400">5×</span>
+                            <span class="text-[11px] font-bold uppercase text-slate-600 dark:text-slate-400 tracking-wider">Quả Bóng Vàng</span>
                         </div>
-                        <div class="bg-cardbg/90 border border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
-                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">5×</span>
-                            <span class="text-[11px] font-semibold uppercase text-slate-400 tracking-wider">Cúp Champions League</span>
+                        <div class="bg-white/90 dark:bg-cardbg/90 border border-slate-200 dark:border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
+                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-600 dark:text-gold-400">5×</span>
+                            <span class="text-[11px] font-bold uppercase text-slate-600 dark:text-slate-400 tracking-wider">Cúp Champions League</span>
                         </div>
-                        <div class="bg-cardbg/90 border border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
-                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-400">146</span>
-                            <span class="text-[11px] font-semibold uppercase text-slate-400 tracking-wider">Bàn ĐTQG</span>
+                        <div class="bg-white/90 dark:bg-cardbg/90 border border-slate-200 dark:border-slate-800/90 p-4 rounded-xl text-center hover:border-gold-500/50 transition-all shadow-lg gold-glow-hover">
+                            <span class="block font-display text-3xl sm:text-4xl font-extrabold text-gold-600 dark:text-gold-400">146</span>
+                            <span class="text-[11px] font-bold uppercase text-slate-600 dark:text-slate-400 tracking-wider">Bàn ĐTQG</span>
                         </div>
                     </div>
                 </div>
@@ -170,98 +176,98 @@
     </section>
 
     <!-- Career Timeline Section -->
-    <section id="timeline" class="py-20 border-b border-slate-800/60 relative">
+    <section id="timeline" class="py-20 border-b border-slate-200 dark:border-slate-800/60 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-xs uppercase font-bold text-gold-400 tracking-widest mb-2">Hành Trình Chinh Phục</h2>
-                <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white">Các Cột Mốc Sự Nghiệp</p>
+                <h2 class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 tracking-widest mb-2">Hành Trình Chinh Phục</h2>
+                <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-slate-900 dark:text-white">Các Cột Mốc Sự Nghiệp</p>
                 <div class="w-20 h-1 bg-gradient-to-r from-gold-400 to-amber-600 mx-auto mt-4 rounded-full shadow-sm"></div>
             </div>
 
             <!-- Timeline Cards Grid -->
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Sporting CP -->
-                <div class="bg-cardbg border border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-xl group">
+                <div class="bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-lg group">
                     <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-bold">2002 - 2003</span>
+                        <span class="px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full text-xs font-bold">2002 - 2003</span>
                         <img src="image/sprt.png" alt="Sporting CP Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Sporting CP</h3>
-                    <p class="text-xs text-slate-400 mb-4 font-medium">Bệ phóng tại Lisbon</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử, mở đường sang Manchester United.</p>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-1">Sporting CP</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">Bệ phóng tại Lisbon</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử, mở đường sang Manchester United.</p>
                 </div>
 
                 <!-- Manchester United -->
-                <div class="bg-cardbg border border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-xl group">
+                <div class="bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-lg group">
                     <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-red-500/10 text-red-400 border border-red-500/30 rounded-full text-xs font-bold">2003 - 2009</span>
+                        <span class="px-3 py-1 bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30 rounded-full text-xs font-bold">2003 - 2009</span>
                         <img src="image/mu.png" alt="Manchester United Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Manchester United</h3>
-                    <p class="text-xs text-slate-400 mb-4 font-medium">Vươn tầm thế giới</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Đoạt 3 chức vô địch Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.</p>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-1">Manchester United</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">Vươn tầm thế giới</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Đoạt 3 chức vô địch Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.</p>
                 </div>
 
                 <!-- Real Madrid -->
-                <div class="bg-cardbg border border-gold-500/40 p-6 rounded-2xl transition-all hover:-translate-y-1.5 gold-glow shadow-xl group">
+                <div class="bg-white dark:bg-cardbg border border-gold-500/40 p-6 rounded-2xl transition-all hover:-translate-y-1.5 gold-glow shadow-lg group">
                     <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-gold-500/10 text-gold-400 border border-gold-500/30 rounded-full text-xs font-bold">2009 - 2018</span>
+                        <span class="px-3 py-1 bg-gold-500/10 text-gold-600 dark:text-gold-400 border border-gold-500/30 rounded-full text-xs font-bold">2009 - 2018</span>
                         <img src="image/real.png" alt="Real Madrid Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Real Madrid</h3>
-                    <p class="text-xs text-slate-400 mb-4 font-medium">Kỷ nguyên hoàng kim</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Ghi 450 bàn sau 438 trận. Giành 4 cúp Champions League (trong đó có 3 lần liên tiếp) và 4 Quả Bóng Vàng.</p>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-1">Real Madrid</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">Kỷ nguyên hoàng kim</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Ghi 450 bàn sau 438 trận. Giành 4 cúp Champions League (trong đó có 3 lần liên tiếp) và 4 Quả Bóng Vàng.</p>
                 </div>
 
                 <!-- Juventus -->
-                <div class="bg-cardbg border border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-xl group">
+                <div class="bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-lg group">
                     <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-slate-500/10 text-slate-300 border border-slate-500/30 rounded-full text-xs font-bold">2018 - 2021</span>
-                        <img src="image/juv.png" alt="Juventus Logo" class="w-8 h-8 object-contain brightness-0 invert group-hover:scale-110 transition-transform">
+                        <span class="px-3 py-1 bg-slate-500/10 text-slate-700 dark:text-slate-300 border border-slate-500/30 rounded-full text-xs font-bold">2018 - 2021</span>
+                        <img src="image/juv.png" alt="Juventus Logo" class="w-8 h-8 object-contain dark:brightness-0 dark:invert group-hover:scale-110 transition-transform">
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Juventus</h3>
-                    <p class="text-xs text-slate-400 mb-4 font-medium">Chinh phục Serie A</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB Juventus.</p>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-1">Juventus</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">Chinh phục Serie A</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB Juventus.</p>
                 </div>
 
                 <!-- Al Nassr -->
-                <div class="bg-cardbg border border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-xl group">
+                <div class="bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-lg group">
                     <div class="flex justify-between items-start mb-4">
-                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-bold">2023 - Hiện tại</span>
+                        <span class="px-3 py-1 bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30 rounded-full text-xs font-bold">2023 - Hiện tại</span>
                         <img src="image/al.png" alt="Al Nassr Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Al Nassr</h3>
-                    <p class="text-xs text-slate-400 mb-4 font-medium">Tiên phong tại Ả Rập</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Thúc đẩy sự phát triển bóng đá châu Á và tiếp tục chinh phục cột mốc 1.000 bàn thắng chính thức.</p>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-1">Al Nassr</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">Tiên phong tại Ả Rập</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Thúc đẩy sự phát triển bóng đá châu Á và tiếp tục chinh phục cột mốc 1.000 bàn thắng chính thức.</p>
                 </div>
 
                 <!-- Bồ Đào Nha -->
-                <div class="bg-cardbg border border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-xl group">
+                <div class="bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 hover:border-gold-500/60 p-6 rounded-2xl transition-all hover:-translate-y-1.5 shadow-lg group">
                     <div class="flex justify-between items-start mb-4">
                         <span class="px-3 py-1 bg-cr7red/10 text-cr7red border border-cr7red/30 rounded-full text-xs font-bold">2003 - Hiện tại</span>
                         <img src="image/bdn.png" alt="Portugal Logo" class="w-8 h-8 object-contain group-hover:scale-110 transition-transform">
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-1">Bồ Đào Nha</h3>
-                    <p class="text-xs text-slate-400 mb-4 font-medium">Anh hùng dân tộc</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Cầu thủ ghi bàn vĩ đại nhất cấp ĐTQG.</p>
+                    <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-1">Bồ Đào Nha</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 font-medium">Anh hùng dân tộc</p>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Cầu thủ ghi bàn vĩ đại nhất cấp ĐTQG.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Trophy Cabinet Section -->
-    <section id="trophies" class="py-20 border-b border-slate-800/60 bg-slate-950/60">
+    <section id="trophies" class="py-20 border-b border-slate-200 dark:border-slate-800/60 bg-slate-100/70 dark:bg-slate-950/60 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                 <div>
-                    <h2 class="text-xs uppercase font-bold text-gold-400 tracking-widest mb-2">Thành Tựu</h2>
-                    <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white">Bảng Vàng Danh Hiệu</p>
+                    <h2 class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 tracking-widest mb-2">Thành Tựu</h2>
+                    <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-slate-900 dark:text-white">Bảng Vàng Danh Hiệu</p>
                 </div>
                 <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="trophy-filters">
                     <button data-filter="all" class="px-4 py-2 rounded-xl text-sm font-bold bg-gold-500 text-black shadow-lg shadow-gold-500/20 transition-all">Tất cả</button>
-                    <button data-filter="individual" class="px-4 py-2 rounded-xl text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Cá nhân</button>
-                    <button data-filter="club" class="px-4 py-2 rounded-xl text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Câu lạc bộ</button>
-                    <button data-filter="international" class="px-4 py-2 rounded-xl text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Đội tuyển quốc gia</button>
+                    <button data-filter="individual" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white dark:bg-cardbg text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-800 hover:border-gold-500/50 transition-all">Cá nhân</button>
+                    <button data-filter="club" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white dark:bg-cardbg text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-800 hover:border-gold-500/50 transition-all">Câu lạc bộ</button>
+                    <button data-filter="international" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white dark:bg-cardbg text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-800 hover:border-gold-500/50 transition-all">Đội tuyển quốc gia</button>
                 </div>
             </div>
 
@@ -271,20 +277,20 @@
     </section>
 
     <!-- Signature Celebration Section -->
-    <section id="siuuu" class="py-20 border-b border-slate-800/60 relative overflow-hidden bg-gradient-to-b from-darkbg via-cardbg to-darkbg">
+    <section id="siuuu" class="py-20 border-b border-slate-200 dark:border-slate-800/60 relative overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-100 dark:from-darkbg dark:via-cardbg dark:to-darkbg transition-colors">
         <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-            <span class="px-3.5 py-1.5 bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-widest rounded-full shadow-sm">Khoảnh khắc biểu tượng</span>
-            <h2 class="font-display text-5xl sm:text-6xl font-extrabold uppercase text-white mt-4 mb-4">Ăn Mừng "SIUUU"!</h2>
-            <p class="text-slate-300 max-w-xl mx-auto mb-10 text-base font-light">Bấm nút bên dưới để phát âm thanh tiếng hô SIUUU cực chất của Cristiano Ronaldo!</p>
+            <span class="px-3.5 py-1.5 bg-gold-500/20 dark:bg-gold-500/10 border border-gold-500/40 dark:border-gold-500/30 text-gold-600 dark:text-gold-400 text-xs font-bold uppercase tracking-widest rounded-full shadow-sm">Khoảnh khắc biểu tượng</span>
+            <h2 class="font-display text-5xl sm:text-6xl font-extrabold uppercase text-slate-900 dark:text-white mt-4 mb-4">Ăn Mừng "SIUUU"!</h2>
+            <p class="text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-10 text-base font-light">Bấm nút bên dưới để phát âm thanh tiếng hô SIUUU cực chất của Cristiano Ronaldo!</p>
 
             <div class="relative inline-block my-6">
                 <div id="shockwave-target" class="absolute inset-0 rounded-full pointer-events-none"></div>
 
                 <button id="siuuu-btn" class="relative group w-48 h-48 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-300 p-1.5 shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 gold-glow focus:outline-none">
-                    <div class="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center border border-gold-400/50 group-hover:bg-slate-900 transition-colors">
-                        <i class="fa-solid fa-volume-high text-4xl text-gold-400 mb-2 group-hover:animate-bounce"></i>
-                        <span class="font-display text-3xl font-black text-white tracking-widest">SIUUU!</span>
-                        <span class="text-[10px] text-slate-400 uppercase tracking-widest mt-1 font-semibold">Ấn Để Ăn Mừng</span>
+                    <div class="w-full h-full rounded-full bg-white dark:bg-slate-950 flex flex-col items-center justify-center border border-gold-400/50 group-hover:bg-slate-50 dark:group-hover:bg-slate-900 transition-colors">
+                        <i class="fa-solid fa-volume-high text-4xl text-gold-500 dark:text-gold-400 mb-2 group-hover:animate-bounce"></i>
+                        <span class="font-display text-3xl font-black text-slate-900 dark:text-white tracking-widest">SIUUU!</span>
+                        <span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest mt-1 font-semibold">Ấn Để Ăn Mừng</span>
                     </div>
                 </button>
             </div>
@@ -296,21 +302,21 @@
     </section>
 
     <!-- Interactive Quiz Section -->
-    <section id="quiz" class="py-20 border-b border-slate-800/60">
+    <section id="quiz" class="py-20 border-b border-slate-200 dark:border-slate-800/60">
         <div class="max-w-3xl mx-auto px-4">
             <div class="text-center mb-10">
-                <h2 class="text-xs uppercase font-bold text-gold-400 tracking-widest mb-2">Thử Thách Kiến Thức</h2>
-                <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-white">Trắc Nghiệm CR7 (15 Câu Ngẫu Nhiên)</p>
+                <h2 class="text-xs uppercase font-bold text-gold-600 dark:text-gold-400 tracking-widest mb-2">Thử Thách Kiến Thức</h2>
+                <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-slate-900 dark:text-white">Trắc Nghiệm CR7 (15 Câu Ngẫu Nhiên)</p>
             </div>
 
-            <div class="bg-cardbg border border-slate-800/90 rounded-2xl p-6 sm:p-8 gold-glow relative shadow-2xl">
+            <div class="bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 rounded-2xl p-6 sm:p-8 gold-glow relative shadow-2xl">
                 <div id="quiz-container">
-                    <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
-                        <span class="text-xs font-extrabold text-gold-400 uppercase tracking-wider" id="quiz-progress">Câu 1 / 15</span>
-                        <span class="text-xs font-bold text-slate-300 bg-slate-800 px-3 py-1 rounded-full border border-slate-700" id="quiz-score-badge">Điểm: 0</span>
+                    <div class="flex justify-between items-center mb-6 border-b border-slate-200 dark:border-slate-800 pb-4">
+                        <span class="text-xs font-extrabold text-gold-600 dark:text-gold-400 uppercase tracking-wider" id="quiz-progress">Câu 1 / 15</span>
+                        <span class="text-xs font-bold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-300 dark:border-slate-700" id="quiz-score-badge">Điểm: 0</span>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-6 leading-snug" id="quiz-question">Đang tải câu hỏi...</h3>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 leading-snug" id="quiz-question">Đang tải câu hỏi...</h3>
 
                     <div class="space-y-3" id="quiz-options"></div>
 
@@ -321,9 +327,9 @@
                 </div>
 
                 <div id="quiz-results" class="hidden text-center py-8">
-                    <i class="fa-solid fa-trophy text-6xl text-gold-400 mb-4 animate-bounce"></i>
-                    <h3 class="font-display text-3xl font-bold text-white mb-2">Hoàn Thành Trắc Nghiệm!</h3>
-                    <p class="text-slate-300 mb-6" id="quiz-final-score">Bạn đã trả lời đúng 0 / 15 câu!</p>
+                    <i class="fa-solid fa-trophy text-6xl text-gold-500 dark:text-gold-400 mb-4 animate-bounce"></i>
+                    <h3 class="font-display text-3xl font-bold text-slate-900 dark:text-white mb-2">Hoàn Thành Trắc Nghiệm!</h3>
+                    <p class="text-slate-600 dark:text-slate-300 mb-6" id="quiz-final-score">Bạn đã trả lời đúng 0 / 15 câu!</p>
                     <button id="quiz-restart-btn" class="bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-black font-extrabold px-8 py-3 rounded-xl transition-all shadow-xl">Thử Bộ Câu Hỏi Khác</button>
                 </div>
             </div>
@@ -331,15 +337,35 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 py-10 border-t border-slate-800/80 text-center text-xs text-slate-400">
+    <footer class="bg-slate-200 dark:bg-slate-950 py-10 border-t border-slate-300 dark:border-slate-800/80 text-center text-xs text-slate-600 dark:text-slate-400 transition-colors">
         <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <p class="font-display text-2xl font-bold text-gold-400 tracking-wider">CR7 - Mr. Champions League - El Bicho - 7 - GOAT - Cỗ máy săn bàn - Ronnie</p>
+            <p class="font-display text-2xl font-bold text-gold-600 dark:text-gold-400 tracking-wider">CR7 - Mr. Champions League - El Bicho - 7 - GOAT - Cỗ máy săn bàn - Ronnie</p>
             <p>©AnhĐa đã tạo 08/10/2026. Messi chính là 1 ông già không còn đá banh nỗi,Anh Ronaldo của chúng ta thì mãi mãi là GOÁT. </p>
         </div>
     </footer>
 
     <!-- JS CHÍNH -->
     <script>
+        // --- 0. Logic chuyển chế độ Light / Dark Mode ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleIcon = document.getElementById('theme-toggle-icon');
+
+        function updateThemeIcon() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleIcon.className = 'fa-solid fa-sun text-lg text-gold-400';
+            } else {
+                themeToggleIcon.className = 'fa-solid fa-moon text-lg text-slate-700';
+            }
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                updateThemeIcon();
+            });
+        }
+        updateThemeIcon();
+
         // --- 1. Mảng danh hiệu & hàm hiển thị khung ảnh ---
         const trophies = [
             { 
@@ -425,26 +451,25 @@
             
             filtered.forEach(t => {
                 const card = document.createElement('div');
-                // Card dạng ngang: Ảnh bên trái (w-2/5), Thông tin bên phải
-                card.className = "bg-cardbg border border-slate-800/90 hover:border-gold-500/60 rounded-2xl overflow-hidden flex flex-row transition-all transform hover:-translate-y-1 group shadow-xl";
+                card.className = "bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-800/90 hover:border-gold-500/60 rounded-2xl overflow-hidden flex flex-row transition-all transform hover:-translate-y-1 group shadow-lg";
                 card.innerHTML = `
                     <!-- BÊN TRÁI: Ảnh minh họa -->
                     <div class="relative w-2/5 h-44 flex-shrink-0 overflow-hidden">
                         <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cardbg/20 to-cardbg"></div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-cardbg/20 to-white dark:to-cardbg"></div>
                     </div>
                     
                     <!-- BÊN PHẢI: Tên danh hiệu, Năm và Nhãn phân loại kèm Số lượng bên phải -->
                     <div class="p-3.5 flex-1 flex flex-col justify-between min-w-0">
                         <div>
-                            <h4 class="font-bold text-white text-sm leading-snug mb-1 line-clamp-2">${t.title}</h4>
-                            <p class="text-[11px] text-slate-400 leading-tight line-clamp-2">${t.year}</p>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm leading-snug mb-1 line-clamp-2">${t.title}</h4>
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400 leading-tight line-clamp-2">${t.year}</p>
                         </div>
-                        <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center gap-1">
+                        <div class="pt-2 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center gap-1">
                             <!-- Phân loại bên trái -->
-                            <span class="text-[9px] uppercase font-semibold text-gold-400/90 bg-gold-500/10 px-2 py-0.5 rounded-md border border-gold-500/20 whitespace-nowrap">${t.categoryName}</span>
+                            <span class="text-[9px] uppercase font-semibold text-gold-600 dark:text-gold-400/90 bg-gold-500/10 px-2 py-0.5 rounded-md border border-gold-500/20 whitespace-nowrap">${t.categoryName}</span>
                             <!-- Số lượng 5x/4x nằm bên phải -->
-                            <span class="font-display text-xl font-black text-gold-400 bg-black/75 px-2 py-0.5 rounded-lg border border-gold-500/40 whitespace-nowrap">${t.count}</span>
+                            <span class="font-display text-xl font-black text-gold-600 dark:text-gold-400 bg-amber-50 dark:bg-black/75 px-2 py-0.5 rounded-lg border border-gold-500/40 whitespace-nowrap">${t.count}</span>
                         </div>
                     </div>
                 `;
@@ -457,7 +482,7 @@
             filterContainer.addEventListener('click', (e) => {
                 if (e.target.tagName === 'BUTTON') {
                     document.querySelectorAll('#trophy-filters button').forEach(btn => {
-                        btn.className = "px-4 py-2 rounded-xl text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all";
+                        btn.className = "px-4 py-2 rounded-xl text-sm font-semibold bg-white dark:bg-cardbg text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-800 hover:border-gold-500/50 transition-all";
                     });
                     e.target.className = "px-4 py-2 rounded-xl text-sm font-bold bg-gold-500 text-black shadow-lg shadow-gold-500/20 transition-all";
                     renderTrophies(e.target.dataset.filter);
@@ -678,7 +703,7 @@
 
             q.options.forEach((opt, idx) => {
                 const btn = document.createElement('button');
-                btn.className = "w-full text-left p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-gold-500/60 text-slate-200 text-sm font-medium transition-all flex justify-between items-center shadow-md";
+                btn.className = "w-full text-left p-4 rounded-xl bg-slate-100 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 hover:border-gold-500/60 text-slate-800 dark:text-slate-200 text-sm font-medium transition-all flex justify-between items-center shadow-sm dark:shadow-md";
                 btn.innerText = opt;
                 btn.onclick = () => checkAnswer(idx, btn);
                 optsContainer.appendChild(btn);
@@ -696,26 +721,26 @@
             
             if (selectedIdx === q.correct) {
                 score++;
-                selectedBtn.classList.remove('bg-slate-900/90', 'border-slate-800');
-                selectedBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
-                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-check text-emerald-400 ml-2"></i>';
+                selectedBtn.classList.remove('bg-slate-100', 'dark:bg-slate-900/90', 'border-slate-200', 'dark:border-slate-800');
+                selectedBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-check text-emerald-500 dark:text-emerald-400 ml-2"></i>';
                 if (feedback) {
                     feedback.innerText = "Chính xác! SIUUU!";
-                    feedback.className = "text-sm font-bold text-emerald-400";
+                    feedback.className = "text-sm font-bold text-emerald-600 dark:text-emerald-400";
                 }
             } else {
-                selectedBtn.classList.remove('bg-slate-900/90', 'border-slate-800');
-                selectedBtn.classList.add('bg-red-500/20', 'border-red-500', 'text-red-400');
-                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-xmark text-red-400 ml-2"></i>';
+                selectedBtn.classList.remove('bg-slate-100', 'dark:bg-slate-900/90', 'border-slate-200', 'dark:border-slate-800');
+                selectedBtn.classList.add('bg-red-500/20', 'border-red-500', 'text-red-600', 'dark:text-red-400');
+                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-xmark text-red-500 dark:text-red-400 ml-2"></i>';
                 
                 const correctBtn = optsButtons[q.correct];
                 if (correctBtn) {
-                    correctBtn.classList.remove('bg-slate-900/90', 'border-slate-800');
-                    correctBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-400');
+                    correctBtn.classList.remove('bg-slate-100', 'dark:bg-slate-900/90', 'border-slate-200', 'dark:border-slate-800');
+                    correctBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
                 }
                 if (feedback) {
                     feedback.innerText = `Chưa đúng! Đáp án đúng là: ${q.options[q.correct]}`;
-                    feedback.className = "text-sm font-bold text-red-400";
+                    feedback.className = "text-sm font-bold text-red-600 dark:text-red-400";
                 }
             }
             
