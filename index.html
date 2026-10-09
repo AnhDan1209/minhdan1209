@@ -108,60 +108,60 @@
 
     <!-- Navigation Header -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-tBg/80 border-b border-tBorder shadow-lg transition-colors duration-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl theme-gradient-bg flex items-center justify-center shadow-md">
-                <span class="font-display text-2xl font-black">7</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl theme-gradient-bg flex items-center justify-center shadow-md">
+                    <span class="font-display text-2xl font-black">7</span>
+                </div>
+                <div>
+                    <span class="font-display text-3xl font-extrabold tracking-wider theme-gradient-text theme-text-glow block leading-none">CR7</span>
+                    <span class="text-[9px] uppercase tracking-[0.25em] text-tMuted font-bold block mt-0.5">The Living Legend</span>
+                </div>
             </div>
-            <div>
-                <span class="font-display text-3xl font-extrabold tracking-wider theme-gradient-text theme-text-glow block leading-none">CR7</span>
-                <span class="text-[9px] uppercase tracking-[0.25em] text-tMuted font-bold block mt-0.5">The Living Legend</span>
+            
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
+                <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
+                <a href="#records" class="hover:text-tAccent transition-colors">Kỷ Lục</a>
+                <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
+                <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
+                <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
+                <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
+            </nav>
+
+            <!-- Right Side: Theme + SIUUU + Mobile Menu Button -->
+            <div class="flex items-center gap-2 sm:gap-4">
+                <div class="flex items-center gap-1.5 bg-tCard px-2 py-1.5 sm:px-2.5 rounded-full border border-tBorder shadow-sm">
+                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm">
+                        <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
+                    </button>
+                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày">
+                        <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
+                    </button>
+                </div>
+
+                <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
+                    <i class="fa-solid fa-bolt animate-pulse"></i>
+                    <span class="hidden sm:inline">SIUUU!</span>
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-base"></i>
+                </button>
             </div>
         </div>
-        
-        <!-- Menu Desktop (Tự ẩn trên Mobile) -->
-        <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
-            <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
-            <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
-            <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
-            <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
-            <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
-        </nav>
 
-        <!-- Right Side: Theme + SIUUU + Mobile Menu Button -->
-        <div class="flex items-center gap-2 sm:gap-4">
-            <!-- Theme Toggle -->
-            <div class="flex items-center gap-1.5 bg-tCard px-2 py-1.5 sm:px-2.5 rounded-full border border-tBorder shadow-sm">
-                <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm">
-                    <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
-                </button>
-                <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày">
-                    <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
-                </button>
-            </div>
-
-            <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
-                <i class="fa-solid fa-bolt animate-pulse"></i>
-                <span class="hidden sm:inline">SIUUU!</span>
-            </a>
-
-            <!-- Nút 3 gạch mở Menu trên Mobile -->
-            <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars text-base"></i>
-            </button>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
+            <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
+            <a href="#records" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Kỷ Lục</a>
+            <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
+            <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
+            <a href="#quiz" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Phát Hiện Ricon</a>
+            <a href="game.html" class="block py-2 text-amber-500 font-black hover:text-tAccent transition-colors"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
         </div>
-    </div>
-
-    <!-- Menu Xổ Xuống trên Mobile khi bấm nút 3 gạch -->
-    <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
-        <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
-        <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
-        <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
-        <a href="#quiz" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Phát Hiện Ricon</a>
-        <a href="game.html" class="block py-2 text-amber-500 font-black hover:text-tAccent transition-colors"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-tBorder bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: linear-gradient(to bottom, var(--hero-overlay), var(--c-bg)), url('image/background1.jpg');">
@@ -217,7 +217,264 @@
         </div>
     </section>
 
-    <!-- Career Timeline Section (Tích hợp Modal Popup Khi Bấm Xem Chi Tiết) -->
+    <!-- ================= BẢNG KỶ LỤC MỌI THỜI ĐẠI (18 KỶ LỤC) ================= -->
+    <section id="records" class="py-20 border-b border-tBorder bg-tBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-4 py-1.5 bg-tCard border border-tBorder text-tAccent text-xs font-extrabold uppercase tracking-widest rounded-full shadow-sm inline-flex items-center gap-1.5 mb-3">
+                    <i class="fa-solid fa-crown text-[10px]"></i> Bộ cập nhật kỷ lục toàn diện
+                </span>
+                <h2 class="font-display text-4xl sm:text-5xl font-black uppercase text-tText tracking-wide">
+                    BẢNG KỶ LỤC MỌI THỜI ĐẠI
+                </h2>
+                <div class="w-24 h-1.5 theme-gradient-bg mx-auto my-4 rounded-full shadow-md"></div>
+                <p class="text-tMuted text-sm sm:text-base font-medium leading-relaxed">
+                    Tổng hợp đầy đủ 18 kỷ lục lịch sử vô tiền khoáng hậu khẳng định vị thế Vua săn bàn vĩ đại nhất bóng đá thế giới.
+                </p>
+            </div>
+
+            <!-- Grid 18 Thẻ Kỷ Lục -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- 1. 900+ Bàn -->
+                <div class="bg-tCard border-2 border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-2xl relative flex flex-col justify-between theme-glow">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-crown text-tAccent text-sm"></i>
+                            <span class="text-[9px] font-black uppercase tracking-wider text-black theme-gradient-bg px-2.5 py-1 rounded-md shadow-sm">WORLD RECORD</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">900+ BÀN</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Ghi Bàn Lịch Sử World</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Cầu thủ đầu tiên đạt mốc 900 bàn thắng chính thức.</p>
+                    </div>
+                </div>
+
+                <!-- 2. 130+ Bàn ĐTQG -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-globe text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">ĐỘI TUYỂN QG</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">130+ BÀN</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Săn Bàn ĐTQG</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Ghi nhiều bàn thắng nhất cho một ĐTQG (Bồ Đào Nha).</p>
+                    </div>
+                </div>
+
+                <!-- 3. 140 Bàn C1 -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-star text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">CHAMPIONS LEAGUE</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">140 BÀN C1</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Phá Lưới C1</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Chân sút số 1 mọi thời đại tại UEFA Champions League.</p>
+                    </div>
+                </div>
+
+                <!-- 4. 17 Bàn / Mùa -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-fire text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">CÚP C1</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">17 BÀN / MÙA</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Kỷ Lục Mùa C1 13/14</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Số bàn thắng nhiều nhất ghi được trong một mùa C1.</p>
+                    </div>
+                </div>
+
+                <!-- 5. 5 Kỳ WC -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-trophy text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">WORLD CUP</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">5 KỲ WC</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Ghi Bàn 5 Kỳ WC</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Cầu thủ duy nhất nổ súng ở 5 kỳ World Cup liên tiếp.</p>
+                    </div>
+                </div>
+
+                <!-- 6. 14 Bàn EURO -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-flag text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">VCK EURO</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">14 BÀN EURO</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Phá Lưới EURO</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Ghi nhiều bàn thắng nhất lịch sử các VCK EURO.</p>
+                    </div>
+                </div>
+
+                <!-- 7. 6 Kỳ EURO -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-shirt text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">VCK EURO</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">6 KỲ EURO</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Kỷ Lục Tham Gia EURO</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Cầu thủ duy nhất góp mặt ở 6 VCK EURO (2004 - 2024).</p>
+                    </div>
+                </div>
+
+                <!-- 8. 450 Bàn Real -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-shield text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">REAL MADRID</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">450 BÀN REAL</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Phá Lưới Real</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">450 bàn sau 438 trận (hiệu suất vượt mốc 1.03 bàn/trận).</p>
+                    </div>
+                </div>
+
+                <!-- 9. 4 Quốc Gia -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-shoe-prints text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">GIẢI VĐQG</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">4 QUỐC GIA</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Giày Vàng 4 Giải Đấu</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Vua phá lưới ở Premier League, La Liga, Serie A & SPL.</p>
+                    </div>
+                </div>
+
+                <!-- 10. 10 Hat-trick -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-bolt text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">HAT-TRICK ĐTQG</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">10 HAT-TRICK</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Hat-trick ĐTQG</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Lập nhiều Cú đúp 3 bàn nhất lịch sử bóng đá quốc tế.</p>
+                    </div>
+                </div>
+
+                <!-- 11. 11 Trận C1 -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-arrows-rotate text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">CHUỖI BÀN C1</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">11 TRẬN C1</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Ghi Bàn Liên Tiếp C1</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Chuỗi trận ghi bàn liên tiếp dài nhất tại Champions League.</p>
+                    </div>
+                </div>
+
+                <!-- 12. 42 Kiến Tạo -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-handshake text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">KIẾN TẠO C1</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">42 KIẾN TẠO</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Kiến Tạo C1</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Kiến tạo nhiều bàn thắng nhất lịch sử Cúp C1.</p>
+                    </div>
+                </div>
+
+                <!-- 13. 35 Bàn / Mùa -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-ribbon text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">SAUDI PRO LEAGUE</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">35 BÀN / MÙA</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Kỷ Lục Mùa SPL 23/24</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Số bàn thắng cao nhất trong 1 mùa giải Saudi Pro League.</p>
+                    </div>
+                </div>
+
+                <!-- 14. 100 Bàn/131 Trận -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-stopwatch text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">JUVENTUS FC</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">100 BÀN/131 TRẬN</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">100 Bàn Nhanh Nhất Juve</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Cầu thủ đạt mốc 100 bàn nhanh nhất lịch sử Juventus.</p>
+                    </div>
+                </div>
+
+                <!-- 15. 50+ Bàn / 6 Mùa -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-chart-line text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">REAL MADRID</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">50+ BÀN / 6 MÙA</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Phong Độ Đỉnh Cao 6 Mùa</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">6 mùa liên tiếp ghi trên 50 bàn cho Real Madrid.</p>
+                    </div>
+                </div>
+
+                <!-- 16. 210+ Trận ĐTQG -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-users text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">CẤP ĐTQG</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">210+ TRẬN ĐTQG</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Ra Sân ĐTQG Nhiều Nhất</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Kỷ lục ra sân nhiều nhất cho một ĐTQG mọi thời đại.</p>
+                    </div>
+                </div>
+
+                <!-- 17. 15 Lần XI -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-id-card text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">FIFA FIFPRO</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">15 LẦN XI</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Đội Hình Tiêu Biểu FIFA</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Có mặt trong Đội hình xuất sắc nhất năm FIFA FIFPro World11.</p>
+                    </div>
+                </div>
+
+                <!-- 18. 7 Lần VPL C1 -->
+                <div class="bg-tCard border border-tBorder hover:border-tAccent p-5 rounded-2xl transition-all duration-300 shadow-xl relative flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <i class="fa-solid fa-medal text-tMuted group-hover:text-tAccent transition-colors text-sm"></i>
+                            <span class="text-[9px] font-extrabold uppercase tracking-wider text-tMuted bg-tBg border border-tBorder px-2.5 py-1 rounded-md">CÚP C1</span>
+                        </div>
+                        <div class="font-display text-3xl font-black theme-gradient-text mb-1">7 LẦN VPL C1</div>
+                        <h3 class="text-sm font-extrabold text-tText mb-1">Vua Phá Lưới C1 7 Mùa</h3>
+                        <p class="text-xs text-tMuted leading-relaxed">Đoạt danh hiệu Vua phá lưới Champions League nhiều mùa nhất.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline Section -->
     <section id="timeline" class="py-20 border-b border-tBorder relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -456,34 +713,23 @@
         </div>
     </footer>
 
-   <!-- ================= CLUB DETAIL MODAL POPUP (CÓ CÁNH & SỪNG QUỶ ĐỎ) ================= -->
+    <!-- ================= CLUB DETAIL MODAL POPUP (CÓ CÁNH PNG & SỪNG QUỶ ĐỎ) ================= -->
     <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6">
             
             <!-- SỪNG QUỶ ĐỎ NỔI Ở ĐỈNH KHUNG POPUP (Chỉ hiện khi chọn MU) -->
             <div id="devil-horns" class="hidden absolute -top-9 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-between w-32 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse">
-                <!-- Sừng Trái -->
                 <svg class="w-10 h-10 text-red-600 fill-current transform -scale-x-100 -rotate-12" viewBox="0 0 24 24">
                     <path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/>
                 </svg>
-                <!-- Sừng Phải -->
                 <svg class="w-10 h-10 text-red-600 fill-current transform rotate-12" viewBox="0 0 24 24">
                     <path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/>
                 </svg>
             </div>
 
-            <!-- CÁNH QUỶ ĐỎ 2 BÊN HÔNG KHUNG (Chỉ hiện khi chọn MU) -->
-            <div id="devil-wing-left" class="hidden absolute -left-16 sm:-left-24 top-1/2 -translate-y-1/2 z-0 pointer-events-none w-20 sm:w-28 text-red-600/90 drop-shadow-[0_0_20px_rgba(220,38,38,0.85)] animate-pulse">
-                <svg class="w-full h-auto fill-current transform -scale-x-100" viewBox="0 0 100 100">
-                    <path d="M10 50 C20 20, 60 10, 95 30 C80 45, 75 60, 90 75 C70 65, 50 80, 45 95 C40 70, 20 65, 10 50 Z"/>
-                </svg>
-            </div>
-            <div id="devil-wing-right" class="hidden absolute -right-16 sm:-right-24 top-1/2 -translate-y-1/2 z-0 pointer-events-none w-20 sm:w-28 text-red-600/90 drop-shadow-[0_0_20px_rgba(220,38,38,0.85)] animate-pulse">
-                <svg class="w-full h-auto fill-current" viewBox="0 0 100 100">
-                    <path d="M10 50 C20 20, 60 10, 95 30 C80 45, 75 60, 90 75 C70 65, 50 80, 45 95 C40 70, 20 65, 10 50 Z"/>
-                </svg>
-            </div>
+            <!-- BỘ CÁNH QUỶ FULL (Dùng 1 ảnh PNG) -->
+            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[130%] sm:w-[145%] max-w-[850px] h-auto drop-shadow-[0_0_30px_rgba(220,38,38,0.9)] animate-pulse">
 
             <!-- Nút Đóng Modal -->
             <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
@@ -508,7 +754,6 @@
                     <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-4"></p>
                 </div>
 
-                <!-- Góc Dưới Bên Phải: Nút Khám Phá -->
                 <div class="pt-4 border-t border-tBorder flex justify-end">
                     <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
                         Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
@@ -591,9 +836,7 @@
 
         function playSiuuuSound() {
             siuuuAudio.currentTime = 0;
-            siuuuAudio.play().catch(e => {
-                console.log("Lỗi phát âm thanh:", e);
-            });
+            siuuuAudio.play().catch(e => console.log("Lỗi phát âm thanh:", e));
             drawVisualizerWave();
         }
 
@@ -848,7 +1091,6 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Tự đóng menu khi bấm chuyển trang/mục
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
@@ -856,7 +1098,7 @@
             });
         }
 
-        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB (ĐÃ THÊM THEME RED DEVILS CHO MU) ---
+        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB ---
         const clubDetailsData = {
             sporting: {
                 title: "Sporting CP",
@@ -872,7 +1114,7 @@
                 subtitle: "🔥 THE RED DEVILS - KỶ NGUYÊN QUỶ ĐỎ RỰC LỬA",
                 years: "2003 - 2009 & 2021 - 2022",
                 badge: "image/mu.png",
-                cr7Img: "image/cr7_mu.jpg", // Đường dẫn ảnh nghệ thuật CR7 khoác áo Quỷ Đỏ
+                cr7Img: "image/cr7_mu.jpg",
                 desc: "Nơi thần đồng biến thành Quỷ Đỏ thống trị châu Âu. Với lối chơi bùng nổ, tốc độ xé gió và những cú nã đại bác mang thương hiệu CR7, Ronaldo đã cùng Sir Alex Ferguson đoạt 3 Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.",
                 link: "mu.html"
             },
@@ -882,7 +1124,7 @@
                 years: "2009 - 2018",
                 badge: "image/real.png",
                 cr7Img: "image/cr7_real.jpg",
-                desc: "Đỉnh cao lịch sử bóng đá với 450 bàn thắng sau 438 trận. Giành 4 chức vô địch UEFA Champions League (với cú hat-trick C1 liên tiếp 2016-2018) và 4 Quả Bóng Vàng.",
+                desc: "Đỉnh cao lịch sử bóng đá với 450 bàn thắng sau 438 trận. Giành 4 chức vô địch UEFA Champions League (với cú hat-trick C1 liên tiếp 2016-2018 — kỷ lục vô tiền khoáng hậu) và 4 Quả Bóng Vàng.",
                 link: "real.html"
             },
             juventus: {
@@ -919,10 +1161,8 @@
         const closeModalBtn = document.getElementById('close-modal-btn');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
 
-        // Lấy các phần tử cánh và sừng quỷ
         const devilHorns = document.getElementById('devil-horns');
-        const devilWingLeft = document.getElementById('devil-wing-left');
-        const devilWingRight = document.getElementById('devil-wing-right');
+        const devilWingsFull = document.getElementById('devil-wings-full');
 
         openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -938,18 +1178,14 @@
                     document.getElementById('modal-cr7-img').src = data.cr7Img;
                     document.getElementById('modal-explore-btn').href = data.link;
 
-                    // Nếu chọn Manchester United -> Kích hoạt Cánh & Sừng Quỷ Đỏ + Viền Đỏ Rực
                     if (clubKey === 'mu') {
                         modalContainer.classList.add('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
                         if (devilHorns) devilHorns.classList.remove('hidden');
-                        if (devilWingLeft) devilWingLeft.classList.remove('hidden');
-                        if (devilWingRight) devilWingRight.classList.remove('hidden');
+                        if (devilWingsFull) devilWingsFull.classList.remove('hidden');
                     } else {
-                        // Các CLB khác giữ nguyên viền vàng chuẩn
                         modalContainer.classList.remove('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
                         if (devilHorns) devilHorns.classList.add('hidden');
-                        if (devilWingLeft) devilWingLeft.classList.add('hidden');
-                        if (devilWingRight) devilWingRight.classList.add('hidden');
+                        if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -978,6 +1214,7 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') hideClubModal();
         });
+
         // Tự động khởi chạy khi tải xong trang
         renderTrophies();
         initQuiz();
