@@ -242,26 +242,134 @@
         </div>
     </section>
 
-    <!-- Trophy Cabinet Section -->
-    <section id="trophies" class="py-20 border-b border-slate-800/50 bg-slate-950/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-xs uppercase font-semibold text-gold-400 tracking-widest mb-2">Thành Tựu</h2>
-                    <p class="font-display text-4xl font-bold uppercase text-white">Bảng Vàng Danh Hiệu</p>
-                </div>
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="trophy-filters">
-                    <button data-filter="all" class="px-4 py-2 rounded-lg text-sm font-semibold bg-gold-500 text-black shadow-md transition-all">Tất cả</button>
-                    <button data-filter="individual" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Cá nhân</button>
-                    <button data-filter="club" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Câu lạc bộ</button>
-                    <button data-filter="international" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Đội tuyển quốc gia</button>
-                </div>
-            </div>
+    // --- Trophy Cabinet Items (Đã chèn ảnh CR7 nâng cúp) ---
+      <script>
+    // 1. MẢNG DANH HIỆU (Đã chuyển từ icon sang đường dẫn ảnh trong thư mục image/)
+    <script>
+    // 1. Mảng 8 danh hiệu - Có ảnh minh họa + Phân loại tiếng Việt cho bộ lọc
+    const trophies = [
+        { 
+            id: 1, 
+            title: "Quả Bóng Vàng (Ballon d'Or)", 
+            count: "5×", 
+            category: "individual", 
+            categoryName: "Cá nhân",
+            year: "2008, 2013, 2014, 2016, 2017", 
+            img: "image/trophy_ballondor.jpg" 
+        },
+        { 
+            id: 2, 
+            title: "UEFA Champions League", 
+            count: "5×", 
+            category: "club", 
+            categoryName: "Câu lạc bộ",
+            year: "2008, 2014, 2016, 2017, 2018", 
+            img: "image/trophy_c1.jpg" 
+        },
+        { 
+            id: 3, 
+            title: "Giải Vô Địch Châu Âu (EURO)", 
+            count: "1×", 
+            category: "international", 
+            categoryName: "Đội tuyển quốc gia",
+            year: "2016 (Bồ Đào Nha)", 
+            img: "image/trophy_euro.jpg" 
+        },
+        { 
+            id: 4, 
+            title: "Chiếc Giày Vàng Châu Âu", 
+            count: "4×", 
+            category: "individual", 
+            categoryName: "Cá nhân",
+            year: "2008, 2011, 2014, 2015", 
+            img: "image/trophy_giayvang.jpg" 
+        },
+        { 
+            id: 5, 
+            title: "FIFA Club World Cup", 
+            count: "4×", 
+            category: "club", 
+            categoryName: "Câu lạc bộ",
+            year: "2008, 2014, 2016, 2017", 
+            img: "image/trophy_cwc.jpg" 
+        },
+        { 
+            id: 6, 
+            title: "UEFA Nations League", 
+            count: "1×", 
+            category: "international", 
+            categoryName: "Đội tuyển quốc gia",
+            year: "2019 (Bồ Đào Nha)", 
+            img: "image/trophy_nationsleague.jpg" 
+        },
+        { 
+            id: 7, 
+            title: "Ngoại Hạng Anh (Premier League)", 
+            count: "3×", 
+            category: "club", 
+            categoryName: "Câu lạc bộ",
+            year: "2007, 2008, 2009", 
+            img: "image/trophy_epl.jpg" 
+        },
+        { 
+            id: 8, 
+            title: "La Liga (Tây Ban Nha)", 
+            count: "2×", 
+            category: "club", 
+            categoryName: "Câu lạc bộ",
+            year: "2012, 2017", 
+            img: "image/trophy_laliga.jpg" 
+        }
+    ];
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="trophy-container"></div>
-        </div>
-    </section>
+    // 2. Hàm render thẻ danh hiệu có hình ảnh
+    function renderTrophies(filter = 'all') {
+        const container = document.getElementById('trophy-container');
+        if (!container) return;
+        container.innerHTML = '';
+        
+        const filtered = filter === 'all' ? trophies : trophies.filter(t => t.category === filter);
+        
+        filtered.forEach(t => {
+            const card = document.createElement('div');
+            card.className = "bg-cardbg border border-slate-800 hover:border-gold-500/50 rounded-2xl overflow-hidden flex flex-col justify-between transition-all transform hover:-translate-y-1 group shadow-lg";
+            card.innerHTML = `
+                <div class="relative h-48 overflow-hidden">
+                    <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-cardbg/20 to-transparent"></div>
+                    <span class="absolute top-3 right-3 font-display text-3xl font-extrabold text-gold-400 bg-black/70 px-3 py-1 rounded-xl backdrop-blur-md border border-gold-500/40">${t.count}</span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-white text-lg mb-1">${t.title}</h4>
+                        <p class="text-xs text-slate-400 mb-4">${t.year}</p>
+                    </div>
+                    <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center">
+                        <span class="text-[10px] uppercase font-semibold text-gold-400/90 bg-gold-500/10 px-2.5 py-1 rounded-md border border-gold-500/20">${t.categoryName}</span>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
 
+    // 3. Sự kiện bấm nút cho 4 bộ lọc: Tất cả / Cá nhân / Câu lạc bộ / Đội tuyển quốc gia
+    const filterContainer = document.getElementById('trophy-filters');
+    if (filterContainer) {
+        filterContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                document.querySelectorAll('#trophy-filters button').forEach(btn => {
+                    btn.className = "px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all";
+                });
+                e.target.className = "px-4 py-2 rounded-lg text-sm font-semibold bg-gold-500 text-black shadow-md transition-all";
+                renderTrophies(e.target.dataset.filter);
+            }
+        });
+    }
+
+    // Chạy render ban đầu
+    renderTrophies();
+</script>
     <!-- Signature Celebration Section -->
     <section id="siuuu" class="py-20 border-b border-slate-800/50 relative overflow-hidden bg-gradient-to-b from-darkbg via-cardbg to-darkbg">
         <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
