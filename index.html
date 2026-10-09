@@ -217,8 +217,7 @@
         </div>
     </section>
 
-    <!-- Career Timeline Section -->
-   <!-- Career Timeline Section (Giao diện chuẩn gọn ban đầu + Nút Xem Chi Tiết) -->
+    <!-- Career Timeline Section (Tích hợp Modal Popup Khi Bấm Xem Chi Tiết) -->
     <section id="timeline" class="py-20 border-b border-tBorder relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -238,22 +237,10 @@
                         <h3 class="font-display text-2xl font-bold text-tText mb-1">Sporting CP</h3>
                         <p class="text-xs text-tMuted mb-3 font-bold">Bệ phóng tại Lisbon</p>
                         <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử, mở đường sang Manchester United.</p>
-
-                        <!-- Phần chi tiết & Nút chuyển trang (Ẩn ban đầu) -->
-                        <div class="detail-content hidden mt-4 pt-3 border-t border-emerald-500/20 text-xs text-tMuted space-y-2">
-                            <p>• Ra mắt đội 1 ngày 14/08/2002 trong trận sơ loại C1 gặp Inter Milan.</p>
-                            <p>• Cầu thủ duy nhất lịch sử CLB chơi cho 5 cấp độ đội bóng trong cùng 1 mùa giải.</p>
-                            <div class="pt-2">
-                                <a href="sporting.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500 hover:text-white rounded-lg text-xs font-extrabold transition-all">
-                                    Khám phá Sporting <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/30 flex items-center justify-between">
-                        <button class="toggle-btn text-[11px] font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300"></i>
+                    <div class="mt-6 pt-3 border-t border-tBorder/30">
+                        <button data-club="sporting" class="open-modal-btn text-xs font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
+                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                     </div>
                 </div>
@@ -267,23 +254,11 @@
                         </div>
                         <h3 class="font-display text-2xl font-bold text-tText mb-1">Manchester United</h3>
                         <p class="text-xs text-tMuted mb-3 font-bold">Vươn tầm thế giới</p>
-                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đoạt 3 chức vô địch Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.</p>
-
-                        <!-- Phần chi tiết & Nút chuyển trang (Ẩn ban đầu) -->
-                        <div class="detail-content hidden mt-4 pt-3 border-t border-red-500/20 text-xs text-tMuted space-y-2">
-                            <p>• Kế thừa chiếc áo số 7 huyền thoại từ Sir Alex Ferguson.</p>
-                            <p>• Ghi 118 bàn thắng giai đoạn đầu, giành Cúp C1 năm 2008 & Quả bóng vàng đầu tiên.</p>
-                            <div class="pt-2">
-                                <a href="mu.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-500/20 text-red-400 border border-red-500/40 hover:bg-red-600 hover:text-white rounded-lg text-xs font-extrabold transition-all shadow-md">
-                                    Khám phá MU <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đoạt 3 chức vô dịch Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.</p>
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/30 flex items-center justify-between">
-                        <button class="toggle-btn text-[11px] font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300"></i>
+                    <div class="mt-6 pt-3 border-t border-tBorder/30">
+                        <button data-club="mu" class="open-modal-btn text-xs font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
+                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                     </div>
                 </div>
@@ -292,7 +267,6 @@
                 <div class="relative p-[2.5px] rounded-2xl theme-gradient-bg theme-glow hover:theme-glow-lg transition-all duration-500 group flex flex-col justify-between">
                     <div class="bg-tCard p-6 rounded-[13px] h-full flex flex-col justify-between relative overflow-hidden">
                         <div class="absolute -right-8 -top-8 w-36 h-36 bg-tAccent rounded-full blur-2xl opacity-20 pointer-events-none group-hover:opacity-40 transition-all duration-500"></div>
-                        
                         <div>
                             <div class="flex justify-between items-start mb-4">
                                 <span class="px-3.5 py-1 theme-gradient-bg rounded-full text-xs font-black shadow-md flex items-center gap-1.5">
@@ -300,28 +274,15 @@
                                 </span>
                                 <img src="image/real.png" alt="Real Madrid" class="w-10 h-10 object-contain group-hover:scale-125 group-hover:rotate-6 transition-transform duration-300">
                             </div>
-                            
                             <h3 class="font-display text-2xl font-black theme-gradient-text mb-1 theme-text-glow">Real Madrid</h3>
                             <p class="text-[11px] text-tAccent mb-3 font-extrabold uppercase tracking-wider flex items-center gap-1">
                                 <i class="fa-solid fa-star text-[9px]"></i> Kỷ Nguyên Hoàng Kim <i class="fa-solid fa-star text-[9px]"></i>
                             </p>
                             <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Ghi 450 bàn sau 438 trận. Giành 4 cúp Champions League (3 lần liên tiếp) và 4 Quả Bóng Vàng.</p>
-
-                            <!-- Phần chi tiết & Nút chuyển trang (Ẩn ban đầu) -->
-                            <div class="detail-content hidden mt-4 pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                                <p>• Cầu thủ ghi nhiều bàn thắng nhất lịch sử Real Madrid.</p>
-                                <p>• Chuỗi 3 cúp C1 liên tiếp kỷ luật vô tiền khoáng hậu (2016-2018).</p>
-                                <div class="pt-2">
-                                    <a href="real.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 theme-gradient-bg text-black font-black rounded-lg text-xs transition-all shadow-md">
-                                        Khám phá Real Madrid <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
-
-                        <div class="mt-4 pt-3 border-t border-tBorder flex items-center justify-between">
-                            <button class="toggle-btn text-[11px] font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                                <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300"></i>
+                        <div class="mt-6 pt-3 border-t border-tBorder flex items-center justify-between">
+                            <button data-club="real" class="open-modal-btn text-xs font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
+                                <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
                             </button>
                             <span class="text-[10px] bg-tBg border border-tBorder text-tAccent font-black px-2.5 py-0.5 rounded-md shadow-sm">
                                 4× C1 | 4× BÓNG VÀNG
@@ -340,22 +301,10 @@
                         <h3 class="font-display text-2xl font-bold text-tText mb-1">Juventus</h3>
                         <p class="text-xs text-tMuted mb-3 font-bold">Chinh phục Serie A</p>
                         <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB Juventus.</p>
-
-                        <!-- Phần chi tiết & Nút chuyển trang (Ẩn ban đầu) -->
-                        <div class="detail-content hidden mt-4 pt-3 border-t border-slate-500/20 text-xs text-tMuted space-y-2">
-                            <p>• Cầu thủ đầu tiên trong lịch sử đoạt Vua phá lưới ở Premier League, La Liga và Serie A.</p>
-                            <p>• Đạt mốc 100 bàn thắng chỉ sau 131 trận cho Juventus.</p>
-                            <div class="pt-2">
-                                <a href="juventus.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-200 text-black border border-slate-400 hover:bg-white rounded-lg text-xs font-extrabold transition-all">
-                                    Khám phá Juventus <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/30 flex items-center justify-between">
-                        <button class="toggle-btn text-[11px] font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300"></i>
+                    <div class="mt-6 pt-3 border-t border-tBorder/30">
+                        <button data-club="juventus" class="open-modal-btn text-xs font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
+                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                     </div>
                 </div>
@@ -370,22 +319,10 @@
                         <h3 class="font-display text-2xl font-bold text-tText mb-1">Al Nassr</h3>
                         <p class="text-xs text-tMuted mb-3 font-bold">Tiên phong tại Ả Rập</p>
                         <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Thúc đẩy sự phát triển bóng đá châu Á và tiếp tục chinh phục cột mốc 1.000 bàn thắng chính thức.</p>
-
-                        <!-- Phần chi tiết & Nút chuyển trang (Ẩn ban đầu) -->
-                        <div class="detail-content hidden mt-4 pt-3 border-t border-yellow-500/20 text-xs text-tMuted space-y-2">
-                            <p>• Phá kỷ lục ghi 35 bàn/mùa tại Saudi Pro League (2023/24).</p>
-                            <p>• Vua phá lưới thế giới năm 2023 với tổng cộng 54 bàn thắng.</p>
-                            <div class="pt-2">
-                                <a href="alnassr.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 hover:bg-yellow-500 hover:text-black rounded-lg text-xs font-extrabold transition-all">
-                                    Khám phá Al Nassr <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/30 flex items-center justify-between">
-                        <button class="toggle-btn text-[11px] font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300"></i>
+                    <div class="mt-6 pt-3 border-t border-tBorder/30">
+                        <button data-club="alnassr" class="open-modal-btn text-xs font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
+                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                     </div>
                 </div>
@@ -400,22 +337,10 @@
                         <h3 class="font-display text-2xl font-bold text-tText mb-1">Bồ Đào Nha</h3>
                         <p class="text-xs text-tMuted mb-3 font-bold">Anh hùng dân tộc</p>
                         <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Cầu thủ ghi bàn vĩ đại nhất cấp ĐTQG.</p>
-
-                        <!-- Phần chi tiết & Nút chuyển trang (Ẩn ban đầu) -->
-                        <div class="detail-content hidden mt-4 pt-3 border-t border-red-500/20 text-xs text-tMuted space-y-2">
-                            <p>• Đội trưởng đưa Bồ Đào Nha vô địch EURO 2016 & Nations League 2019.</p>
-                            <p>• Cầu thủ ghi nhiều bàn nhất (130+) và ra sân nhiều nhất lịch sử bóng đá quốc tế.</p>
-                            <div class="pt-2">
-                                <a href="portugal.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-600/20 text-red-400 border border-red-500/40 hover:bg-red-600 hover:text-white rounded-lg text-xs font-extrabold transition-all">
-                                    Khám phá ĐTQG <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/30 flex items-center justify-between">
-                        <button class="toggle-btn text-[11px] font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[9px] transition-transform duration-300"></i>
+                    <div class="mt-6 pt-3 border-t border-tBorder/30">
+                        <button data-club="portugal" class="open-modal-btn text-xs font-extrabold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
+                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                     </div>
                 </div>
@@ -530,6 +455,42 @@
             <p>©AnhĐa đã tạo 08/10/2026. Messi chính là 1 ông già không còn đá banh nỗi,Anh Ronaldo của chúng ta thì mãi mãi là GOÁT.</p>
         </div>
     </footer>
+
+    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
+    <div id="club-modal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6">
+            <!-- Nút Đóng Modal -->
+            <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Bên Trái: Ảnh CR7 Mặc Áo CLB -->
+            <div class="w-full md:w-5/12 h-64 md:h-auto rounded-xl overflow-hidden border border-tBorder relative flex-shrink-0 bg-tBg">
+                <img id="modal-cr7-img" src="" alt="CR7" onerror="this.src='image/cr7god.jpg'" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <span id="modal-years" class="absolute bottom-3 left-3 px-3 py-1 bg-black/70 backdrop-blur-sm border border-tBorder text-tAccent font-extrabold text-[10px] rounded-md uppercase tracking-wider"></span>
+            </div>
+
+            <!-- Bên Phải: Nội Dung Giới Thiệu + Nút Khám Phá -->
+            <div class="w-full md:w-7/12 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <img id="modal-badge" src="" alt="Badge" class="w-8 h-8 object-contain">
+                        <h3 id="modal-title" class="font-display text-3xl font-black text-tText"></h3>
+                    </div>
+                    <p id="modal-subtitle" class="text-xs text-tAccent font-bold uppercase tracking-wider mb-3"></p>
+                    <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-4"></p>
+                </div>
+
+                <!-- Góc Dưới Bên Phải: Nút Khám Phá Trang Riêng -->
+                <div class="pt-4 border-t border-tBorder flex justify-end">
+                    <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
+                        Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JS CHÍNH -->
     <script>
@@ -869,7 +830,113 @@
             });
         }
 
+        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB ---
+        const clubDetailsData = {
+            sporting: {
+                title: "Sporting CP",
+                subtitle: "Bệ phóng Lisbon (2002 - 2003)",
+                years: "2002 - 2003",
+                badge: "image/sprt.png",
+                cr7Img: "image/cr7_sporting.jpg",
+                desc: "Nơi khởi nguồn của huyền thoại. Ở tuổi 17, Cristiano Ronaldo đã làm đảo lộn hàng phòng ngự Man Utd trong trận giao hữu năm 2003, khiến Sir Alex Ferguson quyết tâm ký hợp đồng ngay lập tức.",
+                link: "sporting.html"
+            },
+            mu: {
+                title: "Manchester United",
+                subtitle: "Vươn tầm thế giới & Số 7 huyền thoại",
+                years: "2003 - 2009 & 2021 - 2022",
+                badge: "image/mu.png",
+                cr7Img: "image/cr7_mu.jpg",
+                desc: "Nơi biến thần đồng thành biểu tượng toàn cầu. Ronaldo đoạt 3 Premier League, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008 dưới sự dẫn dắt của Sir Alex Ferguson.",
+                link: "mu.html"
+            },
+            real: {
+                title: "Real Madrid",
+                subtitle: "Kỷ Nguyên Hoàng Kim (2009 - 2018)",
+                years: "2009 - 2018",
+                badge: "image/real.png",
+                cr7Img: "image/cr7_real.jpg",
+                desc: "Đỉnh cao lịch sử bóng đá với 450 bàn thắng sau 438 trận. Giành 4 chức vô địch UEFA Champions League (với cú hat-trick C1 liên tiếp 2016-2018) và 4 Quả Bóng Vàng.",
+                link: "real.html"
+            },
+            juventus: {
+                title: "Juventus FC",
+                subtitle: "Chinh phục Serie A (2018 - 2021)",
+                years: "2018 - 2021",
+                badge: "image/juv.png",
+                cr7Img: "image/cr7_juve.jpg",
+                desc: "Thống trị bóng đá Ý với 2 Serie A và lập kỷ lục đạt mốc 100 bàn thắng nhanh nhất lịch sử Juve. Trở thành cầu thủ đầu tiên đoạt Vua phá lưới ở Anh, TBN và Ý.",
+                link: "juventus.html"
+            },
+            alnassr: {
+                title: "Al Nassr",
+                subtitle: "Tiên phong tại Ả Rập (2023 - Hiện tại)",
+                years: "2023 - Hiện tại",
+                badge: "image/al.png",
+                cr7Img: "image/cr7_alnassr.jpg",
+                desc: "Tiên phong mở ra kỷ nguyên mới cho bóng đá châu Á. Lập kỷ lục ghi 35 bàn trong một mùa giải Saudi Pro League và hướng tới cột mốc vĩ đại 1.000 bàn thắng.",
+                link: "alnassr.html"
+            },
+            portugal: {
+                title: "Bồ Đào Nha",
+                subtitle: "Anh hùng dân tộc (2003 - Hiện tại)",
+                years: "2003 - Hiện tại",
+                badge: "image/bdn.png",
+                cr7Img: "image/cr7_portugal.jpg",
+                desc: "Đội trưởng huyền thoại đưa Bồ Đào Nha xưng vương tại EURO 2016 và Nations League 2019. Cầu thủ ghi nhiều bàn thắng nhất lịch sử bóng đá quốc tế (130+ bàn).",
+                link: "portugal.html"
+            }
+        };
+
+        const modal = document.getElementById('club-modal');
+        const modalContainer = document.getElementById('club-modal-card');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const openModalBtns = document.querySelectorAll('.open-modal-btn');
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const clubKey = btn.getAttribute('data-club');
+                const data = clubDetailsData[clubKey];
+
+                if (data) {
+                    document.getElementById('modal-title').innerText = data.title;
+                    document.getElementById('modal-subtitle').innerText = data.subtitle;
+                    document.getElementById('modal-years').innerText = data.years;
+                    document.getElementById('modal-desc').innerText = data.desc;
+                    document.getElementById('modal-badge').src = data.badge;
+                    document.getElementById('modal-cr7-img').src = data.cr7Img;
+                    document.getElementById('modal-explore-btn').href = data.link;
+
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modalContainer.classList.remove('scale-90');
+                    modalContainer.classList.add('scale-100');
+                }
+            });
+        });
+
+        function hideClubModal() {
+            if (modal && modalContainer) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalContainer.classList.remove('scale-100');
+                modalContainer.classList.add('scale-90');
+            }
+        }
+
+        if (closeModalBtn) closeModalBtn.addEventListener('click', hideClubModal);
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) hideClubModal();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideClubModal();
+        });
+
         // Tự động khởi chạy khi tải xong trang
         renderTrophies();
         initQuiz();
     </script>
+</body>
+</html>
