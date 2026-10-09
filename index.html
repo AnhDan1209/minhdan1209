@@ -457,6 +457,11 @@
     </footer>
 
    <!-- ================= CLUB DETAIL MODAL POPUP (CÓ CÁNH & SỪNG QUỶ ĐỎ) ================= -->
+    Dưới đây là đoạn code HTML đã được thay thế 2 cánh SVG cũ bằng 1 ảnh PNG nguyên bộ (image/devil_wings.png), cùng với đoạn JS cập nhật tương ứng:
+
+Bước 1: Thay thế đoạn <div id="club-modal"> bằng code này
+HTML
+    <!-- ================= CLUB DETAIL MODAL POPUP (CÓ CÁNH PNG & SỪNG QUỶ ĐỎ) ================= -->
     <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6">
@@ -473,17 +478,8 @@
                 </svg>
             </div>
 
-            <!-- CÁNH QUỶ ĐỎ 2 BÊN HÔNG KHUNG (Chỉ hiện khi chọn MU) -->
-            <div id="devil-wing-left" class="hidden absolute -left-16 sm:-left-24 top-1/2 -translate-y-1/2 z-0 pointer-events-none w-20 sm:w-28 text-red-600/90 drop-shadow-[0_0_20px_rgba(220,38,38,0.85)] animate-pulse">
-                <svg class="w-full h-auto fill-current transform -scale-x-100" viewBox="0 0 100 100">
-                    <path d="M10 50 C20 20, 60 10, 95 30 C80 45, 75 60, 90 75 C70 65, 50 80, 45 95 C40 70, 20 65, 10 50 Z"/>
-                </svg>
-            </div>
-            <div id="devil-wing-right" class="hidden absolute -right-16 sm:-right-24 top-1/2 -translate-y-1/2 z-0 pointer-events-none w-20 sm:w-28 text-red-600/90 drop-shadow-[0_0_20px_rgba(220,38,38,0.85)] animate-pulse">
-                <svg class="w-full h-auto fill-current" viewBox="0 0 100 100">
-                    <path d="M10 50 C20 20, 60 10, 95 30 C80 45, 75 60, 90 75 C70 65, 50 80, 45 95 C40 70, 20 65, 10 50 Z"/>
-                </svg>
-            </div>
+            <!-- BỘ CÁNH QUỶ FULL (Dùng 1 ảnh PNG, tự động căn giữa chìm phía sau khung Popup) -->
+            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[130%] sm:w-[145%] max-w-[850px] h-auto drop-shadow-[0_0_30px_rgba(220,38,38,0.9)] animate-pulse">
 
             <!-- Nút Đóng Modal -->
             <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
@@ -517,7 +513,6 @@
             </div>
         </div>
     </div>
-
     <!-- JS CHÍNH -->
     <script>
         // --- 0. LOGIC THEME ENGINE ---
@@ -914,15 +909,14 @@
             }
         };
 
-        const modal = document.getElementById('club-modal');
+       const modal = document.getElementById('club-modal');
         const modalContainer = document.getElementById('club-modal-card');
         const closeModalBtn = document.getElementById('close-modal-btn');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
 
-        // Lấy các phần tử cánh và sừng quỷ
+        // Lấy sừng và bộ cánh quỷ full
         const devilHorns = document.getElementById('devil-horns');
-        const devilWingLeft = document.getElementById('devil-wing-left');
-        const devilWingRight = document.getElementById('devil-wing-right');
+        const devilWingsFull = document.getElementById('devil-wings-full');
 
         openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -938,18 +932,15 @@
                     document.getElementById('modal-cr7-img').src = data.cr7Img;
                     document.getElementById('modal-explore-btn').href = data.link;
 
-                    // Nếu chọn Manchester United -> Kích hoạt Cánh & Sừng Quỷ Đỏ + Viền Đỏ Rực
+                    // Nếu là Manchester United -> Hiện sừng + 1 bộ cánh nguyên vẹn
                     if (clubKey === 'mu') {
                         modalContainer.classList.add('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
                         if (devilHorns) devilHorns.classList.remove('hidden');
-                        if (devilWingLeft) devilWingLeft.classList.remove('hidden');
-                        if (devilWingRight) devilWingRight.classList.remove('hidden');
+                        if (devilWingsFull) devilWingsFull.classList.remove('hidden');
                     } else {
-                        // Các CLB khác giữ nguyên viền vàng chuẩn
                         modalContainer.classList.remove('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
                         if (devilHorns) devilHorns.classList.add('hidden');
-                        if (devilWingLeft) devilWingLeft.classList.add('hidden');
-                        if (devilWingRight) devilWingRight.classList.add('hidden');
+                        if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
