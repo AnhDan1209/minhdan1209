@@ -34,7 +34,7 @@
     <style>
         /* ================= THEME ENGINE ================= */
         :root, [data-theme="base"] {
-            /* 1. Base: VIP Black & Gold */
+            /* 1. Base: VIP Black & Gold (Đêm) */
             --c-bg: #05070E;
             --c-card: #0D1322;
             --c-text: #F8FAFC;
@@ -47,36 +47,8 @@
             --btn-text: #000000;
         }
 
-        [data-theme="portugal"] {
-            /* 2. Royal Portugal: Đỏ Đô & Xanh Lục Bảo */
-            --c-bg: #1A050A; 
-            --c-card: #2D0A14;
-            --c-text: #F8FAFC;
-            --c-text-muted: #FDA4AF;
-            --c-accent: #10B981; 
-            --c-border: rgba(16, 185, 129, 0.25);
-            --g-main: linear-gradient(135deg, #6EE7B7 0%, #10B981 40%, #047857 70%, #022C22 100%);
-            --shadow-glow: rgba(16, 185, 129, 0.4);
-            --hero-overlay: rgba(26, 5, 10, 0.55);
-            --btn-text: #FFFFFF;
-        }
-
-        [data-theme="madrid"] {
-            /* 3. Midnight Navy & Cyan: Đêm Madrid C1 */
-            --c-bg: #0B132B;
-            --c-card: #142146;
-            --c-text: #F8FAFC;
-            --c-text-muted: #93C5FD;
-            --c-accent: #00F2FE;
-            --c-border: rgba(0, 242, 254, 0.25);
-            --g-main: linear-gradient(135deg, #A5F3FC 0%, #00F2FE 40%, #0284C7 70%, #0369A1 100%);
-            --shadow-glow: rgba(0, 242, 254, 0.4);
-            --hero-overlay: rgba(11, 19, 43, 0.55);
-            --btn-text: #000000;
-        }
-
         [data-theme="white"] {
-            /* 4. White & Deep Orange (Trắng Cam Đậm) */
+            /* 2. White & Deep Orange (Ngày - Trắng Cam Đậm) */
             --c-bg: #FFF8F3;
             --c-card: #FFFFFF;
             --c-text: #18181B;
@@ -154,12 +126,16 @@
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-4">
-                <!-- Bảng chọn theme màu (Tương thích cả mobile và desktop) -->
-                <div class="flex items-center gap-1.5 bg-tCard px-2.5 py-1.5 rounded-full border border-tBorder shadow-sm">
-                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#D4AF37] border-2 border-[#05070E] transition-all active" data-set-theme="base" title="Base: Black & Gold"></button>
-                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#800020] border-2 border-[#1A050A] transition-all" data-set-theme="portugal" title="Royal Portugal"></button>
-                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#00F2FE] border-2 border-[#0B132B] transition-all" data-set-theme="madrid" title="Midnight Madrid"></button>
-                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#FF5500] border-2 border-[#FFF8F3] transition-all" data-set-theme="white" title="Trắng Cam Đậm"></button>
+                <!-- Bảng chọn theme màu (Mặt trăng / Mặt trời) -->
+                <div class="flex items-center gap-2 bg-tCard px-2.5 py-1.5 rounded-full border border-tBorder shadow-sm">
+                    <!-- Mode Base: Mặt trăng -->
+                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm (Base: Black & Gold)">
+                        <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
+                    </button>
+                    <!-- Mode White: Mặt trời -->
+                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày (Trắng Cam)">
+                        <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
+                    </button>
                 </div>
 
                 <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
@@ -710,8 +686,8 @@
                 }
             } else {
                 selectedBtn.classList.remove('bg-tBg', 'border-tBorder');
-                selectedBtn.classList.add('bg-red-500/20', 'border-red-500', 'text-red-500');
-                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-xmark text-red-500 ml-2"></i>';
+                selectedBtn.classList.add('bg-[#E50914]/20', 'border-[#E50914]', 'text-[#E50914]');
+                selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-xmark text-[#E50914] ml-2"></i>';
                 
                 const correctBtn = optsButtons[q.correct];
                 if (correctBtn) {
@@ -720,7 +696,7 @@
                 }
                 if (feedback) {
                     feedback.innerText = `Chưa đúng! Đáp án đúng là: ${q.options[q.correct]}`;
-                    feedback.className = "text-sm font-extrabold text-red-500";
+                    feedback.className = "text-sm font-extrabold text-[#E50914]";
                 }
             }
             
