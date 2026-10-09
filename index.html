@@ -108,60 +108,60 @@
 
     <!-- Navigation Header -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-tBg/80 border-b border-tBorder shadow-lg transition-colors duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl theme-gradient-bg flex items-center justify-center shadow-md">
-                    <span class="font-display text-2xl font-black">7</span>
-                </div>
-                <div>
-                    <span class="font-display text-3xl font-extrabold tracking-wider theme-gradient-text theme-text-glow block leading-none">CR7</span>
-                    <span class="text-[9px] uppercase tracking-[0.25em] text-tMuted font-bold block mt-0.5">The Living Legend</span>
-                </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl theme-gradient-bg flex items-center justify-center shadow-md">
+                <span class="font-display text-2xl font-black">7</span>
             </div>
-            
-            <!-- Menu Desktop (Tự ẩn trên Mobile) -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
-                <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
-                <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
-                <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
-                <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
-                <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
-            </nav>
+            <div>
+                <span class="font-display text-3xl font-extrabold tracking-wider theme-gradient-text theme-text-glow block leading-none">CR7</span>
+                <span class="text-[9px] uppercase tracking-[0.25em] text-tMuted font-bold block mt-0.5">The Living Legend</span>
+            </div>
+        </div>
+        
+        <!-- Menu Desktop (Tự ẩn trên Mobile) -->
+        <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
+            <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
+            <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
+            <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
+            <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
+            <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
+        </nav>
 
-            <!-- Right Side: Theme + SIUUU + Mobile Menu Button -->
-            <div class="flex items-center gap-2 sm:gap-4">
-                <!-- Theme Toggle -->
-                <div class="flex items-center gap-1.5 bg-tCard px-2 py-1.5 sm:px-2.5 rounded-full border border-tBorder shadow-sm">
-                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm">
-                        <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
-                    </button>
-                    <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày">
-                        <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
-                    </button>
-                </div>
-
-                <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
-                    <i class="fa-solid fa-bolt animate-pulse"></i>
-                    <span class="hidden sm:inline">SIUUU!</span>
-                </a>
-
-                <!-- Nút 3 gạch mở Menu trên Mobile -->
-                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
-                    <i class="fa-solid fa-bars text-base"></i>
+        <!-- Right Side: Theme + SIUUU + Mobile Menu Button -->
+        <div class="flex items-center gap-2 sm:gap-4">
+            <!-- Theme Toggle -->
+            <div class="flex items-center gap-1.5 bg-tCard px-2 py-1.5 sm:px-2.5 rounded-full border border-tBorder shadow-sm">
+                <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#05070E] text-[#D4AF37] border border-[#D4AF37]/50 hover:border-[#D4AF37] transition-all active" data-set-theme="base" title="Mode Đêm">
+                    <i class="fa-solid fa-moon text-xs sm:text-sm"></i>
+                </button>
+                <button class="theme-btn w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center bg-[#FFF8F3] text-[#FF5500] border border-[#FF5500]/50 hover:border-[#FF5500] transition-all" data-set-theme="white" title="Mode Ngày">
+                    <i class="fa-solid fa-sun text-xs sm:text-sm"></i>
                 </button>
             </div>
-        </div>
 
-        <!-- Menu Xổ Xuống trên Mobile khi bấm nút 3 gạch -->
-        <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
-            <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
-            <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
-            <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
-            <a href="#quiz" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Phát Hiện Ricon</a>
-            <a href="game.html" class="block py-2 text-amber-500 font-black hover:text-tAccent transition-colors"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
+            <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
+                <i class="fa-solid fa-bolt animate-pulse"></i>
+                <span class="hidden sm:inline">SIUUU!</span>
+            </a>
+
+            <!-- Nút 3 gạch mở Menu trên Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-base"></i>
+            </button>
         </div>
-    </header>
+    </div>
+
+    <!-- Menu Xổ Xuống trên Mobile khi bấm nút 3 gạch -->
+    <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
+        <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
+        <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
+        <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
+        <a href="#quiz" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Phát Hiện Ricon</a>
+        <a href="game.html" class="block py-2 text-amber-500 font-black hover:text-tAccent transition-colors"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-tBorder bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: linear-gradient(to bottom, var(--hero-overlay), var(--c-bg)), url('image/background1.jpg');">
@@ -456,7 +456,7 @@
         </div>
     </footer>
 
-    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
+   <!-- ================= CLUB DETAIL MODAL POPUP (CÓ CÁNH & SỪNG QUỶ ĐỎ) ================= -->
     <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6">
@@ -473,8 +473,17 @@
                 </svg>
             </div>
 
-            <!-- BỘ CÁNH QUỶ FULL (Dùng 1 ảnh PNG) -->
-            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[130%] sm:w-[145%] max-w-[850px] h-auto drop-shadow-[0_0_30px_rgba(220,38,38,0.9)] animate-pulse">
+            <!-- CÁNH QUỶ ĐỎ 2 BÊN HÔNG KHUNG (Chỉ hiện khi chọn MU) -->
+            <div id="devil-wing-left" class="hidden absolute -left-16 sm:-left-24 top-1/2 -translate-y-1/2 z-0 pointer-events-none w-20 sm:w-28 text-red-600/90 drop-shadow-[0_0_20px_rgba(220,38,38,0.85)] animate-pulse">
+                <svg class="w-full h-auto fill-current transform -scale-x-100" viewBox="0 0 100 100">
+                    <path d="M10 50 C20 20, 60 10, 95 30 C80 45, 75 60, 90 75 C70 65, 50 80, 45 95 C40 70, 20 65, 10 50 Z"/>
+                </svg>
+            </div>
+            <div id="devil-wing-right" class="hidden absolute -right-16 sm:-right-24 top-1/2 -translate-y-1/2 z-0 pointer-events-none w-20 sm:w-28 text-red-600/90 drop-shadow-[0_0_20px_rgba(220,38,38,0.85)] animate-pulse">
+                <svg class="w-full h-auto fill-current" viewBox="0 0 100 100">
+                    <path d="M10 50 C20 20, 60 10, 95 30 C80 45, 75 60, 90 75 C70 65, 50 80, 45 95 C40 70, 20 65, 10 50 Z"/>
+                </svg>
+            </div>
 
             <!-- Nút Đóng Modal -->
             <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
@@ -847,7 +856,7 @@
             });
         }
 
-        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB ---
+        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB (ĐÃ THÊM THEME RED DEVILS CHO MU) ---
         const clubDetailsData = {
             sporting: {
                 title: "Sporting CP",
@@ -863,7 +872,7 @@
                 subtitle: "🔥 THE RED DEVILS - KỶ NGUYÊN QUỶ ĐỎ RỰC LỬA",
                 years: "2003 - 2009 & 2021 - 2022",
                 badge: "image/mu.png",
-                cr7Img: "image/cr7_mu.jpg",
+                cr7Img: "image/cr7_mu.jpg", // Đường dẫn ảnh nghệ thuật CR7 khoác áo Quỷ Đỏ
                 desc: "Nơi thần đồng biến thành Quỷ Đỏ thống trị châu Âu. Với lối chơi bùng nổ, tốc độ xé gió và những cú nã đại bác mang thương hiệu CR7, Ronaldo đã cùng Sir Alex Ferguson đoạt 3 Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.",
                 link: "mu.html"
             },
@@ -910,9 +919,10 @@
         const closeModalBtn = document.getElementById('close-modal-btn');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
 
-        // Lấy sừng và bộ cánh quỷ full
+        // Lấy các phần tử cánh và sừng quỷ
         const devilHorns = document.getElementById('devil-horns');
-        const devilWingsFull = document.getElementById('devil-wings-full');
+        const devilWingLeft = document.getElementById('devil-wing-left');
+        const devilWingRight = document.getElementById('devil-wing-right');
 
         openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -928,15 +938,18 @@
                     document.getElementById('modal-cr7-img').src = data.cr7Img;
                     document.getElementById('modal-explore-btn').href = data.link;
 
-                    // Nếu là Manchester United -> Hiện sừng + 1 bộ cánh nguyên vẹn
+                    // Nếu chọn Manchester United -> Kích hoạt Cánh & Sừng Quỷ Đỏ + Viền Đỏ Rực
                     if (clubKey === 'mu') {
                         modalContainer.classList.add('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
                         if (devilHorns) devilHorns.classList.remove('hidden');
-                        if (devilWingsFull) devilWingsFull.classList.remove('hidden');
+                        if (devilWingLeft) devilWingLeft.classList.remove('hidden');
+                        if (devilWingRight) devilWingRight.classList.remove('hidden');
                     } else {
+                        // Các CLB khác giữ nguyên viền vàng chuẩn
                         modalContainer.classList.remove('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
                         if (devilHorns) devilHorns.classList.add('hidden');
-                        if (devilWingsFull) devilWingsFull.classList.add('hidden');
+                        if (devilWingLeft) devilWingLeft.classList.add('hidden');
+                        if (devilWingRight) devilWingRight.classList.add('hidden');
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -965,7 +978,6 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') hideClubModal();
         });
-
         // Tự động khởi chạy khi tải xong trang
         renderTrophies();
         initQuiz();
