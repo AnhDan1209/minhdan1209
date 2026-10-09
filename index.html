@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR7 - Huyền Thoại Vĩ Đại </title>
+    <title>CR7 - Huyền Thoại Vĩ Đại | Cristiano Ronaldo Showcase</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,7 +43,7 @@
             --c-border: rgba(212, 175, 55, 0.25);
             --g-main: linear-gradient(135deg, #FFF4A3 0%, #E6C200 40%, #D4AF37 70%, #996515 100%);
             --shadow-glow: rgba(212, 175, 55, 0.4);
-            --hero-overlay: rgba(5, 7, 14, 0.95);
+            --hero-overlay: rgba(5, 7, 14, 0.55);
             --btn-text: #000000;
         }
 
@@ -57,7 +57,7 @@
             --c-border: rgba(16, 185, 129, 0.25);
             --g-main: linear-gradient(135deg, #6EE7B7 0%, #10B981 40%, #047857 70%, #022C22 100%);
             --shadow-glow: rgba(16, 185, 129, 0.4);
-            --hero-overlay: rgba(26, 5, 10, 0.95);
+            --hero-overlay: rgba(26, 5, 10, 0.55);
             --btn-text: #FFFFFF;
         }
 
@@ -71,13 +71,13 @@
             --c-border: rgba(0, 242, 254, 0.25);
             --g-main: linear-gradient(135deg, #A5F3FC 0%, #00F2FE 40%, #0284C7 70%, #0369A1 100%);
             --shadow-glow: rgba(0, 242, 254, 0.4);
-            --hero-overlay: rgba(11, 19, 43, 0.95);
+            --hero-overlay: rgba(11, 19, 43, 0.55);
             --btn-text: #000000;
         }
 
         [data-theme="white"] {
             /* 4. Pure White & Silver Sapphire */
-            --c-bg: #F1F5F9;
+            --c-bg: #EBF0F7;
             --c-card: #FFFFFF;
             --c-text: #0F172A;
             --c-text-muted: #475569;
@@ -85,7 +85,7 @@
             --c-border: rgba(37, 99, 235, 0.25);
             --g-main: linear-gradient(135deg, #93C5FD 0%, #3B82F6 40%, #1D4ED8 70%, #1E3A8A 100%);
             --shadow-glow: rgba(37, 99, 235, 0.3);
-            --hero-overlay: rgba(241, 245, 249, 0.95);
+            --hero-overlay: rgba(235, 240, 247, 0.55);
             --btn-text: #FFFFFF;
         }
 
@@ -95,7 +95,7 @@
             color: var(--c-text);
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
         .font-display { font-family: 'Oswald', sans-serif; }
         
@@ -123,18 +123,16 @@
         ::-webkit-scrollbar-thumb { background: var(--c-card); border-radius: 4px; border: 1px solid var(--c-border); }
         ::-webkit-scrollbar-thumb:hover { background: var(--c-accent); }
 
-        /* Animation viền theme picker */
         .theme-btn.active {
             outline: 2px solid var(--c-accent);
             outline-offset: 2px;
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
 
-   
-   <!-- Navigation Header -->
+    <!-- Navigation Header -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-tBg/80 border-b border-tBorder shadow-lg transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -151,11 +149,11 @@
                 <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
                 <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
                 <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
-                <a href="#quiz" class="hover:text-tAccent transition-colors">Trắc Nghiệm</a>
+                <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
             </nav>
 
             <div class="flex items-center gap-2 sm:gap-4">
-                <!-- Bảng chọn màu (Đã hiện rõ cả trên điện thoại) -->
+                <!-- Bảng chọn theme màu (Tương thích cả mobile và desktop) -->
                 <div class="flex items-center gap-1.5 bg-tCard px-2.5 py-1.5 rounded-full border border-tBorder shadow-sm">
                     <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#D4AF37] border-2 border-[#05070E] transition-all active" data-set-theme="base" title="Base: Black & Gold"></button>
                     <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#800020] border-2 border-[#1A050A] transition-all" data-set-theme="portugal" title="Royal Portugal"></button>
@@ -170,9 +168,9 @@
             </div>
         </div>
     </header>
-    
-    <!-- Hero Section -->
-    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-tBorder bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: linear-gradient(to bottom, rgba(5, 7, 14, 0.55), var(--c-bg)), url('image/background1.jpg');">
+
+    <!-- Hero Section (Ảnh nền đằng sau đã được làm rõ nét) -->
+    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-tBorder bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: linear-gradient(to bottom, var(--hero-overlay), var(--c-bg)), url('image/background1.jpg');">
         <div class="absolute inset-0 bg-[radial-gradient(var(--c-accent)_1px,transparent_1px)] [background-size:32px_32px] opacity-10"></div>
         <div class="absolute top-1/4 -left-20 w-96 h-96 bg-tAccent rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
 
@@ -214,7 +212,7 @@
                     </div>
                 </div>
 
-                <!-- Right: Visual -->
+                <!-- Right: Visual Avatar -->
                 <div class="md:col-span-5 flex justify-center">
                     <div class="relative group max-w-sm w-full">
                         <div class="absolute -inset-1.5 theme-gradient-bg rounded-3xl blur-xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
@@ -243,7 +241,7 @@
                     </div>
                     <h3 class="font-display text-2xl font-bold text-tText mb-1">Sporting CP</h3>
                     <p class="text-xs text-tMuted mb-4 font-bold">Bệ phóng tại Lisbon</p>
-                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử.</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử, mở đường sang Manchester United.</p>
                 </div>
 
                 <!-- Manchester United -->
@@ -276,6 +274,15 @@
                             </p>
                             <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Ghi 450 bàn sau 438 trận. Giành 4 cúp Champions League (3 lần liên tiếp) và 4 Quả Bóng Vàng.</p>
                         </div>
+
+                        <div class="mt-5 pt-3 border-t border-tBorder flex justify-between items-center">
+                            <span class="text-[10px] font-extrabold text-tAccent uppercase tracking-widest flex items-center gap-1">
+                                <i class="fa-solid fa-fire text-amber-500 animate-pulse"></i> Peak Performance
+                            </span>
+                            <span class="text-[10px] bg-tBg border border-tBorder text-tAccent font-black px-2.5 py-0.5 rounded-md shadow-sm">
+                                4× C1 | 4× BÓNG VÀNG
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -287,7 +294,7 @@
                     </div>
                     <h3 class="font-display text-2xl font-bold text-tText mb-1">Juventus</h3>
                     <p class="text-xs text-tMuted mb-4 font-bold">Chinh phục Serie A</p>
-                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB.</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB Juventus.</p>
                 </div>
 
                 <!-- Al Nassr -->
@@ -309,13 +316,13 @@
                     </div>
                     <h3 class="font-display text-2xl font-bold text-tText mb-1">Bồ Đào Nha</h3>
                     <p class="text-xs text-tMuted mb-4 font-bold">Anh hùng dân tộc</p>
-                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Vua phá lưới ĐTQG.</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Cầu thủ ghi bàn vĩ đại nhất cấp ĐTQG.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trophy Section -->
+    <!-- Trophy Cabinet Section (Bố cục 4x2 chuẩn) -->
     <section id="trophies" class="py-20 border-b border-tBorder transition-colors bg-tBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -327,14 +334,16 @@
                     <button data-filter="all" class="px-4 py-2 rounded-xl text-xs font-extrabold theme-gradient-bg shadow-md transition-all uppercase tracking-wider">Tất cả</button>
                     <button data-filter="individual" class="px-4 py-2 rounded-xl text-xs font-bold bg-tCard text-tText border border-tBorder hover:border-tAccent transition-all uppercase tracking-wider">Cá nhân</button>
                     <button data-filter="club" class="px-4 py-2 rounded-xl text-xs font-bold bg-tCard text-tText border border-tBorder hover:border-tAccent transition-all uppercase tracking-wider">Câu lạc bộ</button>
-                    <button data-filter="international" class="px-4 py-2 rounded-xl text-xs font-bold bg-tCard text-tText border border-tBorder hover:border-tAccent transition-all uppercase tracking-wider">ĐTQG</button>
+                    <button data-filter="international" class="px-4 py-2 rounded-xl text-xs font-bold bg-tCard text-tText border border-tBorder hover:border-tAccent transition-all uppercase tracking-wider">Đội tuyển quốc gia</button>
                 </div>
             </div>
+
+            <!-- Chia 4 cột cân đối: 4 thẻ hàng trên - 4 thẻ hàng dưới -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="trophy-container"></div>
         </div>
     </section>
 
-    <!-- SIUUU Section -->
+    <!-- Signature Celebration Section -->
     <section id="siuuu" class="py-20 border-b border-tBorder relative overflow-hidden bg-tBg">
         <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
             <span class="px-4 py-1.5 bg-tCard border border-tBorder text-tAccent text-xs font-extrabold uppercase tracking-widest rounded-full shadow-sm">Khoảnh khắc biểu tượng</span>
@@ -352,15 +361,19 @@
                     </div>
                 </button>
             </div>
+
+            <div class="mt-8 flex justify-center">
+                <canvas id="audio-canvas" width="300" height="40" class="rounded-lg opacity-90"></canvas>
+            </div>
         </div>
     </section>
 
-    <!-- Quiz Section -->
+    <!-- Interactive Quiz Section -->
     <section id="quiz" class="py-20 border-b border-tBorder bg-tBg">
         <div class="max-w-3xl mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-xs uppercase font-extrabold text-tAccent tracking-[0.2em] mb-2">Thử Thách Kiến Thức</h2>
-                <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-tText">Trắc Nghiệm CR7</p>
+                <p class="font-display text-4xl sm:text-5xl font-extrabold uppercase text-tText">Trắc Nghiệm CR7 (15 Câu Ngẫu Nhiên)</p>
             </div>
 
             <div class="bg-tCard border border-tBorder rounded-2xl p-6 sm:p-8 theme-glow relative shadow-2xl">
@@ -371,6 +384,7 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-tText mb-6 leading-snug" id="quiz-question">Đang tải câu hỏi...</h3>
+
                     <div class="space-y-3" id="quiz-options"></div>
 
                     <div class="mt-8 flex justify-between items-center">
@@ -389,39 +403,57 @@
         </div>
     </section>
 
+    <!-- Floating Multi-Track Audio Player (Trình phát nhạc C1 & CR7) -->
+    <div class="fixed bottom-5 left-5 z-50 flex items-center gap-3 bg-tCard/90 backdrop-blur-md border border-tBorder p-2.5 px-4 rounded-full shadow-2xl transition-all hover:scale-105">
+        <button id="bg-music-btn" class="w-10 h-10 rounded-full theme-gradient-bg flex items-center justify-center text-black font-extrabold shadow-md focus:outline-none transition-transform active:scale-95">
+            <i id="bg-music-icon" class="fa-solid fa-play text-sm ml-0.5"></i>
+        </button>
+
+        <div class="flex flex-col pr-1 min-w-[110px]">
+            <span class="text-[9px] font-black uppercase text-tAccent tracking-widest flex items-center gap-1">
+                <i class="fa-solid fa-music text-[8px] animate-pulse"></i> Track <span id="track-number">1/3</span>
+            </span>
+            <span id="track-title" class="text-xs font-extrabold text-tText tracking-wide truncate max-w-[120px]">C1 Anthem</span>
+        </div>
+
+        <button id="next-track-btn" class="w-8 h-8 rounded-full bg-tBg border border-tBorder flex items-center justify-center text-tText hover:text-tAccent transition-colors" title="Đổi bài tiếp theo">
+            <i class="fa-solid fa-forward-step text-xs"></i>
+        </button>
+
+        <audio id="bg-audio" preload="auto"></audio>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-tCard py-10 border-t border-tBorder text-center text-xs text-tMuted transition-colors">
         <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <p class="font-display text-2xl font-bold theme-gradient-text tracking-wider theme-text-glow">CR7 - Mr. Champions League - El Bicho - GOAT</p>
-            <p>©AnhĐa đã tạo 08/10/2026. Ronaldo của chúng ta thì mãi mãi là GOAT.</p>
+            <p class="font-display text-2xl font-bold theme-gradient-text tracking-wider theme-text-glow">CR7 - Mr. Champions League - El Bicho - 7 - GOAT - Cỗ máy săn bàn - Ronnie</p>
+            <p>©AnhĐa đã tạo 08/10/2026. Messi chính là 1 ông già không còn đá banh nỗi,Anh Ronaldo của chúng ta thì mãi mãi là GOÁT.</p>
         </div>
     </footer>
 
     <!-- JS CHÍNH -->
     <script>
-        // --- 0. THEME SWITCHER LOGIC ---
+        // --- 0. LOGIC THEME ENGINE ---
         const themeBtns = document.querySelectorAll('[data-set-theme]');
         themeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const themeName = btn.getAttribute('data-set-theme');
                 document.documentElement.setAttribute('data-theme', themeName);
-                
-                // Update active state on palette buttons
                 themeBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
             });
         });
 
-        // --- 1. TROPHY RENDERER ---
+        // --- 1. LOGIC RENDER TROPHIES ---
         const trophies = [
-            { id: 1, title: "Quả Bóng Vàng", count: "5×", category: "individual", categoryName: "Cá nhân", year: "2008, 2013, 2014, 2016, 2017", img: "image/trophy_ballondor.jpg" },
-            { id: 2, title: "Champions League", count: "5×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017, 2018", img: "image/trophy_c1.jpg" },
-            { id: 3, title: "EURO", count: "1×", category: "international", categoryName: "ĐTQG", year: "2016 (Bồ Đào Nha)", img: "image/trophy_euro.jpg" },
-            { id: 4, title: "Chiếc Giày Vàng", count: "4×", category: "individual", categoryName: "Cá nhân", year: "2008, 2011, 2014, 2015", img: "image/trophy_giayvang.jpg" },
-            { id: 5, title: "Club World Cup", count: "4×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017", img: "image/trophy_cwc.jpg" },
-            { id: 6, title: "Nations League", count: "1×", category: "international", categoryName: "ĐTQG", year: "2019 (Bồ Đào Nha)", img: "image/trophy_nationsleague.jpg" },
-            { id: 7, title: "Premier League", count: "3×", category: "club", categoryName: "Câu lạc bộ", year: "2007, 2008, 2009", img: "image/trophy_epl.jpg" },
-            { id: 8, title: "La Liga", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017", img: "image/trophy_laliga.jpg" }
+            { id: 1, title: "Quả Bóng Vàng (Ballon d'Or)", count: "5×", category: "individual", categoryName: "Cá nhân", year: "2008, 2013, 2014, 2016, 2017", img: "image/trophy_ballondor.jpg" },
+            { id: 2, title: "UEFA Champions League", count: "5×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017, 2018", img: "image/trophy_c1.jpg" },
+            { id: 3, title: "Giải Vô Địch Châu Âu (EURO)", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2016 (Bồ Đào Nha)", img: "image/trophy_euro.jpg" },
+            { id: 4, title: "Chiếc Giày Vàng Châu Âu", count: "4×", category: "individual", categoryName: "Cá nhân", year: "2008, 2011, 2014, 2015", img: "image/trophy_giayvang.jpg" },
+            { id: 5, title: "FIFA Club World Cup", count: "4×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017", img: "image/trophy_cwc.jpg" },
+            { id: 6, title: "UEFA Nations League", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2019 (Bồ Đào Nha)", img: "image/trophy_nationsleague.jpg" },
+            { id: 7, title: "Ngoại Hạng Anh (Premier League)", count: "3×", category: "club", categoryName: "Câu lạc bộ", year: "2007, 2008, 2009", img: "image/trophy_epl.jpg" },
+            { id: 8, title: "La Liga (Tây Ban Nha)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017", img: "image/trophy_laliga.jpg" }
         ];
 
         function renderTrophies(filter = 'all') {
@@ -437,6 +469,7 @@
                 card.innerHTML = `
                     <div class="relative w-2/5 h-44 flex-shrink-0 overflow-hidden bg-tBg">
                         <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-tCard/20 to-tCard"></div>
                     </div>
                     <div class="p-3.5 flex-1 flex flex-col justify-between min-w-0">
                         <div>
@@ -466,24 +499,110 @@
             });
         }
 
-        // --- 2. SIUUU AUDIO ---
+        // --- 2. LOGIC ÂM THANH SIUUU ---
         const siuuuAudio = new Audio('image/siuuu.mp3');
+
+        function playSiuuuSound() {
+            siuuuAudio.currentTime = 0;
+            siuuuAudio.play().catch(e => {
+                console.log("Lỗi phát âm thanh:", e);
+                alert("Không thể phát âm thanh. Vui lòng kiểm tra lại file siuuu.mp3 trong thư mục image!");
+            });
+            drawVisualizerWave();
+        }
+
+        function drawVisualizerWave() {
+            const canvas = document.getElementById('audio-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let frame = 0;
+            
+            function animateCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'var(--c-accent)';
+                
+                for(let i = 0; i < 20; i++) {
+                    const h = Math.sin(frame * 0.2 + i) * 15 + 20;
+                    ctx.fillRect(i * 15, (canvas.height - h)/2, 8, h);
+                }
+                
+                frame++;
+                if(frame < 35) requestAnimationFrame(animateCanvas);
+                else ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            animateCanvas();
+        }
+
         const siuuuBtn = document.getElementById('siuuu-btn');
         const shockwaveTarget = document.getElementById('shockwave-target');
 
         if (siuuuBtn) {
             siuuuBtn.addEventListener('click', () => {
-                siuuuAudio.currentTime = 0;
-                siuuuAudio.play().catch(e => console.log("Lỗi âm thanh:", e));
+                playSiuuuSound();
 
                 const wave = document.createElement('div');
                 wave.className = 'absolute inset-0 rounded-full border-4 border-tAccent animate-shockwave';
                 if (shockwaveTarget) shockwaveTarget.appendChild(wave);
+
                 setTimeout(() => wave.remove(), 800);
             });
         }
 
-        // --- 3. QUIZ ENGINE (Rút gọn DB mẫu để hiển thị) ---
+        // --- 3. LOGIC MULTI-TRACK AUDIO PLAYER ---
+        const playlist = [
+            { title: "C1 Anthem", src: "image/c1_anthem.mp3" },
+            { title: "The Nights - Avicii", src: "image/the_nights.mp3" },
+            { title: "Hall of Fame", src: "image/hall_of_fame.mp3" }
+        ];
+
+        let currentTrackIndex = 0;
+        const bgAudio = document.getElementById('bg-audio');
+        const bgMusicBtn = document.getElementById('bg-music-btn');
+        const bgMusicIcon = document.getElementById('bg-music-icon');
+        const nextTrackBtn = document.getElementById('next-track-btn');
+        const trackTitle = document.getElementById('track-title');
+        const trackNumber = document.getElementById('track-number');
+
+        function loadTrack(index) {
+            if (!bgAudio) return;
+            bgAudio.src = playlist[index].src;
+            if (trackTitle) trackTitle.innerText = playlist[index].title;
+            if (trackNumber) trackNumber.innerText = `${index + 1}/${playlist.length}`;
+        }
+
+        if (bgMusicBtn && bgAudio) {
+            bgAudio.volume = 0.35;
+            loadTrack(currentTrackIndex);
+
+            bgMusicBtn.addEventListener('click', () => {
+                if (bgAudio.paused) {
+                    bgAudio.play().then(() => {
+                        bgMusicIcon.className = 'fa-solid fa-pause text-sm';
+                    }).catch(e => console.log("Thao tác người dùng yêu cầu để phát nhạc:", e));
+                } else {
+                    bgAudio.pause();
+                    bgMusicIcon.className = 'fa-solid fa-play text-sm ml-0.5';
+                }
+            });
+
+            if (nextTrackBtn) {
+                nextTrackBtn.addEventListener('click', () => {
+                    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+                    loadTrack(currentTrackIndex);
+                    bgAudio.play().then(() => {
+                        bgMusicIcon.className = 'fa-solid fa-pause text-sm';
+                    });
+                });
+            }
+
+            bgAudio.addEventListener('ended', () => {
+                currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+                loadTrack(currentTrackIndex);
+                bgAudio.play();
+            });
+        }
+
+        // --- 4. DATABASE 100+ CÂU HỎI TRẮC NGHIỆM ---
         const masterQuizData = [
             { question: "Cristiano Ronaldo sinh ra ở đâu?", options: ["Madeira", "Lisbon", "Porto", "Madrid"], correct: 0 },
             { question: "Ronaldo sinh năm bao nhiêu?", options: ["1983", "1985", "1987", "1989"], correct: 1 },
@@ -603,32 +722,46 @@
         let score = 0;
 
         function initQuiz() {
-            currentQ = 0; score = 0;
+            currentQ = 0;
+            score = 0;
             const shuffledMaster = shuffleArray(masterQuizData);
-            const raw15 = shuffledMaster.slice(0, 5); // Tạm lấy 5 câu để test, bạn đổi thành 15 nhé
+            const raw15 = shuffledMaster.slice(0, 15);
 
             selectedQuestions = raw15.map(item => {
                 const correctAnswerText = item.options[item.correct];
                 const shuffledOptions = shuffleArray(item.options);
                 const newCorrectIndex = shuffledOptions.indexOf(correctAnswerText);
-                return { question: item.question, options: shuffledOptions, correct: newCorrectIndex };
+                return {
+                    question: item.question,
+                    options: shuffledOptions,
+                    correct: newCorrectIndex
+                };
             });
 
-            document.getElementById('quiz-results').classList.add('hidden');
-            document.getElementById('quiz-container').classList.remove('hidden');
+            const resDiv = document.getElementById('quiz-results');
+            const containerDiv = document.getElementById('quiz-container');
+            if (resDiv) resDiv.classList.add('hidden');
+            if (containerDiv) containerDiv.classList.remove('hidden');
             loadQuestion();
         }
 
         function loadQuestion() {
             if (!selectedQuestions.length) return;
             const q = selectedQuestions[currentQ];
-            document.getElementById('quiz-progress').innerText = `Câu ${currentQ + 1} / ${selectedQuestions.length}`;
-            document.getElementById('quiz-question').innerText = q.question;
-            document.getElementById('quiz-score-badge').innerText = `Điểm: ${score}`;
-            document.getElementById('quiz-feedback').innerText = '';
-            document.getElementById('quiz-next-btn').classList.add('hidden');
+            const prog = document.getElementById('quiz-progress');
+            const quest = document.getElementById('quiz-question');
+            const badge = document.getElementById('quiz-score-badge');
+            const feedback = document.getElementById('quiz-feedback');
+            const nextBtn = document.getElementById('quiz-next-btn');
+
+            if (prog) prog.innerText = `Câu ${currentQ + 1} / ${selectedQuestions.length}`;
+            if (quest) quest.innerText = q.question;
+            if (badge) badge.innerText = `Điểm: ${score}`;
+            if (feedback) feedback.innerText = '';
+            if (nextBtn) nextBtn.classList.add('hidden');
 
             const optsContainer = document.getElementById('quiz-options');
+            if (!optsContainer) return;
             optsContainer.innerHTML = '';
 
             q.options.forEach((opt, idx) => {
@@ -643,39 +776,66 @@
         function checkAnswer(selectedIdx, selectedBtn) {
             const q = selectedQuestions[currentQ];
             const optsButtons = document.querySelectorAll('#quiz-options button');
+            const feedback = document.getElementById('quiz-feedback');
+            const badge = document.getElementById('quiz-score-badge');
+            const nextBtn = document.getElementById('quiz-next-btn');
+            
             optsButtons.forEach(btn => btn.disabled = true);
             
             if (selectedIdx === q.correct) {
                 score++;
+                selectedBtn.classList.remove('bg-tBg', 'border-tBorder');
                 selectedBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-500');
                 selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-check text-emerald-500 ml-2"></i>';
-                document.getElementById('quiz-feedback').innerHTML = "<span class='text-emerald-500'>Chính xác! SIUUU!</span>";
+                if (feedback) {
+                    feedback.innerText = "Chính xác! SIUUU!";
+                    feedback.className = "text-sm font-extrabold text-emerald-500";
+                }
             } else {
+                selectedBtn.classList.remove('bg-tBg', 'border-tBorder');
                 selectedBtn.classList.add('bg-red-500/20', 'border-red-500', 'text-red-500');
                 selectedBtn.innerHTML += ' <i class="fa-solid fa-circle-xmark text-red-500 ml-2"></i>';
                 
                 const correctBtn = optsButtons[q.correct];
-                if (correctBtn) correctBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-500');
-                document.getElementById('quiz-feedback').innerHTML = `<span class='text-red-500'>Sai rồi! Đáp án: ${q.options[q.correct]}</span>`;
+                if (correctBtn) {
+                    correctBtn.classList.remove('bg-tBg', 'border-tBorder');
+                    correctBtn.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-500');
+                }
+                if (feedback) {
+                    feedback.innerText = `Chưa đúng! Đáp án đúng là: ${q.options[q.correct]}`;
+                    feedback.className = "text-sm font-extrabold text-red-500";
+                }
             }
             
-            document.getElementById('quiz-score-badge').innerText = `Điểm: ${score}`;
-            document.getElementById('quiz-next-btn').classList.remove('hidden');
+            if (badge) badge.innerText = `Điểm: ${score}`;
+            if (nextBtn) nextBtn.classList.remove('hidden');
         }
 
-        document.getElementById('quiz-next-btn').addEventListener('click', () => {
-            currentQ++;
-            if (currentQ < selectedQuestions.length) {
-                loadQuestion();
-            } else {
-                document.getElementById('quiz-container').classList.add('hidden');
-                document.getElementById('quiz-results').classList.remove('hidden');
-                document.getElementById('quiz-final-score').innerText = `Bạn đã đạt ${score} / ${selectedQuestions.length} điểm!`;
-            }
-        });
+        const nextBtn = document.getElementById('quiz-next-btn');
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentQ++;
+                if (currentQ < selectedQuestions.length) {
+                    loadQuestion();
+                } else {
+                    const containerDiv = document.getElementById('quiz-container');
+                    const resDiv = document.getElementById('quiz-results');
+                    const finalScore = document.getElementById('quiz-final-score');
+                    if (containerDiv) containerDiv.classList.add('hidden');
+                    if (resDiv) resDiv.classList.remove('hidden');
+                    if (finalScore) finalScore.innerText = `Bạn đã đạt ${score} / ${selectedQuestions.length} điểm!`;
+                }
+            });
+        }
 
-        document.getElementById('quiz-restart-btn').addEventListener('click', () => initQuiz());
+        const restartBtn = document.getElementById('quiz-restart-btn');
+        if (restartBtn) {
+            restartBtn.addEventListener('click', () => {
+                initQuiz();
+            });
+        }
 
+        // Tự động khởi chạy khi tải xong trang
         renderTrophies();
         initQuiz();
     </script>
