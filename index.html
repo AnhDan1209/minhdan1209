@@ -120,12 +120,11 @@
             </div>
         </div>
         
-        <!-- Menu Desktop -->
-        <nav class="hidden md:flex items-center space-x-7 text-xs font-extrabold tracking-widest text-tText uppercase">
+        <!-- Menu Desktop (Tự ẩn trên Mobile) -->
+        <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
             <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
             <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
             <a href="#trophies" class="hover:text-tAccent transition-colors">Danh Hiệu</a>
-            <a href="#records" class="hover:text-tAccent transition-colors text-tAccent font-black"><i class="fa-solid fa-crown mr-1"></i> Kỷ Lục</a>
             <a href="#quiz" class="hover:text-tAccent transition-colors">Phát Hiện Ricon</a>
             <a href="game.html" class="hover:text-tAccent transition-colors text-amber-500 font-black"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
         </nav>
@@ -154,19 +153,71 @@
         </div>
     </div>
 
-    <!-- Menu Xổ Xuống trên Mobile -->
+    <!-- Menu Xổ Xuống trên Mobile khi bấm nút 3 gạch -->
     <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
         <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
         <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
         <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
-        <a href="#records" class="block py-2 text-tAccent font-black hover:text-tAccent transition-colors border-b border-tBorder/30"><i class="fa-solid fa-crown mr-1"></i> Kỷ Lục Mọi Thời Đại</a>
         <a href="#quiz" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Phát Hiện Ricon</a>
         <a href="game.html" class="block py-2 text-amber-500 font-black hover:text-tAccent transition-colors"><i class="fa-solid fa-gamepad mr-1"></i> MINI GAME</a>
     </div>
 </header>
 
     <!-- Hero Section -->
-    <!-- Career Timeline Section (Đã thêm nút Chi Tiết & Nút Khám Phá Trang Riêng) -->
+    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-tBorder bg-cover bg-center bg-no-repeat transition-colors duration-500" style="background-image: linear-gradient(to bottom, var(--hero-overlay), var(--c-bg)), url('image/background1.jpg');">
+        <div class="absolute inset-0 bg-[radial-gradient(var(--c-accent)_1px,transparent_1px)] [background-size:32px_32px] opacity-10"></div>
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-tAccent rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <!-- Left: Info -->
+                <div class="md:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tCard border border-tBorder text-tAccent text-xs font-extrabold uppercase tracking-widest shadow-md">
+                        <i class="fa-solid fa-crown"></i> Cầu Thủ Vĩ Đại Nhất Lịch Sử
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-7xl font-black font-display tracking-tight text-tText uppercase leading-none">
+                        Cristiano <br>
+                        <span class="theme-gradient-text theme-text-glow">Ronaldo</span>
+                    </h1>
+                    
+                    <p class="text-tMuted text-lg max-w-xl font-light leading-relaxed">
+                        Biểu tượng thể thao vĩ đại, cỗ máy săn bàn thượng hạng và tấm gương nỗ lực không ngừng nghỉ. Từ hòn đảo Madeira đến đỉnh cao thế giới.
+                    </p>
+
+                    <!-- Stat Counters -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
+                        <div class="bg-tCard border border-tBorder p-4 rounded-2xl text-center hover:border-tAccent transition-all shadow-xl">
+                            <span class="block font-display text-3xl sm:text-4xl font-black theme-gradient-text" id="stat-goals">979</span>
+                            <span class="text-[10px] font-extrabold uppercase text-tMuted tracking-widest">Bàn thắng</span>
+                        </div>
+                        <div class="bg-tCard border border-tBorder p-4 rounded-2xl text-center hover:border-tAccent transition-all shadow-xl">
+                            <span class="block font-display text-3xl sm:text-4xl font-black theme-gradient-text">5×</span>
+                            <span class="text-[10px] font-extrabold uppercase text-tMuted tracking-widest">Quả Bóng Vàng</span>
+                        </div>
+                        <div class="bg-tCard border border-tBorder p-4 rounded-2xl text-center hover:border-tAccent transition-all shadow-xl">
+                            <span class="block font-display text-3xl sm:text-4xl font-black theme-gradient-text">5×</span>
+                            <span class="text-[10px] font-extrabold uppercase text-tMuted tracking-widest">Champions League</span>
+                        </div>
+                        <div class="bg-tCard border border-tBorder p-4 rounded-2xl text-center hover:border-tAccent transition-all shadow-xl">
+                            <span class="block font-display text-3xl sm:text-4xl font-black theme-gradient-text">146</span>
+                            <span class="text-[10px] font-extrabold uppercase text-tMuted tracking-widest">Bàn ĐTQG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Visual Avatar -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative group max-w-sm w-full">
+                        <div class="absolute -inset-1.5 theme-gradient-bg rounded-3xl blur-xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+                        <img src="image/cr7god.jpg" alt="Cristiano Ronaldo" class="relative w-full h-[430px] rounded-2xl border-2 border-tBorder theme-glow object-cover shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Timeline Section -->
     <section id="timeline" class="py-20 border-b border-tBorder relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -177,63 +228,29 @@
 
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Sporting CP -->
-                <div class="bg-tCard border border-emerald-500/30 hover:border-emerald-500 p-6 rounded-2xl transition-all shadow-xl group flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3.5 py-1 bg-emerald-500/15 text-emerald-500 border border-emerald-500/40 rounded-full text-xs font-extrabold">2002 - 2003</span>
-                            <img src="image/sprt.png" alt="Sporting CP" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
-                        </div>
-                        <h3 class="font-display text-2xl font-bold text-tText mb-1">Sporting CP</h3>
-                        <p class="text-xs text-tMuted mb-3 font-bold">Bệ phóng tại Lisbon</p>
-                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium mb-3">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử.</p>
-                        
-                        <!-- Nội dung chi tiết ẩn ban đầu -->
-                        <div class="timeline-detail hidden pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                            <p>• Ra mắt đội một vào ngày 14/08/2002 trong trận sơ loại C1 với Inter Milan.</p>
-                            <p>• Trở thành cầu thủ duy nhất lịch sử CLB chơi cho U16, U17, U18, đội B và đội 1 trong cùng 1 mùa giải.</p>
-                        </div>
+                <div class="bg-tCard border border-emerald-500/30 hover:border-emerald-500 p-6 rounded-2xl transition-all hover:-translate-y-2 shadow-xl group">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3.5 py-1 bg-emerald-500/15 text-emerald-500 border border-emerald-500/40 rounded-full text-xs font-extrabold">2002 - 2003</span>
+                        <img src="image/sprt.png" alt="Sporting CP" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/40 flex items-center justify-between gap-2">
-                        <button class="toggle-detail-btn text-xs font-bold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
-                        </button>
-                        <a href="sporting.html" class="hidden detail-link-btn px-3 py-1.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 hover:bg-emerald-500 hover:text-white rounded-lg text-xs font-extrabold transition-all flex items-center gap-1">
-                            Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
+                    <h3 class="font-display text-2xl font-bold text-tText mb-1">Sporting CP</h3>
+                    <p class="text-xs text-tMuted mb-4 font-bold">Bệ phóng tại Lisbon</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Chơi trận chuyên nghiệp năm 17 tuổi. Lọt vào mắt xanh Sir Alex Ferguson trong trận giao hữu lịch sử, mở đường sang Manchester United.</p>
                 </div>
 
                 <!-- Manchester United -->
-                <div class="bg-tCard border border-red-500/30 hover:border-red-500 p-6 rounded-2xl transition-all shadow-xl group flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3.5 py-1 bg-red-500/15 text-red-500 border border-red-500/40 rounded-full text-xs font-extrabold">2003 - 2009 & 2021 - 2022</span>
-                            <img src="image/mu.png" alt="Manchester United" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
-                        </div>
-                        <h3 class="font-display text-2xl font-bold text-tText mb-1">Manchester United</h3>
-                        <p class="text-xs text-tMuted mb-3 font-bold">Vươn tầm thế giới & Số 7 huyền thoại</p>
-                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium mb-3">Đoạt 3 chức vô địch Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.</p>
-
-                        <!-- Nội dung chi tiết ẩn ban đầu -->
-                        <div class="timeline-detail hidden pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                            <p>• Thừa kế chiếc áo số 7 huyền thoại từ Sir Alex Ferguson.</p>
-                            <p>• Ghi 118 bàn thắng giai đoạn đầu, đoạt cú ăn 3 danh hiệu năm 2008 & Quả bóng vàng đầu tiên trong sự nghiệp.</p>
-                        </div>
+                <div class="bg-tCard border border-red-500/30 hover:border-red-500 p-6 rounded-2xl transition-all hover:-translate-y-2 shadow-xl group">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3.5 py-1 bg-red-500/15 text-red-500 border border-red-500/40 rounded-full text-xs font-extrabold">2003 - 2009</span>
+                        <img src="image/mu.png" alt="Manchester United" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/40 flex items-center justify-between gap-2">
-                        <button class="toggle-detail-btn text-xs font-bold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
-                        </button>
-                        <a href="mu.html" class="hidden detail-link-btn px-3 py-1.5 bg-red-500/20 text-red-400 border border-red-500/50 hover:bg-red-600 hover:text-white rounded-lg text-xs font-extrabold transition-all flex items-center gap-1 shadow-md">
-                            Khám phá MU <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
+                    <h3 class="font-display text-2xl font-bold text-tText mb-1">Manchester United</h3>
+                    <p class="text-xs text-tMuted mb-4 font-bold">Vươn tầm thế giới</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đoạt 3 chức vô địch Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.</p>
                 </div>
 
-                <!-- Real Madrid (VIP Card) -->
-                <div class="relative p-[2.5px] rounded-2xl theme-gradient-bg theme-glow hover:theme-glow-lg transition-all duration-500 group flex flex-col justify-between">
+                <!-- Real Madrid (VIP Glow Card) -->
+                <div class="relative p-[2.5px] rounded-2xl theme-gradient-bg theme-glow hover:theme-glow-lg transition-all duration-500 transform hover:-translate-y-2.5 group">
                     <div class="bg-tCard p-6 rounded-[13px] h-full flex flex-col justify-between relative overflow-hidden">
                         <div class="absolute -right-8 -top-8 w-36 h-36 bg-tAccent rounded-full blur-2xl opacity-20 pointer-events-none group-hover:opacity-40 transition-all duration-500"></div>
                         
@@ -249,108 +266,51 @@
                             <p class="text-[11px] text-tAccent mb-3 font-extrabold uppercase tracking-wider flex items-center gap-1">
                                 <i class="fa-solid fa-star text-[9px]"></i> Kỷ Nguyên Hoàng Kim <i class="fa-solid fa-star text-[9px]"></i>
                             </p>
-                            <p class="text-sm text-tText leading-relaxed opacity-90 font-medium mb-3">Ghi 450 bàn sau 438 trận. Giành 4 cúp Champions League (3 lần liên tiếp) và 4 Quả Bóng Vàng.</p>
-
-                            <!-- Nội dung chi tiết ẩn ban đầu -->
-                            <div class="timeline-detail hidden pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                                <p>• Cầu thủ ghi bàn vĩ đại nhất lịch sử Real Madrid.</p>
-                                <p>• Chuỗi 3 chức vô địch Champions League liên tiếp độc nhất vô nhị từ năm 2016 đến 2018.</p>
-                            </div>
+                            <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Ghi 450 bàn sau 438 trận. Giành 4 cúp Champions League (3 lần liên tiếp) và 4 Quả Bóng Vàng.</p>
                         </div>
 
-                        <div class="mt-4 pt-3 border-t border-tBorder flex items-center justify-between gap-2">
-                            <button class="toggle-detail-btn text-xs font-bold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                                <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
-                            </button>
-                            <a href="real.html" class="hidden detail-link-btn px-3 py-1.5 theme-gradient-bg font-black rounded-lg text-xs transition-all shadow-md flex items-center gap-1">
-                                Khám phá Real <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </a>
+                        <div class="mt-5 pt-3 border-t border-tBorder flex justify-between items-center">
+                            <span class="text-[10px] font-extrabold text-tAccent uppercase tracking-widest flex items-center gap-1">
+                                <i class="fa-solid fa-fire text-amber-500 animate-pulse"></i> Peak Performance
+                            </span>
+                            <span class="text-[10px] bg-tBg border border-tBorder text-tAccent font-black px-2.5 py-0.5 rounded-md shadow-sm">
+                                4× C1 | 4× BÓNG VÀNG
+                            </span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Juventus -->
-                <div class="bg-tCard border border-slate-400/40 hover:border-slate-300 p-6 rounded-2xl transition-all shadow-xl group flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3.5 py-1 bg-slate-500/15 text-slate-500 border border-slate-500/40 rounded-full text-xs font-extrabold">2018 - 2021</span>
-                            <img src="image/juv.png" alt="Juventus" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
-                        </div>
-                        <h3 class="font-display text-2xl font-bold text-tText mb-1">Juventus</h3>
-                        <p class="text-xs text-tMuted mb-3 font-bold">Chinh phục Serie A</p>
-                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium mb-3">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB Juventus.</p>
-
-                        <!-- Nội dung chi tiết ẩn ban đầu -->
-                        <div class="timeline-detail hidden pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                            <p>• Cầu thủ đầu tiên trong lịch sử đoạt Vua phá lưới ở Premier League, La Liga và Serie A.</p>
-                            <p>• Đạt mốc 100 bàn thắng chỉ sau 131 trận cho Bà đầm già Turin.</p>
-                        </div>
+                <div class="bg-tCard border border-slate-400/40 hover:border-slate-300 p-6 rounded-2xl transition-all hover:-translate-y-2 shadow-xl group">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3.5 py-1 bg-slate-500/15 text-slate-500 border border-slate-500/40 rounded-full text-xs font-extrabold">2018 - 2021</span>
+                        <img src="image/juv.png" alt="Juventus" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/40 flex items-center justify-between gap-2">
-                        <button class="toggle-detail-btn text-xs font-bold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
-                        </button>
-                        <a href="juventus.html" class="hidden detail-link-btn px-3 py-1.5 bg-slate-200 text-black border border-slate-400 hover:bg-white rounded-lg text-xs font-extrabold transition-all flex items-center gap-1">
-                            Khám phá Juve <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
+                    <h3 class="font-display text-2xl font-bold text-tText mb-1">Juventus</h3>
+                    <p class="text-xs text-tMuted mb-4 font-bold">Chinh phục Serie A</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Sở hữu 2 danh hiệu Serie A và trở thành cầu thủ đạt mốc 100 bàn thắng nhanh nhất lịch sử CLB Juventus.</p>
                 </div>
 
                 <!-- Al Nassr -->
-                <div class="bg-tCard border border-yellow-500/30 hover:border-yellow-400 p-6 rounded-2xl transition-all shadow-xl group flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3.5 py-1 bg-yellow-500/15 text-yellow-500 border border-yellow-500/40 rounded-full text-xs font-extrabold">2023 - Hiện tại</span>
-                            <img src="image/al.png" alt="Al Nassr" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
-                        </div>
-                        <h3 class="font-display text-2xl font-bold text-tText mb-1">Al Nassr</h3>
-                        <p class="text-xs text-tMuted mb-3 font-bold">Tiên phong tại Ả Rập</p>
-                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium mb-3">Thúc đẩy sự phát triển bóng đá châu Á và tiếp tục chinh phục cột mốc 1.000 bàn thắng chính thức.</p>
-
-                        <!-- Nội dung chi tiết ẩn ban đầu -->
-                        <div class="timeline-detail hidden pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                            <p>• Phá kỷ lục ghi nhiều bàn thắng nhất trong một mùa giải Saudi Pro League (35 bàn mùa 23/24).</p>
-                            <p>• Vua phá lưới thế giới năm 2023 với 54 bàn thắng.</p>
-                        </div>
+                <div class="bg-tCard border border-yellow-500/30 hover:border-yellow-400 p-6 rounded-2xl transition-all hover:-translate-y-2 shadow-xl group">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3.5 py-1 bg-yellow-500/15 text-yellow-500 border border-yellow-500/40 rounded-full text-xs font-extrabold">2023 - Hiện tại</span>
+                        <img src="image/al.png" alt="Al Nassr" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/40 flex items-center justify-between gap-2">
-                        <button class="toggle-detail-btn text-xs font-bold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
-                        </button>
-                        <a href="alnassr.html" class="hidden detail-link-btn px-3 py-1.5 bg-yellow-500/20 text-yellow-400 border border-yellow-500/50 hover:bg-yellow-500 hover:text-black rounded-lg text-xs font-extrabold transition-all flex items-center gap-1">
-                            Khám phá Al Nassr <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
+                    <h3 class="font-display text-2xl font-bold text-tText mb-1">Al Nassr</h3>
+                    <p class="text-xs text-tMuted mb-4 font-bold">Tiên phong tại Ả Rập</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Thúc đẩy sự phát triển bóng đá châu Á và tiếp tục chinh phục cột mốc 1.000 bàn thắng chính thức.</p>
                 </div>
 
                 <!-- Portugal -->
-                <div class="bg-tCard border border-[#E50914]/30 hover:border-[#E50914] p-6 rounded-2xl transition-all shadow-xl group flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="px-3.5 py-1 bg-[#E50914]/15 text-[#E50914] border border-[#E50914]/40 rounded-full text-xs font-extrabold">2003 - Hiện tại</span>
-                            <img src="image/bdn.png" alt="Portugal" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
-                        </div>
-                        <h3 class="font-display text-2xl font-bold text-tText mb-1">Bồ Đào Nha</h3>
-                        <p class="text-xs text-tMuted mb-3 font-bold">Anh hùng dân tộc</p>
-                        <p class="text-sm text-tText leading-relaxed opacity-90 font-medium mb-3">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Cầu thủ ghi bàn vĩ đại nhất cấp ĐTQG.</p>
-
-                        <!-- Nội dung chi tiết ẩn ban đầu -->
-                        <div class="timeline-detail hidden pt-3 border-t border-tBorder text-xs text-tMuted space-y-2">
-                            <p>• Đội trưởng dẫn dắt ĐTQG đoạt danh hiệu lớn đầu tiên trong lịch sử (EURO 2016).</p>
-                            <p>• Cầu thủ ghi nhiều bàn thắng nhất (130+) và ra sân nhiều nhất lịch sử bóng đá quốc tế.</p>
-                        </div>
+                <div class="bg-tCard border border-[#E50914]/30 hover:border-[#E50914] p-6 rounded-2xl transition-all hover:-translate-y-2 shadow-xl group">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3.5 py-1 bg-[#E50914]/15 text-[#E50914] border border-[#E50914]/40 rounded-full text-xs font-extrabold">2003 - Hiện tại</span>
+                        <img src="image/bdn.png" alt="Portugal" class="w-9 h-9 object-contain group-hover:scale-125 transition-transform">
                     </div>
-
-                    <div class="mt-4 pt-3 border-t border-tBorder/40 flex items-center justify-between gap-2">
-                        <button class="toggle-detail-btn text-xs font-bold text-tAccent hover:underline flex items-center gap-1 focus:outline-none">
-                            <span>Xem chi tiết</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
-                        </button>
-                        <a href="portugal.html" class="hidden detail-link-btn px-3 py-1.5 bg-red-600/20 text-red-400 border border-red-500/50 hover:bg-red-600 hover:text-white rounded-lg text-xs font-extrabold transition-all flex items-center gap-1">
-                            Khám phá ĐTQG <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
-                    </div>
+                    <h3 class="font-display text-2xl font-bold text-tText mb-1">Bồ Đào Nha</h3>
+                    <p class="text-xs text-tMuted mb-4 font-bold">Anh hùng dân tộc</p>
+                    <p class="text-sm text-tText leading-relaxed opacity-90 font-medium">Đội trưởng đưa Bồ Đào Nha lên ngôi vô địch Euro 2016 và Nations League 2019. Cầu thủ ghi bàn vĩ đại nhất cấp ĐTQG.</p>
                 </div>
             </div>
         </div>
@@ -373,267 +333,6 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="trophy-container"></div>
-        </div>
-    </section>
-
-    <!-- ================= All-Time Records Section (KỶ LỤC MỌI THỜI ĐẠI - COMPACT GRID) ================= -->
-    <section id="records" class="py-16 border-b border-tBorder relative bg-tBg overflow-hidden">
-        <!-- Ánh sáng nền mờ -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-tAccent/10 rounded-full blur-[140px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Header Tiêu Đề -->
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="px-3.5 py-1 bg-tCard border border-tBorder text-tAccent text-[10px] sm:text-xs font-extrabold uppercase tracking-widest rounded-full shadow-md inline-block mb-2">
-                    <i class="fa-solid fa-fire text-amber-500 mr-1 animate-pulse"></i> Bộ Cập Nhật Kỷ Lục Toàn Diện
-                </span>
-                <h2 class="font-display text-3xl sm:text-5xl font-black uppercase text-tText tracking-tight">
-                    Bảng Kỷ Lục <span class="theme-gradient-text theme-text-glow">Mọi Thời Đại</span>
-                </h2>
-                <p class="text-tMuted text-xs sm:text-sm mt-2 font-medium max-w-lg mx-auto">
-                    Tổng hợp đầy đủ 18 kỷ lục lịch sử vô tiền khoáng hậu khẳng định vị thế Vua săn bàn vĩ đại nhất bóng đá thế giới.
-                </p>
-                <div class="w-20 h-1 theme-gradient-bg mx-auto mt-3 rounded-full shadow-lg"></div>
-            </div>
-
-            <!-- Grid Thống Kê Nhỏ Gọn (4 Cột Desktop, 2 Cột Mobile) -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                <!-- Record 1 (VIP Glow) -->
-                <div class="relative p-[1.5px] rounded-xl theme-gradient-bg theme-glow hover:theme-glow-lg transition-all duration-300 transform hover:-translate-y-1 group">
-                    <div class="bg-tCard p-3.5 sm:p-4 rounded-[10px] h-full flex flex-col justify-between">
-                        <div class="flex justify-between items-center mb-2">
-                            <i class="fa-solid fa-crown text-tAccent text-base"></i>
-                            <span class="text-[9px] font-black uppercase text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">WORLD RECORD</span>
-                        </div>
-                        <div>
-                            <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">900+ BÀN</span>
-                            <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Ghi Bàn Lịch Sử World</h3>
-                            <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Cầu thủ đầu tiên đạt mốc 900 bàn thắng chính thức.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Record 2 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-earth-americas text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">ĐỘI TUYỂN QG</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">130+ BÀN</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Săn Bàn ĐTQG</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Ghi nhiều bàn thắng nhất cho một ĐTQG (Bồ Đào Nha).</p>
-                    </div>
-                </div>
-
-                <!-- Record 3 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-star text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">CHAMPIONS LEAGUE</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">140 BÀN C1</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Phá Lưới C1</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Chân sút số 1 mọi thời đại tại UEFA Champions League.</p>
-                    </div>
-                </div>
-
-                <!-- Record 4 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-start mb-2">
-                        <i class="fa-solid fa-fire text-amber-500 text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">CUP C1</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">17 BÀN / MÙA</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Kỷ Lục Mùa C1 13/14</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Số bàn thắng nhiều nhất ghi được trong một mùa C1.</p>
-                    </div>
-                </div>
-
-                <!-- Record 5 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-trophy text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">WORLD CUP</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">6 KỲ WC</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Ghi Bàn 6 Kỳ WC</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Cầu thủ duy nhất nổ súng ở 6 kỳ World Cup liên tiếp.</p>
-                    </div>
-                </div>
-
-                <!-- Record 6 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-flag text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">VCK EURO</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">14 BÀN EURO</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Phá Lưới EURO</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Ghi nhiều bàn thắng nhất lịch sử các VCK EURO.</p>
-                    </div>
-                </div>
-
-                <!-- Record 7 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-shirt text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">VCK EURO</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">6 KỲ EURO</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Kỷ Lục Tham Gia EURO</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Cầu thủ duy nhất góp mặt ở 6 VCK EURO (2004 - 2024).</p>
-                    </div>
-                </div>
-
-                <!-- Record 8 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-shield-halved text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">REAL MADRID</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">450 BÀN REAL</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Phá Lưới Real</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">450 bàn sau 438 trận (hiệu suất vượt mốc 1.03 bàn/trận).</p>
-                    </div>
-                </div>
-
-                <!-- Record 9 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-shoe-prints text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">GIẢI VĐQG</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">4 QUỐC GIA</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Giày Vàng 4 Giải Đấu</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Vua phá lưới ở Premier League, La Liga, Serie A & SPL.</p>
-                    </div>
-                </div>
-
-                <!-- Record 10 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-bolt text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">HAT-TRICK ĐTQG</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">10 HAT-TRICK</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Hat-trick ĐTQG</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Lập nhiều Cú đúp 3 bàn nhất lịch sử bóng đá quốc tế.</p>
-                    </div>
-                </div>
-
-                <!-- Record 11 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-repeat text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">CHUỖI BÀN C1</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">11 TRẬN C1</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Ghi Bàn Liên Tiếp C1</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Chuỗi trận ghi bàn liên tiếp dài nhất tại Champions League.</p>
-                    </div>
-                </div>
-
-                <!-- Record 12 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-hands-holding text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">KIẾN TẠO C1</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">42 KIẾN TẠO</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Kiến Tạo C1</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Kiến tạo nhiều bàn thắng nhất lịch sử Cúp C1.</p>
-                    </div>
-                </div>
-
-                <!-- Record 13 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-award text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">SAUDI PRO LEAGUE</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">35 BÀN / MÙA</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Kỷ Lục Mùa SPL 23/24</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Số bàn thắng cao nhất trong 1 mùa giải Saudi Pro League.</p>
-                    </div>
-                </div>
-
-                <!-- Record 14 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-[#000] fa-stopwatch text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">JUVENTUS FC</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">100 BÀN/131 TRẬN</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">100 Bàn Nhanh Nhất Juve</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Cầu thủ đạt mốc 100 bàn nhanh nhất lịch sử Juventus.</p>
-                    </div>
-                </div>
-
-                <!-- Record 15 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-chart-line text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">REAL MADRID</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">50+ BÀN / 6 MÙA</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Phong Độ Đỉnh Cao 6 Mùa</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">6 mùa liên tiếp ghi trên 50 bàn cho Real Madrid.</p>
-                    </div>
-                </div>
-
-                <!-- Record 16 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-users text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">CẤP ĐTQG</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">210+ TRẬN ĐTQG</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Ra Sân ĐTQG Nhiều Nhất</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Kỷ lục ra sân nhiều nhất cho một ĐTQG mọi thời đại.</p>
-                    </div>
-                </div>
-
-                <!-- Record 17 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-id-card text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">FIFA FIFPRO</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">15 LẦN XI</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Đội Hình Tiêu Biểu FIFA</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Có mặt trong Đội hình xuất sắc nhất năm FIFA FIFPro World11.</p>
-                    </div>
-                </div>
-
-                <!-- Record 18 -->
-                <div class="bg-tCard border border-tBorder hover:border-tAccent p-3.5 sm:p-4 rounded-xl transition-all hover:-translate-y-1 shadow-md group">
-                    <div class="flex justify-between items-center mb-2">
-                        <i class="fa-solid fa-medal text-tAccent text-base"></i>
-                        <span class="text-[9px] font-bold text-tAccent bg-tBg border border-tBorder px-2 py-0.5 rounded">CUP C1</span>
-                    </div>
-                    <div>
-                        <span class="font-display text-2xl sm:text-3xl font-black theme-gradient-text block leading-none">7 LẦN VPL C1</span>
-                        <h3 class="font-bold text-tText text-xs sm:text-sm mt-1">Vua Phá Lưới C1 7 Mùa</h3>
-                        <p class="text-[11px] text-tMuted leading-tight mt-1 opacity-90">Đoạt danh hiệu Vua phá lưới Champions League nhiều mùa nhất.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1055,6 +754,7 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
+            // Tự đóng menu khi bấm chuyển trang/mục
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
@@ -1066,5 +766,3 @@
         renderTrophies();
         initQuiz();
     </script>
-</body>
-</html>
