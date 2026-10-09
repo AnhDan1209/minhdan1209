@@ -102,6 +102,26 @@
             outline-offset: 2px;
             transform: scale(1.15);
         }
+        /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
+#club-modal-card.modal-mu {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #450a0a 100%) !important;
+    border-color: #f87171 !important;
+    box-shadow: 0 0 65px rgba(239, 68, 68, 0.85) !important;
+    color: #ffffff !important;
+}
+#club-modal-card.modal-mu #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+#club-modal-card.modal-mu #modal-subtitle {
+    color: #fde047 !important; /* Màu vàng tươi nổi bật trên nền đỏ */
+}
+#club-modal-card.modal-mu #modal-desc {
+    color: #fef2f2 !important; /* Màu chữ trắng sáng dễ đọc */
+}
+#club-modal-card.modal-mu .border-tBorder {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
@@ -1182,15 +1202,15 @@
                     document.getElementById('modal-cr7-img').src = data.cr7Img;
                     document.getElementById('modal-explore-btn').href = data.link;
 
-                    if (clubKey === 'mu') {
-                        modalContainer.classList.add('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
-                        if (devilHorns) devilHorns.classList.remove('hidden');
-                        if (devilWingsFull) devilWingsFull.classList.remove('hidden');
-                    } else {
-                        modalContainer.classList.remove('border-red-600', 'shadow-[0_0_50px_rgba(220,38,38,0.6)]');
-                        if (devilHorns) devilHorns.classList.add('hidden');
-                        if (devilWingsFull) devilWingsFull.classList.add('hidden');
-                    }
+                               if (clubKey === 'mu') {
+                modalContainer.classList.add('modal-mu');
+                if (devilHorns) devilHorns.classList.remove('hidden');
+                if (devilWingsFull) devilWingsFull.classList.remove('hidden');
+            } else {
+                modalContainer.classList.remove('modal-mu');
+                if (devilHorns) devilHorns.classList.add('hidden');
+                if (devilWingsFull) devilWingsFull.classList.add('hidden');
+            }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
                     modalContainer.classList.remove('scale-90');
