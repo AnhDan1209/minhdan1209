@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-theme="base">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -41,17 +41,16 @@
 </head>
 <body class="min-h-screen flex flex-col items-center justify-between p-3 sm:p-6 select-none">
 
-    <!-- Header / Scoreboard -->
-    <div class="w-full max-w-xl flex justify-between items-center bg-cardbg/90 backdrop-blur-md p-4 rounded-2xl border border-gold/30 shadow-xl mb-3">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-gold text-black font-black font-display text-2xl flex items-center justify-center shadow-lg">7</div>
-            <div>
-                <h1 class="font-display text-xl font-bold tracking-wider gold-text uppercase leading-none">CR7 Penalty</h1>
-                <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">King of Clutch</span>
-            </div>
-        </div>
+    <!-- Header Navigation & Scoreboard -->
+    <div class="w-full max-w-xl flex justify-between items-center bg-cardbg/90 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-gold/30 shadow-xl mb-3">
+        <!-- Nút Về Trang Chủ đặt góc trái Header -->
+        <a href="index.html" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-700 hover:border-gold text-slate-200 hover:text-gold text-xs font-bold uppercase transition-all shadow-md active:scale-95">
+            <i class="fa-solid fa-arrow-left text-gold"></i>
+            <span>Trang Chủ</span>
+        </a>
 
-        <div class="flex gap-4 text-center">
+        <!-- Điểm số -->
+        <div class="flex gap-3 sm:gap-4 text-center">
             <div class="bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-700">
                 <span class="block text-[9px] text-slate-400 font-bold uppercase">Bàn thắng</span>
                 <span id="score-val" class="font-display text-2xl font-black text-gold">0</span>
@@ -74,13 +73,20 @@
         </div>
 
         <!-- Start Screen -->
-        <div id="start-screen" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center z-30">
+        <div id="start-screen" class="absolute inset-0 bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center z-30">
             <i class="fa-solid fa-futbol text-6xl text-gold mb-4 animate-bounce"></i>
             <h2 class="font-display text-3xl sm:text-4xl font-extrabold gold-text uppercase mb-2">Thử Thách Sút Phạt CR7</h2>
             <p class="text-xs sm:text-sm text-slate-300 max-w-xs mb-6 font-medium">Lần 1 chọn hướng, lần 2 chọn lực sút! CR7 lấy đà xé lưới đối phương!</p>
-            <button id="start-btn" class="bg-gradient-to-r from-amber-500 to-gold text-black font-extrabold px-8 py-3.5 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-wider text-sm">
-                <i class="fa-solid fa-play mr-2"></i> VÀO GAME
-            </button>
+            
+            <div class="flex flex-col items-center gap-3">
+                <button id="start-btn" class="bg-gradient-to-r from-amber-500 to-gold text-black font-extrabold px-8 py-3.5 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-wider text-sm">
+                    <i class="fa-solid fa-play mr-2"></i> VÀO GAME
+                </button>
+                <!-- Nút Về Trang Chủ đặt tại Start Screen -->
+                <a href="index.html" class="text-xs font-bold text-slate-400 hover:text-gold transition-colors underline uppercase tracking-wider mt-1">
+                    <i class="fa-solid fa-house mr-1"></i> Quay về trang chủ
+                </a>
+            </div>
         </div>
     </div>
 
@@ -97,10 +103,10 @@
     </div>
 
     <footer class="mt-4 text-center text-[10px] text-slate-500 font-medium">
-        CR7 Penalty Mini Web Game © 2026 | Sẵn sàng chạy trên GitHub Pages
+        CR7 Penalty Mini Web Game © 2026 | <a href="index.html" class="underline hover:text-gold">Quay lại trang chủ</a>
     </footer>
 
-    <!-- Game Script (Đã nâng cấp Messi Bay Người / Dive Animation) -->
+    <!-- Game Script -->
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
@@ -108,7 +114,7 @@
         canvas.width = 600;
         canvas.height = 450;
 
-        // Khởi tạo Ảnh & Chống lặp vô hạn
+        // Khởi tạo Ảnh từ thư mục image/
         const cr7Img = new Image();
         cr7Img.crossOrigin = "anonymous";
         cr7Img.src = "image/cr7_game.png";
@@ -140,7 +146,6 @@
 
         const goal = { left: 90, right: 510, top: 55, bottom: 180 };
 
-        // Thủ môn (Messi): Đã thêm góc xoay angle & độ nâng y
         const keeper = { 
             x: canvas.width / 2, 
             y: 142, 
@@ -206,7 +211,6 @@
                 ball.targetY = goal.top + 20 + (100 - power) * 0.95;
                 ball.progress = 0;
 
-                // Thủ môn phán đoán bay người
                 if (Math.random() < 0.65) {
                     keeper.targetX = aimX + (Math.random() - 0.5) * 50;
                 } else {
@@ -287,11 +291,9 @@
                 ball.x = ball.startX + (ball.targetX - ball.startX) * ball.progress;
                 ball.y = ball.startY + (ball.targetY - ball.startY) * ball.progress;
 
-                // ANIMATION MESSI BAY NGƯỜI DIVE & JUMP:
                 const moveDist = keeper.targetX - (canvas.width / 2);
                 keeper.x += (keeper.targetX - keeper.x) * 0.14;
 
-                // Tự động nhảy nâng độ cao & nghiêng người theo hướng bay
                 const diveProgress = Math.sin(ball.progress * Math.PI);
                 keeper.y = keeper.baseY - (diveProgress * 35); 
                 keeper.angle = (moveDist / 180) * diveProgress; 
@@ -326,14 +328,12 @@
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // 1. BẦU TRỜI / KHÁN ĐÀI ĐẰNG SAU
             const skyGradient = ctx.createLinearGradient(0, 0, 0, goal.bottom);
             skyGradient.addColorStop(0, '#020617');
             skyGradient.addColorStop(1, '#0f172a');
             ctx.fillStyle = skyGradient;
             ctx.fillRect(0, 0, canvas.width, goal.bottom);
 
-            // 2. MẶT CỎ 3D SỌC XEN KẼ
             const grassStartY = goal.bottom;
             const grassHeight = canvas.height - grassStartY;
             const stripeCount = 9;
@@ -345,7 +345,6 @@
                 ctx.fillRect(0, y, canvas.width, stripeH);
             }
 
-            // 3. VẠCH KẺ SÂN BÓNG 3D
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.75)';
             ctx.lineWidth = 2.5;
 
@@ -373,7 +372,6 @@
             ctx.fill();
             ctx.shadowBlur = 0; 
 
-            // 4. KHUNG THÀNH 3D CÓ ĐỘ SÂU
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
             ctx.lineWidth = 1;
             for (let x = goal.left; x <= goal.right; x += 16) {
@@ -391,7 +389,6 @@
             ctx.lineWidth = 2;
             ctx.strokeRect(goal.left - 4, goal.top - 4, (goal.right - goal.left) + 8, (goal.bottom - goal.top) + 4);
 
-            // 5. VẼ MESSI BAY NGƯỜI (XOAY GÓC DIVE)
             ctx.save();
             ctx.translate(keeper.x, keeper.y);
             ctx.rotate(keeper.angle);
@@ -404,7 +401,6 @@
             }
             ctx.restore();
 
-            // 6. TÂM NGẮM & THANH LỰC
             if (gameState === 'AIM_AIMING' || gameState === 'POWER_BUILDING') {
                 const reticleY = goal.top + 55;
                 ctx.strokeStyle = '#D4AF37';
@@ -426,7 +422,6 @@
                 ctx.fillRect(aimX - 35, goal.top - 22, (power / 100) * 70, 12);
             }
 
-            // 7. TRÁI BÓNG TRÊN CHẤM 11M
             ctx.save();
             ctx.beginPath();
             ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
@@ -441,7 +436,6 @@
             ctx.fill();
             ctx.restore();
 
-            // 8. CR7 HIỂN THỊ TRỌN VẸN TOÀN THÂN Ở GẦN CAMERA
             if (cr7Img.complete && cr7Img.naturalWidth !== 0) {
                 ctx.drawImage(cr7Img, player.x - player.width / 2, player.y - player.height / 2, player.width, player.height);
             } else {
