@@ -368,7 +368,7 @@
         </div>
     </section>
 
-    <!-- ================= BẢNG KỶ LỤC MỌI THỜI ĐẠI (ĐÃ DỜI XUỐNG ĐÂY) ================= -->
+    <!-- BẢNG KỶ LỤC MỌI THỜI ĐẠI -->
     <section id="records" class="py-20 border-b border-tBorder bg-tBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -709,11 +709,11 @@
     <footer class="bg-tCard py-10 border-t border-tBorder text-center text-xs text-tMuted transition-colors">
         <div class="max-w-7xl mx-auto px-4 space-y-4">
             <p class="font-display text-2xl font-bold theme-gradient-text tracking-wider theme-text-glow">CR7 - Mr. Champions League - El Bicho - 7 - GOAT - Cỗ máy săn bàn - Ronnie</p>
-            <p>©AnhĐa đã tạo 08/10/2026. Messi chính là 1 ông già không còn đá banh nỗi,Anh Ronaldo của chúng ta thì mãi mãi là GOÁT.</p>
+            <p>©AnhĐa đã tạo 08/10/2026. Messi chính là 1 ông giảm không còn đá banh nỗi,Anh Ronaldo của chúng ta thì mãi mãi là GOÁT.</p>
         </div>
     </footer>
 
-    <!-- ================= CLUB DETAIL MODAL POPUP (CÓ CÁNH PNG & SỪNG QUỶ ĐỎ) ================= -->
+    <!-- ================= CLUB DETAIL MODAL POPUP (ĐÃ CỦNG CỐ CÁNH NẰM CHÌM PHÍA SAU) ================= -->
     <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6">
@@ -728,8 +728,8 @@
                 </svg>
             </div>
 
-            <!-- BỘ CÁNH QUỶ FULL (Dùng 1 ảnh PNG) -->
-            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[130%] sm:w-[145%] max-w-[850px] h-auto drop-shadow-[0_0_30px_rgba(220,38,38,0.9)] animate-pulse">
+            <!-- BỘ CÁNH QUỶ FULL (Dùng -z-10 để nằm chìm hẳn phía sau khung và giang rộng lộ ra 2 bên) -->
+            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none w-[150%] sm:w-[175%] md:w-[190%] max-w-[1150px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
 
             <!-- Nút Đóng Modal -->
             <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
