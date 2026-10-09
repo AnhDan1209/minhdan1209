@@ -258,9 +258,9 @@
                     <button data-filter="international" class="px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all">Đội tuyển quốc gia</button>
                 </div>
             </div>
-    
-<!-- Chuyển sang grid 2 cột để thẻ ngang có không gian hiển thị thoải mái -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="trophy-container"></div>
+
+<!-- Chia 4 cột cân đối: 4 thẻ hàng trên - 4 thẻ hàng dưới -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="trophy-container"></div>
         </div>
     </section>
 
@@ -411,51 +411,40 @@
         ];
 
                function renderTrophies(filter = 'all') {
-            const container = document.getElementById('trophy-container');
-            if (!container) return;
-            container.innerHTML = '';
+    const container = document.getElementById('trophy-container');
+    if (!container) return;
+    container.innerHTML = '';
+    
+    const filtered = filter === 'all' ? trophies : trophies.filter(t => t.category === filter);
+    
+    filtered.forEach(t => {
+        const card = document.createElement('div');
+        // Card dạng ngang: Ảnh bên trái (w-2/5), Thông tin bên phải
+        card.className = "bg-cardbg border border-slate-800 hover:border-gold-500/50 rounded-2xl overflow-hidden flex flex-row transition-all transform hover:-translate-y-1 group shadow-xl";
+        card.innerHTML = `
+            <!-- BÊN TRÁI: Ảnh minh họa (Đã bỏ badge số đè lên ảnh) -->
+            <div class="relative w-2/5 h-44 flex-shrink-0 overflow-hidden">
+                <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cardbg/20 to-cardbg"></div>
+            </div>
             
-            const filtered = filter === 'all' ? trophies : trophies.filter(t => t.category === filter);
-            
-            filtered.forEach(t => {
-                const card = document.createElement('div');
-                // Thiết kế Thẻ Ngang: Ảnh bên trái (w-2/5), Thông tin bên phải (flex-1)
-                card.className = "bg-cardbg border border-slate-800 hover:border-gold-500/50 rounded-2xl overflow-hidden flex flex-col sm:flex-row transition-all transform hover:-translate-y-1 group shadow-xl";
-                card.innerHTML = `
-                    <!-- BÊN TRÁI: Ảnh minh họa rộng rãi -->
-                    <div class="relative w-full sm:w-2/5 h-52 sm:h-auto flex-shrink-0 overflow-hidden">
-                        <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cardbg/10 to-cardbg hidden sm:block"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-transparent to-transparent sm:hidden"></div>
-                        <span class="absolute top-3 left-3 font-display text-2xl font-extrabold text-gold-400 bg-black/80 px-3 py-1 rounded-xl backdrop-blur-md border border-gold-500/40">${t.count}</span>
-                    </div>
-                    
-                    <!-- BÊN PHẢI: Chi tiết danh hiệu -->
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h4 class="font-bold text-white text-lg mb-1.5">${t.title}</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed mb-4">${t.year}</p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-800/80 flex justify-between items-center">
-                            <span class="text-[10px] uppercase font-semibold text-gold-400/90 bg-gold-500/10 px-2.5 py-1 rounded-md border border-gold-500/20">${t.categoryName}</span>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }   
-        const filterContainer = document.getElementById('trophy-filters');
-        if (filterContainer) {
-            filterContainer.addEventListener('click', (e) => {
-                if (e.target.tagName === 'BUTTON') {
-                    document.querySelectorAll('#trophy-filters button').forEach(btn => {
-                        btn.className = "px-4 py-2 rounded-lg text-sm font-semibold bg-cardbg text-slate-300 border border-slate-800 hover:border-gold-500/50 transition-all";
-                    });
-                    e.target.className = "px-4 py-2 rounded-lg text-sm font-semibold bg-gold-500 text-black shadow-md transition-all";
-                    renderTrophies(e.target.dataset.filter);
-                }
-            });
-        }
+            <!-- BÊN PHẢI: Tên danh hiệu, Năm và Nhãn phân loại kèm Số lượng bên phải -->
+            <div class="p-3.5 flex-1 flex flex-col justify-between min-w-0">
+                <div>
+                    <h4 class="font-bold text-white text-sm leading-snug mb-1 line-clamp-2">${t.title}</h4>
+                    <p class="text-[11px] text-slate-400 leading-tight line-clamp-2">${t.year}</p>
+                </div>
+                <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center gap-1">
+                    <!-- Phân loại bên trái -->
+                    <span class="text-[9px] uppercase font-semibold text-gold-400/90 bg-gold-500/10 px-2 py-0.5 rounded-md border border-gold-500/20 whitespace-nowrap">${t.categoryName}</span>
+                    <!-- Số lượng 5x/4x nằm bên phải -->
+                    <span class="font-display text-xl font-black text-gold-400 bg-black/60 px-2 py-0.5 rounded-lg border border-gold-500/30 whitespace-nowrap">${t.count}</span>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
 
         // --- 2. SIUUU Real Audio Sound ---
         const siuuuAudio = new Audio('image/siuuu.mp3');
