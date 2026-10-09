@@ -422,7 +422,7 @@
         card.innerHTML = `
             <!-- Tăng chiều cao khung ảnh lên h-60 (240px) -->
             <div class="relative h-60 overflow-hidden">
-                <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <img src="${t.img}" alt="${t.title}" onerror="this.src='image/cr7.jpg'" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-cardbg via-cardbg/20 to-transparent"></div>
                 <!-- Tăng cỡ chữ badge số lượng lên text-4xl -->
                 <span class="absolute top-3 right-3 font-display text-4xl font-extrabold text-gold-400 bg-black/75 px-3.5 py-1.5 rounded-xl backdrop-blur-md border border-gold-500/40">${t.count}</span>
