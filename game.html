@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CR7 Penalty Challenge | Mini Web Game</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        darkbg: '#0B0F19',
+                        cardbg: '#151D2A'
+                    },
+                    fontFamily: {
+                        display: ['Oswald', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F19;
+            color: #F8FAFC;
+            touch-action: manipulation;
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #FFF4A3 0%, #E6C200 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-3 sm:p-6 select-none">
+
+    <!-- Header / Scoreboard -->
+    <div class="w-full max-w-xl flex justify-between items-center bg-cardbg/90 backdrop-blur-md p-4 rounded-2xl border border-gold/30 shadow-xl mb-3">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-gold text-black font-black font-display text-2xl flex items-center justify-center shadow-lg">7</div>
+            <div>
+                <h1 class="font-display text-xl font-bold tracking-wider gold-text uppercase leading-none">CR7 Penalty</h1>
+                <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">King of Clutch</span>
+            </div>
+        </div>
+
+        <div class="flex gap-4 text-center">
+            <div class="bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-700">
+                <span class="block text-[9px] text-slate-400 font-bold uppercase">Bàn thắng</span>
+                <span id="score-val" class="font-display text-2xl font-black text-gold">0</span>
+            </div>
+            <div class="bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-700">
+                <span class="block text-[9px] text-slate-400 font-bold uppercase">Kỷ lục</span>
+                <span id="high-score-val" class="font-display text-2xl font-black text-emerald-400">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Canvas Wrapper -->
+    <div class="relative w-full max-w-xl aspect-[4/3] rounded-2xl overflow-hidden border-2 border-gold/40 shadow-2xl">
+        <canvas id="gameCanvas" class="w-full h-full block bg-slate-950"></canvas>
+
+        <!-- Notification Banner -->
+        <div id="status-banner" class="absolute inset-x-0 top-1/3 flex flex-col items-center justify-center pointer-events-none transition-all duration-300 transform scale-0 opacity-0 z-20">
+            <h2 id="status-text" class="font-display text-5xl sm:text-6xl font-black uppercase tracking-wider text-white drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]">GOAL!</h2>
+            <span id="status-sub" class="text-xs sm:text-sm font-bold bg-black/70 px-4 py-1 rounded-full text-gold uppercase tracking-widest mt-2 border border-gold/30">SIUUUU!</span>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center z-30">
+            <i class="fa-solid fa-futbol text-6xl text-gold mb-4 animate-bounce"></i>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold gold-text uppercase mb-2">Thử Thách Sút Phạt CR7</h2>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-xs mb-6 font-medium">Lần 1 chọn hướng, lần 2 chọn lực sút! CR7 lấy đà xé lưới đối phương!</p>
+            <button id="start-btn" class="bg-gradient-to-r from-amber-500 to-gold text-black font-extrabold px-8 py-3.5 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-wider text-sm">
+                <i class="fa-solid fa-play mr-2"></i> VÀO GAME
+            </button>
+        </div>
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="w-full max-w-xl mt-4 bg-cardbg/80 border border-slate-800 p-4 rounded-2xl flex flex-col gap-3">
+        <div class="flex justify-between items-center text-xs font-bold uppercase text-slate-400">
+            <span>Trạng thái: <strong id="step-guide" class="text-gold">Bấm để ngắm hướng</strong></span>
+            <span>Combo Streak: <strong id="streak-val" class="text-emerald-400">0×</strong></span>
+        </div>
+
+        <button id="shoot-trigger" class="w-full py-4 bg-gradient-to-r from-amber-500 via-gold to-amber-600 text-black font-black font-display text-xl rounded-xl shadow-lg active:scale-95 transition-all uppercase tracking-widest">
+            SÚT PHẠT (TAP / SPACE)
+        </button>
+    </div>
+
+    <footer class="mt-4 text-center text-[10px] text-slate-500 font-medium">
+        CR7 Penalty Mini Web Game © 2026 | Sẵn sàng chạy trên GitHub Pages
+    </footer>
+
+    <!-- Game Script (Đã nâng cấp Messi Bay Người / Dive Animation) -->
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = 600;
+        canvas.height = 450;
+
+        // Khởi tạo Ảnh & Chống lặp vô hạn
+        const cr7Img = new Image();
+        cr7Img.crossOrigin = "anonymous";
+        cr7Img.src = "cr7_game.png";
+        cr7Img.onerror = () => {
+            cr7Img.onerror = null;
+            cr7Img.src = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.png";
+        };
+
+        const keeperImg = new Image();
+        keeperImg.crossOrigin = "anonymous";
+        keeperImg.src = "keeper_game.png";
+        keeperImg.onerror = () => {
+            keeperImg.onerror = null;
+            keeperImg.src = "https://cdn-icons-png.flaticon.com/512/532/532971.png";
+        };
+
+        let score = 0;
+        let highScore = localStorage.getItem('cr7_high_score') || 0;
+        let streak = 0;
+        let gameState = 'START'; 
+        
+        let aimX = canvas.width / 2;
+        let aimSpeed = 4.5;
+        let aimDir = 1;
+
+        let power = 0;
+        let powerSpeed = 3.5;
+        let powerDir = 1;
+
+        const goal = { left: 90, right: 510, top: 55, bottom: 180 };
+
+        // Thủ môn (Messi): Đã thêm góc xoay angle & độ nâng y
+        const keeper = { 
+            x: canvas.width / 2, 
+            y: 142, 
+            baseY: 142,
+            width: 50, 
+            height: 75, 
+            targetX: canvas.width / 2,
+            angle: 0
+        };
+
+        const player = { x: canvas.width / 2 - 50, y: 382, startY: 382, targetY: 320, width: 90, height: 125 };
+        const ball = { x: canvas.width / 2, y: 310, radius: 11, targetX: 0, targetY: 0, startX: canvas.width / 2, startY: 310, progress: 0 };
+
+        document.getElementById('high-score-val').innerText = highScore;
+
+        function playAudioFX(type) {
+            try {
+                const ctxAudio = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctxAudio.createOscillator();
+                const gain = ctxAudio.createGain();
+                osc.connect(gain);
+                gain.connect(ctxAudio.destination);
+
+                if (type === 'kick') {
+                    osc.frequency.setValueAtTime(160, ctxAudio.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(35, ctxAudio.currentTime + 0.15);
+                    gain.gain.setValueAtTime(1, ctxAudio.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctxAudio.currentTime + 0.15);
+                    osc.start();
+                    osc.stop(ctxAudio.currentTime + 0.15);
+                } else if (type === 'goal') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(280, ctxAudio.currentTime);
+                    osc.frequency.linearRampToValueAtTime(580, ctxAudio.currentTime + 0.3);
+                    gain.gain.setValueAtTime(0.5, ctxAudio.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, ctxAudio.currentTime + 0.5);
+                    osc.start();
+                    osc.stop(ctxAudio.currentTime + 0.5);
+                } else if (type === 'save') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(180, ctxAudio.currentTime);
+                    osc.frequency.linearRampToValueAtTime(80, ctxAudio.currentTime + 0.3);
+                    gain.gain.setValueAtTime(0.5, ctxAudio.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, ctxAudio.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(ctxAudio.currentTime + 0.3);
+                }
+            } catch(e) {}
+        }
+
+        function handleInput() {
+            if (gameState === 'START') {
+                document.getElementById('start-screen').classList.add('hidden');
+                resetForNextShot();
+            } else if (gameState === 'AIM_AIMING') {
+                gameState = 'POWER_BUILDING';
+                document.getElementById('step-guide').innerText = 'Bấm lần 2 để chọn LỰC SÚT!';
+            } else if (gameState === 'POWER_BUILDING') {
+                gameState = 'RUNNING'; 
+                document.getElementById('step-guide').innerText = 'CR7 đang lấy đà...';
+                
+                ball.targetX = aimX;
+                ball.targetY = goal.top + 20 + (100 - power) * 0.95;
+                ball.progress = 0;
+
+                // Thủ môn phán đoán bay người
+                if (Math.random() < 0.65) {
+                    keeper.targetX = aimX + (Math.random() - 0.5) * 50;
+                } else {
+                    const jumpChoices = [goal.left + 45, canvas.width / 2, goal.right - 45];
+                    keeper.targetX = jumpChoices[Math.floor(Math.random() * jumpChoices.length)];
+                }
+            }
+        }
+
+        document.getElementById('start-btn').addEventListener('click', (e) => { e.target.blur(); handleInput(); });
+        document.getElementById('shoot-trigger').addEventListener('click', (e) => { e.target.blur(); handleInput(); });
+        
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                handleInput();
+            }
+        });
+
+        function resetForNextShot() {
+            gameState = 'AIM_AIMING';
+            aimX = canvas.width / 2;
+            power = 0;
+            player.x = canvas.width / 2 - 50;
+            player.y = player.startY;
+            ball.x = canvas.width / 2;
+            ball.y = 310;
+            ball.progress = 0;
+            keeper.x = canvas.width / 2;
+            keeper.y = keeper.baseY;
+            keeper.angle = 0;
+            document.getElementById('step-guide').innerText = 'Bấm để ngắm HƯỚNG SÚT';
+        }
+
+        function showStatus(isGoal, text, sub) {
+            const banner = document.getElementById('status-banner');
+            const statusText = document.getElementById('status-text');
+            const statusSub = document.getElementById('status-sub');
+
+            statusText.innerText = text;
+            statusSub.innerText = sub;
+            statusText.className = `font-display text-5xl sm:text-6xl font-black uppercase tracking-wider ${isGoal ? 'text-amber-400' : 'text-red-500'} drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)]`;
+
+            banner.classList.remove('scale-0', 'opacity-0');
+            banner.classList.add('scale-100', 'opacity-100');
+
+            setTimeout(() => {
+                banner.classList.remove('scale-100', 'opacity-100');
+                banner.classList.add('scale-0', 'opacity-0');
+                resetForNextShot();
+            }, 1800);
+        }
+
+        function update() {
+            if (gameState === 'AIM_AIMING') {
+                aimX += aimSpeed * aimDir;
+                if (aimX > goal.right - 30) { aimX = goal.right - 30; aimDir = -1; }
+                if (aimX < goal.left + 30) { aimX = goal.left + 30; aimDir = 1; }
+            }
+
+            if (gameState === 'POWER_BUILDING') {
+                power += powerSpeed * powerDir;
+                if (power >= 100) { power = 100; powerDir = -1; }
+                if (power <= 0) { power = 0; powerDir = 1; }
+            }
+
+            if (gameState === 'RUNNING') {
+                player.y -= 3.5;
+                player.x += 1.8;
+                if (player.y <= player.targetY) {
+                    gameState = 'SHOOTING';
+                    playAudioFX('kick');
+                }
+            }
+
+            if (gameState === 'SHOOTING') {
+                ball.progress += 0.045;
+                ball.x = ball.startX + (ball.targetX - ball.startX) * ball.progress;
+                ball.y = ball.startY + (ball.targetY - ball.startY) * ball.progress;
+
+                // ANIMATION MESSI BAY NGƯỜI DIVE & JUMP:
+                const moveDist = keeper.targetX - (canvas.width / 2);
+                keeper.x += (keeper.targetX - keeper.x) * 0.14;
+
+                // Tự động nhảy nâng độ cao & nghiêng người theo hướng bay
+                const diveProgress = Math.sin(ball.progress * Math.PI);
+                keeper.y = keeper.baseY - (diveProgress * 35); 
+                keeper.angle = (moveDist / 180) * diveProgress; 
+
+                if (ball.progress >= 1) {
+                    gameState = 'RESULT';
+                    const hitKeeper = Math.abs(ball.x - keeper.x) < (keeper.width / 2 + ball.radius + 10) && Math.abs(ball.y - keeper.y) < (keeper.height / 2 + ball.radius + 10);
+                    const insideGoal = ball.x > goal.left + 15 && ball.x < goal.right - 15 && ball.y > goal.top && ball.y < goal.bottom;
+
+                    if (insideGoal && !hitKeeper) {
+                        score++;
+                        streak++;
+                        if (score > highScore) {
+                            highScore = score;
+                            localStorage.setItem('cr7_high_score', highScore);
+                            document.getElementById('high-score-val').innerText = highScore;
+                        }
+                        document.getElementById('score-val').innerText = score;
+                        document.getElementById('streak-val').innerText = streak + '×';
+                        playAudioFX('goal');
+                        showStatus(true, 'GOAL!', 'SIUUUU! 🔥');
+                    } else {
+                        streak = 0;
+                        document.getElementById('streak-val').innerText = '0×';
+                        playAudioFX('save');
+                        showStatus(false, hitKeeper ? 'SAVED!' : 'OUT!', hitKeeper ? 'Thủ môn cản phá!' : 'Sút ra ngoài!');
+                    }
+                }
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 1. BẦU TRỜI / KHÁN ĐÀI ĐẰNG SAU
+            const skyGradient = ctx.createLinearGradient(0, 0, 0, goal.bottom);
+            skyGradient.addColorStop(0, '#020617');
+            skyGradient.addColorStop(1, '#0f172a');
+            ctx.fillStyle = skyGradient;
+            ctx.fillRect(0, 0, canvas.width, goal.bottom);
+
+            // 2. MẶT CỎ 3D SỌC XEN KẼ
+            const grassStartY = goal.bottom;
+            const grassHeight = canvas.height - grassStartY;
+            const stripeCount = 9;
+            const stripeH = grassHeight / stripeCount;
+
+            for (let i = 0; i < stripeCount; i++) {
+                const y = grassStartY + i * stripeH;
+                ctx.fillStyle = (i % 2 === 0) ? '#15803d' : '#166534';
+                ctx.fillRect(0, y, canvas.width, stripeH);
+            }
+
+            // 3. VẠCH KẺ SÂN BÓNG 3D
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.75)';
+            ctx.lineWidth = 2.5;
+
+            ctx.beginPath();
+            ctx.moveTo(30, goal.bottom);
+            ctx.lineTo(570, goal.bottom);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(goal.left - 40, goal.bottom);
+            ctx.lineTo(goal.left - 65, canvas.height);
+            ctx.moveTo(goal.right + 40, goal.bottom);
+            ctx.lineTo(goal.right + 65, canvas.height);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, 310, 50, Math.PI * 1.15, Math.PI * 1.85);
+            ctx.stroke();
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.shadowColor = 'rgba(0,0,0,0.5)';
+            ctx.shadowBlur = 6;
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, 310, 5.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0; 
+
+            // 4. KHUNG THÀNH 3D CÓ ĐỘ SÂU
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+            ctx.lineWidth = 1;
+            for (let x = goal.left; x <= goal.right; x += 16) {
+                ctx.beginPath(); ctx.moveTo(x, goal.top); ctx.lineTo(x, goal.bottom); ctx.stroke();
+            }
+            for (let y = goal.top; y <= goal.bottom; y += 14) {
+                ctx.beginPath(); ctx.moveTo(goal.left, y); ctx.lineTo(goal.right, y); ctx.stroke();
+            }
+
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = 8;
+            ctx.strokeRect(goal.left, goal.top, goal.right - goal.left, goal.bottom - goal.top);
+
+            ctx.strokeStyle = '#CBD5E1';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(goal.left - 4, goal.top - 4, (goal.right - goal.left) + 8, (goal.bottom - goal.top) + 4);
+
+            // 5. VẼ MESSI BAY NGƯỜI (XOAY GÓC DIVE)
+            ctx.save();
+            ctx.translate(keeper.x, keeper.y);
+            ctx.rotate(keeper.angle);
+
+            if (keeperImg.complete && keeperImg.naturalWidth !== 0) {
+                ctx.drawImage(keeperImg, -keeper.width / 2, -keeper.height / 2, keeper.width, keeper.height);
+            } else {
+                ctx.fillStyle = '#E50914';
+                ctx.fillRect(-keeper.width / 2, -keeper.height / 2, keeper.width, keeper.height);
+            }
+            ctx.restore();
+
+            // 6. TÂM NGẮM & THANH LỰC
+            if (gameState === 'AIM_AIMING' || gameState === 'POWER_BUILDING') {
+                const reticleY = goal.top + 55;
+                ctx.strokeStyle = '#D4AF37';
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                ctx.arc(aimX, reticleY, 22, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(aimX - 30, reticleY); ctx.lineTo(aimX + 30, reticleY);
+                ctx.moveTo(aimX, reticleY - 30); ctx.lineTo(aimX, reticleY + 30);
+                ctx.stroke();
+            }
+
+            if (gameState === 'POWER_BUILDING') {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+                ctx.fillRect(aimX - 35, goal.top - 22, 70, 12);
+                ctx.fillStyle = power > 80 ? '#EF4444' : '#EAB308';
+                ctx.fillRect(aimX - 35, goal.top - 22, (power / 100) * 70, 12);
+            }
+
+            // 7. TRÁI BÓNG TRÊN CHẤM 11M
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFFFFF';
+            ctx.fill();
+            ctx.strokeStyle = '#000000';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.fillStyle = '#000000';
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius * 0.4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+
+            // 8. CR7 HIỂN THỊ TRỌN VẸN TOÀN THÂN Ở GẦN CAMERA
+            if (cr7Img.complete && cr7Img.naturalWidth !== 0) {
+                ctx.drawImage(cr7Img, player.x - player.width / 2, player.y - player.height / 2, player.width, player.height);
+            } else {
+                ctx.fillStyle = '#D4AF37';
+                ctx.fillRect(player.x - player.width / 2, player.y - player.height / 2, player.width, player.height);
+            }
+        }
+
+        function loop() {
+            update();
+            draw();
+            requestAnimationFrame(loop);
+        }
+        loop();
+    </script>
+</body>
+</html>
