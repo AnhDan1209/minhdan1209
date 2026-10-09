@@ -134,6 +134,7 @@
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
 
     <!-- Navigation Header -->
+   <!-- Navigation Header -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-tBg/80 border-b border-tBorder shadow-lg transition-colors duration-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -153,18 +154,18 @@
                 <a href="#quiz" class="hover:text-tAccent transition-colors">Trắc Nghiệm</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <!-- KHU VỰC CHỌN THEME (PALETTE) -->
-                <div class="hidden sm:flex items-center gap-2 bg-tCard px-3 py-1.5 rounded-full border border-tBorder shadow-sm">
-                    <button class="theme-btn w-5 h-5 rounded-full bg-[#D4AF37] border-2 border-[#05070E] transition-all active" data-set-theme="base" title="Base: Black & Gold"></button>
-                    <button class="theme-btn w-5 h-5 rounded-full bg-[#800020] border-2 border-[#1A050A] transition-all" data-set-theme="portugal" title="Royal Portugal"></button>
-                    <button class="theme-btn w-5 h-5 rounded-full bg-[#00F2FE] border-2 border-[#0B132B] transition-all" data-set-theme="madrid" title="Midnight Madrid"></button>
-                    <button class="theme-btn w-5 h-5 rounded-full bg-[#F1F5F9] border-2 border-[#cbd5e1] transition-all" data-set-theme="white" title="Pure White Sapphire"></button>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <!-- Bảng chọn màu (Đã hiện rõ cả trên điện thoại) -->
+                <div class="flex items-center gap-1.5 bg-tCard px-2.5 py-1.5 rounded-full border border-tBorder shadow-sm">
+                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#D4AF37] border-2 border-[#05070E] transition-all active" data-set-theme="base" title="Base: Black & Gold"></button>
+                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#800020] border-2 border-[#1A050A] transition-all" data-set-theme="portugal" title="Royal Portugal"></button>
+                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#00F2FE] border-2 border-[#0B132B] transition-all" data-set-theme="madrid" title="Midnight Madrid"></button>
+                    <button class="theme-btn w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#F1F5F9] border-2 border-[#cbd5e1] transition-all" data-set-theme="white" title="Pure White Sapphire"></button>
                 </div>
 
-                <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-4 sm:px-5 py-2.5 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-2 text-xs sm:text-sm">
+                <a href="#siuuu" class="theme-gradient-bg hover:brightness-110 font-extrabold px-3 sm:px-5 py-2 rounded-xl shadow-lg transform hover:-translate-y-0.5 transition-all flex items-center gap-1.5 text-xs sm:text-sm">
                     <i class="fa-solid fa-bolt animate-pulse"></i>
-                    <span>SIUUU!</span>
+                    <span class="hidden sm:inline">SIUUU!</span>
                 </a>
             </div>
         </div>
