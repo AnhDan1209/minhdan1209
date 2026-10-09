@@ -830,7 +830,7 @@
             });
         }
 
-        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB ---
+        // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB (ĐÃ THÊM THEME RED DEVILS CHO MU) ---
         const clubDetailsData = {
             sporting: {
                 title: "Sporting CP",
@@ -843,11 +843,11 @@
             },
             mu: {
                 title: "Manchester United",
-                subtitle: "Vươn tầm thế giới & Số 7 huyền thoại",
+                subtitle: "🔥 THE RED DEVILS - KỶ NGUYÊN QUỶ ĐỎ RỰC LỬA",
                 years: "2003 - 2009 & 2021 - 2022",
                 badge: "image/mu.png",
-                cr7Img: "image/cr7_mu.jpg",
-                desc: "Nơi biến thần đồng thành biểu tượng toàn cầu. Ronaldo đoạt 3 Premier League, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008 dưới sự dẫn dắt của Sir Alex Ferguson.",
+                cr7Img: "image/cr7_mu.jpg", // Đường dẫn ảnh nghệ thuật CR7 khoác áo Quỷ Đỏ
+                desc: "Nơi thần đồng biến thành Quỷ Đỏ thống trị châu Âu. Với lối chơi bùng nổ, tốc độ xé gió và những cú nã đại bác mang thương hiệu CR7, Ronaldo đã cùng Sir Alex Ferguson đoạt 3 Ngoại Hạng Anh, 1 Champions League và Quả Bóng Vàng đầu tiên năm 2008.",
                 link: "mu.html"
             },
             real: {
@@ -899,13 +899,37 @@
                 const data = clubDetailsData[clubKey];
 
                 if (data) {
-                    document.getElementById('modal-title').innerText = data.title;
-                    document.getElementById('modal-subtitle').innerText = data.subtitle;
-                    document.getElementById('modal-years').innerText = data.years;
+                    const titleEl = document.getElementById('modal-title');
+                    const subtitleEl = document.getElementById('modal-subtitle');
+                    const yearsEl = document.getElementById('modal-years');
+                    const exploreBtn = document.getElementById('modal-explore-btn');
+
+                    titleEl.innerText = data.title;
+                    subtitleEl.innerText = data.subtitle;
+                    yearsEl.innerText = data.years;
                     document.getElementById('modal-desc').innerText = data.desc;
                     document.getElementById('modal-badge').src = data.badge;
                     document.getElementById('modal-cr7-img').src = data.cr7Img;
-                    document.getElementById('modal-explore-btn').href = data.link;
+                    exploreBtn.href = data.link;
+
+                    // --- TUỶ CHỈNH PHONG CÁCH RIÊNG CHO MANCHESTER UNITED (RED DEVILS) ---
+                    if (clubKey === 'mu') {
+                        // Viền đỏ rực lửa + Hiệu ứng Glow đỏ đậm
+                        modalContainer.className = "bg-[#0A0304] border-2 border-red-600 rounded-2xl max-w-2xl w-full p-6 relative shadow-[0_0_50px_rgba(220,38,38,0.5)] transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6";
+                        
+                        // Tiêu đề & Subtitle đỏ rực
+                        subtitleEl.className = "text-xs font-black uppercase tracking-wider mb-3 text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.7)]";
+                        yearsEl.className = "absolute bottom-3 left-3 px-3 py-1 bg-red-950/80 backdrop-blur-sm border border-red-600/60 text-red-400 font-black text-[10px] rounded-md uppercase tracking-wider shadow-md";
+                        
+                        // Nút "Khám phá" dạng Gradient Đỏ - Cam Quỷ Đỏ
+                        exploreBtn.className = "bg-gradient-to-r from-red-700 via-red-600 to-amber-500 text-white font-black px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-125 shadow-[0_0_20px_rgba(220,38,38,0.6)] transition-all transform hover:scale-105";
+                    } else {
+                        // Trả về phong cách chuẩn cho các CLB khác
+                        modalContainer.className = "bg-tCard border-2 border-tBorder rounded-2xl max-w-2xl w-full p-6 relative shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6";
+                        subtitleEl.className = "text-xs text-tAccent font-bold uppercase tracking-wider mb-3";
+                        yearsEl.className = "absolute bottom-3 left-3 px-3 py-1 bg-black/70 backdrop-blur-sm border border-tBorder text-tAccent font-extrabold text-[10px] rounded-md uppercase tracking-wider";
+                        exploreBtn.className = "theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105";
+                    }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
                     modalContainer.classList.remove('scale-90');
@@ -933,7 +957,6 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') hideClubModal();
         });
-
         // Tự động khởi chạy khi tải xong trang
         renderTrophies();
         initQuiz();
