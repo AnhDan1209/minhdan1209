@@ -916,35 +916,35 @@
     </footer>
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
-    <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        <!-- Thu nhỏ bảng lại: đổi max-w-3xl thành max-w-2xl -->
-        <div class="relative max-w-2xl w-full flex items-center justify-center">
+<div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <!-- Giữ max-w-3xl để khung chuẩn rộng rãi không bị co gập layout -->
+    <div class="relative max-w-3xl w-full flex items-center justify-center">
 
-            <!-- VƯƠNG MIỆN HOÀNG GIA (Đã căn chỉnh đít vương miện nằm sát ngay trên viền bảng) -->
-            <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[82%] z-30 pointer-events-none w-36 sm:w-40 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
-            
-            <!-- 2 Cúp bên trái (Đã phóng to siêu khủng: w-28 sm:w-32) -->
-            <div id="real-trophies-left" class="hidden absolute -left-16 top-4 bottom-4 flex flex-col justify-around z-30 pointer-events-none">
-                <img src="image/c113-14.png" alt="Cúp C1 2013-14" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
-                <img src="image/c107-08.png" alt="Cúp C1 2007-08" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
-            </div>
+        <!-- VƯƠNG MIỆN HOÀNG GIA: Đít vương miện đặt sát ngay trên viền trên của modal -->
+        <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute -top-14 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-36 sm:w-40 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
+        
+        <!-- 2 Cúp bên trái: Kích thước w-20 hợp lý, vị trí -left-12 không dính đè -->
+        <div id="real-trophies-left" class="hidden absolute -left-12 top-8 bottom-8 flex flex-col justify-around z-30 pointer-events-none">
+            <img src="image/c113-14.png" alt="Cúp C1" class="w-16 sm:w-20 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]">
+            <img src="image/c107-08.png" alt="Cúp C1" class="w-16 sm:w-20 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]">
+        </div>
 
-            <!-- 2 Cúp bên phải (Đã phóng to siêu khủng & lật đối xứng) -->
-            <div id="real-trophies-right" class="hidden absolute -right-16 top-4 bottom-4 flex flex-col justify-around z-30 pointer-events-none">
-                <img src="image/c1.png" alt="Cúp C1" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transform scale-x-[-1]">
-                <img src="image/c11.png" alt="Cúp C1" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transform scale-x-[-1]">
-            </div>
+        <!-- 2 Cúp bên phải (lật đối xứng) -->
+        <div id="real-trophies-right" class="hidden absolute -right-12 top-8 bottom-8 flex flex-col justify-around z-30 pointer-events-none">
+            <img src="image/c1.png" alt="Cúp C1" class="w-16 sm:w-20 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] transform scale-x-[-1]">
+            <img src="image/c11.png" alt="Cúp C1" class="w-16 sm:w-20 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] transform scale-x-[-1]">
+        </div>
 
-            <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
-            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
-            
-            <!-- Nhãn dán Khởi nguồn (Dành riêng cho Sporting CP) -->
-            <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
-                🌱 THE BEGINNING • 2002
-            </div>
+        <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
+        <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
+        
+        <!-- Nhãn dán Khởi nguồn (Dành riêng cho Sporting CP) -->
+        <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
+            🌱 THE BEGINNING • 2002
+        </div>
 
-            <!-- BẢNG POPUP CHÍNH -->
-            <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
+        <!-- BẢNG POPUP CHÍNH -->
+        <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
                 
                 <!-- Logo mờ chìm làm hình nền (Watermark) -->
                 <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
