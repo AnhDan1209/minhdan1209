@@ -188,13 +188,18 @@
     background: radial-gradient(circle at 85% 15%, rgba(29, 78, 216, 0.7) 0%, transparent 60%),
                 radial-gradient(circle at 15% 85%, rgba(245, 158, 11, 0.9) 0%, transparent 60%),
                 linear-gradient(135deg, #f8fafc 0%, #ffffff 100%) !important;
-   /* 3 LỚP VIỀN HOÀNG GIA: [1] Viền vàng mỏng trong suốt, [2] Viền đỏ dày ở giữa, [3] Viền vàng mỏng ngoài cùng */
-    border: 1px solid #f59e0b !important; /* Viền vàng mỏng trong cùng */
+  /* Xếp lớp viền bằng box-shadow đa tầng chuẩn xác: 
+       1. Viền vàng mỏng bên trong (2px)
+       2. Viền đỏ dày ở giữa (6px tiếp theo)
+       3. Viền vàng mỏng ngoài cùng (2px tiếp theo)
+       4. Hiệu ứng tỏa sáng glow */
+    border: none !important;
     box-shadow: 
-        0 0 0 6px #dc2626,         /* Lớp viền đỏ dày ở giữa (Độ dày 6px) */
-        0 0 0 8px #f59e0b,         /* Viền vàng mỏng ngoài cùng (Độ dày 2px tiếp theo) */
-        0 0 40px rgba(220, 38, 38, 0.4), /* Vầng sáng đỏ tỏa ra ngoài */
-        0 0 25px rgba(245, 158, 11, 0.4) !important; /* Vầng sáng vàng tỏa ra ngoài */
+        0 0 0 2px #f59e0b,         /* Lớp 1: Viền vàng mỏng bên trong */
+        0 0 0 8px #dc2626,         /* Lớp 2: Viền đỏ dày ở giữa */
+        0 0 0 10px #f59e0b,        /* Lớp 3: Viền vàng mỏng bên ngoài */
+        0 0 45px rgba(220, 38, 38, 0.4), 
+        0 0 25px rgba(245, 158, 11, 0.4) !important;
         
     color: #0f172a !important;
 }
