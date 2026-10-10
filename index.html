@@ -1150,9 +1150,23 @@
                     const containerDiv = document.getElementById('quiz-container');
                     const resDiv = document.getElementById('quiz-results');
                     const finalScore = document.getElementById('quiz-final-score');
+                    
                     if (containerDiv) containerDiv.classList.add('hidden');
                     if (resDiv) resDiv.classList.remove('hidden');
-                    if (finalScore) finalScore.innerText = `Bạn đã đạt ${score} / ${selectedQuestions.length} điểm!`;
+        
+                    // --- ĐOẠN PHÂN LOẠI MỚI THAY THẾ CHO DÒNG ĐIỂM CŨ ---
+                    let rankTitle = "";
+                    if (score <= 5) {
+                        rankTitle = "Bạn là Riconcard";
+                    } else if (score <= 10) {
+                        rankTitle = "Bạn là Ricon";
+                    } else {
+                        rankTitle = "Fan Ronaldo";
+                    }
+        
+                    if (finalScore) {
+                        finalScore.innerHTML = `<span class="block text-2xl font-black theme-gradient-text mb-2">${rankTitle}</span><span class="text-sm text-tMuted font-medium">Bạn đã trả lời đúng ${score} / ${selectedQuestions.length} câu!</span>`;
+                    }
                 }
             });
         }
