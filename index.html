@@ -192,7 +192,6 @@
     box-shadow: 0 0 50px rgba(37, 99, 235, 0.25), 0 0 25px rgba(245, 158, 11, 0.3) !important;
     color: #0f172a !important; /* Chữ tối màu rõ nét trên nền trắng */
 }
-
 /* Tiêu đề & Subtitle trên nền trắng */
 #club-modal-card.modal-real #modal-title {
     color: #0f172a !important;
@@ -253,7 +252,10 @@
     color: #ffffff !important;
     box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4) !important;
 }
-        
+        #club-modal-card.modal-real #modal-bg-watermark {
+    filter: grayscale(100%) contrast(150%) brightness(0.2) !important;
+    opacity: 0.08 !important; /* Điều chỉnh độ mờ vừa mắt trên nền trắng */
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
