@@ -916,147 +916,132 @@
     </footer>
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
-    <!-- ================= CLUB DETAIL MODAL POPUP (VIP REDESIGN) ================= -->
-<!-- ================= CLUB DETAIL MODAL POPUP ================= -->
-<div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-    <div class="relative max-w-3xl w-full flex items-center justify-center">
-<!-- === VƯƠNG MIỆN HOÀNG GIA & CÚP C1 (DÀNH RIÊNG CHO REAL MADRID) === -->
+    <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <!-- Thu nhỏ bảng lại: đổi max-w-3xl thành max-w-2xl -->
+        <div class="relative max-w-2xl w-full flex items-center justify-center">
+
+            <!-- VƯƠNG MIỆN HOÀNG GIA (Đã căn chỉnh đít vương miện nằm sát ngay trên viền bảng) -->
+            <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[82%] z-30 pointer-events-none w-36 sm:w-40 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
             
-            <!-- === VƯƠNG MIỆN HOÀNG GIA & 4 CÚP C1 (ĐÃ PHÓNG TO VÀ ĐÚNG TÊN FILE) === -->
-            <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute -top-24 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-48 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
-
-            <!-- 2 Cúp bên trái (Đã gán đúng tên file & phóng to ôm sát mép) -->
-            <div id="real-trophies-left" class="hidden absolute -left-12 top-6 bottom-6 flex flex-col justify-around z-30 pointer-events-none">
-                <img src="image/c113-14.png" alt="Cúp C1 2013-14" class="w-20 sm:w-24 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
-                <img src="image/c107-08.png" alt="Cúp C1 2007-08" class="w-20 sm:w-24 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+            <!-- 2 Cúp bên trái (Đã phóng to siêu khủng: w-28 sm:w-32) -->
+            <div id="real-trophies-left" class="hidden absolute -left-16 top-4 bottom-4 flex flex-col justify-around z-30 pointer-events-none">
+                <img src="image/c113-14.png" alt="Cúp C1 2013-14" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+                <img src="image/c107-08.png" alt="Cúp C1 2007-08" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
             </div>
 
-            <!-- 2 Cúp bên phải (Đã gán đúng tên file, phóng to & lật đối xứng) -->
-            <div id="real-trophies-right" class="hidden absolute -right-12 top-6 bottom-6 flex flex-col justify-around z-30 pointer-events-none">
-                <img src="image/c1.png" alt="Cúp C1" class="w-20 sm:w-24 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transform scale-x-[-1]">
-                <img src="image/c11.png" alt="Cúp C1" class="w-20 sm:w-24 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transform scale-x-[-1]">
+            <!-- 2 Cúp bên phải (Đã phóng to siêu khủng & lật đối xứng) -->
+            <div id="real-trophies-right" class="hidden absolute -right-16 top-4 bottom-4 flex flex-col justify-around z-30 pointer-events-none">
+                <img src="image/c1.png" alt="Cúp C1" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transform scale-x-[-1]">
+                <img src="image/c11.png" alt="Cúp C1" class="w-28 sm:w-32 h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transform scale-x-[-1]">
             </div>
-        <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
-        <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
-        
-        <!-- Nhãn dán Khởi nguồn (Dành riêng cho Sporting CP) -->
-        <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
-            🌱 THE BEGINNING • 2002
-        </div>
 
-        <!-- BẢNG POPUP CHÍNH -->
-        <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
+            <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
+            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
             
-            <!-- Logo mờ chìm làm hình nền (Watermark) -->
-            <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
-
-            <!-- Sừng quỷ đỏ (Dành riêng cho MU) -->
-            <div id="devil-horns" class="hidden absolute -top-9 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-between w-32 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse">
-                <svg class="w-10 h-10 text-red-600 fill-current transform -scale-x-100 -rotate-12" viewBox="0 0 24 24"><path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/></svg>
-                <svg class="w-10 h-10 text-red-600 fill-current transform rotate-12" viewBox="0 0 24 24"><path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/></svg>
+            <!-- Nhãn dán Khởi nguồn (Dành riêng cho Sporting CP) -->
+            <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
+                🌱 THE BEGINNING • 2002
             </div>
 
-            <!-- Nút Đóng Modal -->
-            <button id="close-modal-btn" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
+            <!-- BẢNG POPUP CHÍNH -->
+            <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
+                
+                <!-- Logo mờ chìm làm hình nền (Watermark) -->
+                <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
 
-            <!-- Cột Trái: Ảnh CR7 Mặc Áo CLB -->
-            <div class="w-full md:w-5/12 h-72 md:h-auto rounded-2xl overflow-hidden border border-tBorder relative flex-shrink-0 bg-tBg z-10 shadow-xl">
-                <img id="modal-cr7-img" src="" alt="CR7" class="w-full h-full object-cover object-top transition-opacity duration-300 opacity-0" onload="this.classList.remove('opacity-0')">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                <span id="modal-years" class="absolute bottom-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-md border border-tBorder text-tAccent font-extrabold text-[10px] rounded-lg uppercase tracking-wider"></span>
-            </div>
+                <!-- Sừng quỷ đỏ (Dành riêng cho MU) -->
+                <div id="devil-horns" class="hidden absolute -top-9 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-between w-32 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse">
+                    <svg class="w-10 h-10 text-red-600 fill-current transform -scale-x-100 -rotate-12" viewBox="0 0 24 24"><path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/></svg>
+                    <svg class="w-10 h-10 text-red-600 fill-current transform rotate-12" viewBox="0 0 24 24"><path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/></svg>
+                </div>
 
-            <!-- Cột Phải: Nội Dung Giới Thiệu + Mini-Stats -->
-            <div class="w-full md:w-7/12 flex flex-col justify-between z-10">
-                <div>
-                    <div class="flex items-center gap-3 mb-3">
-                        <img id="modal-badge" src="" alt="Badge" class="w-9 h-9 object-contain">
-                        <div>
-                            <h3 id="modal-title" class="font-display text-3xl font-black text-tText leading-none"></h3>
-                            <p id="modal-subtitle" class="text-[11px] text-tAccent font-extrabold uppercase tracking-wider mt-1"></p>
-                        </div>
-                    </div>
-                    
-                    <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-6 font-medium"></p>
+                <!-- Nút Đóng Modal -->
+                <button id="close-modal-btn" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
 
-                    <!-- MINI-STATS BOX -->
-                    <div class="grid grid-cols-3 gap-2.5 mb-4" id="modal-stats-box">
-                        <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
-                            <span class="block text-[10px] text-tMuted font-bold uppercase">Trận</span>
-                            <span id="stat-matches" class="font-display text-base font-black text-tText">--</span>
-                        </div>
-                        <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
-                            <span class="block text-[10px] text-tMuted font-bold uppercase">Bàn thắng</span>
-                            <span id="modal-stat-goals" class="font-display text-base font-black theme-gradient-text">--</span>
-                        </div>
-                        <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
-                            <span class="block text-[10px] text-tMuted font-bold uppercase">Hiệu suất</span>
-                            <span id="stat-ratio" class="font-display text-base font-black text-tAccent">--</span>
-                        </div>
-                    </div>
+                <!-- Cột Trái: Ảnh CR7 Mặc Áo CLB -->
+                <div class="w-full md:w-5/12 h-72 md:h-auto rounded-2xl overflow-hidden border border-tBorder relative flex-shrink-0 bg-tBg z-10 shadow-xl">
+                    <img id="modal-cr7-img" src="" alt="CR7" class="w-full h-full object-cover object-top transition-opacity duration-300 opacity-0" onload="this.classList.remove('opacity-0')">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                    <span id="modal-years" class="absolute bottom-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-md border border-tBorder text-tAccent font-extrabold text-[10px] rounded-lg uppercase tracking-wider"></span>
+                </div>
 
-                    <!-- KHUNG TRÍCH DẪN ĐỘC QUYỀN CHO TỪNG CLB -->
-                    <div id="modal-quote-container" class="hidden mb-4">
+                <!-- Cột Phải: Nội Dung Giới Thiệu + Mini-Stats -->
+                <div class="w-full md:w-7/12 flex flex-col justify-between z-10">
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <img id="modal-badge" src="" alt="Badge" class="w-9 h-9 object-contain">
+                            <div>
+                                <h3 id="modal-title" class="font-display text-3xl font-black text-tText leading-none"></h3>
+                                <p id="modal-subtitle" class="text-[11px] text-tAccent font-extrabold uppercase tracking-wider mt-1"></p>
+                            </div>
+                        </div>
                         
-                        <!-- Sporting CP -->
-                        <div id="quote-sporting" class="club-quote-box hidden border-emerald-500/30 text-emerald-200">
-                            <i class="fa-solid fa-quote-left text-emerald-400"></i>
-                            <p>"Cậu nhóc đó là cầu thủ trẻ thú vị nhất mà tôi từng thấy... Các hậu vệ của tôi ở hiệp một đã bị cậu ta làm cho chóng mặt. Họ liên tục bảo tôi phải ký hợp đồng với cậu ấy ngay lập tức."</p>
-                            <span class="text-emerald-400">— HLV Laszlo Boloni</span>
+                        <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-6 font-medium"></p>
+
+                        <!-- MINI-STATS BOX -->
+                        <div class="grid grid-cols-3 gap-2.5 mb-4" id="modal-stats-box">
+                            <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
+                                <span class="block text-[10px] text-tMuted font-bold uppercase">Trận</span>
+                                <span id="stat-matches" class="font-display text-base font-black text-tText">--</span>
+                            </div>
+                            <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
+                                <span class="block text-[10px] text-tMuted font-bold uppercase">Bàn thắng</span>
+                                <span id="modal-stat-goals" class="font-display text-base font-black theme-gradient-text">--</span>
+                            </div>
+                            <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
+                                <span class="block text-[10px] text-tMuted font-bold uppercase">Hiệu suất</span>
+                                <span id="stat-ratio" class="font-display text-base font-black text-tAccent">--</span>
+                            </div>
                         </div>
 
-                        <!-- Manchester United -->
-                        <div id="quote-mu" class="club-quote-box hidden border-red-500/30 text-red-200">
-                            <i class="fa-solid fa-quote-left text-red-400"></i>
-                            <p>"Cristiano là cầu thủ tài năng nhất mà tôi từng dẫn dắt. Cậu ấy đã vượt qua tất cả những cầu thủ vĩ đại khác mà tôi từng huấn luyện tại United — và tôi đã có rất nhiều người giỏi."</p>
-                            <span class="text-red-400">— Sir Alex Ferguson</span>
+                        <!-- KHUNG TRÍCH DẪN ĐỘC QUYỀN CHO TỪNG CLB -->
+                        <div id="modal-quote-container" class="hidden mb-4">
+                            <div id="quote-sporting" class="club-quote-box hidden border-emerald-500/30 text-emerald-200">
+                                <i class="fa-solid fa-quote-left text-emerald-400"></i>
+                                <p>"Cậu nhóc đó là cầu thủ trẻ thú vị nhất mà tôi từng thấy... Các hậu vệ của tôi ở hiệp một đã bị cậu ta làm cho chóng mặt. Họ liên tục bảo tôi phải ký hợp đồng với cậu ấy ngay lập tức."</p>
+                                <span class="text-emerald-400">— HLV Laszlo Boloni</span>
+                            </div>
+                                <i class="fa-solid fa-quote-left text-red-400"></i>
+                                <p>"Cristiano là cầu thủ tài năng nhất mà tôi từng dẫn dắt. Cậu ấy đã vượt qua tất cả những cầu thủ vĩ đại khác mà tôi từng huấn luyện tại United — và tôi đã có rất nhiều người giỏi."</p>
+                                <span class="text-red-400">— Sir Alex Ferguson</span>
+                            </div>
+                            <div id="quote-real" class="club-quote-box hidden border-amber-400/30 text-amber-200">
+                                <i class="fa-solid fa-quote-left text-amber-400"></i>
+                                <p>"Khi bạn ra sân với Ronaldo trong đội hình, bạn đã tự động dẫn trước đối thủ 1-0 rồi."</p>
+                                <span class="text-amber-400">— Zinedine Zidane</span>
+                            </div>
+                            <div id="quote-juventus" class="club-quote-box hidden border-slate-300/30 text-slate-200">
+                                <i class="fa-solid fa-quote-left text-slate-300"></i>
+                                <p>"Tôi đã làm việc cùng CR7 trong hai năm và chúng tôi đã làm tốt cùng nhau, nhưng tôi nghĩ Juventus đã phần nào đánh mất đi bản sắc DNA của một tập thể."</p>
+                                <span class="text-slate-300">— Gianluigi Buffon</span>
+                            </div>
+                            <div id="quote-alnassr" class="club-quote-box hidden border-yellow-500/30 text-yellow-200">
+                                <i class="fa-solid fa-quote-left text-yellow-400"></i>
+                                <p>"Tôi chưa bao giờ chạy theo kỷ lục, chính các kỷ lục mới là thứ chạy theo tôi."</p>
+                                <span class="text-yellow-400">— Cristiano Ronaldo</span>
+                            </div>
+                            <div id="quote-portugal" class="club-quote-box hidden border-red-600/30 text-red-200">
+                                <i class="fa-solid fa-quote-left text-red-500"></i>
+                                <p>"Ronaldo là cầu thủ xuất sắc nhất thế giới đối với tôi, và cậu ấy sẽ luôn là như vậy."</p>
+                                <span class="text-red-400">— Fernando Santos</span>
+                            </div>
                         </div>
+                    </div>
 
-                        <!-- Real Madrid -->
-                        <div id="quote-real" class="club-quote-box hidden border-amber-400/30 text-amber-200">
-                            <i class="fa-solid fa-quote-left text-amber-400"></i>
-                            <p>"Khi bạn ra sân với Ronaldo trong đội hình, bạn đã tự động dẫn trước đối thủ 1-0 rồi."</p>
-                            <span class="text-amber-400">— Zinedine Zidane</span>
-                        </div>
-
-                        <!-- Juventus -->
-                        <div id="quote-juventus" class="club-quote-box hidden border-slate-300/30 text-slate-200">
-                            <i class="fa-solid fa-quote-left text-slate-300"></i>
-                            <p>"Tôi đã làm việc cùng CR7 trong hai năm và chúng tôi đã làm tốt cùng nhau, nhưng tôi nghĩ Juventus đã phần nào đánh mất đi bản sắc DNA của một tập thể."</p>
-                            <span class="text-slate-300">— Gianluigi Buffon</span>
-                        </div>
-
-                        <!-- Al Nassr -->
-                        <div id="quote-alnassr" class="club-quote-box hidden border-yellow-500/30 text-yellow-200">
-                            <i class="fa-solid fa-quote-left text-yellow-400"></i>
-                            <p>"Tôi chưa bao giờ chạy theo kỷ lục, chính các kỷ lục mới là thứ chạy theo tôi."</p>
-                            <span class="text-yellow-400">— Cristiano Ronaldo</span>
-                        </div>
-
-                        <!-- Bồ Đào Nha -->
-                        <div id="quote-portugal" class="club-quote-box hidden border-red-600/30 text-red-200">
-                            <i class="fa-solid fa-quote-left text-red-500"></i>
-                            <p>"Ronaldo là cầu thủ xuất sắc nhất thế giới đối với tôi, và cậu ấy sẽ luôn là như vậy."</p>
-                            <span class="text-red-400">— Fernando Santos</span>
-                        </div>
-
+                    <!-- Nút Khám phá ở cuối cột phải -->
+                    <div class="pt-4 border-t border-tBorder flex justify-between items-center">
+                        <span class="text-[10px] text-tMuted font-bold uppercase tracking-widest">CRISTIANO RONALDO</span>
+                        <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
+                            Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Nút Khám phá ở cuối cột phải -->
-                <div class="pt-4 border-t border-tBorder flex justify-between items-center">
-                    <span class="text-[10px] text-tMuted font-bold uppercase tracking-widest">CRISTIANO RONALDO</span>
-                    <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
-                        Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
             </div>
-
         </div>
     </div>
-</div>
     <!-- JS CHÍNH -->
     <script>
         // --- 0. LOGIC THEME ENGINE ---
