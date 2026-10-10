@@ -180,6 +180,26 @@
     border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
+        /* Style Hoàng gia & Vàng kim cho Real Madrid */
+#club-modal-card.modal-real {
+    background: linear-gradient(135deg, #1c1917 0%, #0c0a09 100%) !important;
+    border-color: rgba(234, 179, 8, 0.45) !important;
+    box-shadow: 0 0 55px rgba(234, 179, 8, 0.35) !important;
+    color: #ffffff !important;
+}
+#club-modal-card.modal-real #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
+}
+#club-modal-card.modal-real #modal-subtitle {
+    color: #facc15 !important; /* Vàng ánh kim sang trọng */
+}
+#club-modal-card.modal-real #modal-desc {
+    color: #f5f5f4 !important;
+}
+#club-modal-card.modal-real .border-tBorder {
+    border-color: rgba(234, 179, 8, 0.2) !important;
+}
         
     </style>
 </head>
@@ -1518,7 +1538,8 @@
                     document.getElementById('modal-explore-btn').href = data.link;
 
                     // Reset các class đặc biệt trước khi áp dụng theme
-                    modalContainer.classList.remove('modal-mu', 'modal-sporting');
+                    / Reset các class đặc biệt trước khi áp dụng theme
+                    modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real');
                     if (devilHorns) devilHorns.classList.add('hidden');
                     if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
@@ -1531,6 +1552,9 @@
                     } else if (clubKey === 'sporting') {
                         modalContainer.classList.add('modal-sporting');
                         if (sportingOriginTag) sportingOriginTag.classList.remove('hidden');
+                    } else if (clubKey === 'real') {
+                        modalContainer.classList.add('modal-real');
+                        // (Phần hiển thị vương miện PNG sẽ được thêm vào đây sau khi bạn chuẩn bị xong file ảnh)
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
