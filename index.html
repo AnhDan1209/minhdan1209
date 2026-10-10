@@ -257,8 +257,8 @@
     box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4) !important;
 }
 #club-modal-card.modal-real #modal-bg-watermark {
-    filter: brightness(0) invert(1) !important;
-    opacity: 0.18 !important; /* Độ mờ vừa phải để chìm vào nền trắng ngọc trai */
+    filter: none !important;
+    opacity: 0.12 !important; /* Điều chỉnh độ mờ tuỳ thích từ 0.08 đến 0.2 */
 }
     </style>
 </head>
@@ -1500,6 +1500,7 @@
                 matches: "346", goals: "145", ratio: "0.42",
                 borderColor: "border-red-500/60", glowColor: "shadow-[0_0_60px_rgba(239,68,68,0.4)]",
                 link: "mu.html"
+                
             },
             real: {
                 title: "Real Madrid",
@@ -1510,7 +1511,9 @@
                 desc: "Đỉnh cao lịch sử bóng đá với 450 bàn thắng sau 438 trận. Giành 4 chức vô địch UEFA Champions League (với cú hat-trick C1 liên tiếp 2016-2018) và 4 Quả Bóng Vàng.",
                 matches: "438", goals: "450", ratio: "1.03",
                 borderColor: "border-amber-400/60", glowColor: "shadow-[0_0_60px_rgba(251,191,36,0.4)]",
-                link: "real.html"
+                link: "real.html",
+                watermark: "image/realnocolor.jpg"
+                
             },
             juventus: {
                 title: "Juventus FC",
@@ -1569,7 +1572,11 @@
                     document.getElementById('modal-badge').src = data.badge;
 
                     // Gán dữ liệu chỉ số & watermark
-                    document.getElementById('modal-bg-watermark').src = data.badge;
+                    if (clubKey === 'real') {
+                        document.getElementById('modal-bg-watermark').src = "image/realnocolor.jpg";
+                    } else {
+                        document.getElementById('modal-bg-watermark').src = data.badge;
+                    }
                     document.getElementById('stat-matches').innerText = data.matches;
                     document.getElementById('modal-stat-goals').innerText = data.goals;
                     document.getElementById('stat-ratio').innerText = data.ratio;
