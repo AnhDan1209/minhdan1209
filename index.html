@@ -1362,7 +1362,7 @@
         const devilHorns = document.getElementById('devil-horns');
         const devilWingsFull = document.getElementById('devil-wings-full');
 
-        openModalBtns.forEach(btn => {
+      openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const clubKey = btn.getAttribute('data-club');
                 const data = clubDetailsData[clubKey];
@@ -1372,17 +1372,40 @@
                     document.getElementById('modal-subtitle').innerText = data.subtitle;
                     document.getElementById('modal-years').innerText = data.years;
                     document.getElementById('modal-desc').innerText = data.desc;
-                   document.getElementById('modal-badge').src = data.badge;
+                    document.getElementById('modal-badge').src = data.badge;
 
-// Làm mờ ảnh cũ ngay lập tức khi vừa bấm sang CLB mới
-const imgEl = document.getElementById('modal-cr7-img');
-imgEl.classList.add('opacity-0');
-imgEl.src = data.cr7Img;
+                    // 👉 Bổ sung các dòng gán dữ liệu bị thiếu này:
+                    document.getElementById('modal-bg-watermark').src = data.badge;
+                    document.getElementById('stat-matches').innerText = data.matches;
+                    document.getElementById('stat-goals').innerText = data.goals;
+                    document.getElementById('stat-ratio').innerText = data.ratio;
 
-// Khi ảnh mới load xong thì hiện rõ lên
-imgEl.onload = () => {
-    imgEl.classList.remove('opacity-0');
-};
+                    // Làm mờ ảnh cũ ngay lập tức khi vừa bấm sang CLB mới
+                    const imgEl = document.getElementById('modal-cr7-img');
+                    imgEl.classList.add('opacity-0');
+                    imgEl.src = data.cr7Img;
+
+                    // Khi ảnh mới load xong thì hiện rõ lên
+                    imgEl.onload = () => {
+                        imgEl.classList.remove('opacity-0');
+                    };
+
+                    document.getElementById('modal-explore-btn').href = data.link;
+
+                    if (clubKey === 'mu') {
+                        modalContainer.classList.add('modal-mu');
+                        if (devilHorns) devilHorns.classList.remove('hidden');
+                        if (devilWingsFull) devilWingsFull.classList.remove('hidden');
+                    } else {
+                        modalContainer.classList.remove('modal-mu');
+                        if (devilHorns) devilHorns.classList.add('hidden');
+                        if (devilWingsFull) devilWingsFull.classList.add('hidden');
+                    }
+
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modalContainer.classList.remove('scale-90');
+                    modalContainer.classList.add('scale-100');
+                }
                     document.getElementById('modal-explore-btn').href = data.link;
 
                                if (clubKey === 'mu') {
