@@ -122,6 +122,28 @@
 #club-modal-card.modal-mu .border-tBorder {
     border-color: rgba(255, 255, 255, 0.25) !important;
 }
+
+#club-modal-card.modal-sporting {
+    background: linear-gradient(135deg, #064e3b 0%, #022c22 100%) !important;
+    border-color: rgba(52, 211, 153, 0.35) !important;
+    box-shadow: 0 0 45px rgba(6, 78, 59, 0.6) !important;
+    color: #ffffff !important;
+}
+#club-modal-card.modal-sporting #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+#club-modal-card.modal-sporting #modal-subtitle {
+    color: #6ee7b7 !important; /* Xanh mạ pastel mộc mạc, nhẹ nhàng */
+}
+#club-modal-card.modal-sporting #modal-desc {
+    color: #d1fae5 !important;
+}
+#club-modal-card.modal-sporting .border-tBorder {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+        
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
@@ -777,7 +799,10 @@
 
         <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
         <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
-
+        <!-- 👉 THÊM NHÃN DÁN KHỞI NGUỒN CHO SPORTING CP Ở ĐÂY -->
+        <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
+            🌱 THE BEGINNING • 2002
+        </div>
         <!-- BẢNG POPUP CHÍNH -->
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
             
@@ -1361,8 +1386,9 @@
 
         const devilHorns = document.getElementById('devil-horns');
         const devilWingsFull = document.getElementById('devil-wings-full');
+        const sportingOriginTag = document.getElementById('sporting-origin-tag');
 
-     openModalBtns.forEach(btn => {
+        openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const clubKey = btn.getAttribute('data-club');
                 const data = clubDetailsData[clubKey];
@@ -1380,26 +1406,30 @@
                     document.getElementById('modal-stat-goals').innerText = data.goals;
                     document.getElementById('stat-ratio').innerText = data.ratio;
 
-                    // Làm mờ ảnh cũ ngay lập tức khi vừa bấm sang CLB mới
                     const imgEl = document.getElementById('modal-cr7-img');
                     imgEl.classList.add('opacity-0');
                     imgEl.src = data.cr7Img;
 
-                    // Khi ảnh mới load xong thì hiện rõ lên
                     imgEl.onload = () => {
                         imgEl.classList.remove('opacity-0');
                     };
 
                     document.getElementById('modal-explore-btn').href = data.link;
 
+                    // Reset các class đặc biệt trước khi áp dụng theme
+                    modalContainer.classList.remove('modal-mu', 'modal-sporting');
+                    if (devilHorns) devilHorns.classList.add('hidden');
+                    if (devilWingsFull) devilWingsFull.classList.add('hidden');
+                    if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
+
+                    // Kích hoạt theme theo câu lạc bộ
                     if (clubKey === 'mu') {
                         modalContainer.classList.add('modal-mu');
                         if (devilHorns) devilHorns.classList.remove('hidden');
                         if (devilWingsFull) devilWingsFull.classList.remove('hidden');
-                    } else {
-                        modalContainer.classList.remove('modal-mu');
-                        if (devilHorns) devilHorns.classList.add('hidden');
-                        if (devilWingsFull) devilWingsFull.classList.add('hidden');
+                    } else if (clubKey === 'sporting') {
+                        modalContainer.classList.add('modal-sporting');
+                        if (sportingOriginTag) sportingOriginTag.classList.remove('hidden');
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -1408,7 +1438,6 @@
                 }
             });
         });
-
         function hideClubModal() {
             if (modal && modalContainer) {
                 modal.classList.add('opacity-0', 'pointer-events-none');
