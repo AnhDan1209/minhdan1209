@@ -993,28 +993,126 @@
         }
 
         // --- 4. DATABASE CÂU HỎI TRẮC NGHIỆM ---
+        Để nâng cấp trải nghiệm thử thách trắc nghiệm thêm phần phong phú và không bị lặp câu hỏi, dưới đây là bộ dữ liệu 100 câu hỏi trắc nghiệm siêu cấp độc quyền về Cristiano Ronaldo được biên soạn đầy đủ từ tuổi thơ, sự nghiệp câu lạc bộ (Sporting, MU, Real, Juventus, Al Nassr), đội tuyển Bồ Đào Nha cho đến mọi kỷ lục vĩ đại nhất.
+
+Bạn chỉ cần tìm đoạn khai báo biến const masterQuizData = [...] cũ trong file của bạn và thay thế toàn bộ bằng đoạn code mới này:
+
+JavaScript
+        // --- DATABASE 100 CÂU HỎI TRẮC NGHIỆM CR7 ---
         const masterQuizData = [
-            { question: "Cristiano Ronaldo sinh ra ở đâu?", options: ["Madeira", "Lisbon", "Porto", "Madrid"], correct: 0 },
-            { question: "Ronaldo sinh năm bao nhiêu?", options: ["1983", "1985", "1987", "1989"], correct: 1 },
-            { question: "CLB chuyên nghiệp đầu tiên Ronaldo thi đấu là gì?", options: ["Sporting CP", "Porto", "Benfica", "Manchester United"], correct: 0 },
-            { question: "Năm nào Ronaldo gia nhập Manchester United lần đầu tiên?", options: ["2001", "2003", "2005", "2007"], correct: 1 },
-            { question: "Số áo đầu tiên Ronaldo khoác tại Manchester United là số mấy?", options: ["7", "9", "17", "28"], correct: 0 },
-            { question: "Ronaldo giành Quả bóng vàng đầu tiên vào năm nào?", options: ["2007", "2008", "2009", "2010"], correct: 1 },
-            { question: "Ronaldo chuyển sang Real Madrid vào năm nào?", options: ["2008", "2009", "2010", "2011"], correct: 1 },
-            { question: "Mức phí chuyển nhượng kỷ lục thế giới của CR7 sang Real Madrid năm 2009 là bao nhiêu?", options: ["80 triệu bảng", "90 triệu bảng", "100 triệu euro", "120 triệu euro"], correct: 0 },
-            { question: "Mùa giải đầu tiên tại Real Madrid, Ronaldo mang áo số mấy?", options: ["7", "9", "10", "11"], correct: 1 },
-            { question: "Ronaldo đã ghi tổng cộng bao nhiêu bàn thắng chính thức cho Real Madrid?", options: ["438", "450", "500", "380"], correct: 1 },
-            { question: "Ronaldo giành bao nhiêu chức vô địch Champions League cùng Real Madrid?", options: ["2", "3", "4", "5"], correct: 2 },
-            { question: "Biệt danh nổi tiếng nhất của Cristiano Ronaldo là gì?", options: ["CR7", "El Fenomeno", "The King", "Roni"], correct: 0 },
-            { question: "Ronaldo gia nhập Juventus vào năm nào?", options: ["2017", "2018", "2019", "2020"], correct: 1 },
-            { question: "Ronaldo cùng Bồ Đào Nha vô địch EURO vào năm nào?", options: ["2004", "2012", "2016", "2020"], correct: 2 },
-            { question: "Đội bóng nào bị Ronaldo đánh bại trong trận chung kết EURO 2016?", options: ["Pháp", "Đức", "Tây Ban Nha", "Anh"], correct: 0 },
-            { question: "Ronaldo đoạt chức vô địch UEFA Nations League đầu tiên vào năm nào?", options: ["2018", "2019", "2020", "2021"], correct: 1 },
-            { question: "Ronaldo đã giành bao nhiêu Quả bóng vàng trong sự nghiệp?", options: ["3", "4", "5", "6"], correct: 2 },
-            { question: "Ronaldo giành bao nhiêu Chiếc giày vàng châu Âu?", options: ["3", "4", "5", "6"], correct: 1 },
-            { question: "Ronaldo trở lại Manchester United lần 2 vào năm nào?", options: ["2020", "2021", "2022", "2023"], correct: 1 },
-            { question: "Hiện tại Ronaldo đang thi đấu cho CLB nào ở châu Á?", options: ["Al Hilal", "Al Nassr", "Al Ittihad", "Al Ahli"], correct: 1 }
+            // 1 - 10: Khởi đầu & Tuổi thơ
+            { question: "Cristiano Ronaldo sinh ngày tháng năm nào?", options: ["05/02/1985", "05/02/1987", "05/02/1983", "05/02/1989"], correct: 0 },
+            { question: "Cristiano Ronaldo sinh ra ở hòn đảo nào của Bồ Đào Nha?", options: ["Azores", "Madeira (Funchal)", "Porto Santo", "Berlengas"], correct: 1 },
+            { question: "Tên đầy đủ của Cristiano Ronaldo là gì?", options: ["Cristiano Ronaldo dos Santos", "Cristiano Ronaldo dos Santos Aveiro", "Cristiano Ronaldo da Silva", "Cristiano Ronaldo Ribeiro"], correct: 1 },
+            { question: "Ronaldo là con thứ mấy trong gia đình?", options: ["Thứ hai", "Thứ ba", "Út (thứ tư)", "Con một"], correct: 2 },
+            { question: "Tên mẹ đẻ của Cristiano Ronaldo là gì?", options: ["Maria Dolores dos Santos Viveiros da Aveiro", "Ana Maria", "Maria Rosa", "Elma Aveiro"], correct: 0 },
+            { question: "Đội bóng thời thơ ấu đầu tiên mà Ronaldo từng thi đấu là gì?", options: ["Andorinha", "Nacional", "Sporting CP", "Maritimo"], correct: 0 },
+            { question: "Năm 15 tuổi, Ronaldo từng đối mặt với nguy cơ phải giải nghệ sớm vì bệnh gì?", options: ["Bệnh sốt rét", "Bệnh tim (nhịp tim đập nhanh bất thường)", "Chấn thương đầu gối nặng", "Bệnh hen suyễn"], correct: 1 },
+            { question: "Cậu bé nào là bạn thân thời thơ ở Madeira đã nhường cơ hội thi tuyển vào Sporting CP cho Ronaldo?", options: ["Albert Fantrau", "Nani", "Ricardo Quaresma", "Miguel Paixao"], correct: 0 },
+            { question: "Ronaldo gia nhập học viện trẻ của Sporting CP vào năm bao nhiêu tuổi?", options: ["10 tuổi", "12 tuổi", "14 tuổi", "16 tuổi"], correct: 1 },
+            { question: "Ronaldo có trận ra mắt đội một Sporting CP vào năm nào?", options: ["2001", "2002", "2003", "2004"], correct: 1 },
+
+            // 11 - 25: Sự nghiệp tại Sporting CP & Man Utd (Lần 1)
+            { question: "Trận đấu giao hữu định mệnh năm 2003 khiến Sir Alex Ferguson quyết định mua Ronaldo diễn ra giữa Man Utd và câu lạc bộ nào?", options: ["Porto", "Sporting CP", "Benfica", "Real Madrid"], correct: 1 },
+            { question: "Mức phí chuyển nhượng đưa Ronaldo từ Sporting CP sang Man Utd năm 2003 là khoảng bao nhiêu?", options: ["12.24 triệu bảng", "15 triệu bảng", "18.5 triệu bảng", "22 triệu bảng"], correct: 0 },
+            { question: "Khi mới đến Man Utd, Ronaldo ban đầu muốn mặc số áo nào nhưng Sir Alex yêu cầu lấy số 7?", options: ["Số 9", "Số 28", "Số 17", "Số 10"], correct: 1 },
+            { question: "Ronaldo có trận ra mắt Ngoại hạng Anh cho Man Utd đối đầu với đội bóng nào?", options: ["Bolton Wanderers", "Arsenal", "Chelsea", "Liverpool"], correct: 0 },
+            { question: "Ronaldo ghi bàn thắng đầu tiên cho Man Utd từ tình huống nào?", options: ["Đánh đầu cận thành", "Sút phạt trực tiếp", "Đệm bóng cận thành", "Penalty"], correct: 1 },
+            { question: "Ronaldo giành danh hiệu Cầu thủ trẻ xuất sắc nhất năm của PFA vào mùa giải nào?", options: ["2005/06", "2006/07", "2007/08", "2003/04"], correct: 1 },
+            { question: "Mùa giải 2007/08, Ronaldo ghi tổng cộng bao nhiêu bàn thắng trên mọi đấu trường cho Man Utd?", options: ["35 bàn", "42 bàn", "48 bàn", "51 bàn"], correct: 1 },
+            { question: "Ronaldo giành Quả bóng vàng đầu tiên trong sự nghiệp vào năm nào?", options: ["2007", "2008", "2009", "2010"], correct: 1 },
+            { question: "Ronaldo cùng Man Utd vô địch Champions League đầu tiên vào năm nào?", options: ["2006", "2007", "2008", "2009"], correct: 2 },
+            { question: "Đội bóng nào bị Man Utd đánh bại trong trận chung kết Champions League 2008?", options: ["Chelsea", "Barcelona", "Bayern Munich", "AC Milan"], correct: 0 },
+            { question: "Ronaldo giành giải thưởng nào của FIFA sau màn trình diễn siêu hạng năm 2008?", options: ["Cầu thủ xuất sắc nhất năm của FIFA (FIFA World Player)", "The Best", "Cầu thủ trẻ xuất sắc nhất", "Quả bóng vàng FIFA"], correct: 0 },
+            { question: "Bàn thắng nào của Ronaldo tại Champions League vào lưới Porto năm 2009 đã giành giải Puskas?", options: ["Cú đánh đầu sấm sét", "Cú sút xa cự ly hơn 36 mét", "Pha lốp bóng tinh tế", "Cú đá phạt góc thành bàn"], correct: 1 },
+            { question: "Ronaldo ghi bao nhiêu bàn thắng trong màu áo Man Utd ở giai đoạn đầu tiên (2003-2009)?", options: ["98 bàn", "105 bàn", "118 bàn", "125 bàn"], correct: 2 },
+            { question: "Số danh hiệu Ngoại hạng Anh (Premier League) Ronaldo đạt được ở giai đoạn 1 với Man Utd là mấy?", options: ["2", "3", "4", "5"], correct: 1 },
+            { question: "Trận chung kết Champions League cuối cùng của Ronaldo trong màu áo Man Utd (giai đoạn 1) là năm nào?", options: ["2008", "2009", "2010", "2011"], correct: 1 },
+
+            // 26 - 50: Kỷ nguyên rực rỡ tại Real Madrid
+            { question: "Ronaldo chính thức gia nhập Real Madrid vào năm nào?", options: ["2008", "2009", "2010", "2011"], correct: 1 },
+            { question: "Mức phí chuyển nhượng kỷ lục thế giới khi Ronaldo sang Real Madrid năm 2009 là bao nhiêu?", options: ["80 triệu bảng", "90 triệu bảng", "94 triệu euro (80 triệu bảng)", "100 triệu euro"], correct: 2 },
+            { question: "Buổi lễ ra mắt của Ronaldo tại sân Santiago Bernabeu thu hút bao nhiêu khán giả đến sân?", options: ["Khoảng 50.000 người", "Khoảng 60.000 người", "Khoảng 80.000 người", "Hơn 90.000 người"], correct: 3 },
+            { question: "Mùa giải đầu tiên tại Real Madrid (2009/10), do Raul Gonzalez đang mặc áo số 7, Ronaldo mang áo số mấy?", options: ["Số 9", "Số 11", "Số 17", "Số 19"], correct: 0 },
+            { question: "Ronaldo ghi tổng cộng bao nhiêu bàn thắng trong lịch sử thi đấu cho Real Madrid?", options: ["438 bàn", "450 bàn", "465 bàn", "500 bàn"], correct: 1 },
+            { question: "Ronaldo mất bao nhiêu trận để đạt mốc 450 bàn thắng cho Real Madrid?", options: ["412 trận", "438 trận", "450 trận", "460 trận"], correct: 1 },
+            { question: "Ronaldo giành tổng cộng bao nhiêu danh hiệu Champions League cùng Real Madrid?", options: ["2", "3", "4", "5"], correct: 2 },
+            { question: "Real Madrid dưới sự dẫn dắt của Ronaldo đã lập kỷ lục vô địch Champions League mấy lần liên tiếp?", options: ["2 lần", "3 lần", "4 lần", "Không có"], correct: 1 },
+            { question: "Ronaldo giành bao nhiêu Quả bóng vàng trong thời gian khoác áo Real Madrid?", options: ["2", "3", "4", "5"], correct: 1 },
+            { question: "Mùa giải Champions League nào Ronaldo ghi kỷ lục 17 bàn thắng trong một mùa giải?", options: ["2011/12", "2013/14", "2015/16", "2016/17"], correct: 1 },
+            { question: "Ronaldo là chân sút vĩ đại nhất lịch sử tại đấu trường nào?", options: ["La Liga", "UEFA Champions League", "Cúp Nhà vua Tây Ban Nha", "FIFA Club World Cup"], correct: 1 },
+            { question: "Đội bóng nào là đối thủ mà Ronaldo chọc thủng lưới nhiều nhất trong sự nghiệp?", options: ["Barcelona", "Sevilla", "Atletico Madrid", "Getafe"], correct: 1 },
+            { question: "Ronaldo ghi bao nhiêu bàn thắng tại El Clasico (trận đấu giữa Real Madrid và Barcelona)?", options: ["15 bàn", "18 bàn", "20 bàn", "22 bàn"], correct: 1 },
+            { question: "Bàn thắng bằng đầu huyền thoại giúp Real Madrid đánh bại Barcelona ở chung kết Cúp Nhà vua 2011 diễn ra ở sân nào?", options: ["Camp Nou", "Mestalla", "Santiago Bernabeu", "Wanda Metropolitano"], correct: 1 },
+            { question: "Pha 'xe đạp chổng ngược' tuyệt đỉnh của Ronaldo vào lưới Juventus ở tứ kết Cúp C1 diễn ra năm nào?", options: ["2016", "2017", "2018", "2019"], correct: 2 },
+            { question: "Sau cú 'xe đạp chổng ngược' vào lưới Juventus, Ronaldo nhận được phản ứng gì từ cổ động viên đội chủ nhà?", options: ["La ó phản đối", "Bỏ về sân", "Đứng dậy vỗ tay tán thưởng", "Ném vật thể lạ"], correct: 2 },
+            { question: "Ronaldo giành bao nhiêu danh hiệu Vua phá lưới La Liga (Pichichi) cùng Real Madrid?", options: ["2", "3", "4", "5"], correct: 1 },
+            { question: "Mùa giải La Liga 2014/15, Ronaldo ghi được bao nhiêu bàn thắng ở giải VĐQG?", options: ["40 bàn", "42 bàn", "48 bàn", "50 bàn"], correct: 2 },
+            { question: "Ronaldo cùng Real Madrid vô địch La Liga tổng cộng mấy lần?", options: ["1 lần", "2 lần", "3 lần", "4 lần"], correct: 1 },
+            { question: "Ai là huấn luyện viên đã đưa Ronaldo về Real Madrid vào năm 2009?", options: ["Jose Mourinho", "Manuel Pellegrini", "Zinedine Zidane", "Carlo Ancelotti"], correct: 1 },
+            { question: "Ronaldo chính thức chia tay Real Madrid để chuyển sang Juventus vào mùa hè năm nào?", options: ["2017", "2018", "2019", "2020"], correct: 1 },
+            { question: "Tổng số danh hiệu lớn nhỏ Ronaldo giành được trong 9 năm khoác áo Real Madrid là bao nhiêu?", options: ["12 danh hiệu", "14 danh hiệu", "16 danh hiệu", "18 danh hiệu"], correct: 2 },
+            { question: "Ronaldo ghi bao nhiêu cú hat-trick trong màu áo Real Madrid?", options: ["34 hat-trick", "40 hat-trick", "44 hat-trick", "48 hat-trick"], correct: 2 },
+            { question: "Cầu thủ nào kiến tạo nhiều nhất cho Ronaldo trong thời gian ở Real Madrid?", options: ["Karim Benzema", "Gareth Bale", "Mesut Ozil", "Angel Di Maria"], correct: 0 },
+            { question: "Khoảng thời gian Ronaldo chơi bóng đỉnh cao tại Real Madrid kéo dài bao nhiêu năm?", options: ["7 năm", "8 năm", "9 năm", "10 năm"], correct: 2 },
+
+            // 51 - 65: Juventus & Al Nassr
+            { question: "Ronaldo gia nhập câu lạc bộ Juventus từ Real Madrid với mức phí khoảng bao nhiêu?", options: ["85 triệu euro", "100 triệu euro", "112 triệu euro", "120 triệu euro"], correct: 1 },
+            { question: "Ronaldo có trận ra mắt Serie A trong màu áo Juventus đối đầu với đội bóng nào?", options: ["Chievo", "Lazio", "AC Milan", "Inter Milan"], correct: 0 },
+            { question: "Ronaldo giành bao nhiêu chức vô địch Serie A cùng Juventus?", options: ["1", "2", "3", "4"], correct: 1 },
+            { question: "Ronaldo mất bao nhiêu trận để đạt mốc 100 bàn thắng cho Juventus?", options: ["115 trận", "125 trận", "131 trận", "140 trận"], correct: 2 },
+            { question: "Ronaldo đạt danh hiệu Vua phá lưới Serie A (Capocannoniere) vào mùa giải nào?", options: ["2018/19", "2019/20", "2020/21", "Cả 3 mùa"], correct: 2 },
+            { question: "Ronaldo lập kỷ lục trở thành cầu thủ đầu tiên giành Vua phá lưới ở các giải đấu nào?", options: ["Anh, Tây Ban Nha, Pháp", "Anh, Tây Ban Nha, Ý", "Tây Ban Nha, Ý, Đức", "Anh, Ý, Đức"], correct: 1 },
+            { question: "Ronaldo rời Juventus để trở lại Man Utd vào tháng năm nào?", options: ["Tháng 1/2021", "Tháng 8/2021", "Tháng 1/2022", "Tháng 6/2022"], correct: 1 },
+            { question: "Trong giai đoạn 2 khoác áo Man Utd (2021-2022), ai là người đã nhường lại chiếc áo số 7 cho Ronaldo?", options: ["Bruno Fernandes", "Jadon Sancho", "Edinson Cavani", "Marcus Rashford"], correct: 2 },
+            { question: "Mùa giải 2021/22, Ronaldo ghi bao nhiêu bàn thắng trên mọi đấu trường cho Man Utd ở tuổi 37?", options: ["18 bàn", "24 bàn", "28 bàn", "32 bàn"], correct: 1 },
+            { question: "Cuộc phỏng vấn gây chấn động khiến Ronaldo chấm dứt hợp đồng sớm với Man Utd thực hiện với ai?", options: ["Piers Morgan", "Gary Neville", "Rio Ferdinand", "Jamie Carragher"], correct: 0 },
+            { question: "Ronaldo chính thức gia nhập câu lạc bộ Al Nassr tại Ả Rập Xê Út vào thời gian nào?", options: ["Tháng 11/2022", "Tháng 1/2023", "Tháng 6/2023", "Tháng 9/2023"], correct: 1 },
+            { question: "Mức lương ước tính của Ronaldo tại Al Nassr được báo chí thế giới ghi nhận là bao nhiêu mỗi năm?", options: ["100 triệu euro", "150 triệu euro", "200 triệu euro", "250 triệu euro"], correct: 2 },
+            { question: "Ronaldo lập kỷ lục ghi bao nhiêu bàn thắng trong một mùa giải Saudi Pro League (2023/24)?", options: ["31 bàn", "33 bàn", "35 bàn", "38 bàn"], correct: 2 },
+            { question: "Danh hiệu đầu tiên Ronaldo giành được cùng Al Nassr là gì?", options: ["Saudi Pro League", "Arab Club Champions Cup", "King Cup", "Saudi Super Cup"], correct: 1 },
+            { question: "Mục tiêu lớn tiếp theo được Ronaldo đặt ra sau khi vượt mốc 900 bàn thắng là gì?", options: ["950 bàn", "1000 bàn", "1100 bàn", "Vô địch World Cup"], correct: 1 },
+
+            // 66 - 85: Sự nghiệp ĐTQG Bồ Đào Nha
+            { question: "Ronaldo có trận ra mắt đội tuyển quốc gia Bồ Đào Nha vào năm nào?", options: ["2001", "2003", "2004", "2005"], correct: 1 },
+            { question: "Đội tuyển nào là nạn nhân đầu tiên trong trận ra mắt của Ronaldo cho Bồ Đào Nha?", options: ["Tây Ban Nha", "Kazakhstan", "Hy Lạp", "Thụy Điển"], correct: 1 },
+            { question: "Ronaldo ghi bàn thắng đầu tiên trong màu áo ĐTQG tại giải đấu nào?", options: ["EURO 2004", "World Cup 2006", "Vòng loại World Cup 2006", "Giao hữu quốc tế"], correct: 0 },
+            { question: "Trận chung kết EURO đầu tiên trong sự nghiệp của Ronaldo diễn ra vào năm nào?", options: ["2004", "2008", "2012", "2016"], correct: 0 },
+            { question: "Đội tuyển nào đã đánh bại Bồ Đào Nha trong trận chung kết EURO 2004 trên đất Bồ Đào Nha?", options: ["Pháp", "Hy Lạp", "Cộng hòa Séc", "Hà Lan"], correct: 1 },
+            { question: "Ronaldo chính thức đeo băng đội trưởng tuyển Bồ Đào Nha từ năm nào?", options: ["2006", "2008", "2010", "2012"], correct: 1 },
+            { question: "Ronaldo cùng Bồ Đào Nha xuất sắc vô địch EURO vào năm nào?", options: ["2012", "2016", "2020", "2024"], correct: 1 },
+            { question: "Đội bóng nào bị Bồ Đào Nha đánh bại trong trận chung kết EURO 2016?", options: ["Đức", "Tây Ban Nha", "Pháp", "Ý"], correct: 2 },
+            { question: "Trong trận chung kết EURO 2016, điều gì không may xảy ra với Ronaldo ở hiệp 1?", options: ["Nhận thẻ đỏ trực tiếp", "Bị chấn thương phải rời sân bằng cáng", "Phản lưới nhà", "Sút hỏng penalty"], correct: 1 },
+            { question: "Dù rời sân vì chấn thương ở chung kết EURO 2016, Ronaldo đã làm gì bên đường biên dọc?", options: ["Đi vào đường hầm khóc", "Cùng HLV Fernando Santos chỉ đạo các đồng đội", "Ngồi ghế dự bị ngủ", "Đi cổ vũ khán giả"], correct: 1 },
+            { question: "Ronaldo giành danh hiệu Chiếc giày bạc tại EURO 2016 với bao nhiêu bàn thắng?", options: ["2 bàn", "3 bàn", "4 bàn", "5 bàn"], correct: 1 },
+            { question: "Ronaldo cùng Bồ Đào Nha vô địch giải đấu UEFA Nations League vào mùa giải nào?", options: ["2017/18", "2018/19", "2020/21", "2022/23"], correct: 1 },
+            { question: "Ronaldo lập cú hat-trick kinh điển vào lưới đội tuyển nào tại vòng bảng World Cup 2018?", options: ["Tây Ban Nha", "Đức", "Argentina", "Brazil"], correct: 0 },
+            { question: "Ronaldo là cầu thủ châu Âu đầu tiên cán mốc bao nhiêu bàn thắng cho ĐTQG?", options: ["80 bàn", "100 bàn", "120 bàn", "130 bàn"], correct: 1 },
+            { question: "Ronaldo nắm giữ kỷ lục cầu thủ ra sân nhiều nhất lịch sử cho đội tuyển quốc gia nào?", options: ["Tây Ban Nha", "Bồ Đào Nha", "Ý", "Brazil"], correct: 1 },
+            { question: "Ronaldo đã tham gia tổng cộng bao nhiêu kỳ World Cup trong sự nghiệp?", options: ["4 kỳ", "5 kỳ", "6 kỳ", "7 kỳ"], correct: 1 },
+            { question: "Kỷ lục vĩ đại nào của Ronaldo tại World Cup thiết lập năm 2022?", options: ["Cầu thủ ghi nhiều bàn nhất lịch sử World Cup", "Cầu thủ duy nhất ghi bàn ở 5 kỳ World Cup liên tiếp", "Cầu thủ kiến tạo nhiều nhất World Cup", "Cầu thủ đá chính nhiều trận nhất"], correct: 1 },
+            { question: "Ronaldo đã tham gia tổng cộng bao nhiêu kỳ VCK EURO trong sự nghiệp (tính đến 2024)?", options: ["4 kỳ", "5 kỳ", "6 kỳ", "7 kỳ"], correct: 2 },
+            { question: "Tổng số bàn thắng Ronaldo ghi được cho đội tuyển Bồ Đào Nha tính đến hiện tại vượt mốc bao nhiêu?", options: ["110+ bàn", "120+ bàn", "130+ bàn", "140+ bàn"], correct: 2 },
+            { question: "Ronaldo giành bao nhiêu danh hiệu lớn cùng đội tuyển quốc gia Bồ Đào Nha?", options: ["1 danh hiệu", "2 danh hiệu", "3 danh hiệu", "Không có"], correct: 1 },
+
+            // 86 - 100: Kỷ lục, Thống kê & Biểu tượng
+            { question: "Ronaldo chính thức trở thành cầu thủ ghi bàn nhiều nhất lịch sử bóng đá thế giới vào năm nào?", options: ["2020", "2021", "2022", "2023"], correct: 1 },
+            { question: "Ronaldo chạm mốc lịch sử bao nhiêu bàn thắng trong các trận đấu chính thức?", options: ["800 bàn", "850 bàn", "900 bàn", "950 bàn"], correct: 2 },
+            { question: "Ronaldo giành tổng cộng bao nhiêu Quả bóng vàng (Ballon d'Or) trong sự nghiệp?", options: ["3", "4", "5", "6"], correct: 2 },
+            { question: "Ronaldo giành bao nhiêu Chiếc giày vàng châu Âu (European Golden Shoe)?", options: ["3", "4", "5", "6"], correct: 1 },
+            { question: "Biệt danh nổi tiếng 'CR7' xuất phát từ đâu?", options: ["Tên viết tắt kết hợp số áo yêu thích", "Tên do fan hâm mộ tự đặt", "Biệt danh do Sir Alex đặt", "Tên thương hiệu thời trang"], correct: 0 },
+            { question: "Kiểu ăn mừng 'SIUUU' nổi tiếng của Ronaldo xuất hiện lần đầu tiên trong trận đấu nào?", options: ["Giao hữu gặp Chelsea năm 2013 ở Mỹ", "Trận chung kết Cúp C1 năm 2014", "Trận Siêu kinh điển năm 2012", "Trận ra mắt Real Madrid"], correct: 0 },
+            { question: "Cầu thủ nào là đối thủ lớn nhất trong suốt sự nghiệp đỉnh cao của Cristiano Ronaldo?", options: ["Neymar", "Lionel Messi", "Kylian Mbappe", "Ronaldinho"], correct: 1 },
+            { question: "Ronaldo có bao nhiêu người con tính đến thời điểm hiện tại?", options: ["3 người", "4 người", "5 người", "6 người"], correct: 2 },
+            { question: "Tên bạn đời hiện tại luôn đồng hành cùng Ronaldo là ai?", options: ["Irina Shayk", "Georgina Rodriguez", "Paris Hilton", "Luciana Abreu"], correct: 1 },
+            { question: "Ronaldo là vận động viên thể thao sở hữu lượng người theo dõi lớn nhất trên nền tảng mạng xã hội nào?", options: ["Facebook", "Instagram", "TikTok", "X (Twitter)"], correct: 1 },
+            { question: "Kênh YouTube cá nhân của Ronaldo mang tên gì?", options: ["CR7 Channel", "UR Cristiano", "Ronaldo Official", "The Real CR7"], correct: 1 },
+            { question: "Kênh YouTube của Ronaldo phá vỡ kỷ lục đạt 1 triệu người đăng ký trong thời gian bao lâu?", options: ["1 tiếng", "90 phút", "3 tiếng", "5 tiếng"], correct: 1 },
+            { question: "Ronaldo thuận chân nào khi chơi bóng?", options: ["Chân trái", "Chân phải", "Thuận cả hai chân như nhau", "Chân trái nhưng sút chân phải tốt hơn"], correct: 1 },
+            { question: "Chiều cao chính thức của Cristiano Ronaldo là bao nhiêu?", options: ["1m82", "1m85", "1m87", "1m89"], correct: 2 },
+            { question: "Câu nói nổi tiếng nào thể hiện rõ nhất tinh thần nỗ lực không ngừng nghỉ của Ronaldo?", options: ["Talent without working hard is nothing", "Your love makes me strong, your hate makes me unstoppable", "Play for the badge", "Never give up on your dreams"], correct: 1 }
         ];
+        // --- HẾT DATABASE 100 CÂU HỎI ---
 
         function shuffleArray(array) {
             const arr = [...array];
