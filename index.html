@@ -238,7 +238,7 @@
         </div>
     </section>
 
-<!-- Biography Section (Tiểu Sử) -->
+<!-- Biography Section (Tiểu Sử - Bố Cục So Le 2 Ảnh) -->
 <section id="biography" class="py-20 border-b border-tBorder relative bg-tBg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -249,61 +249,55 @@
             <div class="w-24 h-1.5 theme-gradient-bg mx-auto mt-4 rounded-full shadow-md"></div>
         </div>
 
-        <div class="grid md:grid-cols-12 gap-8 items-center">
+        <div class="space-y-16">
             
-            <!-- Cột Trái: Thông số cá nhân -->
-            <div class="md:col-span-5 bg-tCard border border-tBorder p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-tAccent/10 rounded-full blur-2xl pointer-events-none"></div>
-                <h3 class="font-display text-2xl font-bold text-tText mb-6 border-b border-tBorder pb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-user-gear text-tAccent"></i> Hồ Sơ Cá Nhân
-                </h3>
-                
-                <ul class="space-y-4 text-sm font-medium">
-                    <li class="flex justify-between border-b border-tBorder/30 pb-2">
-                        <span class="text-tMuted">Họ và tên:</span>
-                        <span class="text-tText font-bold">Cristiano Ronaldo dos Santos Aveiro</span>
-                    </li>
-                    <li class="flex justify-between border-b border-tBorder/30 pb-2">
-                        <span class="text-tMuted">Ngày sinh:</span>
-                        <span class="text-tText font-bold">05/02/1985</span>
-                    </li>
-                    <li class="flex justify-between border-b border-tBorder/30 pb-2">
-                        <span class="text-tMuted">Nơi sinh:</span>
-                        <span class="text-tText font-bold">Funchal, Madeira, Bồ Đào Nha</span>
-                    </li>
-                    <li class="flex justify-between border-b border-tBorder/30 pb-2">
-                        <span class="text-tMuted">Chiều cao:</span>
-                        <span class="text-tText font-bold">1m87</span>
-                    </li>
-                    <li class="flex justify-between border-b border-tBorder/30 pb-2">
-                        <span class="text-tMuted">Vị trí:</span>
-                        <span class="text-tText font-bold">Tiền đạo (Forward)</span>
-                    </li>
-                    <li class="flex justify-between">
-                        <span class="text-tMuted">Số áo biểu tượng:</span>
-                        <span class="theme-gradient-text font-black text-lg">#7</span>
-                    </li>
-                </ul>
+            <!-- HÀNG 1: Ảnh Trái - Nội Dung Phải (Tuổi Thơ) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Ảnh 1 -->
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-1.5 theme-gradient-bg rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <img src="image/cr7god.jpg" alt="Ronaldo Young" class="relative w-full h-[380px] object-cover rounded-2xl border border-tBorder shadow-2xl object-top">
+                </div>
+                <!-- Nội dung 1 -->
+                <div class="lg:col-span-7 bg-tCard border border-tBorder p-6 sm:p-8 rounded-2xl shadow-xl space-y-4">
+                    <span class="px-3 py-1 bg-tBg border border-tBorder text-tAccent text-xs font-black uppercase rounded-full">Chương 1</span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-tText flex items-center gap-2">
+                        <i class="fa-solid fa-child text-tAccent"></i> Tuổi thơ gian khó tại Madeira
+                    </h3>
+                    <p class="text-sm sm:text-base text-tMuted leading-relaxed font-medium">
+                        Sinh ra trong một gia đình nghèo ở đảo Madeira, Ronaldo lớn lên với niềm đam mê bóng đá cháy bỏng trên những con đường phố nhỏ. Bất chấp căn bệnh tim nguy hiểm đe dọa sự nghiệp khi mới 15 tuổi, nghị lực phi thường đã giúp anh vượt qua cuộc phẫu thuật thành công để bước chân vào con đường chuyên nghiệp.
+                    </p>
+                    
+                    <!-- Hồ sơ nhỏ gọn gàng đi kèm -->
+                    <div class="pt-4 border-t border-tBorder grid grid-cols-2 gap-4 text-xs font-semibold">
+                        <div><span class="text-tMuted">Họ tên:</span> <span class="text-tText font-bold">C. Ronaldo Aveiro</span></div>
+                        <div><span class="text-tMuted">Ngày sinh:</span> <span class="text-tText font-bold">05/02/1985</span></div>
+                        <div><span class="text-tMuted">Nơi sinh:</span> <span class="text-tText font-bold">Madeira, Bồ Đào Nha</span></div>
+                        <div><span class="text-tMuted">Chiều cao:</span> <span class="text-tText font-bold">1m87</span></div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Cột Phải: Câu chuyện cuộc đời -->
-            <div class="md:col-span-7 space-y-5 text-tMuted leading-relaxed font-medium">
-                <div class="bg-tCard border border-tBorder p-6 rounded-2xl shadow-lg">
-                    <h4 class="font-display text-xl font-bold text-tText mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-child text-tAccent"></i> Tuổi thơ gian khó tại Madeira
-                    </h4>
-                    <p class="text-sm">
-                        Sinh ra trong một gia đình nghèo ở đảo Madeira, Ronaldo lớn lên với niềm đam mê bóng đá cháy bỏng. Bất chấp căn bệnh tim nguy hiểm năm 15 tuổi, anh đã phẫu thuật thành công để tiếp tục theo đuổi ước mơ trở thành cầu thủ xuất sắc nhất thế giới.
-                    </p>
-                </div>
-
-                <div class="bg-tCard border border-tBorder p-6 rounded-2xl shadow-lg">
-                    <h4 class="font-display text-xl font-bold text-tText mb-2 flex items-center gap-2">
+            <!-- HÀNG 2: Nội Dung Trái - Ảnh Phải (Đỉnh Cao) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Nội dung 2 -->
+                <div class="lg:col-span-7 bg-tCard border border-tBorder p-6 sm:p-8 rounded-2xl shadow-xl space-y-4 order-2 lg:order-1">
+                    <span class="px-3 py-1 bg-tBg border border-tBorder text-tAccent text-xs font-black uppercase rounded-full">Chương 2</span>
+                    <h3 class="font-display text-2xl sm:text-3xl font-bold text-tText flex items-center gap-2">
                         <i class="fa-solid fa-fire-flame-curved text-tAccent"></i> Tinh thần kỷ luật thép & Ý chí vô song
-                    </h4>
-                    <p class="text-sm">
-                        Không chỉ dựa vào năng khiếu bẩm sinh, CR7 nổi tiếng toàn cầu nhờ chế độ tập luyện, dinh dưỡng và hồi phục khắt khe bậc nhất. Khao khát chiến thắng mãnh liệt đã biến anh thành cỗ máy săn bàn bền bỉ qua hơn 2 thập kỷ đỉnh cao.
+                    </h3>
+                    <p class="text-sm sm:text-base text-tMuted leading-relaxed font-medium">
+                        Không chỉ dựa vào thiên bẩm, CR7 vươn lên tầm vóc GOAT nhờ chế độ tập luyện, dinh dưỡng và ý chí khắt khe bậc nhất lịch sử túc cầu. Khao khát chiến thắng tột độ qua hơn hai thập kỷ đã biến anh thành cỗ máy săn bàn vĩ đại nhất mọi thời đại.
                     </p>
+                    <div class="pt-4 border-t border-tBorder flex items-center justify-between text-xs font-bold">
+                        <span class="text-tMuted">Vị trí: <span class="text-tText">Tiền đạo</span></span>
+                        <span class="theme-gradient-text text-lg font-black">BIỂU TƯỢNG SỐ #7</span>
+                    </div>
+                </div>
+                <!-- Ảnh 2 -->
+                <div class="lg:col-span-5 relative group order-1 lg:order-2">
+                    <div class="absolute -inset-1.5 theme-gradient-bg rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <img src="image/cr7.jpg" alt="Ronaldo Peak" class="relative w-full h-[380px] object-cover rounded-2xl border border-tBorder shadow-2xl object-top">
                 </div>
             </div>
 
