@@ -823,7 +823,7 @@
                         </div>
                         <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
                             <span class="block text-[10px] text-tMuted font-bold uppercase">Bàn thắng</span>
-                            <span id="stat-goals" class="font-display text-base font-black theme-gradient-text">--</span>
+                            <span id="modal-stat-goals" class="font-display text-base font-black theme-gradient-text">--</span>
                         </div>
                         <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
                             <span class="block text-[10px] text-tMuted font-bold uppercase">Hiệu suất</span>
@@ -1377,7 +1377,7 @@
                     // Gán dữ liệu chỉ số & watermark
                     document.getElementById('modal-bg-watermark').src = data.badge;
                     document.getElementById('stat-matches').innerText = data.matches;
-                    document.getElementById('stat-goals').innerText = data.goals;
+                    document.getElementById('modal-stat-goals').innerText = data.goals;
                     document.getElementById('stat-ratio').innerText = data.ratio;
 
                     // Làm mờ ảnh cũ ngay lập tức khi vừa bấm sang CLB mới
