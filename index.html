@@ -924,25 +924,20 @@
            <!-- Đã đẩy vương miện lên cao hẳn so với viền trên của bảng -->
 <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute -top-24 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-36 sm:w-40 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
             
-           <!-- 2 Cúp bên trái (Phóng to x5 lần & kéo sát lề) -->
-           <!-- CÚP TRÊN BÊN TRÁI -->
-            <div id="real-trophy-top-left" class="hidden absolute -left-36 top-4 z-30 pointer-events-none">
-                <img src="image/c113-14.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)]" style="width: 250px;">
+           <!-- 2 CÚP BÊN TRÁI -->
+            <div id="real-trophies-left" class="hidden absolute -left-36 top-2 bottom-2 flex flex-col justify-between z-30 pointer-events-none">
+                <!-- Cúp trên trái (đẩy dịch xuống một chút nếu muốn tạo độ xéo) -->
+                <img src="image/c113-14.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)]" style="width: 250px; margin-top: 10px;">
+                <!-- Cúp dưới trái (đẩy dịch lên) -->
+                <img src="image/c107-08.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)]" style="width: 250px; margin-bottom: 10px;">
             </div>
 
-            <!-- CÚP DƯỚI BÊN TRÁI (Thấp hơn để tạo góc xéo) -->
-            <div id="real-trophy-bottom-left" class="hidden absolute -left-36 bottom-4 z-30 pointer-events-none">
-                <img src="image/c107-08.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)]" style="width: 250px;">
-            </div>
-
-            <!-- CÚP TRÊN BÊN PHẢI -->
-            <div id="real-trophy-top-right" class="hidden absolute -right-36 top-4 z-30 pointer-events-none">
-                <img src="image/c1.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)] transform scale-x-[-1]" style="width: 250px;">
-            </div>
-
-            <!-- CÚP DƯỚI BÊN PHẢI (Giữ width 300px của ông) -->
-            <div id="real-trophy-bottom-right" class="hidden absolute -right-36 bottom-4 z-30 pointer-events-none">
-                <img src="image/c11.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)] transform scale-x-[-1]" style="width: 300px;">
+            <!-- 2 CÚP BÊN PHẢI -->
+            <div id="real-trophies-right" class="hidden absolute -right-36 top-2 bottom-2 flex flex-col justify-between z-30 pointer-events-none">
+                <!-- Cúp trên phải -->
+                <img src="image/c1.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)] transform scale-x-[-1]" style="width: 250px; margin-top: 10px;">
+                <!-- Cúp dưới phải (Giữ width 300px của ông) -->
+                <img src="image/c11.png" alt="Cúp C1" class="h-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.85)] transform scale-x-[-1]" style="width: 300px; margin-bottom: 10px;">
             </div>
         <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
         <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
@@ -1637,10 +1632,8 @@
                     modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real');
                    // Reset ẩn đi khi mở CLB khác
                     if (realCrownTop) realCrownTop.classList.add('hidden');
-                    const realTrophiesTopLeft = document.getElementById('real-trophy-top-left');
-                    const realTrophiesBottomLeft = document.getElementById('real-trophy-bottom-left');
-                    const realTrophiesTopRight = document.getElementById('real-trophy-top-right');
-                    const realTrophiesBottomRight = document.getElementById('real-trophy-bottom-right');
+                    const realTrophiesLeft = document.getElementById('real-trophies-left');
+                    const realTrophiesRight = document.getElementById('real-trophies-right');
                     if (realTrophiesLeft) realTrophiesLeft.classList.add('hidden');
                     if (realTrophiesRight) realTrophiesRight.classList.add('hidden');
                     if (devilHorns) devilHorns.classList.add('hidden');
