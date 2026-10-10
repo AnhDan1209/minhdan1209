@@ -102,6 +102,43 @@
             outline-offset: 2px;
             transform: scale(1.15);
         }
+
+        /* Style chung cho hộp trích dẫn các CLB */
+.club-quote-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 14px;
+    border-radius: 12px;
+    position: relative;
+    margin-bottom: 8px;
+    backdrop-filter: blur(8px);
+}
+.club-quote-box i {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 20px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+.club-quote-box p {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.5;
+    position: relative;
+    z-index: 10;
+    padding-left: 14px;
+    font-weight: 500;
+}
+.club-quote-box span {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 800;
+    text-align: right;
+    margin-top: 6px;
+}
         /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
 #club-modal-card.modal-mu {
     background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #450a0a 100%) !important;
@@ -840,8 +877,8 @@
                     
                     <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-6 font-medium"></p>
 
-                    <!-- MINI-STATS BOX (Chỉ số nhanh tại CLB) -->
-                    <div class="grid grid-cols-3 gap-2.5 mb-6" id="modal-stats-box">
+                    <!-- MINI-STATS BOX -->
+                    <div class="grid grid-cols-3 gap-2.5 mb-4" id="modal-stats-box">
                         <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
                             <span class="block text-[10px] text-tMuted font-bold uppercase">Trận</span>
                             <span id="stat-matches" class="font-display text-base font-black text-tText">--</span>
@@ -855,14 +892,53 @@
                             <span id="stat-ratio" class="font-display text-base font-black text-tAccent">--</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="pt-4 border-t border-tBorder flex justify-between items-center">
-                    <span class="text-[10px] text-tMuted font-bold uppercase tracking-widest">CRISTIANO RONALDO</span>
-                    <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
-                        Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
+                    <!-- KHUNG TRÍCH DẪN ĐỘC QUYỀN CHO TỪNG CLB -->
+                    <div id="modal-quote-container" class="hidden">
+                        
+                        <!-- Sporting CP -->
+                        <div id="quote-sporting" class="club-quote-box hidden border-emerald-500/30 text-emerald-200">
+                            <i class="fa-solid fa-quote-left text-emerald-400"></i>
+                            <p>"Cậu nhóc đó là cầu thủ trẻ thú vị nhất mà tôi từng thấy... Các hậu vệ của tôi ở hiệp một đã bị cậu ta làm cho chóng mặt. Họ liên tục bảo tôi phải ký hợp đồng với cậu ấy ngay lập tức."</p>
+                            <span class="text-emerald-400">— HLV Laszlo Boloni (hoặc Sir Alex)</span>
+                        </div>
+
+                        <!-- Manchester United -->
+                        <div id="quote-mu" class="club-quote-box hidden border-red-500/30 text-red-200">
+                            <i class="fa-solid fa-quote-left text-red-400"></i>
+                            <p>"Cristiano là cầu thủ tài năng nhất mà tôi từng dẫn dắt. Cậu ấy đã vượt qua tất cả những cầu thủ vĩ đại khác mà tôi từng huấn luyện tại United — và tôi đã có rất nhiều người giỏi."</p>
+                            <span class="text-red-400">— Sir Alex Ferguson</span>
+                        </div>
+
+                        <!-- Real Madrid -->
+                        <div id="quote-real" class="club-quote-box hidden border-amber-400/30 text-amber-200">
+                            <i class="fa-solid fa-quote-left text-amber-400"></i>
+                            <p>"Khi bạn ra sân với Ronaldo trong đội hình, bạn đã tự động dẫn trước đối thủ 1-0 rồi."</p>
+                            <span class="text-amber-400">— Zinedine Zidane</span>
+                        </div>
+
+                        <!-- Juventus -->
+                        <div id="quote-juventus" class="club-quote-box hidden border-slate-300/30 text-slate-200">
+                            <i class="fa-solid fa-quote-left text-slate-300"></i>
+                            <p>"Tôi đã làm việc cùng CR7 trong hai năm và chúng tôi đã làm tốt cùng nhau, nhưng tôi nghĩ Juventus đã phần nào đánh mất đi bản sắc DNA của một tập thể."</p>
+                            <span class="text-slate-300">— Gianluigi Buffon</span>
+                        </div>
+
+                        <!-- Al Nassr -->
+                        <div id="quote-alnassr" class="club-quote-box hidden border-yellow-500/30 text-yellow-200">
+                            <i class="fa-solid fa-quote-left text-yellow-400"></i>
+                            <p>"Tôi chưa bao giờ chạy theo kỷ lục, chính các kỷ lục mới là thứ chạy theo tôi."</p>
+                            <span class="text-yellow-400">— Cristiano Ronaldo</span>
+                        </div>
+
+                        <!-- Bồ Đào Nha -->
+                        <div id="quote-portugal" class="club-quote-box hidden border-red-600/30 text-red-200">
+                            <i class="fa-solid fa-quote-left text-red-500"></i>
+                            <p>"Ronaldo là cầu thủ xuất sắc nhất thế giới đối với tôi, và cậu ấy sẽ luôn là như vậy."</p>
+                            <span class="text-red-400">— Fernando Santos</span>
+                        </div>
+
+                    </div>
             </div>
         </div>
     </div>
@@ -1405,7 +1481,19 @@
                     document.getElementById('stat-matches').innerText = data.matches;
                     document.getElementById('modal-stat-goals').innerText = data.goals;
                     document.getElementById('stat-ratio').innerText = data.ratio;
+                    // Ẩn tất cả các khung trích dẫn trước
+                    const allQuotes = document.querySelectorAll('#modal-quote-container > div');
+                    const quoteContainer = document.getElementById('modal-quote-container');
+                    allQuotes.forEach(q => q.classList.add('hidden'));
+                    if (quoteContainer) quoteContainer.classList.add('hidden');
 
+                    // Hiện câu trích dẫn tương ứng nếu có
+                    const activeQuote = document.getElementById(`quote-${clubKey}`);
+                    if (activeQuote && quoteContainer) {
+                        quoteContainer.classList.remove('hidden');
+                        activeQuote.classList.remove('hidden');
+                    }
+                    
                     const imgEl = document.getElementById('modal-cr7-img');
                     imgEl.classList.add('opacity-0');
                     imgEl.src = data.cr7Img;
