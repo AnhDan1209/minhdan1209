@@ -920,7 +920,20 @@
 <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
     <div class="relative max-w-3xl w-full flex items-center justify-center">
+<!-- === VƯƠNG MIỆN HOÀNG GIA & CÚP C1 (DÀNH RIÊNG CHO REAL MADRID) === -->
+           <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute -top-16 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-36 h-auto drop-shadow-[0_5px_15px_rgba(245,158,11,0.7)]">
+            
+            <!-- 2 Cúp bên trái -->
+            <div id="real-trophies-left" class="hidden absolute left-[-55px] top-0 bottom-0 flex flex-col justify-around z-30 pointer-events-none">
+                <img src="image/c1.png" alt="Cúp C1" class="w-14 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+                <img src="image/c1.png" alt="Cúp C1" class="w-14 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+            </div>
 
+            <!-- 2 Cúp bên phải (lật đối xứng) -->
+            <div id="real-trophies-right" class="hidden absolute right-[-55px] top-0 bottom-0 flex flex-col justify-around z-30 pointer-events-none">
+                <img src="image/c1.png" alt="Cúp C1" class="w-14 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] transform scale-x-[-1]">
+                <img src="image/c1.png" alt="Cúp C1" class="w-14 h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] transform scale-x-[-1]">
+            </div>
         <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
         <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
         
@@ -1611,6 +1624,12 @@
 
                     // Reset các class đặc biệt trước khi áp dụng theme
                     modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real');
+                   // Reset ẩn đi khi mở CLB khác
+                    if (realCrownTop) realCrownTop.classList.add('hidden');
+                    const realTrophiesLeft = document.getElementById('real-trophies-left');
+                    const realTrophiesRight = document.getElementById('real-trophies-right');
+                    if (realTrophiesLeft) realTrophiesLeft.classList.add('hidden');
+                    if (realTrophiesRight) realTrophiesRight.classList.add('hidden');
                     if (devilHorns) devilHorns.classList.add('hidden');
                     if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
@@ -1623,9 +1642,11 @@
                     } else if (clubKey === 'sporting') {
                         modalContainer.classList.add('modal-sporting');
                         if (sportingOriginTag) sportingOriginTag.classList.remove('hidden');
-                    } else if (clubKey === 'real') {
+                  } else if (clubKey === 'real') {
                         modalContainer.classList.add('modal-real');
-                        // (Phần hiển thị vương miện PNG sẽ được thêm vào đây sau khi bạn chuẩn bị xong file ảnh)
+                        if (realCrownTop) realCrownTop.classList.remove('hidden');
+                        if (realTrophiesLeft) realTrophiesLeft.classList.remove('hidden');
+                        if (realTrophiesRight) realTrophiesRight.classList.remove('hidden');
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
