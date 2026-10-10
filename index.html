@@ -771,59 +771,77 @@
     </footer>
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
-    <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        
-        <!-- WRAPPER BỌC NGOÀI ĐỂ CÁNH VÀ BẢNG CÙNG CĂN GIỮA -->
-        <div class="relative max-w-2xl w-full flex items-center justify-center">
+    <!-- ================= CLUB DETAIL MODAL POPUP (VIP REDESIGN) ================= -->
+<div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="relative max-w-3xl w-full flex items-center justify-center">
 
-            <!-- 1. BỘ CÁNH QUỶ (ĐẶT BÊN NGOÀI BẢNG -> NẰM CHÌM HOÀN TOÀN ĐẰNG SAU) -->
-            <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[160%] sm:w-[185%] md:w-[205%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
+        <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
+        <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
 
-            <!-- 2. BẢNG KHUNG CHI TIẾT CLB (ĐẶT Z-10 ĐỂ ĐÈ HOÀN TOÀN LÊN CÁNH) -->
-            <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-2xl w-full p-6 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6">
-                
-                <!-- SỪNG QUỶ ĐỎ NỔI Ở ĐỈNH KHUNG POPUP (Chỉ hiện khi chọn MU) -->
-                <div id="devil-horns" class="hidden absolute -top-9 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-between w-32 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse">
-                    <svg class="w-10 h-10 text-red-600 fill-current transform -scale-x-100 -rotate-12" viewBox="0 0 24 24">
-                        <path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/>
-                    </svg>
-                    <svg class="w-10 h-10 text-red-600 fill-current transform rotate-12" viewBox="0 0 24 24">
-                        <path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/>
-                    </svg>
-                </div>
+        <!-- BẢNG POPUP CHÍNH -->
+        <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
+            
+            <!-- Logo mờ chìm làm hình nền (Watermark) -->
+            <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
 
-                <!-- Nút Đóng Modal -->
-                <button id="close-modal-btn" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+            <!-- Sừng quỷ đỏ (Dành riêng cho MU) -->
+            <div id="devil-horns" class="hidden absolute -top-9 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-between w-32 drop-shadow-[0_0_12px_rgba(239,68,68,0.9)] animate-pulse">
+                <svg class="w-10 h-10 text-red-600 fill-current transform -scale-x-100 -rotate-12" viewBox="0 0 24 24"><path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/></svg>
+                <svg class="w-10 h-10 text-red-600 fill-current transform rotate-12" viewBox="0 0 24 24"><path d="M12 2C9 2 4 7 4 14c2-2 5-3 8-2-1-3 0-8 0-10z"/></svg>
+            </div>
 
-                <!-- Bên Trái: Ảnh CR7 Mặc Áo CLB -->
-                <div class="w-full md:w-5/12 h-64 md:h-auto rounded-xl overflow-hidden border border-tBorder relative flex-shrink-0 bg-tBg z-10">
-                   <img id="modal-cr7-img" src="" alt="CR7" onerror="this.src='image/cr7_rd.jpg'" class="w-full h-full object-cover object-top transition-opacity duration-300 opacity-0" onload="this.classList.remove('opacity-0')">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <span id="modal-years" class="absolute bottom-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-sm border border-tBorder text-tAccent font-extrabold text-[10px] rounded-md uppercase tracking-wider"></span>
-                </div>
+            <!-- Nút Đóng Modal -->
+            <button id="close-modal-btn" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-tBg border border-tBorder text-tMuted hover:text-tAccent flex items-center justify-center transition-colors z-20">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
 
-                <!-- Bên Phải: Nội Dung Giới Thiệu + Nút Khám Phá -->
-                <div class="w-full md:w-7/12 flex flex-col justify-between z-10">
-                    <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <img id="modal-badge" src="" alt="Badge" class="w-8 h-8 object-contain">
-                            <h3 id="modal-title" class="font-display text-3xl font-black text-tText"></h3>
+            <!-- Cột Trái: Ảnh CR7 Mặc Áo CLB -->
+            <div class="w-full md:w-5/12 h-72 md:h-auto rounded-2xl overflow-hidden border border-tBorder relative flex-shrink-0 bg-tBg z-10 shadow-xl">
+                <img id="modal-cr7-img" src="" alt="CR7" class="w-full h-full object-cover object-top transition-opacity duration-300 opacity-0" onload="this.classList.remove('opacity-0')">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <span id="modal-years" class="absolute bottom-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-md border border-tBorder text-tAccent font-extrabold text-[10px] rounded-lg uppercase tracking-wider"></span>
+            </div>
+
+            <!-- Cột Phải: Nội Dung Giới Thiệu + Mini-Stats -->
+            <div class="w-full md:w-7/12 flex flex-col justify-between z-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img id="modal-badge" src="" alt="Badge" class="w-9 h-9 object-contain">
+                        <div>
+                            <h3 id="modal-title" class="font-display text-3xl font-black text-tText leading-none"></h3>
+                            <p id="modal-subtitle" class="text-[11px] text-tAccent font-extrabold uppercase tracking-wider mt-1"></p>
                         </div>
-                        <p id="modal-subtitle" class="text-xs text-tAccent font-bold uppercase tracking-wider mb-3"></p>
-                        <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-4"></p>
                     </div>
+                    
+                    <p id="modal-desc" class="text-xs sm:text-sm text-tMuted leading-relaxed mb-6 font-medium"></p>
 
-                    <div class="pt-4 border-t border-tBorder flex justify-end">
-                        <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
-                            Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                        </a>
+                    <!-- MINI-STATS BOX (Chỉ số nhanh tại CLB) -->
+                    <div class="grid grid-cols-3 gap-2.5 mb-6" id="modal-stats-box">
+                        <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
+                            <span class="block text-[10px] text-tMuted font-bold uppercase">Trận</span>
+                            <span id="stat-matches" class="font-display text-base font-black text-tText">--</span>
+                        </div>
+                        <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
+                            <span class="block text-[10px] text-tMuted font-bold uppercase">Bàn thắng</span>
+                            <span id="stat-goals" class="font-display text-base font-black theme-gradient-text">--</span>
+                        </div>
+                        <div class="bg-tBg border border-tBorder p-2.5 rounded-xl text-center">
+                            <span class="block text-[10px] text-tMuted font-bold uppercase">Hiệu suất</span>
+                            <span id="stat-ratio" class="font-display text-base font-black text-tAccent">--</span>
+                        </div>
                     </div>
+                </div>
+
+                <div class="pt-4 border-t border-tBorder flex justify-between items-center">
+                    <span class="text-[10px] text-tMuted font-bold uppercase tracking-widest">CRISTIANO RONALDO</span>
+                    <a id="modal-explore-btn" href="#" class="theme-gradient-bg text-black font-extrabold px-6 py-2.5 rounded-xl text-xs flex items-center gap-2 hover:brightness-110 shadow-lg transition-all transform hover:scale-105">
+                        Khám phá <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!-- JS CHÍNH -->
     <script>
         // --- 0. LOGIC THEME ENGINE ---
@@ -1267,7 +1285,7 @@
         }
 
         // --- DATA & LOGIC POPUP BẢNG GIỚI THIỆU CLB ---
-        const clubDetailsData = {
+       const clubDetailsData = {
             sporting: {
                 title: "Sporting CP",
                 subtitle: "Bệ phóng Lisbon (2002 - 2003)",
@@ -1275,15 +1293,19 @@
                 badge: "image/sprt.png",
                 cr7Img: "image/cr7_sporting.jpg",
                 desc: "Nơi khởi nguồn của huyền thoại. Ở tuổi 17, Cristiano Ronaldo đã làm đảo lộn hàng phòng ngự Man Utd trong trận giao hữu năm 2003, khiến Sir Alex Ferguson quyết tâm ký hợp đồng ngay lập tức.",
+                matches: "31", goals: "5", ratio: "0.16",
+                borderColor: "border-emerald-500/50", glowColor: "shadow-[0_0_50px_rgba(16,185,129,0.3)]",
                 link: "sporting.html"
             },
-           mu: {
+            mu: {
                 title: "Manchester United",
-                subtitle: "🔥 THE RED DEVILS - THÁNH ĐỊA CỦA QUỶ VƯƠNG",
+                subtitle: "🔥 THE RED DEVILS - QUỶ VƯƠNG OLD TRAFFORD",
                 years: "2003 - 2009 & 2021 - 2022",
                 badge: "image/mu.png",
                 cr7Img: "image/cr7_mu.jpg",
-                desc: "Thánh địa Old Trafford — nơi linh hồn Quỷ Đỏ thức tỉnh! Mang trên mình chiếc áo số 7 huyền thoại, CR7 thiêu rụi mọi hàng phòng ngự bằng tốc độ xé gió và những cú nã đại bác tàn khốc. Cùng Quỷ Vương Sir Alex Ferguson, anh gieo rắc cơn ác mộng khắp châu Âu, thâu tóm 3 Premier League, 1 Champions League và đoạt Quả Bóng Vàng 2008!",
+                desc: "Thánh địa Old Trafford — nơi linh hồn Quỷ Đỏ thức tỉnh! Mang chiếc áo số 7 huyền thoại, CR7 thiêu rụi mọi hàng phòng ngự, thâu tóm 3 Premier League, 1 Champions League và Quả Bóng Vàng 2008!",
+                matches: "346", goals: "145", ratio: "0.42",
+                borderColor: "border-red-500/60", glowColor: "shadow-[0_0_60px_rgba(239,68,68,0.4)]",
                 link: "mu.html"
             },
             real: {
@@ -1292,7 +1314,9 @@
                 years: "2009 - 2018",
                 badge: "image/real.png",
                 cr7Img: "image/cr7_real.jpg",
-                desc: "Đỉnh cao lịch sử bóng đá với 450 bàn thắng sau 438 trận. Giành 4 chức vô địch UEFA Champions League (với cú hat-trick C1 liên tiếp 2016-2018 — kỷ lục vô tiền khoáng hậu) và 4 Quả Bóng Vàng.",
+                desc: "Đỉnh cao lịch sử bóng đá với 450 bàn thắng sau 438 trận. Giành 4 chức vô địch UEFA Champions League (với cú hat-trick C1 liên tiếp 2016-2018) và 4 Quả Bóng Vàng.",
+                matches: "438", goals: "450", ratio: "1.03",
+                borderColor: "border-amber-400/60", glowColor: "shadow-[0_0_60px_rgba(251,191,36,0.4)]",
                 link: "real.html"
             },
             juventus: {
@@ -1302,6 +1326,8 @@
                 badge: "image/juv.png",
                 cr7Img: "image/cr7_juve.jpg",
                 desc: "Thống trị bóng đá Ý với 2 Serie A và lập kỷ lục đạt mốc 100 bàn thắng nhanh nhất lịch sử Juve. Trở thành cầu thủ đầu tiên đoạt Vua phá lưới ở Anh, TBN và Ý.",
+                matches: "134", goals: "101", ratio: "0.75",
+                borderColor: "border-slate-300/40", glowColor: "shadow-[0_0_50px_rgba(255,255,255,0.2)]",
                 link: "juventus.html"
             },
             alnassr: {
@@ -1311,15 +1337,19 @@
                 badge: "image/al.png",
                 cr7Img: "image/cr7_alnassr.jpg",
                 desc: "Tiên phong mở ra kỷ nguyên mới cho bóng đá châu Á. Lập kỷ lục ghi 35 bàn trong một mùa giải Saudi Pro League và hướng tới cột mốc vĩ đại 1.000 bàn thắng.",
+                matches: "60+", goals: "60+", ratio: "1.0+",
+                borderColor: "border-yellow-500/50", glowColor: "shadow-[0_0_50px_rgba(234,179,8,0.3)]",
                 link: "alnassr.html"
             },
             portugal: {
                 title: "Bồ Đào Nha",
                 subtitle: "Anh hùng dân tộc (2003 - 2026)",
-                years: "2003 - Hiện tại",
+                years: "2003 - 2026",
                 badge: "image/bdn.png",
                 cr7Img: "image/cr7_portugal.jpg",
                 desc: "Đội trưởng huyền thoại đưa Bồ Đào Nha xưng vương tại EURO 2016 và Nations League 2019. Cầu thủ ghi nhiều bàn thắng nhất lịch sử bóng đá quốc tế (130+ bàn).",
+                matches: "210+", goals: "130+", ratio: "0.62",
+                borderColor: "border-red-600/50", glowColor: "shadow-[0_0_50px_rgba(220,38,38,0.3)]",
                 link: "portugal.html"
             }
         };
