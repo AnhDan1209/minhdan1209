@@ -139,6 +139,29 @@
     text-align: right;
     margin-top: 6px;
 }
+        /* Styling góc hoa văn hoàng gia cho Real Madrid */
+.real-corner {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    z-index: 25;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.7));
+    /* Sử dụng hình SVG hoa văn uốn lượn màu vàng kim */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f59e0b'%3E%3Cpath d='M10 10 C 40 10, 40 40, 10 40 C 25 40, 25 25, 10 25 C 20 25, 20 20, 10 20 Z M 10 10 C 10 40, 40 40, 40 10 C 40 25, 25 25, 25 10 C 25 20, 20 20, 20 10 Z'/%3E%3Ccircle cx='18' cy='18' r='4' fill='%23f59e0b'/%3E%3C/svg%3E");
+}
+
+/* Định vị 4 góc ôm sát viền bảng modal */
+.corner-top-left { top: -6px; left: -6px; }
+.corner-top-right { top: -6px; right: -6px; transform: scaleX(-1); }
+.corner-bottom-left { bottom: -6px; left: -6px; transform: scaleY(-1); }
+.corner-bottom-right { bottom: -6px; right: -6px; transform: scale(-1); }
+
+/* Bật hiển thị 4 góc khi chọn club Real Madrid */
+#club-modal-card.modal-real .real-corner {
+    display: block !important;
+}
         /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
 #club-modal-card.modal-mu {
     background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #450a0a 100%) !important;
@@ -945,7 +968,11 @@
 
         <!-- BẢNG POPUP CHÍNH -->
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
-            
+            <!-- === 4 GÓC HOA VĂN HOÀNG GIA (DÀNH RIÊNG CHO REAL MADRID) === -->
+            <div class="real-corner corner-top-left hidden pointer-events-none"></div>
+            <div class="real-corner corner-top-right hidden pointer-events-none"></div>
+            <div class="real-corner corner-bottom-left hidden pointer-events-none"></div>
+            <div class="real-corner corner-bottom-right hidden pointer-events-none"></div>
             <!-- Logo mờ chìm làm hình nền (Watermark) -->
             <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
 
@@ -1634,7 +1661,10 @@
                     if (devilHorns) devilHorns.classList.add('hidden');
                     if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
-
+                    // Khi mở CLB khác:
+                    document.querySelectorAll('.real-corner').forEach(el => el.classList.add('hidden'));
+                    
+                    
                     // Kích hoạt theme theo câu lạc bộ
                     if (clubKey === 'mu') {
                         modalContainer.classList.add('modal-mu');
@@ -1648,6 +1678,8 @@
                         if (realCrownTop) realCrownTop.classList.remove('hidden');
                         if (realTrophiesLeft) realTrophiesLeft.classList.remove('hidden');
                         if (realTrophiesRight) realTrophiesRight.classList.remove('hidden');
+                        // Khi bấm vào Real Madrid (clubKey === 'real'):
+                    document.querySelectorAll('.real-corner').forEach(el => el.classList.remove('hidden'));
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
