@@ -141,26 +141,27 @@
 }
         /* Styling góc hoa văn hoàng gia cho Real Madrid */
 /* Styling 4 góc hoa văn hoàng gia bọc bên ngoài */
+/* Styling 4 góc hoa văn hoàng gia cổ điển uốn lượn */
 .real-corner {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     z-index: 40;
     background-size: contain;
     background-repeat: no-repeat;
-    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.9));
-    /* Hoạ tiết hoa văn vàng kim cổ điển hoàng gia */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f59e0b'%3E%3Cpath d='M10 10 C 50 10, 50 50, 10 50 C 30 50, 30 30, 10 30 C 40 30, 40 10, 10 10 Z'/%3E%3Ccircle cx='20' cy='20' r='6' fill='%23f59e0b'/%3E%3C/svg%3E");
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.9));
+    /* SVG Hoa văn uốn lượn cổ điển (Filigree Scrollwork) chuẩn hoàng gia */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23f59e0b'%3E%3Cpath d='M5 5 C 40 5, 80 15, 95 50 C 95 30, 70 15, 40 10 C 25 8, 10 25, 5 40 Z'/%3E%3Cpath d='M15 15 C 40 15, 65 25, 75 50 C 70 35, 50 25, 30 22 C 20 20, 15 25, 15 35 Z'/%3E%3Cpath d='M5 5 L5 55 M5 5 L55 5' stroke='%23f59e0b' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='18' r='6'/%3E%3C/svg%3E");
 }
 
-/* Định vị 4 góc ôm sát vòng ngoài viền modal */
-.corner-top-left { top: -14px; left: -14px; }
-.corner-top-right { top: -14px; right: -14px; transform: scaleX(-1); }
-.corner-bottom-left { bottom: -14px; left: -14px; transform: scaleY(-1); }
-.corner-bottom-right { bottom: -14px; right: -14px; transform: scale(-1); }
+/* Định vị 4 góc ôm trọn ra ngoài viền bảng */
+.corner-top-left { top: -20px; left: -20px; }
+.corner-top-right { top: -20px; right: -20px; transform: scaleX(-1); }
+.corner-bottom-left { bottom: -20px; left: -20px; transform: scaleY(-1); }
+.corner-bottom-right { bottom: -20px; right: -20px; transform: scale(-1); }
 
 /* Hiển thị khi chọn Real Madrid */
-#club-modal.modal-real-active .real-corner,
+#club-modal-card.modal-real .real-corner,
 .real-corner:not(.hidden) {
     display: block;
 }
