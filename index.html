@@ -838,15 +838,16 @@
         });
 
         // --- 1. LOGIC RENDER TROPHIES ---
-        const trophies = [
+       const trophies = [
             { id: 1, title: "Quả Bóng Vàng (Ballon d'Or)", count: "5×", category: "individual", categoryName: "Cá nhân", year: "2008, 2013, 2014, 2016, 2017", img: "image/trophy_ballondor.jpg" },
             { id: 2, title: "UEFA Champions League", count: "5×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017, 2018", img: "image/trophy_c1.jpg" },
-            { id: 3, title: "Giải Vô Địch Châu Âu (EURO)", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2016 (Bồ Đào Nha)", img: "image/trophy_euro.jpg" },
-            { id: 4, title: "Chiếc Giày Vàng Châu Âu", count: "4×", category: "individual", categoryName: "Cá nhân", year: "2008, 2011, 2014, 2015", img: "image/trophy_giayvang.jpg" },
-            { id: 5, title: "FIFA Club World Cup", count: "4×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017", img: "image/trophy_cwc.jpg" },
-            { id: 6, title: "UEFA Nations League", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2019 (Bồ Đào Nha)", img: "image/trophy_nationsleague.jpg" },
-            { id: 7, title: "Ngoại Hạng Anh (Premier League)", count: "3×", category: "club", categoryName: "Câu lạc bộ", year: "2007, 2008, 2009", img: "image/trophy_epl.jpg" },
-            { id: 8, title: "La Liga (Tây Ban Nha)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017", img: "image/trophy_laliga.jpg" }
+            { id: 3, title: "FIFA Puskás Award", count: "1×", category: "individual", categoryName: "Cá nhân", year: "2009 (Bàn thắng đẹp nhất năm)", img: "image/puskas.jpg" },
+            { id: 4, title: "Giải Vô Địch Châu Âu (EURO)", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2016 (Bồ Đào Nha)", img: "image/trophy_euro.jpg" },
+            { id: 5, title: "Chiếc Giày Vàng Châu Âu", count: "4×", category: "individual", categoryName: "Cá nhân", year: "2008, 2011, 2014, 2015", img: "image/trophy_giayvang.jpg" },
+            { id: 6, title: "FIFA Club World Cup", count: "4×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017", img: "image/trophy_cwc.jpg" },
+            { id: 7, title: "UEFA Nations League", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2019 (Bồ Đào Nha)", img: "image/trophy_nationsleague.jpg" },
+            { id: 8, title: "Ngoại Hạng Anh (Premier League)", count: "3×", category: "club", categoryName: "Câu lạc bộ", year: "2007, 2008, 2009", img: "image/trophy_epl.jpg" },
+            { id: 9, title: "La Liga (Tây Ban Nha)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017", img: "image/trophy_laliga.jpg" }
         ];
 
         function renderTrophies(filter = 'all') {
