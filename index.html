@@ -762,7 +762,7 @@
 
                 <!-- Bên Trái: Ảnh CR7 Mặc Áo CLB -->
                 <div class="w-full md:w-5/12 h-64 md:h-auto rounded-xl overflow-hidden border border-tBorder relative flex-shrink-0 bg-tBg z-10">
-                    <img id="modal-cr7-img" src="" alt="CR7" onerror="this.src='image/cr7_rd.jpg'" class="w-full h-full object-cover object-top">
+                   <img id="modal-cr7-img" src="" alt="CR7" onerror="this.src='image/cr7_rd.jpg'" class="w-full h-full object-cover object-top transition-opacity duration-300 opacity-0 onload="this.classList.remove('opacity-0')">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <span id="modal-years" class="absolute bottom-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-sm border border-tBorder text-tAccent font-extrabold text-[10px] rounded-md uppercase tracking-wider"></span>
                 </div>
@@ -1198,8 +1198,17 @@
                     document.getElementById('modal-subtitle').innerText = data.subtitle;
                     document.getElementById('modal-years').innerText = data.years;
                     document.getElementById('modal-desc').innerText = data.desc;
-                    document.getElementById('modal-badge').src = data.badge;
-                    document.getElementById('modal-cr7-img').src = data.cr7Img;
+                   document.getElementById('modal-badge').src = data.badge;
+
+// Làm mờ ảnh cũ ngay lập tức khi vừa bấm sang CLB mới
+const imgEl = document.getElementById('modal-cr7-img');
+imgEl.classList.add('opacity-0');
+imgEl.src = data.cr7Img;
+
+// Khi ảnh mới load xong thì hiện rõ lên
+imgEl.onload = () => {
+    imgEl.classList.remove('opacity-0');
+};
                     document.getElementById('modal-explore-btn').href = data.link;
 
                                if (clubKey === 'mu') {
