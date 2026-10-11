@@ -1828,7 +1828,7 @@
                     document.getElementById('modal-explore-btn').href = data.link;
 
                     // Reset các class đặc biệt trước khi áp dụng theme
-                    modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real', 'modal-juventus');
+                    modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real', 'modal-juventus', 'modal-alnassr', 'modal-portugal');
                    
                     // Reset ẩn đi khi mở CLB khác
                     if (realCrownTop) realCrownTop.classList.add('hidden');
@@ -1867,6 +1867,11 @@
                         document.getElementById('real-trophy-bottom-left')?.classList.remove('hidden');
                         document.getElementById('real-trophy-top-right')?.classList.remove('hidden');
                         document.getElementById('real-trophy-bottom-right')?.classList.remove('hidden');
+                    /* === BỔ SUNG 2 DÒNG NÀY VÀO === */
+                    } else if (clubKey === 'alnassr') {
+                        modalContainer.classList.add('modal-alnassr');
+                    } else if (clubKey === 'portugal') {
+                        modalContainer.classList.add('modal-portugal');
                     }
 
                     modal.classList.remove('opacity-0', 'pointer-events-none');
