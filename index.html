@@ -987,7 +987,15 @@
         <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
             🌱 THE BEGINNING • 2002
         </div>
-
+        <!-- 2 Ngôi sao vàng Scudetto (Dành riêng cho Juventus) -->
+        <div id="juventus-stars" class="hidden absolute -top-5 left-8 z-30 pointer-events-none flex gap-1 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] animate-pulse">
+            <i class="fa-solid fa-star text-amber-400 text-xl"></i>
+            <i class="fa-solid fa-star text-amber-400 text-xl"></i>
+        </div>
+        <div id="juventus-stars-right" class="hidden absolute -top-5 right-8 z-30 pointer-events-none flex gap-1 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] animate-pulse">
+            <i class="fa-solid fa-star text-amber-400 text-xl"></i>
+            <i class="fa-solid fa-star text-amber-400 text-xl"></i>
+        </div>
         <!-- BẢNG POPUP CHÍNH -->
         <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
             <!-- === 4 GÓC HOA VĂN HOÀNG GIA (DÀNH RIÊNG CHO REAL MADRID) === -->
@@ -1625,6 +1633,8 @@
         const devilWingsFull = document.getElementById('devil-wings-full');
         const sportingOriginTag = document.getElementById('sporting-origin-tag');
         const realCrownTop = document.getElementById('real-crown-top');
+        const juventusStars = document.getElementById('juventus-stars');
+        const juventusStarsRight = document.getElementById('juventus-stars-right');
        openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const clubKey = btn.getAttribute('data-club');
@@ -1678,7 +1688,8 @@
                     if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
                     if (juventusTag) juventusTag.classList.add('hidden'); // Reset ẩn nhãn Juventus
-
+                    if (juventusStars) juventusStars.classList.add('hidden');
+                    if (juventusStarsRight) juventusStarsRight.classList.add('hidden');
                     // Ẩn 4 cúp độc lập của Real Madrid khi mở câu lạc bộ khác
                     document.getElementById('real-trophy-top-left')?.classList.add('hidden');
                     document.getElementById('real-trophy-bottom-left')?.classList.add('hidden');
@@ -1695,11 +1706,13 @@
                         if (sportingOriginTag) sportingOriginTag.classList.remove('hidden');
                     } else if (clubKey === 'juventus') {
                         modalContainer.classList.add('modal-juventus'); // Kích hoạt theme Juventus
-                        if (juventusTag) juventusTag.classList.remove('hidden'); // Hiện nhãn Juventus
+                        if (juventusTag) juventusTag.classList.remove('hidden');       // Hiện nhãn Juventus
+                        if (juventusStars) juventusStars.classList.remove('hidden');   // Hiện 2 sao trái
+                        if (juventusStarsRight) juventusStarsRight.classList.remove('hidden'); // Hiện 2 sao phải
                     } else if (clubKey === 'real') {
                         modalContainer.classList.add('modal-real');
                         if (realCrownTop) realCrownTop.classList.remove('hidden');
-                        
+                    }    
                         // Bật hiển thị cho 4 cúp độc lập theo hình chéo
                         document.getElementById('real-trophy-top-left')?.classList.remove('hidden');
                         document.getElementById('real-trophy-bottom-left')?.classList.remove('hidden');
