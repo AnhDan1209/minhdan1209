@@ -219,10 +219,10 @@
 }
 
 /* Đường viền phân cách bên trong */
-#club-modal-card.modal-real .border-tBorder {
-    border-color: rgba(29, 78, 216, 0.15) !important;
+#club-modal-card.modal-real .border-tBorder,
+#club-modal-card.modal-real div {
+    border-color: transparent !important;
 }
-
 /* BẢNG CHỈ SỐ: Thẻ trắng nổi bật với viền ánh vàng/xanh */
 #club-modal-card.modal-real #modal-stats-box > div {
     background-color: #ffffff !important;
@@ -265,14 +265,15 @@
 }
 /* Sửa hiển thị logo chìm Real Madrid màu trắng */
 #club-modal-card.modal-real #modal-bg-watermark {
-    opacity: 0.15 !important;
-    filter: invert(1) !important;
-    mix-blend-mode: multiply !important;
-    width: 260px !important;
-    height: 260px !important;
-    right: -10px !important;
-    bottom: -10px !important;
+    filter: invert(1) brightness(0.4) !important; /* Đảo ngược ảnh đen-trắng thành nét xám tối */
+    mix-blend-mode: normal !important;            /* Tắt chế độ hòa trộn gây tàng hình */
+    opacity: 0.18 !important;                     /* Độ mờ 18% chìm tinh tế */
+    width: 270px !important;
+    height: 270px !important;
+    right: -15px !important;
+    bottom: -15px !important;
     display: block !important;
+    z-index: 1 !important;
 }
 /* ================= STYLES CHO JUVENTUS (MÃ FIX TRIỆT ĐỂ LỖI FLEXBOX LỆCH) ================= */
 #club-modal-card.modal-juventus {
