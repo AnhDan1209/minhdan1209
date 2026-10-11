@@ -269,37 +269,31 @@
 }
 /* ================= STYLES CHO JUVENTUS (SỌC ÁO ĐẤU BIANCONERI CHUẨN) ================= */
 #club-modal-card.modal-juventus {
-    /* Sọc Đen - Trắng rõ nét, bản rộng tiêu chuẩn áo đấu */
     background: repeating-linear-gradient(
         90deg,
         #000000 0px,
-        #000000 40px,
-        #ffffff 40px,
-        #ffffff 80px
+        #000000 35px,
+        #ffffff 35px,
+        #ffffff 70px
     ) !important;
-    border: 3px solid #18181b !important;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.25) !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.2) !important;
     color: #ffffff !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
-/* Lớp phủ tối siêu mỏng (chỉ 30%) để giữ nguyên sọc Đen - Trắng sắc nét mà vẫn đảm bảo đọc rõ chữ */
 #club-modal-card.modal-juventus::before {
     content: '';
     position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background: rgba(0, 0, 0, 0.32) !important;
+    background: rgba(0, 0, 0, 0.38) !important;
     pointer-events: none !important;
     z-index: 1 !important;
 }
 
-/* Đảm bảo toàn bộ các phần tử con nổi lên trên lớp phủ */
 #club-modal-card.modal-juventus > * {
     position: relative !important;
     z-index: 2 !important;
@@ -313,19 +307,16 @@
 #club-modal-card.modal-juventus #modal-subtitle {
     color: #f4f4f5 !important;
     font-weight: 800 !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 #club-modal-card.modal-juventus #modal-desc {
     color: #f4f4f5 !important;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 #club-modal-card.modal-juventus .border-tBorder {
     border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Thẻ chỉ số và Trích dẫn có nền tối cứng cáp để nổi bật trên nền sọc áo đấu */
 #club-modal-card.modal-juventus #modal-stats-box > div,
 #club-modal-card.modal-juventus #quote-juventus {
     background: rgba(12, 12, 12, 0.92) !important;
