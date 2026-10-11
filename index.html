@@ -1171,38 +1171,40 @@
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
                <!-- === CÁT MỌC TỪ NỀN ĐEN DÂNG CAO LÊN PHỦ CHỒNG LÊN ĐÁY BẢNG === -->
-    <div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-[340px] z-20 pointer-events-none overflow-hidden">
-        <svg class="w-full h-full" viewBox="0 0 1200 340" preserveAspectRatio="none">
-            <defs>
-                <linearGradient id="sand-grad-main" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#fde047" stop-opacity="0.95" />
-                    <stop offset="30%" stop-color="#f59e0b" stop-opacity="0.95" />
-                    <stop offset="100%" stop-color="#92400e" stop-opacity="1" />
-                </linearGradient>
-                
-                <linearGradient id="sand-grad-sub" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.85" />
-                    <stop offset="100%" stop-color="#b45309" stop-opacity="0.95" />
-                </linearGradient>
-
-                <pattern id="sand-speckles" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle cx="4" cy="5" r="1.2" fill="#fef08a" opacity="0.7"/>
-                    <circle cx="14" cy="9" r="1.5" fill="#78350f" opacity="0.6"/>
-                    <circle cx="9" cy="16" r="1" fill="#fde047" opacity="0.8"/>
-                    <circle cx="18" cy="18" r="1.2" fill="#b45309" opacity="0.7"/>
-                </pattern>
-            </defs>
-
-            <!-- Cồn cát lớp sau -->
-            <path d="M0,130 C250,40 500,180 750,80 C1000,0 1120,100 1200,70 L1200,340 L0,340 Z" fill="url(#sand-grad-sub)"></path>
+    <!-- === DẢI CỒN CÁT DÂNG CAO TRƯỜN LÊN PHỦ SÁT ĐÁY BẢNG === -->
+<div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-[520px] z-20 pointer-events-none overflow-hidden">
+    <svg class="w-full h-full" viewBox="0 0 1200 500" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="sand-grad-main" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fde047" stop-opacity="0.95" />
+                <stop offset="25%" stop-color="#f59e0b" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#92400e" stop-opacity="1" />
+            </linearGradient>
             
-            <!-- Cồn cát lớp trước (Dâng cao ngập lên che một phần viền dưới bảng) -->
-            <path d="M0,170 C300,50 550,220 850,90 C1050,15 1150,130 1200,110 L1200,340 L0,340 Z" fill="url(#sand-grad-main)"></path>
+            <linearGradient id="sand-grad-sub" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#b45309" stop-opacity="0.95" />
+            </linearGradient>
 
             <!-- Hạt cát li ti -->
-            <path d="M0,170 C300,50 550,220 850,90 C1050,15 1150,130 1200,110 L1200,340 L0,340 Z" fill="url(#sand-speckles)"></path>
-        </svg>
-    </div>
+            <pattern id="sand-speckles" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="4" cy="5" r="1.2" fill="#fef08a" opacity="0.7"/>
+                <circle cx="14" cy="9" r="1.5" fill="#78350f" opacity="0.6"/>
+                <circle cx="9" cy="16" r="1" fill="#fde047" opacity="0.8"/>
+                <circle cx="18" cy="18" r="1.2" fill="#b45309" opacity="0.7"/>
+            </pattern>
+        </defs>
+
+        <!-- Cồn cát lớp sau (Dâng cao tạo chiều sâu) -->
+        <path d="M0,220 C250,120 500,280 750,160 C1000,60 1120,200 1200,170 L1200,500 L0,500 Z" fill="url(#sand-grad-sub)"></path>
+        
+        <!-- Cồn cát lớp trước (Dâng cao ngập hẳn lên che phần viền dưới bảng modal) -->
+        <path d="M0,280 C300,160 550,340 850,200 C1050,100 1150,260 1200,230 L1200,500 L0,500 Z" fill="url(#sand-grad-main)"></path>
+
+        <!-- Phủ texture hạt cát li ti -->
+        <path d="M0,280 C300,160 550,340 850,200 C1050,100 1150,260 1200,230 L1200,500 L0,500 Z" fill="url(#sand-speckles)"></path>
+    </svg>
+</div>
             <div class="relative max-w-3xl w-full flex items-center justify-center">
 <!-- === VƯƠNG MIỆN HOÀNG GIA & CÚP C1 (DÀNH RIÊNG CHO REAL MADRID) === -->
                 <!-- 1. Chim ưng bay lượn (Góc trên bên trái) -->
