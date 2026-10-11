@@ -141,25 +141,34 @@
 }
         /* Lớp cát sa mạc tràn đáy rực rỡ */
 /* Dải cát sa mạc tràn đáy rực rỡ */
-#alnassr-sand {
+/* Lớp cát phía sau (Hậu cảnh) */
+#alnassr-sand-back {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    height: 215px !important;
-    z-index: 50 !important;
+    height: 350px !important;
+    z-index: 20 !important;
     pointer-events: none !important;
     overflow: hidden !important;
-    background: linear-gradient(to top, 
-        rgba(180, 83, 9, 0.95) 0%, 
-        rgba(217, 119, 6, 0.65) 45%, 
-        rgba(245, 158, 11, 0.2) 80%, 
-        transparent 100%) !important;
 }
-        /* Kim tự tháp và Lạc đà (Nằm ở phía trước) */
+
+/* Lớp cát phía trước (Tiền cảnh che chân) */
+#alnassr-sand-front {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 160px !important;
+    z-index: 30 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+
+/* Lạc đà và Kim tự tháp nằm ở lớp giữa (z-index: 50) */
 .alnassr-camel,
 .alnassr-pyramid {
-    z-index: 100 !important; /* Gán giá trị cao hơn giá trị của cồn cát */
+    z-index: 50 !important;
     position: absolute !important;
 }
         /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
