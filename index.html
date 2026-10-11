@@ -267,28 +267,24 @@
     filter: none !important;
     opacity: 0.12 !important; /* Điều chỉnh độ mờ tuỳ thích từ 0.08 đến 0.2 */
 }
-/* ================= STYLES CHO JUVENTUS (BẢN CHUẨN SỌC JUVE) ================= */
+/* ================= STYLES CHO JUVENTUS (SỌC ÁO ĐẤU BIANCONERI CHUẨN) ================= */
 #club-modal-card.modal-juventus {
-    /* Tạo sọc đứng Trắng - Đen đậm chuẩn áo đấu Juventus */
+    /* Sọc Đen - Trắng rõ nét, bản rộng tiêu chuẩn áo đấu */
     background: repeating-linear-gradient(
         90deg,
-        #0a0a0a,
-        #0a0a0a 28px,
-        #262626 28px,
-        #262626 30px,
-        #ffffff 30px,
-        #ffffff 58px,
-        #e5e5e5 58px,
-        #e5e5e5 60px
+        #000000 0px,
+        #000000 40px,
+        #ffffff 40px,
+        #ffffff 80px
     ) !important;
-    border: 2px solid #ffffff !important;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 0, 0, 0.9) !important;
+    border: 3px solid #18181b !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.25) !important;
     color: #ffffff !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
-/* Lớp phủ tối mờ phủ tuyệt đối (absolute) để KHÔNG làm vỡ Flexbox Layout */
+/* Lớp phủ tối siêu mỏng (chỉ 30%) để giữ nguyên sọc Đen - Trắng sắc nét mà vẫn đảm bảo đọc rõ chữ */
 #club-modal-card.modal-juventus::before {
     content: '';
     position: absolute !important;
@@ -298,7 +294,7 @@
     bottom: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(10, 10, 10, 0.82) 100%) !important;
+    background: rgba(0, 0, 0, 0.32) !important;
     pointer-events: none !important;
     z-index: 1 !important;
 }
@@ -311,28 +307,30 @@
 
 #club-modal-card.modal-juventus #modal-title {
     color: #ffffff !important;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 #club-modal-card.modal-juventus #modal-subtitle {
-    color: #e4e4e7 !important;
+    color: #f4f4f5 !important;
     font-weight: 800 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 #club-modal-card.modal-juventus #modal-desc {
     color: #f4f4f5 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 #club-modal-card.modal-juventus .border-tBorder {
-    border-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-/* Thẻ chỉ số và Trích dẫn nổi bật trên nền sọc */
+/* Thẻ chỉ số và Trích dẫn có nền tối cứng cáp để nổi bật trên nền sọc áo đấu */
 #club-modal-card.modal-juventus #modal-stats-box > div,
 #club-modal-card.modal-juventus #quote-juventus {
-    background: rgba(18, 18, 18, 0.85) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    backdrop-filter: blur(6px);
+    background: rgba(12, 12, 12, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(8px);
 }
     </style>
 </head>
