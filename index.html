@@ -158,7 +158,16 @@
         rgba(245, 158, 11, 0.2) 80%, 
         transparent 100%) !important;
 }
-
+/* Phóng to riêng chiều cao ảnh CR7 khi mở modal Al Nassr */
+#club-modal-card.modal-alnassr .w-full.md\:w-1\/3 {
+    width: 42% !important; /* Mở rộng bề ngang khung ảnh một chút */
+    height: 320px !important; /* Tăng chiều cao trên mobile */
+}
+@media (min-width: 768px) {
+    #club-modal-card.modal-alnassr .w-full.md\:w-1\/3 {
+        height: 440px !important; /* Tăng chiều cao đáng kể trên máy tính riêng cho Al Nassr */
+    }
+}
 /* Lạc đà và Kim tự tháp nằm ở lớp trước cát (z-index cao hơn) */
 .alnassr-camel,
 .alnassr-pyramid {
