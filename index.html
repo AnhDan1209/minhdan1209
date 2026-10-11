@@ -1656,6 +1656,7 @@
                     document.getElementById('stat-matches').innerText = data.matches;
                     document.getElementById('modal-stat-goals').innerText = data.goals;
                     document.getElementById('stat-ratio').innerText = data.ratio;
+                    
                     // Ẩn tất cả các khung trích dẫn trước
                     const allQuotes = document.querySelectorAll('#modal-quote-container > div');
                     const quoteContainer = document.getElementById('modal-quote-container');
@@ -1679,7 +1680,7 @@
 
                     document.getElementById('modal-explore-btn').href = data.link;
 
-                    // Reset các class đặc biệt trước khi áp dụng theme (Đã thêm modal-juventus)
+                    // Reset các class đặc biệt trước khi áp dụng theme
                     modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real', 'modal-juventus');
                    
                     // Reset ẩn đi khi mở CLB khác
@@ -1687,9 +1688,10 @@
                     if (devilHorns) devilHorns.classList.add('hidden');
                     if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
-                    if (juventusTag) juventusTag.classList.add('hidden'); // Reset ẩn nhãn Juventus
+                    if (juventusTag) juventusTag.classList.add('hidden'); 
                     if (juventusStars) juventusStars.classList.add('hidden');
                     if (juventusStarsRight) juventusStarsRight.classList.add('hidden');
+                    
                     // Ẩn 4 cúp độc lập của Real Madrid khi mở câu lạc bộ khác
                     document.getElementById('real-trophy-top-left')?.classList.add('hidden');
                     document.getElementById('real-trophy-bottom-left')?.classList.add('hidden');
@@ -1705,15 +1707,15 @@
                         modalContainer.classList.add('modal-sporting');
                         if (sportingOriginTag) sportingOriginTag.classList.remove('hidden');
                     } else if (clubKey === 'juventus') {
-                        modalContainer.classList.add('modal-juventus'); // Kích hoạt theme Juventus
-                        if (juventusTag) juventusTag.classList.remove('hidden');       // Hiện nhãn Juventus
-                        if (juventusStars) juventusStars.classList.remove('hidden');   // Hiện 2 sao trái
-                        if (juventusStarsRight) juventusStarsRight.classList.remove('hidden'); // Hiện 2 sao phải
+                        modalContainer.classList.add('modal-juventus'); 
+                        if (juventusTag) juventusTag.classList.remove('hidden');       
+                        if (juventusStars) juventusStars.classList.remove('hidden');   
+                        if (juventusStarsRight) juventusStarsRight.classList.remove('hidden'); 
                     } else if (clubKey === 'real') {
                         modalContainer.classList.add('modal-real');
                         if (realCrownTop) realCrownTop.classList.remove('hidden');
-                    }    
-                        // Bật hiển thị cho 4 cúp độc lập theo hình chéo
+                        
+                        // Bật hiển thị cho 4 cúp độc lập theo hình chéo của Real
                         document.getElementById('real-trophy-top-left')?.classList.remove('hidden');
                         document.getElementById('real-trophy-bottom-left')?.classList.remove('hidden');
                         document.getElementById('real-trophy-top-right')?.classList.remove('hidden');
