@@ -267,37 +267,46 @@
     filter: none !important;
     opacity: 0.12 !important; /* Điều chỉnh độ mờ tuỳ thích từ 0.08 đến 0.2 */
 }
- /* ================= STYLES CHO JUVENTUS (SỌC ÁO ĐẤU BIANCONERI) ================= */
+/* ================= STYLES CHO JUVENTUS (BẢN CHUẨN SỌC JUVE) ================= */
 #club-modal-card.modal-juventus {
     /* Tạo sọc đứng Trắng - Đen đậm chuẩn áo đấu Juventus */
     background: repeating-linear-gradient(
         90deg,
         #0a0a0a,
-        #0a0a0a 45px,
-        #ffffff 45px,
-        #ffffff 90px
+        #0a0a0a 28px,
+        #262626 28px,
+        #262626 30px,
+        #ffffff 30px,
+        #ffffff 58px,
+        #e5e5e5 58px,
+        #e5e5e5 60px
     ) !important;
     border: 2px solid #ffffff !important;
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.3), 0 0 20px rgba(0, 0, 0, 0.9) !important;
     color: #ffffff !important;
-    position: relative;
-    overflow: hidden;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
-/* Lớp phủ tối mờ phía trên để giữ độ tương phản giúp chữ và thẻ con dễ đọc */
+/* Lớp phủ tối mờ phủ tuyệt đối (absolute) để KHÔNG làm vỡ Flexbox Layout */
 #club-modal-card.modal-juventus::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(10, 10, 10, 0.75) 100%);
-    pointer-events: none;
-    z-index: 1;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(10, 10, 10, 0.82) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
 }
 
-/* Đảm bảo các nội dung bên trong nổi lên trên lớp phủ */
+/* Đảm bảo toàn bộ các phần tử con nổi lên trên lớp phủ */
 #club-modal-card.modal-juventus > * {
-    position: relative;
-    z-index: 2;
+    position: relative !important;
+    z-index: 2 !important;
 }
 
 #club-modal-card.modal-juventus #modal-title {
