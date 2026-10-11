@@ -1170,19 +1170,39 @@
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-                <!-- Dải cồn cát sa mạc uốn lượn chân thực -->
-<div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-32 z-20 pointer-events-none overflow-hidden">
-    <svg class="absolute bottom-0 inset-x-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <!-- Cồn cát lớp sau (Tông sậm) -->
-        <path d="M0,40 C250,90 500,10 750,70 C1000,130 1100,50 1200,60 L1200,120 L0,120 Z" fill="#92400e" opacity="0.85"></path>
-        <!-- Cồn cát lớp trước (Tông vàng cam rực rỡ) -->
-        <path d="M0,70 C300,10 600,100 900,40 C1050,10 1150,80 1200,70 L1200,120 L0,120 Z" fill="url(#sand-grad)" opacity="0.95"></path>
+                <!-- === DẢI CỒN CÁT SA MẠC DÂNG CAO & HẠT LI TI === -->
+<div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-44 z-20 pointer-events-none overflow-hidden">
+    <svg class="w-full h-full" viewBox="0 0 1200 180" preserveAspectRatio="none">
         <defs>
-            <linearGradient id="sand-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#f59e0b" />
-                <stop offset="100%" stop-color="#b45309" />
+            <!-- Gradient pha vàng kim rực rỡ và nâu cát -->
+            <linearGradient id="sand-grad-main" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fde047" stop-opacity="0.95" />
+                <stop offset="30%" stop-color="#f59e0b" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#92400e" stop-opacity="1" />
             </linearGradient>
+            
+            <linearGradient id="sand-grad-sub" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#b45309" stop-opacity="0.95" />
+            </linearGradient>
+
+            <!-- Pattern hạt cát li ti chân thực -->
+            <pattern id="sand-speckles" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="4" r="1" fill="#fef08a" opacity="0.7"/>
+                <circle cx="11" cy="7" r="1.2" fill="#78350f" opacity="0.6"/>
+                <circle cx="7" cy="13" r="0.8" fill="#fde047" opacity="0.8"/>
+                <circle cx="14" cy="14" r="1" fill="#b45309" opacity="0.7"/>
+            </pattern>
         </defs>
+
+        <!-- Cồn cát lớp sau (Tông trầm hơn tạo chiều sâu) -->
+        <path d="M0,70 C250,20 500,100 750,50 C1000,0 1120,60 1200,45 L1200,180 L0,180 Z" fill="url(#sand-grad-sub)"></path>
+        
+        <!-- Cồn cát lớp trước (Dâng cao chạm bảng, pha vàng óng) -->
+        <path d="M0,95 C300,30 550,125 850,55 C1050,15 1150,75 1200,65 L1200,180 L0,180 Z" fill="url(#sand-grad-main)"></path>
+
+        <!-- Lớp phủ texture hạt cát li ti -->
+        <path d="M0,95 C300,30 550,125 850,55 C1050,15 1150,75 1200,65 L1200,180 L0,180 Z" fill="url(#sand-speckles)"></path>
     </svg>
 </div>
             <div class="relative max-w-3xl w-full flex items-center justify-center">
