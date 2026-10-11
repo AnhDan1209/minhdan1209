@@ -265,13 +265,14 @@
 }
 #/* Sửa hiển thị logo chìm Real Madrid màu trắng */
 #club-modal-card.modal-real #modal-bg-watermark {
-    filter: invert(1) brightness(0.2) !important; /* Đổi màu nét vẽ sang tông tối/xám đậm để nổi rõ trên nền trắng */
-    opacity: 0.18 !important;                     /* Độ mờ vừa phải, đủ nhìn rõ logo chìm sang trọng */
-    width: 280px !important;                      /* Tăng nhẹ kích thước logo cho đẹp mắt */
-    height: 280px !important;
-    right: -20px !important;
-    bottom: -20px !important;
-    z-index: 1 !important;
+    opacity: 0.15 !important;
+    filter: invert(1) !important;
+    mix-blend-mode: multiply !important;
+    width: 260px !important;
+    height: 260px !important;
+    right: -10px !important;
+    bottom: -10px !important;
+    display: block !important;
 }
 /* ================= STYLES CHO JUVENTUS (MÃ FIX TRIỆT ĐỂ LỖI FLEXBOX LỆCH) ================= */
 #club-modal-card.modal-juventus {
