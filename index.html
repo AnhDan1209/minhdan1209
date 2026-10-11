@@ -265,18 +265,15 @@
 }
 /* Sửa hiển thị logo chìm Real Madrid màu trắng */
 /* Sửa hiển thị logo chìm Real Madrid màu trắng chuẩn xác */
+/* Hiện rõ nét, không làm mờ chìm */
 #club-modal-card.modal-real #modal-bg-watermark {
-    /* Đưa logo về màu xám đen mờ sang trọng */
-    filter: brightness(0) opacity(0.12) !important; 
+    filter: invert(1) brightness(0.2) !important;
+    opacity: 0.75 !important; /* Tăng độ hiển thị lên rõ đét */
     mix-blend-mode: normal !important;
-    
-    /* Đặt kích thước và vị trí */
     width: 280px !important;
     height: 280px !important;
     right: -10px !important;
     bottom: -10px !important;
-    
-    /* Đảm bảo logo hiện lên trên nền modal nhưng dưới chữ */
     display: block !important;
     position: absolute !important;
     pointer-events: none !important;
