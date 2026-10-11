@@ -139,8 +139,16 @@
     text-align: right;
     margin-top: 6px;
 }
-       
-/* Lớp cát duy nhất */
+#club-modal-card.modal-alnassr {
+    background: radial-gradient(circle at 85% 15%, rgba(253, 224, 71, 0.9) 0%, rgba(245, 158, 11, 0.5) 45%, transparent 75%),
+                radial-gradient(circle at 15% 85%, rgba(180, 83, 9, 0.7) 0%, transparent 60%),
+                linear-gradient(135deg, #3d1502 0%, #1a0800 100%) !important;
+    border: 2px solid #fde047 !important;
+    box-shadow: 0 0 80px rgba(245, 158, 11, 0.65), 0 0 30px rgba(253, 224, 71, 0.4) !important;
+    color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
 #alnassr-sand {
     position: absolute !important;
     bottom: 0 !important;
@@ -1216,10 +1224,14 @@
 <div id="alnassr-eagle" class="hidden absolute z-30 pointer-events-none" style="top: -100px; left: -180px; width: 220px; transform: rotate(-10deg);">
     <img src="image/eagle.png" alt="Desert Eagle" class="w-full h-auto drop-shadow-[0_0_25px_rgba(245,158,11,0.9)]">
 </div>
-
-<!-- 2. Mặt trời sa mạc rực rỡ (Đã dời sang phải) -->
-<div id="alnassr-sun" class="hidden absolute z-20 pointer-events-none" style="top: -195px; right: -360px; width: 270px; height: 270px;">
-    <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-200 via-amber-400 to-yellow-600 blur-[4px] shadow-[0_0_80px_rgba(245,158,11,0.95)] opacity-95 animate-pulse"></div>
+<!-- 2. Mặt trời sa mạc rực rỡ với Aura tỏa năng gắt (Góc trên bên phải) -->
+<div id="alnassr-sun" class="hidden absolute z-20 pointer-events-none" style="top: -195px; right: -360px; width: 270px; height: 270px;;">
+    <!-- Quầng sáng aura lan tỏa mạnh bên ngoài -->
+    <div class="absolute -inset-10 rounded-full bg-amber-400/40 blur-[35px] animate-pulse"></div>
+    <!-- Vầng hào quang lửa vàng -->
+    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-200 via-amber-400 to-orange-500 blur-md opacity-90"></div>
+    <!-- Tâm mặt trời chói chang cực đại -->
+    <div class="relative w-full h-full rounded-full bg-gradient-to-br from-white via-yellow-100 to-amber-500 shadow-[0_0_90px_rgba(253,224,71,1),0_0_150px_rgba(245,158,11,0.95)]"></div>
 </div>
 
 <!-- 3. Lạc đà (Nằm trước cát, chỉnh top vừa vặn để chân đứng trên cát) -->
