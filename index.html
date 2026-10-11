@@ -139,36 +139,28 @@
     text-align: right;
     margin-top: 6px;
 }
-        /* Lớp cát sa mạc tràn đáy rực rỡ */
-/* Dải cát sa mạc tràn đáy rực rỡ */
-/* Lớp cát phía sau (Hậu cảnh) */
-#alnassr-sand-back {
+       
+/* Lớp cát duy nhất */
+#alnassr-sand {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    height: 350px !important;
-    z-index: 20 !important;
+    height: 215px !important;
+    z-index: 50 !important;
     pointer-events: none !important;
     overflow: hidden !important;
+    background: linear-gradient(to top, 
+        rgba(180, 83, 9, 0.95) 0%, 
+        rgba(217, 119, 6, 0.65) 45%, 
+        rgba(245, 158, 11, 0.2) 80%, 
+        transparent 100%) !important;
 }
 
-/* Lớp cát phía trước (Tiền cảnh che chân) */
-#alnassr-sand-front {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 160px !important;
-    z-index: 30 !important;
-    pointer-events: none !important;
-    overflow: hidden !important;
-}
-
-/* Lạc đà và Kim tự tháp nằm ở lớp giữa (z-index: 50) */
+/* Lạc đà và Kim tự tháp nằm ở lớp trước cát (z-index cao hơn) */
 .alnassr-camel,
 .alnassr-pyramid {
-    z-index: 50 !important;
+    z-index: 100 !important;
     position: absolute !important;
 }
         /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
@@ -1230,13 +1222,13 @@
     <div class="w-full h-full rounded-full bg-gradient-to-br from-amber-200 via-amber-400 to-yellow-600 blur-[4px] shadow-[0_0_80px_rgba(245,158,11,0.95)] opacity-95 animate-pulse"></div>
 </div>
 
-<!-- 3. Lạc đà (Đã tăng kích thước to hơn) -->
-<div id="alnassr-camel" class="hidden absolute z-30 pointer-events-none" style="top: 70%; left: -320px; transform: translateY(-50%); width: 320px;">
+<!-- 3. Lạc đà (Nằm trước cát, chỉnh top vừa vặn để chân đứng trên cát) -->
+<div id="alnassr-camel" class="alnassr-camel hidden absolute pointer-events-none" style="top: 64%; left: -320px; transform: translateY(-50%); width: 320px;">
     <img src="image/camel.png" alt="Camel" class="w-full h-auto drop-shadow-[0_0_30px_rgba(245,158,11,0.85)]">
 </div>
 
-<!-- 4. Kim tự tháp (Đã tăng kích thước to hơn) -->
-<div id="alnassr-pyramid" class="hidden absolute z-30 pointer-events-none" style="top: 70%; right: -380px; transform: translateY(-50%); width: 420px;">
+<!-- 4. Kim tự tháp (Nằm trước cát) -->
+<div id="alnassr-pyramid" class="alnassr-pyramid hidden absolute pointer-events-none" style="top: 64%; right: -380px; transform: translateY(-50%); width: 420px;">
     <img src="image/pyramid.png" alt="Pyramid" class="w-full h-auto drop-shadow-[0_0_30px_rgba(245,158,11,0.85)]">
 </div>
            <!-- Đã đẩy vương miện lên cao hẳn so với viền trên của bảng -->
