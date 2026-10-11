@@ -267,6 +267,39 @@
     filter: none !important;
     opacity: 0.12 !important; /* Điều chỉnh độ mờ tuỳ thích từ 0.08 đến 0.2 */
 }
+        /* ================= STYLES CHO JUVENTUS (BIANCONERI) ================= */
+#club-modal-card.modal-juventus {
+    /* Nền sọc đen trắng đặc trưng kết hợp hiệu ứng tối giản sang trọng */
+    background: repeating-linear-gradient(45deg, #09090b, #09090b 15px, #18181b 15px, #18181b 30px),
+                linear-gradient(135deg, rgba(24, 24, 27, 0.95) 0%, rgba(9, 9, 11, 0.98) 100%) !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.25), 0 0 20px rgba(0, 0, 0, 0.9) !important;
+    color: #ffffff !important;
+}
+
+#club-modal-card.modal-juventus #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+#club-modal-card.modal-juventus #modal-subtitle {
+    color: #e4e4e7 !important;
+    font-weight: 800 !important;
+}
+
+#club-modal-card.modal-juventus #modal-desc {
+    color: #d4d4d8 !important;
+}
+
+#club-modal-card.modal-juventus .border-tBorder {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Khung trích dẫn Juventus */
+#club-modal-card.modal-juventus #quote-juventus {
+    background: rgba(24, 24, 27, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
@@ -945,7 +978,11 @@
             </div>
         <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
         <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
-        
+
+        <!-- Nhãn dán Bianconeri (Dành riêng cho Juventus) -->
+        <div id="juventus-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-zinc-900 border border-white/40 text-white text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
+            ⚪⚫ BIANCONERI LEGEND • 2018-2021
+        </div>
         <!-- Nhãn dán Khởi nguồn (Dành riêng cho Sporting CP) -->
         <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
             🌱 THE BEGINNING • 2002
@@ -1583,7 +1620,7 @@
         const modalContainer = document.getElementById('club-modal-card');
         const closeModalBtn = document.getElementById('close-modal-btn');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
-
+        const juventusTag = document.getElementById('juventus-tag');
         const devilHorns = document.getElementById('devil-horns');
         const devilWingsFull = document.getElementById('devil-wings-full');
         const sportingOriginTag = document.getElementById('sporting-origin-tag');
@@ -1632,14 +1669,15 @@
 
                     document.getElementById('modal-explore-btn').href = data.link;
 
-                    // Reset các class đặc biệt trước khi áp dụng theme
-                    modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real');
+                    // Reset các class đặc biệt trước khi áp dụng theme (Đã thêm modal-juventus)
+                    modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real', 'modal-juventus');
                    
-                    // Reset ẩn đi khi mở CLB khác (ĐÃ CẬP NHẬT 4 CÚP ĐỘC LẬP)
+                    // Reset ẩn đi khi mở CLB khác
                     if (realCrownTop) realCrownTop.classList.add('hidden');
                     if (devilHorns) devilHorns.classList.add('hidden');
                     if (devilWingsFull) devilWingsFull.classList.add('hidden');
                     if (sportingOriginTag) sportingOriginTag.classList.add('hidden');
+                    if (juventusTag) juventusTag.classList.add('hidden'); // Reset ẩn nhãn Juventus
 
                     // Ẩn 4 cúp độc lập của Real Madrid khi mở câu lạc bộ khác
                     document.getElementById('real-trophy-top-left')?.classList.add('hidden');
@@ -1655,6 +1693,9 @@
                     } else if (clubKey === 'sporting') {
                         modalContainer.classList.add('modal-sporting');
                         if (sportingOriginTag) sportingOriginTag.classList.remove('hidden');
+                    } else if (clubKey === 'juventus') {
+                        modalContainer.classList.add('modal-juventus'); // Kích hoạt theme Juventus
+                        if (juventusTag) juventusTag.classList.remove('hidden'); // Hiện nhãn Juventus
                     } else if (clubKey === 'real') {
                         modalContainer.classList.add('modal-real');
                         if (realCrownTop) realCrownTop.classList.remove('hidden');
