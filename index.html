@@ -1170,13 +1170,13 @@
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-              <!-- === DẢI CỒN CÁT CAO VÚT, TRƯỜN LÊN CHE NỬA BẢNG MODAL === -->
-<div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-[750px] z-20 pointer-events-none overflow-hidden">
+             <!-- === DẢI CỒN CÁT NHỒI LỆCH TRÁI, GIỮ PHẢI THOÁNG CHO NÚT KHÁM PHÁ === -->
+<div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-[650px] z-20 pointer-events-none overflow-hidden">
     <svg class="w-full h-full" viewBox="0 0 1200 900" preserveAspectRatio="none">
         <defs>
             <linearGradient id="sand-grad-main" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stop-color="#fde047" stop-opacity="0.95" />
-                <stop offset="20%" stop-color="#f59e0b" stop-opacity="0.95" />
+                <stop offset="25%" stop-color="#f59e0b" stop-opacity="0.95" />
                 <stop offset="100%" stop-color="#92400e" stop-opacity="1" />
             </linearGradient>
             
@@ -1194,14 +1194,14 @@
             </pattern>
         </defs>
 
-        <!-- Cồn cát lớp sau (Đỉnh vươn cực cao) -->
-        <path d="M0,350 C250,150 500,400 750,200 C1000,100 1120,300 1200,250 L1200,900 L0,900 Z" fill="url(#sand-grad-sub)"></path>
+        <!-- Cồn cát lớp sau (Đỉnh cao bên trái, thoải thấp dần về phải) -->
+        <path d="M0,400 C300,180 600,550 1200,780 L1200,900 L0,900 Z" fill="url(#sand-grad-sub)"></path>
         
-        <!-- Cồn cát lớp trước (Đỉnh cao chót vót nuốt trọn phần đáy bảng) -->
-        <path d="M0,450 C300,220 550,500 850,280 C1050,150 1150,380 1200,340 L1200,900 L0,900 Z" fill="url(#sand-grad-main)"></path>
+        <!-- Cồn cát lớp trước (Đỉnh dâng cao bên trái, trườn thấp hẳn ở góc phải để lộ nút Khám phá) -->
+        <path d="M0,500 C350,220 700,650 1200,840 L1200,900 L0,900 Z" fill="url(#sand-grad-main)"></path>
 
         <!-- Phủ texture hạt cát li ti -->
-        <path d="M0,450 C300,220 550,500 850,280 C1050,150 1150,380 1200,340 L1200,900 L0,900 Z" fill="url(#sand-speckles)"></path>
+        <path d="M0,500 C350,220 700,650 1200,840 L1200,900 L0,900 Z" fill="url(#sand-speckles)"></path>
     </svg>
 </div>
             <div class="relative max-w-3xl w-full flex items-center justify-center">
