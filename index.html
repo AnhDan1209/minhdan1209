@@ -335,6 +335,61 @@
     font-weight: 900 !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8) !important;
 }
+        /* ================= STYLES CHO AL NASSR VIP ================= */
+#club-modal-card.modal-alnassr {
+    background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.28) 0%, transparent 60%),
+                radial-gradient(circle at 15% 85%, rgba(29, 78, 216, 0.4) 0%, transparent 60%),
+                linear-gradient(135deg, #0b1329 0%, #030712 100%) !important;
+    border: 2px solid #f59e0b !important;
+    box-shadow: 0 0 55px rgba(245, 158, 11, 0.4), 0 0 25px rgba(29, 78, 216, 0.3) !important;
+    color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#club-modal-card.modal-alnassr #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+#club-modal-card.modal-alnassr #modal-subtitle {
+    color: #fbbf24 !important;
+    font-weight: 900 !important;
+}
+
+#club-modal-card.modal-alnassr #modal-desc {
+    color: #f1f5f9 !important;
+}
+
+#club-modal-card.modal-alnassr .border-tBorder {
+    border-color: rgba(245, 158, 11, 0.25) !important;
+}
+
+/* Nền thẻ con & khung trích dẫn */
+#club-modal-card.modal-alnassr #modal-stats-box > div,
+#club-modal-card.modal-alnassr #quote-alnassr {
+    background: rgba(13, 19, 34, 0.92) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* Watermark Al Nassr phóng to, sáng rõ, cắt góc tinh tế */
+#club-modal-card.modal-alnassr #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(1.3) contrast(1.1) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.25 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
 /* =========================================================
    DESIGN SYSTEM WATERMARK GÓC CHO TẤT CẢ CÁC CLB (SAMPLE REAL)
    ========================================================= */
@@ -1097,8 +1152,6 @@
     </footer>
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
-    <!-- ================= CLUB DETAIL MODAL POPUP (VIP REDESIGN) ================= -->
-<!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
     <div class="relative max-w-3xl w-full flex items-center justify-center">
 <!-- === VƯƠNG MIỆN HOÀNG GIA & CÚP C1 (DÀNH RIÊNG CHO REAL MADRID) === -->
@@ -1134,6 +1187,10 @@
         <!-- Nhãn dán Khởi nguồn (Dành riêng cho Sporting CP) -->
         <div id="sporting-origin-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-emerald-950/90 border border-emerald-400/40 text-emerald-300 text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
             🌱 THE BEGINNING • 2002
+        </div>
+                <!-- Nhãn dán Al Nassr (Dành riêng cho Al Nassr) -->
+        <div id="alnassr-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-amber-500 text-black text-[10px] font-black uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
+            🟡🔵 KNIGHTS OF NAJD • SAUDI PRO LEAGUE
         </div>
         <!-- 2 Ngôi sao vàng Scudetto (Dành riêng cho Juventus) -->
         <div id="juventus-stars" class="hidden absolute -top-5 left-8 z-30 pointer-events-none flex gap-1 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] animate-pulse">
@@ -1782,6 +1839,7 @@
         const realCrownTop = document.getElementById('real-crown-top');
         const juventusStars = document.getElementById('juventus-stars');
         const juventusStarsRight = document.getElementById('juventus-stars-right');
+        const alnassrTag = document.getElementById('alnassr-tag');
        openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const clubKey = btn.getAttribute('data-club');
@@ -1838,6 +1896,7 @@
                     if (juventusTag) juventusTag.classList.add('hidden'); 
                     if (juventusStars) juventusStars.classList.add('hidden');
                     if (juventusStarsRight) juventusStarsRight.classList.add('hidden');
+                    if (alnassrTag) alnassrTag.classList.add('hidden');
                     
                     // Ẩn 4 cúp độc lập của Real Madrid khi mở câu lạc bộ khác
                     document.getElementById('real-trophy-top-left')?.classList.add('hidden');
@@ -1872,8 +1931,14 @@
                         modalContainer.classList.add('modal-alnassr');
                     } else if (clubKey === 'portugal') {
                         modalContainer.classList.add('modal-portugal');
+                    } else if (clubKey === 'alnassr') {
+                        modalContainer.classList.add('modal-alnassr');
+                        if (alnassrTag) alnassrTag.classList.remove('hidden');
                     }
 
+
+
+                    
                     modal.classList.remove('opacity-0', 'pointer-events-none');
                     modalContainer.classList.remove('scale-90');
                     modalContainer.classList.add('scale-100');
