@@ -139,7 +139,10 @@
     text-align: right;
     margin-top: 6px;
 }
-
+/* Nền bao quanh (backdrop) chuyển sang tông màu sa mạc ấm áp khi mở Al Nassr */
+#club-modal.alnassr-backdrop {
+    background: radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.5) 0%, rgba(120, 53, 15, 0.85) 60%, rgba(45, 18, 2, 0.95) 100%) !important;
+}
 #alnassr-sand {
     position: absolute !important;
     bottom: 0 !important;
@@ -1974,7 +1977,7 @@
 
                     // Reset các class đặc biệt trước khi áp dụng theme
                     modalContainer.classList.remove('modal-mu', 'modal-sporting', 'modal-real', 'modal-juventus', 'modal-alnassr', 'modal-portugal');
-                   
+                    modal.classList.remove('alnassr-backdrop'); // <-- Nhét dòng này vào ngay bên dưới dòng trên[cite: 3]
                     // Reset ẩn đi khi mở CLB khác
                     if (realCrownTop) realCrownTop.classList.add('hidden');
                     if (devilHorns) devilHorns.classList.add('hidden');
@@ -2021,7 +2024,8 @@
                     /* === BỔ SUNG 2 DÒNG NÀY VÀO === */
                     }else if (clubKey === 'portugal') {
                         modalContainer.classList.add('modal-portugal');
-                    }else if (clubKey === 'alnassr') {
+                    } else if (clubKey === 'alnassr') {
+                        modal.classList.add('alnassr-backdrop'); // <-- THÊM DÒNG NÀY ĐỂ ĐỔI MÀU NỀN XUNG QUANH
                         modalContainer.classList.add('modal-alnassr');
                         if (alnassrTag) alnassrTag.classList.remove('hidden');
                         
@@ -2031,7 +2035,7 @@
                         if (alnassrCamel) alnassrCamel.classList.remove('hidden');
                         if (alnassrPyramid) alnassrPyramid.classList.remove('hidden');
                         if (alnassrSand) alnassrSand.classList.remove('hidden');
-                    } 
+                    }
 
 
 
