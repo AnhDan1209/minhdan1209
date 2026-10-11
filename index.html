@@ -165,6 +165,15 @@
     z-index: 100 !important;
     position: absolute !important;
 }
+/* Viền bọc trắng bao quanh nét vẽ vương miện Al Nassr */
+#alnassr-crown-top {
+    filter: 
+        drop-shadow(2px 0 0 #ffffff) 
+        drop-shadow(-2px 0 0 #ffffff) 
+        drop-shadow(0 2px 0 #ffffff) 
+        drop-shadow(0 -2px 0 #ffffff)
+        drop-shadow(0 0 15px rgba(253, 224, 71, 0.9)) !important;
+}        
         /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
 #club-modal-card.modal-mu {
     background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #450a0a 100%) !important;
@@ -1229,7 +1238,7 @@
 </div>
 
 <!-- 3. Lạc đà (Nằm trước cát, chỉnh top vừa vặn để chân đứng trên cát) -->
-<div id="alnassr-camel" class="alnassr-camel hidden absolute pointer-events-none" style="top: 80%; left: -320px; transform: translateY(-50%); width: 320px;">
+<div id="alnassr-camel" class="alnassr-camel hidden absolute pointer-events-none" style="top: 80%; left: -300px; transform: translateY(-50%); width: 320px;">
     <img src="image/camel.png" alt="Camel" class="w-full h-auto drop-shadow-[0_0_30px_rgba(245,158,11,0.85)]">
 </div>
 
@@ -1261,7 +1270,8 @@
             </div>
         <!-- Cánh quỷ đỏ (Dành riêng cho MU) -->
         <img id="devil-wings-full" src="image/devil_wings.png" alt="Devil Wings" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none w-[185%] max-w-[1250px] h-auto drop-shadow-[0_0_40px_rgba(220,38,38,0.95)] animate-pulse transition-all duration-300">
-
+        !-- Vương miện Al Nassr (Đặt đỉnh modal, bọc viền trắng & tạo hiệu ứng tỏa sáng) -->
+        <img id="alnassr-crown-top" src="image/nnsrcrown.png" alt="Al Nassr Crown" class="hidden absolute -top-16 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-28 sm:w-32 h-auto">
         <!-- Nhãn dán Bianconeri (Dành riêng cho Juventus) -->
         <div id="juventus-tag" class="hidden absolute -top-4 left-1/2 -translate-x-1/2 z-30 pointer-events-none px-4 py-1 rounded-full bg-zinc-900 border border-white/40 text-white text-[10px] font-extrabold uppercase tracking-[0.25em] shadow-lg backdrop-blur-md">
             ⚪⚫ BIANCONERI LEGEND • 2018-2021
@@ -1930,6 +1940,7 @@
         const alnassrCamel = document.getElementById('alnassr-camel');
         const alnassrPyramid = document.getElementById('alnassr-pyramid');
         const alnassrSand = document.getElementById('alnassr-sand');
+        const alnassrCrownTop = document.getElementById('alnassr-crown-top');
        openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const clubKey = btn.getAttribute('data-club');
@@ -1992,7 +2003,7 @@
                     if (alnassrCamel) alnassrCamel.classList.add('hidden');
                     if (alnassrPyramid) alnassrPyramid.classList.add('hidden');
                     if (alnassrSand) alnassrSand.classList.add('hidden');
-                    
+                    if (alnassrCrownTop) alnassrCrownTop.classList.add('hidden');
                     // Ẩn 4 cúp độc lập của Real Madrid khi mở câu lạc bộ khác
                     document.getElementById('real-trophy-top-left')?.classList.add('hidden');
                     document.getElementById('real-trophy-bottom-left')?.classList.add('hidden');
@@ -2035,6 +2046,7 @@
                         if (alnassrCamel) alnassrCamel.classList.remove('hidden');
                         if (alnassrPyramid) alnassrPyramid.classList.remove('hidden');
                         if (alnassrSand) alnassrSand.classList.remove('hidden');
+                        if (alnassrCrownTop) alnassrCrownTop.classList.remove('hidden');
                     }
 
 
