@@ -267,60 +267,60 @@
     filter: none !important;
     opacity: 0.12 !important; /* Điều chỉnh độ mờ tuỳ thích từ 0.08 đến 0.2 */
 }
-/* ================= STYLES CHO JUVENTUS (SỌC ÁO ĐẤU BIANCONERI CHUẨN) ================= */
+/* ================= STYLES CHO JUVENTUS (SỌC ÁO BIANCONERI CHUẨN FIX FLEX) ================= */
 #club-modal-card.modal-juventus {
+    /* Sọc dọc Đen - Trắng sắc nét */
     background: repeating-linear-gradient(
         90deg,
         #000000 0px,
-        #000000 35px,
-        #ffffff 35px,
-        #ffffff 70px
+        #000000 30px,
+        #ffffff 30px,
+        #ffffff 60px
     ) !important;
     border: 2px solid #ffffff !important;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 15px rgba(255, 255, 255, 0.3) !important;
     color: #ffffff !important;
     position: relative !important;
     overflow: hidden !important;
 }
 
+/* Lớp phủ tối mờ mỏng để chữ không bị chói mắt */
 #club-modal-card.modal-juventus::before {
-    content: '';
+    content: '' !important;
     position: absolute !important;
     inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: rgba(0, 0, 0, 0.38) !important;
+    background: rgba(0, 0, 0, 0.45) !important;
     pointer-events: none !important;
     z-index: 1 !important;
 }
 
+/* Đảm bảo toàn bộ nội dung con nổi lên trên lớp phủ */
 #club-modal-card.modal-juventus > * {
     position: relative !important;
     z-index: 2 !important;
 }
 
+/* Ép kiểu màu chữ nổi bật */
 #club-modal-card.modal-juventus #modal-title {
     color: #ffffff !important;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
-#club-modal-card.modal-juventus #modal-subtitle {
-    color: #f4f4f5 !important;
-    font-weight: 800 !important;
-}
-
+#club-modal-card.modal-juventus #modal-subtitle,
 #club-modal-card.modal-juventus #modal-desc {
     color: #f4f4f5 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 #club-modal-card.modal-juventus .border-tBorder {
-    border-color: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
+/* Khung chỉ số và trích dẫn trên nền tối rõ ràng */
 #club-modal-card.modal-juventus #modal-stats-box > div,
 #club-modal-card.modal-juventus #quote-juventus {
-    background: rgba(12, 12, 12, 0.92) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(15, 15, 15, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
     backdrop-filter: blur(8px);
 }
     </style>
@@ -1020,8 +1020,7 @@
             <i class="fa-solid fa-star text-amber-400 text-xl"></i>
         </div>
         <!-- BẢNG POPUP CHÍNH -->
-        <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full max-w-3xl mx-auto p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-8 overflow-hidden">
-            <!-- === 4 GÓC HOA VĂN HOÀNG GIA (DÀNH RIÊNG CHO REAL MADRID) === -->
+      <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full max-w-2xl mx-auto p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6 overflow-hidden">
             
             <!-- Logo mờ chìm làm hình nền (Watermark) -->
             <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
