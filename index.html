@@ -335,6 +335,104 @@
     font-weight: 900 !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8) !important;
 }
+/* =========================================================
+   DESIGN SYSTEM WATERMARK GÓC CHO TẤT CẢ CÁC CLB (SAMPLE REAL)
+   ========================================================= */
+
+/* --- 1. MANCHESTER UNITED --- */
+#club-modal-card.modal-manutd {
+    position: relative !important;
+    overflow: hidden !important; /* Cắt gọn logo tràn lề */
+}
+#club-modal-card.modal-manutd #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    width: 340px !important;
+    height: 340px !important;
+    right: -60px !important;
+    bottom: -60px !important;
+    filter: invert(1) brightness(0.5) !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.22 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 2. JUVENTUS --- */
+#club-modal-card.modal-juve {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-juve #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    width: 320px !important;
+    height: 320px !important;
+    right: -50px !important;
+    bottom: -50px !important;
+    filter: invert(1) brightness(0.6) !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.20 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 3. AL NASSR --- */
+#club-modal-card.modal-alnassr {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-alnassr #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    width: 330px !important;
+    height: 330px !important;
+    right: -55px !important;
+    bottom: -55px !important;
+    filter: brightness(1.1) contrast(1.1) !important; /* Giữ tông màu gốc hoặc chỉnh sáng nhẹ */
+    mix-blend-mode: screen !important;                 /* Hòa trộn đẹp trên nền xanh đêm */
+    opacity: 0.18 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 4. SPORTING CP --- */
+#club-modal-card.modal-sporting {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-sporting #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    width: 330px !important;
+    height: 330px !important;
+    right: -55px !important;
+    bottom: -55px !important;
+    filter: invert(1) brightness(0.5) !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.20 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 5. ĐỘI TUYỂN BỒ ĐÀO NHA (PORTUGAL) --- */
+#club-modal-card.modal-portugal {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-portugal #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    width: 340px !important;
+    height: 340px !important;
+    right: -60px !important;
+    bottom: -60px !important;
+    filter: invert(1) brightness(0.5) !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.22 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
