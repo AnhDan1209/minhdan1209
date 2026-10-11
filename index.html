@@ -1153,10 +1153,33 @@
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-    <div class="relative max-w-3xl w-full flex items-center justify-center">
+            <div class="relative max-w-3xl w-full flex items-center justify-center">
 <!-- === VƯƠNG MIỆN HOÀNG GIA & CÚP C1 (DÀNH RIÊNG CHO REAL MADRID) === -->
+                <!-- 1. Chim ưng bay lượn (Góc trên bên trái) -->
+        <div id="alnassr-eagle" class="hidden absolute z-30 pointer-events-none" style="top: -45px; left: -110px; width: 140px; transform: rotate(-12deg);">
+            <img src="image/eagle.png" alt="Desert Eagle" class="w-full h-auto drop-shadow-[0_0_20px_rgba(245,158,11,0.8)]">
+        </div>
+
+        <!-- 2. Mặt trời sa mạc rực rỡ (Góc trên bên phải) -->
+        <div id="alnassr-sun" class="hidden absolute z-20 pointer-events-none" style="top: -40px; right: -50px; width: 130px; height: 130px;">
+            <div class="w-full h-full rounded-full bg-gradient-to-br from-yellow-300 via-amber-500 to-amber-700 blur-[3px] shadow-[0_0_50px_rgba(245,158,11,0.9)] opacity-90 animate-pulse"></div>
+        </div>
+
+        <!-- 3. Lạc đà (Cạnh trái giữa khung) -->
+        <div id="alnassr-camel" class="hidden absolute z-30 pointer-events-none" style="top: 50%; left: -75px; transform: translateY(-50%);">
+            <div class="w-14 h-14 rounded-2xl bg-amber-950/85 border border-amber-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.5)] backdrop-blur-md">
+                <svg class="w-8 h-8 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M19 14h-1v-2h1c.6 0 1-.4 1-1s-.4-1-1-1h-2.1l-1.3-3.9C15.3 4.4 14.3 4 13.2 4h-2.4C9.7 4 8.7 4.4 8.4 5.1L7.1 9H5c-.6 0-1 .4-1 1s.4 1 1 1h1v2H5c-.6 0-1 .4-1 1s.4 1 1 1h1v4c0 .6.4 1 1 1s1-.4 1-1v-4h2v4c0 .6.4 1 1 1s1-.4 1-1v-4h4v4c0 .6.4 1 1 1s1-.4 1-1v-4h1c.6 0 1-.4 1-1s-.4-1-1-1zm-9-8h2.4l1 3H9l1-3z"/></svg>
+            </div>
+        </div>
+
+        <!-- 4. Kim tự tháp (Cạnh phải giữa khung) -->
+        <div id="alnassr-pyramid" class="hidden absolute z-30 pointer-events-none" style="top: 50%; right: -75px; transform: translateY(-50%);">
+            <div class="w-14 h-14 rounded-2xl bg-amber-950/85 border border-amber-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(245,158,11,0.5)] backdrop-blur-md">
+                <svg class="w-8 h-8 text-amber-400 fill-current" viewBox="0 0 24 24"><path d="M12 2L2 20h20L12 2zm0 4.4l6.6 11.6H5.4L12 6.4z"/></svg>
+            </div>
+        </div>
            <!-- Đã đẩy vương miện lên cao hẳn so với viền trên của bảng -->
-<img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute -top-24 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-36 sm:w-40 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
+            <img id="real-crown-top" src="image/realcrown.jpg" alt="Real Crown" class="hidden absolute -top-24 left-1/2 -translate-x-1/2 z-30 pointer-events-none w-36 sm:w-40 h-auto drop-shadow-[0_8px_20px_rgba(245,158,11,0.8)]">
             
        <!-- 1. CÚP TRÊN BÊN TRÁI -->
             <div id="real-trophy-top-left" class="hidden absolute z-30 pointer-events-none" style="top: 15px; left: -140px; transform: rotate(-18deg);">
@@ -1203,7 +1226,12 @@
         </div>
         <!-- BẢNG POPUP CHÍNH -->
       <div id="club-modal-card" class="bg-tCard border-2 border-tBorder rounded-3xl w-full max-w-2xl mx-auto p-6 sm:p-8 relative z-10 shadow-2xl transform scale-90 transition-all duration-300 flex flex-col md:flex-row gap-6 overflow-hidden">
-            
+
+          <!-- 5. Cát ở đáy (Bên trong card chính để tràn sát đáy bo góc) -->
+            <div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-16 z-20 pointer-events-none overflow-hidden rounded-b-3xl">
+                <div class="absolute inset-0 bg-gradient-to-t from-amber-600/85 via-amber-500/40 to-transparent"></div>
+                <div class="absolute bottom-0 inset-x-0 h-3 bg-amber-800/90 blur-sm"></div>
+            </div>
             <!-- Logo mờ chìm làm hình nền (Watermark) -->
             <img id="modal-bg-watermark" src="" alt="" class="absolute -right-10 -bottom-10 w-64 h-64 object-contain opacity-[0.03] pointer-events-none transition-all duration-500">
 
@@ -1840,6 +1868,11 @@
         const juventusStars = document.getElementById('juventus-stars');
         const juventusStarsRight = document.getElementById('juventus-stars-right');
         const alnassrTag = document.getElementById('alnassr-tag');
+        const alnassrEagle = document.getElementById('alnassr-eagle');
+        const alnassrSun = document.getElementById('alnassr-sun');
+        const alnassrCamel = document.getElementById('alnassr-camel');
+        const alnassrPyramid = document.getElementById('alnassr-pyramid');
+        const alnassrSand = document.getElementById('alnassr-sand');
        openModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const clubKey = btn.getAttribute('data-club');
@@ -1897,6 +1930,11 @@
                     if (juventusStars) juventusStars.classList.add('hidden');
                     if (juventusStarsRight) juventusStarsRight.classList.add('hidden');
                     if (alnassrTag) alnassrTag.classList.add('hidden');
+                    if (alnassrEagle) alnassrEagle.classList.add('hidden');
+                    if (alnassrSun) alnassrSun.classList.add('hidden');
+                    if (alnassrCamel) alnassrCamel.classList.add('hidden');
+                    if (alnassrPyramid) alnassrPyramid.classList.add('hidden');
+                    if (alnassrSand) alnassrSand.classList.add('hidden');
                     
                     // Ẩn 4 cúp độc lập của Real Madrid khi mở câu lạc bộ khác
                     document.getElementById('real-trophy-top-left')?.classList.add('hidden');
@@ -1934,7 +1972,17 @@
                     } else if (clubKey === 'alnassr') {
                         modalContainer.classList.add('modal-alnassr');
                         if (alnassrTag) alnassrTag.classList.remove('hidden');
-                    }
+                    } else if (clubKey === 'alnassr') {
+                        modalContainer.classList.add('modal-alnassr');
+                        if (alnassrTag) alnassrTag.classList.remove('hidden');
+                        
+                        // Bật hiệu ứng sa mạc độc bản cho Al Nassr
+                        if (alnassrEagle) alnassrEagle.classList.remove('hidden');
+                        if (alnassrSun) alnassrSun.classList.remove('hidden');
+                        if (alnassrCamel) alnassrCamel.classList.remove('hidden');
+                        if (alnassrPyramid) alnassrPyramid.classList.remove('hidden');
+                        if (alnassrSand) alnassrSand.classList.remove('hidden');
+                    } 
 
 
 
