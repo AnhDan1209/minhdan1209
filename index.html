@@ -1170,10 +1170,21 @@
 
    <!-- ================= CLUB DETAIL MODAL POPUP ================= -->
 <div id="club-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-                <div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-24 z-20 pointer-events-none overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-t from-amber-700/95 via-amber-600/50 to-transparent"></div>
-                <div class="absolute bottom-0 inset-x-0 h-4 bg-amber-900/95 blur-sm"></div>
-        </div>  
+                <!-- Dải cồn cát sa mạc uốn lượn chân thực -->
+<div id="alnassr-sand" class="hidden absolute bottom-0 inset-x-0 h-32 z-20 pointer-events-none overflow-hidden">
+    <svg class="absolute bottom-0 inset-x-0 w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <!-- Cồn cát lớp sau (Tông sậm) -->
+        <path d="M0,40 C250,90 500,10 750,70 C1000,130 1100,50 1200,60 L1200,120 L0,120 Z" fill="#92400e" opacity="0.85"></path>
+        <!-- Cồn cát lớp trước (Tông vàng cam rực rỡ) -->
+        <path d="M0,70 C300,10 600,100 900,40 C1050,10 1150,80 1200,70 L1200,120 L0,120 Z" fill="url(#sand-grad)" opacity="0.95"></path>
+        <defs>
+            <linearGradient id="sand-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#f59e0b" />
+                <stop offset="100%" stop-color="#b45309" />
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
             <div class="relative max-w-3xl w-full flex items-center justify-center">
 <!-- === VƯƠNG MIỆN HOÀNG GIA & CÚP C1 (DÀNH RIÊNG CHO REAL MADRID) === -->
                 <!-- 1. Chim ưng bay lượn (Góc trên bên trái) -->
