@@ -504,7 +504,7 @@
                 badge: "image/bdn.png",
                 cr7Img: "image/cr7_portugal.jpg",
                 desc: "Đội trưởng huyền thoại đưa Bồ Đào Nha xưng vương tại EURO 2016 và Nations League 2019. Cầu thủ ghi nhiều bàn thắng nhất lịch sử bóng đá quốc tế (130+ bàn).",
-                matches: "210+", goals: "130+", ratio: "0.62",
+                matches: "234", goals: "146", ratio: "0.62",
                 borderColor: "border-red-600/50", glowColor: "shadow-[0_0_50px_rgba(220,38,38,0.3)]",
                 link: "portugal.html"
             }
