@@ -12,16 +12,28 @@
         // --- 1. LOGIC RENDER TROPHIES ---
        const trophies = [
             { id: 1, title: "Quả Bóng Vàng (Ballon d'Or)", count: "5×", category: "individual", categoryName: "Cá nhân", year: "2008, 2013, 2014, 2016, 2017", img: "image/trophy_ballondor.jpg" },
-            { id: 2, title: "UEFA Champions League", count: "5×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017, 2018", img: "image/trophy_c1.jpg" },
+            { id: 2, title: "UEFA Champions League", count: "5×", category: "club", categoryName: "Câu lạc bộ", year: "2008 (Manchester United), 2014, 2016, 2017, 2018", img: "image/trophy_c1.jpg" },
             { id: 3, title: "FIFA Puskás Award", count: "1×", category: "individual", categoryName: "Cá nhân", year: "2009 (Bàn thắng đẹp nhất năm)", img: "image/puskas.jpg" },
             { id: 4, title: "Giải Vô Địch Châu Âu (EURO)", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2016 (Bồ Đào Nha)", img: "image/trophy_euro.jpg" },
             { id: 5, title: "Chiếc Giày Vàng Châu Âu", count: "4×", category: "individual", categoryName: "Cá nhân", year: "2008, 2011, 2014, 2015", img: "image/trophy_giayvang.jpg" },
-            { id: 6, title: "FIFA Club World Cup", count: "4×", category: "club", categoryName: "Câu lạc bộ", year: "2008, 2014, 2016, 2017", img: "image/trophy_cwc.jpg" },
-            { id: 7, title: "UEFA Nations League", count: "1×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2019 (Bồ Đào Nha)", img: "image/trophy_nationsleague.jpg" },
+            { id: 6, title: "FIFA Club World Cup", count: "4×", category: "club", categoryName: "Câu lạc bộ", year: "2008 (Manchester United), 2014, 2016, 2017 (Real Madrid)", img: "image/trophy_cwc.jpg" },
+            { id: 7, title: "UEFA Nations League", count: "2×", category: "international", categoryName: "Đội tuyển quốc gia", year: "2019, 2025 (Bồ Đào Nha)", img: "image/trophy_nationsleague.jpg" },
             { id: 8, title: "Ngoại Hạng Anh (Premier League)", count: "3×", category: "club", categoryName: "Câu lạc bộ", year: "2007, 2008, 2009", img: "image/trophy_epl.jpg" },
-            { id: 9, title: "La Liga (Tây Ban Nha)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017", img: "image/trophy_laliga.jpg" }
+            { id: 9, title: "La Liga (Tây Ban Nha)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017", img: "image/trophy_laliga.jpg" },
+            { id: 10, title: "FA Cup", count: "1×", category: "club", categoryName: "Câu lạc bộ", year: "2004 (Manchester United)", img: "image/trophy_fa-cup.jpg" },
+            { id: 11, title: "League Cup (EFL Cup)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2006, 2009 (Manchester United)", img: "image/trophy_league-cup.jpg" },
+            { id: 12, title: "FA Community Shield", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2007, 2008 (Manchester United)", img: "image/trophy_community-shield.jpg" },
+            { id: 13, title: "Copa del Rey", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2011, 2014 (Real Madrid)", img: "image/trophy_copa-del-rey.jpg" },
+            { id: 14, title: "Siêu cúp Tây Ban Nha", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2012, 2017 (Real Madrid)", img: "image/trophy-supercopa-espana.jpg" },
+            { id: 15, title: "Siêu cúp UEFA", count: "3×", category: "club", categoryName: "Câu lạc bộ", year: "2014, 2016, 2017 (Real Madrid)", img: "image/trophy-uefa-super-cup.jpg" },
+            { id: 16, title: "Serie A (Ý)", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2019, 2020 (Juventus)", img: "image/trophy-serie-a.jpg" },
+            { id: 17, title: "Coppa Italia", count: "1×", category: "club", categoryName: "Câu lạc bộ", year: "2021 (Juventus)", img: "image/trophy-coppa-italia.jpg" },
+            { id: 18, title: "Siêu cúp Ý", count: "2×", category: "club", categoryName: "Câu lạc bộ", year: "2018, 2020 (Juventus)", img: "image/trophy-supercoppa-italiana.jpg" },
+            { id: 19, title: "Arab Club Champions Cup", count: "1×", category: "club", categoryName: "Câu lạc bộ", year: "2023 (Al Nassr)", img: "image/trophy-arab-club-champions.jpg" },
+            { id: 20, title: "The Best FIFA Men's Player", count: "2×", category: "individual", categoryName: "Cá nhân", year: "2016, 2017", img: "image/trophy-the-best-fifa.jpg" },
+            { id: 21, title: "Cầu thủ nam xuất sắc nhất UEFA", count: "3×", category: "individual", categoryName: "Cá nhân", year: "2014, 2016, 2017", img: "image/trophy-uefa-player-of-year.jpg" },
+            { id: 22, title: "FIFA World Player of the Year", count: "1×", category: "individual", categoryName: "Cá nhân", year: "2008", img: "image/trophy-fifa-world-player.jpg" }
         ];
-
         function renderTrophies(filter = 'all') {
             const container = document.getElementById('trophy-container');
             if (!container) return;
