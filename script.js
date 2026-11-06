@@ -510,17 +510,30 @@
             }
         };
 
-        // Tải trước ảnh dùng trong cửa sổ chi tiết để giảm thời gian chờ khi mở.
+        // Nạp trước và giải mã ảnh modal để đổi CLB không lóe ảnh cũ.
         const clubImageCache = new Map();
-        Object.values(clubDetailsData).forEach(data => {
-            [data.badge, data.cr7Img].forEach(src => {
-                if (!clubImageCache.has(src)) {
-                    const image = new Image();
+        function preloadClubImage(src) {
+            if (!clubImageCache.has(src)) {
+                const image = new Image();
+                const loaded = new Promise((resolve, reject) => {
+                    image.onload = () => resolve(image);
+                    image.onerror = () => reject(new Error(`Không tải được ảnh: ${src}`));
                     image.src = src;
-                    clubImageCache.set(src, image);
-                }
-            });
+                    if (image.complete) {
+                        if (image.naturalWidth > 0) resolve(image);
+                        else reject(new Error(`Không tải được ảnh: ${src}`));
+                    }
+                });
+                clubImageCache.set(src, loaded);
+            }
+            return clubImageCache.get(src);
+        }
+        Object.values(clubDetailsData).forEach(data => {
+            preloadClubImage(data.badge);
+            preloadClubImage(data.cr7Img);
+            preloadClubImage(data === clubDetailsData.real ? "image/realnocolor.jpg" : data.badge);
         });
+        let activeClubImageRequestId = 0;
 
         const modal = document.getElementById('club-modal');
         const modalContainer = document.getElementById('club-modal-card');
@@ -550,14 +563,38 @@
                     document.getElementById('modal-subtitle').innerText = data.subtitle;
                     document.getElementById('modal-years').innerText = data.years;
                     document.getElementById('modal-desc').innerText = data.desc;
-                    document.getElementById('modal-badge').src = data.badge;
+                    const imageRequestId = ++activeClubImageRequestId;
+                    const badgeEl = document.getElementById('modal-badge');
+                    const watermarkEl = document.getElementById('modal-bg-watermark');
+                    const imgEl = document.getElementById('modal-cr7-img');
+                    const watermarkSrc = clubKey === 'real' ? "image/realnocolor.jpg" : data.badge;
 
-                    // Gán dữ liệu chỉ số & watermark
-                    if (clubKey === 'real') {
-                        document.getElementById('modal-bg-watermark').src = "image/realnocolor.jpg";
-                    } else {
-                        document.getElementById('modal-bg-watermark').src = data.badge;
-                    }
+                    // Ẩn ảnh CLB trước, rồi chỉ hiện bộ ảnh đúng của lựa chọn mới nhất.
+                    badgeEl.style.visibility = 'hidden';
+                    watermarkEl.style.visibility = 'hidden';
+                    imgEl.classList.add('opacity-0');
+                    Promise.all([
+                        preloadClubImage(data.badge),
+                        preloadClubImage(data.cr7Img),
+                        preloadClubImage(watermarkSrc)
+                    ]).then(([badgeImage, mainImage, watermarkImage]) => {
+                        if (imageRequestId !== activeClubImageRequestId) return;
+                        badgeEl.src = badgeImage.src;
+                        watermarkEl.src = watermarkImage.src;
+                        imgEl.src = mainImage.src;
+                        badgeEl.style.visibility = 'visible';
+                        watermarkEl.style.visibility = 'visible';
+                        imgEl.classList.remove('opacity-0');
+                    }).catch(error => {
+                        console.error(error);
+                        if (imageRequestId !== activeClubImageRequestId) return;
+                        badgeEl.src = data.badge;
+                        watermarkEl.src = watermarkSrc;
+                        imgEl.src = data.cr7Img;
+                        badgeEl.style.visibility = 'visible';
+                        watermarkEl.style.visibility = 'visible';
+                        imgEl.classList.remove('opacity-0');
+                    });
                     document.getElementById('stat-matches').innerText = data.matches;
                     document.getElementById('modal-stat-goals').innerText = data.goals;
                     document.getElementById('stat-ratio').innerText = data.ratio;
@@ -575,18 +612,6 @@
                         activeQuote.classList.remove('hidden');
                     }
                     
-                    const imgEl = document.getElementById('modal-cr7-img');
-                    const cachedImage = clubImageCache.get(data.cr7Img);
-                    if (cachedImage?.complete && cachedImage.naturalWidth > 0) {
-                        imgEl.src = cachedImage.src;
-                        imgEl.classList.remove('opacity-0');
-                    } else if (cachedImage) {
-                        cachedImage.onload = () => {
-                            imgEl.src = cachedImage.src;
-                            imgEl.classList.remove('opacity-0');
-                        };
-                    }
-
                     document.getElementById('modal-explore-btn').href = data.link;
 
                     // Reset các class đặc biệt trước khi áp dụng theme
