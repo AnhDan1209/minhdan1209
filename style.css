@@ -513,7 +513,7 @@
 }
 
 /* Giữ watermark modal đứng yên khi đổi CLB */
-#modal-bg-watermark {
+#club-modal-card #modal-bg-watermark {
     width: 600px !important;
     height: 600px !important;
     right: -200px !important;
