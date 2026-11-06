@@ -511,4 +511,12 @@
     pointer-events: none !important;
     z-index: 1 !important;
 }
-    
+
+/* Giữ watermark modal đứng yên khi đổi CLB */
+#modal-bg-watermark {
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    transition: none !important;
+}
