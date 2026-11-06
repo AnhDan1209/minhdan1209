@@ -1,0 +1,514 @@
+        /* ================= THEME ENGINE ================= */
+        :root, [data-theme="base"] {
+            /* 1. Base: VIP Black & Gold (Đêm) */
+            --c-bg: #05070E;
+            --c-card: #0D1322;
+            --c-text: #F8FAFC;
+            --c-text-muted: #94A3B8;
+            --c-accent: #D4AF37;
+            --c-border: rgba(212, 175, 55, 0.25);
+            --g-main: linear-gradient(135deg, #FFF4A3 0%, #E6C200 40%, #D4AF37 70%, #996515 100%);
+            --shadow-glow: rgba(212, 175, 55, 0.4);
+            --hero-overlay: rgba(5, 7, 14, 0.55);
+            --btn-text: #000000;
+        }
+
+        [data-theme="white"] {
+            /* 2. White & Deep Orange (Ngày - Trắng Cam Đậm) */
+            --c-bg: #FFF8F3;
+            --c-card: #FFFFFF;
+            --c-text: #18181B;
+            --c-text-muted: #52525B;
+            --c-accent: #FF5500;
+            --c-border: rgba(255, 85, 0, 0.3);
+            --g-main: linear-gradient(135deg, #FF8833 0%, #FF5500 45%, #D94100 80%, #992E00 100%);
+            --shadow-glow: rgba(255, 85, 0, 0.4);
+            --hero-overlay: rgba(255, 248, 243, 0.65);
+            --btn-text: #FFFFFF;
+        }
+
+        /* ================= CÁC LỚP CSS ĐỘNG ================= */
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .font-display { font-family: 'Oswald', sans-serif; }
+        
+        .theme-gradient-bg {
+            background: var(--g-main);
+            color: var(--btn-text) !important;
+        }
+        .theme-gradient-text {
+            background: var(--g-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .theme-glow { box-shadow: 0 0 35px var(--shadow-glow); }
+        .theme-glow-lg { box-shadow: 0 0 50px var(--shadow-glow); }
+        .theme-text-glow { text-shadow: 0 0 18px var(--shadow-glow); }
+        
+        @keyframes shockwave {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2.6); opacity: 0; }
+        }
+        .animate-shockwave { animation: shockwave 0.8s cubic-bezier(0, 0, 0.2, 1) forwards; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--c-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--c-card); border-radius: 4px; border: 1px solid var(--c-border); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--c-accent); }
+
+        .theme-btn.active {
+            outline: 2px solid var(--c-accent);
+            outline-offset: 2px;
+            transform: scale(1.15);
+        }
+
+        /* Style chung cho hộp trích dẫn các CLB */
+.club-quote-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 14px;
+    border-radius: 12px;
+    position: relative;
+    margin-bottom: 8px;
+    backdrop-filter: blur(8px);
+}
+.club-quote-box i {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    font-size: 20px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+.club-quote-box p {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.5;
+    position: relative;
+    z-index: 10;
+    padding-left: 14px;
+    font-weight: 500;
+}
+.club-quote-box span {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 800;
+    text-align: right;
+    margin-top: 6px;
+}
+/* Nền bao quanh (backdrop) chuyển sang tông màu sa mạc ấm áp khi mở Al Nassr */
+#club-modal.alnassr-backdrop {
+    background: radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.5) 0%, rgba(120, 53, 15, 0.85) 60%, rgba(45, 18, 2, 0.95) 100%) !important;
+}
+#alnassr-sand {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 175px !important;
+    z-index: 50 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+    background: linear-gradient(to top, 
+        rgba(180, 83, 9, 0.95) 0%, 
+        rgba(217, 119, 6, 0.65) 45%, 
+        rgba(245, 158, 11, 0.2) 80%, 
+        transparent 100%) !important;
+}
+/* Phóng to riêng chiều cao ảnh CR7 khi mở modal Al Nassr */
+#club-modal-card.modal-alnassr .w-full.md\:w-1\/3 {
+    width: 42% !important; /* Mở rộng bề ngang khung ảnh một chút */
+    height: 320px !important; /* Tăng chiều cao trên mobile */
+}
+@media (min-width: 768px) {
+    #club-modal-card.modal-alnassr .w-full.md\:w-1\/3 {
+        height: 440px !important; /* Tăng chiều cao đáng kể trên máy tính riêng cho Al Nassr */
+    }
+}
+/* Lạc đà và Kim tự tháp nằm ở lớp trước cát (z-index cao hơn) */
+.alnassr-camel,
+.alnassr-pyramid {
+    z-index: 100 !important;
+    position: absolute !important;
+}
+/* Viền bọc trắng bao quanh nét vẽ vương miện Al Nassr */
+#alnassr-crown-top {
+    filter: 
+        drop-shadow(2px 0 0 #ffffff) 
+        drop-shadow(-2px 0 0 #ffffff) 
+        drop-shadow(0 2px 0 #ffffff) 
+        drop-shadow(0 -2px 0 #ffffff)
+        drop-shadow(0 0 15px rgba(253, 224, 71, 0.9)) !important;
+}        
+        /* Style nền đỏ rực và chữ trắng riêng cho bảng Manchester United */
+#club-modal-card.modal-mu {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #450a0a 100%) !important;
+    border-color: #f87171 !important;
+    box-shadow: 0 0 65px rgba(239, 68, 68, 0.85) !important;
+    color: #ffffff !important;
+}
+#club-modal-card.modal-mu #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+#club-modal-card.modal-mu #modal-subtitle {
+    color: #fde047 !important; /* Màu vàng tươi nổi bật trên nền đỏ */
+}
+#club-modal-card.modal-mu #modal-desc {
+    color: #fef2f2 !important; /* Màu chữ trắng sáng dễ đọc */
+}
+#club-modal-card.modal-mu .border-tBorder {
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+#club-modal-card.modal-sporting {
+    background: linear-gradient(135deg, #064e3b 0%, #022c22 100%) !important;
+    border-color: rgba(52, 211, 153, 0.35) !important;
+    box-shadow: 0 0 45px rgba(6, 78, 59, 0.6) !important;
+    color: #ffffff !important;
+}
+#club-modal-card.modal-sporting #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+#club-modal-card.modal-sporting #modal-subtitle {
+    color: #6ee7b7 !important; /* Xanh mạ pastel mộc mạc, nhẹ nhàng */
+}
+#club-modal-card.modal-sporting #modal-desc {
+    color: #d1fae5 !important;
+}
+#club-modal-card.modal-sporting .border-tBorder {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Style Real Madrid Hoàng Gia: Trắng Sáng - Vàng Kim - Xanh Hoàng Gia */
+#club-modal-card.modal-real {
+    /* ĐÃ TĂNG ĐỘ ĐẬM VÀ BÁN KÍNH 2 VẦNG OMBRE NỀN:
+       - Góc trên bên phải (85% 15%): Xanh Royal đậm (rgba 0.45) tỏa rộng 60%
+       - Góc dưới bên trái (15% 85%): Cam vàng ấm đậm (rgba 0.45) tỏa rộng 60% */
+    background: radial-gradient(circle at 85% 15%, rgba(29, 78, 216, 0.9) 0%, transparent 60%),
+                radial-gradient(circle at 15% 85%, rgba(245, 158, 11, 0.9) 0%, transparent 60%),
+                linear-gradient(135deg, #f8fafc 0%, #ffffff 100%) !important;
+  /* Xếp lớp viền bằng box-shadow đa tầng chuẩn xác: 
+       1. Viền vàng mỏng bên trong (2px)
+       2. Viền đỏ dày ở giữa (6px tiếp theo)
+       3. Viền vàng mỏng ngoài cùng (2px tiếp theo)
+       4. Hiệu ứng tỏa sáng glow */
+    border: none !important;
+    box-shadow: 
+        0 0 0 2px #f59e0b,         /* Lớp 1: Viền vàng mỏng bên trong */
+        0 0 0 8px #dc2626,         /* Lớp 2: Viền đỏ dày ở giữa */
+        0 0 0 10px #000000,        /* Lớp 3: Viền vàng mỏng bên ngoài */
+        0 0 45px rgba(220, 38, 38, 0.4), 
+        0 0 25px rgba(245, 158, 11, 0.4) !important;
+        
+    color: #0f172a !important;
+    /* 2 DÒNG THÊM MỚI ĐỂ CẮT GỌN LOGO TRÀN RA NGOÀI KHUNG */
+    position: relative !important;
+    overflow: hidden !important;
+}
+/* Tiêu đề & Subtitle trên nền trắng */
+#club-modal-card.modal-real #modal-title {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+#club-modal-card.modal-real #modal-subtitle {
+    background: linear-gradient(90deg, #1d4ed8 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900 !important;
+}
+#club-modal-card.modal-real #modal-desc {
+    color: #334155 !important; /* Mô tả rõ ràng, dễ đọc */
+}
+
+/* Đường viền phân cách bên trong */
+#club-modal-card.modal-real .border-tBorder,
+#club-modal-card.modal-real div {
+    border-color: transparent !important;
+}
+/* BẢNG CHỈ SỐ: Thẻ trắng nổi bật với viền ánh vàng/xanh */
+#club-modal-card.modal-real #modal-stats-box > div {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(245, 158, 11, 0.3) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+#club-modal-card.modal-real #modal-stats-box span.block {
+    color: #64748b !important;
+}
+#club-modal-card.modal-real #stat-matches {
+    color: #0f172a !important;
+}
+#club-modal-card.modal-real #modal-stat-goals {
+    color: #ea580c !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+}
+#club-modal-card.modal-real #stat-ratio {
+    color: #1d4ed8 !important; /* Hiệu suất xanh hoàng gia */
+}
+
+/* Khung trích dẫn Zidane: Tông nền trắng kem viền vàng kim sang trọng */
+#club-modal-card.modal-real #quote-real {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.9) 0%, rgba(254, 243, 199, 0.4) 100%) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+#club-modal-card.modal-real #quote-real p {
+    color: #1e293b !important;
+}
+#club-modal-card.modal-real #quote-real span {
+    color: #b45309 !important;
+}
+
+/* Nút Khám phá màu Cam Hoàng Gia */
+#club-modal-card.modal-real #modal-explore-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4) !important;
+}
+/* Logo Real Madrid nền trong suốt, hòa trộn chìm sang trọng */
+/* Sửa hiển thị logo chìm Real Madrid màu trắng */
+#club-modal-card.modal-real #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 700px !important;
+    height: 700px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(0.5) !important;
+    mix-blend-mode: multiply !important;
+    opacity: 0.22 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+/* ================= STYLES CHO JUVENTUS (MÃ FIX TRIỆT ĐỂ LỖI FLEXBOX LỆCH) ================= */
+#club-modal-card.modal-juventus {
+    /* Tạo lớp sọc Juve Đen - Trắng kết hợp màu tối chìm nhẹ cực đẹp mà KHÔNG CẦN ::before */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        repeating-linear-gradient(
+            90deg,
+            #000000 0px,
+            #000000 32px,
+            #ffffff 32px,
+            #ffffff 64px
+        ) !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+/* Đảm bảo tiêu đề và chữ luôn sáng rõ */
+#club-modal-card.modal-juventus #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+}
+
+#club-modal-card.modal-juventus #modal-subtitle {
+    color: #f4f4f5 !important;
+    font-weight: 800 !important;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.9) !important;
+}
+
+#club-modal-card.modal-juventus #modal-desc {
+    color: #f4f4f5 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+#club-modal-card.modal-juventus .border-tBorder {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Nền thẻ con đệm mờ để không bị nhòe vào sọc */
+#club-modal-card.modal-juventus #modal-stats-box > div,
+#club-modal-card.modal-juventus #quote-juventus {
+    background: rgba(12, 12, 12, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+}
+        /* Đổi chữ CRISTIANO RONALDO thành màu Vàng Kim nổi bật trên nền sọc */
+#club-modal-card.modal-juventus span.uppercase.tracking-widest {
+    color: #f59e0b !important; /* Màu vàng kim sáng */
+    font-weight: 900 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.8) !important;
+}
+        /* ================= STYLES CHO AL NASSR VIP ================= */
+#club-modal-card.modal-alnassr {
+    background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.7) 0%, transparent 60%),
+                radial-gradient(circle at 15% 85%, rgba(29, 78, 216, 0.7) 0%, transparent 60%),
+                linear-gradient(135deg, #0b1329 0%, #030712 100%) !important;
+    border: 2px solid #f59e0b !important;
+    box-shadow: 0 0 55px rgba(245, 158, 11, 0.4), 0 0 25px rgba(29, 78, 216, 0.3) !important;
+    color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#club-modal-card.modal-alnassr #modal-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+#club-modal-card.modal-alnassr #modal-subtitle {
+    color: #fbbf24 !important;
+    font-weight: 900 !important;
+}
+
+#club-modal-card.modal-alnassr #modal-desc {
+    color: #f1f5f9 !important;
+}
+
+#club-modal-card.modal-alnassr .border-tBorder {
+    border-color: rgba(245, 158, 11, 0.25) !important;
+}
+
+/* Nền thẻ con & khung trích dẫn */
+#club-modal-card.modal-alnassr #modal-stats-box > div,
+#club-modal-card.modal-alnassr #quote-alnassr {
+    background: rgba(13, 19, 34, 0.92) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    backdrop-filter: blur(8px) !important;
+}
+
+/* Watermark Al Nassr phóng to, sáng rõ, cắt góc tinh tế */
+#club-modal-card.modal-alnassr #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(1.3) contrast(1.1) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.25 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+/* =========================================================
+   DESIGN SYSTEM WATERMARK GÓC CHO TẤT CẢ CÁC CLB (SAMPLE REAL)
+   ========================================================= */
+
+/* --- 1. MANCHESTER UNITED --- */
+#club-modal-card.modal-mu {
+    position: relative !important;
+    overflow: hidden !important; /* Cắt gọn logo tràn lề */
+}
+#club-modal-card.modal-mu #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(0.5) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.20 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 2. JUVENTUS --- */
+#club-modal-card.modal-juventus {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-juventus #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(0.5) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.20 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 3. AL NASSR --- */
+#club-modal-card.modal-alnassr {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-alnassr #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(0.7) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.30 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 4. SPORTING CP --- */
+#club-modal-card.modal-sporting {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-sporting #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(0.7) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.30 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* --- 5. ĐỘI TUYỂN BỒ ĐÀO NHA (PORTUGAL) --- */
+#club-modal-card.modal-portugal {
+    position: relative !important;
+    overflow: hidden !important;
+}
+#club-modal-card.modal-portugal #modal-bg-watermark {
+    display: block !important;
+    position: absolute !important;
+    
+    width: 600px !important;
+    height: 600px !important;
+    right: -200px !important;
+    bottom: -200px !important;
+    
+    filter: brightness(0.7) !important;
+    mix-blend-mode: normal !important;
+    opacity: 0.30 !important;
+    
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+    
