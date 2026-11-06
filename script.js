@@ -510,6 +510,18 @@
             }
         };
 
+        // Tải trước ảnh dùng trong cửa sổ chi tiết để giảm thời gian chờ khi mở.
+        const clubImageCache = new Map();
+        Object.values(clubDetailsData).forEach(data => {
+            [data.badge, data.cr7Img].forEach(src => {
+                if (!clubImageCache.has(src)) {
+                    const image = new Image();
+                    image.src = src;
+                    clubImageCache.set(src, image);
+                }
+            });
+        });
+
         const modal = document.getElementById('club-modal');
         const modalContainer = document.getElementById('club-modal-card');
         const closeModalBtn = document.getElementById('close-modal-btn');
@@ -564,12 +576,16 @@
                     }
                     
                     const imgEl = document.getElementById('modal-cr7-img');
-                    imgEl.classList.add('opacity-0');
-                    imgEl.src = data.cr7Img;
-
-                    imgEl.onload = () => {
+                    const cachedImage = clubImageCache.get(data.cr7Img);
+                    if (cachedImage?.complete && cachedImage.naturalWidth > 0) {
+                        imgEl.src = cachedImage.src;
                         imgEl.classList.remove('opacity-0');
-                    };
+                    } else if (cachedImage) {
+                        cachedImage.onload = () => {
+                            imgEl.src = cachedImage.src;
+                            imgEl.classList.remove('opacity-0');
+                        };
+                    }
 
                     document.getElementById('modal-explore-btn').href = data.link;
 
