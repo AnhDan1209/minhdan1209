@@ -501,7 +501,7 @@
                 title: "Bồ Đào Nha",
                 subtitle: "Anh hùng dân tộc (2003 - 2026)",
                 years: "2003 - 2026",
-                badge: "image/bdn.png",
+                badge: "image/bdn.png?v=2",
                 cr7Img: "image/cr7_portugal.jpg",
                 desc: "Đội trưởng huyền thoại đưa Bồ Đào Nha xưng vương tại EURO 2016 và Nations League 2019. Cầu thủ ghi nhiều bàn thắng nhất lịch sử bóng đá quốc tế (130+ bàn).",
                 matches: "234", goals: "146", ratio: "0.62",
