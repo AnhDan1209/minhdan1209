@@ -923,3 +923,60 @@ footer { border-color: var(--c-border) !important; }
     border: 1px solid var(--c-border) !important;
     border-radius: .9rem !important;
 }
+
+
+/* Phone-specific composition and controls (375px and up). */
+@media (max-width: 767px) {
+    #hero {
+        padding-block: 2.25rem 3.5rem !important;
+        background-position: 55% center !important;
+    }
+    #hero .relative.group.max-w-sm.w-full {
+        width: min(62vw, 15rem);
+        max-width: 15rem;
+    }
+    #hero .relative.group.max-w-sm.w-full::after {
+        right: -1rem;
+        bottom: 1.25rem;
+        font-size: .55rem;
+    }
+    #hero h1 {
+        font-size: clamp(3rem, 14vw, 4.5rem) !important;
+        max-width: 10ch;
+    }
+    #hero [class~="md:col-span-7"] > p { font-size: 1rem !important; }
+    #hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div {
+        min-height: 76px;
+    }
+    #mobile-menu { padding: .5rem 1.25rem 1rem !important; }
+    #mobile-menu a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding-block: .55rem;
+        border-bottom: 1px solid var(--c-border);
+    }
+    #mobile-menu a:last-child { border-bottom: 0; }
+    #trophies > .max-w-7xl > .flex { gap: 1rem; }
+    #trophy-container > * { min-width: 0; }
+    #quiz-options button { min-height: 52px; }
+    #club-modal-card {
+        max-height: calc(100svh - 2rem);
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+    }
+
+    /* Keep the soundtrack controls in the page flow so they never cover reading or quiz controls. */
+    body > div:has(#bg-music-btn) {
+        position: static !important;
+        inset: auto !important;
+        align-self: center;
+        width: min(calc(100% - 2rem), 22rem);
+        justify-content: center;
+        margin: 1.5rem auto !important;
+        transform: none !important;
+        border-radius: 1rem !important;
+        background: var(--c-card) !important;
+        backdrop-filter: none !important;
+    }
+}
