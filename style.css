@@ -980,3 +980,25 @@ footer { border-color: var(--c-border) !important; }
         backdrop-filter: none !important;
     }
 }
+
+
+@media (max-width: 767px) {
+    #trophy-filters {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    #trophy-filters::-webkit-scrollbar { display: none; }
+    #mobile-menu-btn {
+        min-width: 44px !important;
+        min-height: 44px !important;
+    }
+    header .theme-btn {
+        min-width: 38px !important;
+        min-height: 38px !important;
+    }
+    #bg-music-btn, #next-track-btn {
+        min-width: 44px !important;
+        min-height: 44px !important;
+    }
+    #timeline button { min-height: 48px; }
+}
