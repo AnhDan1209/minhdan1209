@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Oswald:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
 
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-tAccent selection:text-white">
@@ -48,7 +48,7 @@
             </a>
             
             <!-- Menu Desktop -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-extrabold tracking-widest text-tText uppercase">
+            <nav class="hidden xl:flex flex-1 items-center justify-center space-x-5 text-xs font-extrabold tracking-widest text-tText uppercase">
                 <a href="#hero" class="hover:text-tAccent transition-colors">Tổng Quan</a>
                 <a href="#biography" class="hover:text-tAccent transition-colors">Tiểu Sử</a>
                 <a href="#timeline" class="hover:text-tAccent transition-colors">Sự Nghiệp</a>
@@ -74,14 +74,14 @@
                     <span class="hidden sm:inline">SIUUU!</span>
                 </a>
 
-                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
+                <button id="mobile-menu-btn" class="xl:hidden w-9 h-9 rounded-xl bg-tCard border border-tBorder text-tText flex items-center justify-center hover:text-tAccent transition-colors focus:outline-none" aria-label="Toggle Menu">
                     <i class="fa-solid fa-bars text-base"></i>
                 </button>
             </div>
         </div>
 
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
+        <div id="mobile-menu" class="hidden xl:hidden bg-tCard/95 border-b border-tBorder px-6 py-4 space-y-3 text-xs font-extrabold tracking-widest uppercase backdrop-blur-lg">
             <a href="#hero" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Tổng Quan</a>
             <a href="#timeline" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Sự Nghiệp</a>
             <a href="#trophies" class="block py-2 text-tText hover:text-tAccent transition-colors border-b border-tBorder/30">Danh Hiệu</a>
@@ -650,38 +650,30 @@
         </div>
     </section>
 
-    <!-- CR7 Music Playlist -->
-    <section id="music-playlist" aria-labelledby="music-playlist-title">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="music-playlist__intro">
-                <p class="music-playlist__eyebrow">Âm nhạc</p>
-                <h2 id="music-playlist-title">Nhạc tiếp lửa cho CR7</h2>
-                <p>Chọn một bài để nghe trong lúc khám phá hành trình của Cristiano Ronaldo.</p>
-            </div>
+    <!-- Compact floating CR7 music player -->
+    <div id="music-playlist" class="fixed bottom-5 left-5 z-50 flex items-center gap-3 bg-tCard/90 backdrop-blur-md border border-tBorder p-2.5 px-4 rounded-full shadow-2xl transition-all hover:scale-[1.02]" aria-label="Trình phát nhạc">
+        <button id="bg-music-btn" class="theme-gradient-bg flex h-10 w-10 shrink-0 items-center justify-center rounded-full shadow-md transition-transform active:scale-95" type="button" aria-label="Phát hoặc tạm dừng nhạc" title="Phát hoặc tạm dừng nhạc">
+            <i id="bg-music-icon" class="fa-solid fa-play text-sm ml-0.5" aria-hidden="true"></i>
+        </button>
 
-            <div class="music-playlist__panel">
-                <div class="music-playlist__now-playing">
-                    <button id="bg-music-btn" class="theme-gradient-bg flex items-center justify-center rounded-full shadow-md transition-transform active:scale-95" type="button" aria-label="Phát hoặc tạm dừng nhạc" title="Phát hoặc tạm dừng nhạc">
-                        <i id="bg-music-icon" class="fa-solid fa-play text-sm ml-0.5" aria-hidden="true"></i>
-                    </button>
-                    <div class="music-playlist__current" aria-live="polite">
-                        <span class="music-playlist__current-label">Đang phát · <span id="track-number">1/3</span></span>
-                        <span id="track-title">C1 Anthem</span>
-                    </div>
-                    <button id="next-track-btn" class="rounded-full bg-tBg border border-tBorder flex items-center justify-center text-tText hover:text-tAccent transition-colors" type="button" aria-label="Phát bài tiếp theo" title="Phát bài tiếp theo">
-                        <i class="fa-solid fa-forward-step text-xs" aria-hidden="true"></i>
-                    </button>
-                </div>
+        <button id="toggle-playlist-btn" class="music-player__track flex min-w-0 flex-col text-left" type="button" aria-label="Chọn bài nhạc" aria-controls="playlist-tracks" aria-expanded="false">
+            <span class="text-[9px] font-black uppercase text-tAccent tracking-widest flex items-center gap-1">
+                <i class="fa-solid fa-music text-[8px]" aria-hidden="true"></i> Track <span id="track-number">1/3</span>
+            </span>
+            <span id="track-title" class="text-xs font-extrabold text-tText tracking-wide truncate max-w-[120px]">C1 Anthem</span>
+        </button>
 
-                <ul id="playlist-tracks" aria-label="Danh sách bài nhạc">
-                    <li><button type="button" data-track-index="0" aria-pressed="true"><span class="playlist-track__number">01</span><span class="playlist-track__title">C1 Anthem</span><span class="playlist-track__action" aria-hidden="true"><i class="fa-solid fa-play"></i></span></button></li>
-                    <li><button type="button" data-track-index="1" aria-pressed="false"><span class="playlist-track__number">02</span><span class="playlist-track__title">The Nights — Avicii</span><span class="playlist-track__action" aria-hidden="true"><i class="fa-solid fa-play"></i></span></button></li>
-                    <li><button type="button" data-track-index="2" aria-pressed="false"><span class="playlist-track__number">03</span><span class="playlist-track__title">Hall of Fame</span><span class="playlist-track__action" aria-hidden="true"><i class="fa-solid fa-play"></i></span></button></li>
-                </ul>
-                <audio id="bg-audio" preload="metadata"></audio>
-            </div>
-        </div>
-    </section>
+        <button id="next-track-btn" class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-tBg border border-tBorder text-tText hover:text-tAccent transition-colors" type="button" aria-label="Phát bài tiếp theo" title="Phát bài tiếp theo">
+            <i class="fa-solid fa-forward-step text-xs" aria-hidden="true"></i>
+        </button>
+
+        <ul id="playlist-tracks" class="hidden" aria-label="Danh sách bài nhạc">
+            <li><button type="button" data-track-index="0" aria-pressed="true"><span class="playlist-track__number">01</span><span class="playlist-track__title">C1 Anthem</span></button></li>
+            <li><button type="button" data-track-index="1" aria-pressed="false"><span class="playlist-track__number">02</span><span class="playlist-track__title">The Nights — Avicii</span></button></li>
+            <li><button type="button" data-track-index="2" aria-pressed="false"><span class="playlist-track__number">03</span><span class="playlist-track__title">Hall of Fame</span></button></li>
+        </ul>
+        <audio id="bg-audio" preload="metadata"></audio>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-tCard py-10 border-t border-tBorder text-center text-xs text-tMuted transition-colors">
