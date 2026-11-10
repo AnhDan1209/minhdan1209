@@ -902,3 +902,24 @@ footer { border-color: var(--c-border) !important; }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+
+/* Keep empty trophy-grid tracks transparent; avoid a colored block below the last row. */
+#trophy-container {
+    background: transparent !important;
+    gap: clamp(.75rem, 1.5vw, 1.25rem) !important;
+}
+#trophy-container > * {
+    background: var(--c-card) !important;
+    border: 1px solid var(--c-border) !important;
+    border-radius: .9rem !important;
+    overflow: hidden;
+}
+#records .grid {
+    background: transparent !important;
+    gap: clamp(.75rem, 1.5vw, 1.25rem) !important;
+}
+#records .grid > * {
+    border: 1px solid var(--c-border) !important;
+    border-radius: .9rem !important;
+}
