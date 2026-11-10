@@ -1002,3 +1002,11 @@ footer { border-color: var(--c-border) !important; }
     }
     #timeline button { min-height: 48px; }
 }
+
+
+/* Preserve the original 7/5 grid spans so the hero portrait stays beside its introduction on desktop/tablet. */
+@media (min-width: 768px) {
+    #hero .max-w-7xl > .grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    }
+}
