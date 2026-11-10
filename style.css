@@ -1218,3 +1218,7 @@ footer { border-color: var(--c-border) !important; }
         min-height: 40px !important;
     }
 }
+
+@media (max-width: 767px) {
+    body > div#music-playlist { position: fixed !important; }
+}
