@@ -1148,3 +1148,73 @@ footer { border-color: var(--c-border) !important; }
     .music-playlist__intro h2 { font-size: clamp(2rem, 10vw, 2.7rem); }
     #playlist-tracks [data-track-index] { min-height: 56px; }
 }
+
+
+/* Compact player controls and a readable header rhythm across desktop widths. */
+@media (min-width: 1280px) {
+    header > .max-w-7xl { gap: 1.75rem; }
+    .cr7-brand { flex: 0 0 auto; }
+    header nav { min-width: 0; }
+}
+#music-playlist {
+    position: fixed !important;
+    inset: auto auto max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left)) !important;
+    z-index: 70 !important;
+    display: flex !important;
+    width: max-content !important;
+    max-width: calc(100vw - 2rem) !important;
+    margin: 0 !important;
+    padding: .5rem .75rem !important;
+    border: 1px solid var(--c-border) !important;
+    border-radius: 9999px !important;
+    background: color-mix(in srgb, var(--c-card) 94%, transparent) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
+    backdrop-filter: blur(12px) !important;
+}
+#music-playlist .music-player__track {
+    width: 7.5rem;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+#music-playlist #track-title { max-width: 7.5rem !important; }
+#music-playlist #playlist-tracks {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + .75rem);
+    width: min(86vw, 18rem);
+    padding: .3rem;
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+    border-radius: 1rem;
+    background: var(--c-card);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .34);
+}
+#music-playlist #playlist-tracks.hidden { display: none !important; }
+#music-playlist #playlist-tracks [data-track-index] {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    min-height: 48px;
+    padding: .65rem .8rem;
+}
+#music-playlist #next-track-btn {
+    min-width: 36px !important;
+    min-height: 36px !important;
+}
+@media (max-width: 767px) {
+    body > div#music-playlist {
+        left: max(.75rem, env(safe-area-inset-left)) !important;
+        bottom: max(.75rem, env(safe-area-inset-bottom)) !important;
+        width: max-content !important;
+        margin: 0 !important;
+        padding: .45rem .65rem !important;
+        transform: none !important;
+    }
+    #music-playlist .music-player__track { width: 6.5rem; }
+    #music-playlist #track-title { max-width: 6.5rem !important; }
+    #music-playlist #bg-music-btn {
+        min-width: 40px !important;
+        min-height: 40px !important;
+    }
+}
