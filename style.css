@@ -641,3 +641,264 @@ footer { border-color: var(--c-border); }
         transition-duration: .01ms !important;
     }
 }
+
+
+/* ================= CR7 EDITORIAL LAYOUT ================= */
+:root, [data-theme="base"] {
+    --c-bg: #080b0e;
+    --c-card: #11171c;
+    --c-text: #f4f1e8;
+    --c-text-muted: #b5b8b8;
+    --c-accent: #d7b45b;
+    --c-border: rgba(215, 180, 91, .24);
+}
+[data-theme="white"] {
+    --c-bg: #f5f2eb;
+    --c-card: #fffdf8;
+    --c-text: #1d2428;
+    --c-text-muted: #535b5f;
+    --c-accent: #bf4e2e;
+    --c-border: rgba(29, 36, 40, .18);
+}
+html { scroll-padding-top: 5.5rem; }
+body {
+    line-height: 1.65;
+    background-image: radial-gradient(ellipse at 50% -18%, rgba(215,180,91,.08), transparent 52%);
+}
+[data-theme="white"] body {
+    background-image: radial-gradient(ellipse at 50% -18%, rgba(191,78,46,.07), transparent 52%);
+}
+header {
+    background-color: color-mix(in srgb, var(--c-bg) 94%, transparent) !important;
+    border-color: var(--c-border) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18) !important;
+}
+header > div:first-child { min-height: 76px; }
+header nav { gap: clamp(.7rem, 1.4vw, 1.4rem) !important; }
+header nav a {
+    font-size: .67rem !important;
+    letter-spacing: .09em !important;
+    white-space: nowrap;
+}
+header a, button { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--c-accent) !important;
+    outline-offset: 3px;
+}
+.theme-btn { min-width: 36px; min-height: 36px; }
+
+/* The opening reads like a match-day cover, with the portrait leading. */
+#hero {
+    min-height: min(830px, calc(100svh - 76px));
+    display: flex;
+    align-items: center;
+    padding-block: clamp(3.5rem, 8vw, 7.5rem) !important;
+    background-position: center 35% !important;
+}
+#hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--c-bg) 0%, color-mix(in srgb, var(--c-bg) 84%, transparent) 38%, transparent 78%),
+                linear-gradient(0deg, var(--c-bg) 0%, transparent 42%);
+}
+#hero .max-w-7xl { width: 100%; }
+#hero .max-w-7xl > .grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(290px, .8fr) !important;
+    gap: clamp(2rem, 6vw, 6rem) !important;
+}
+#hero [class~="md:col-span-7"] { position: relative; z-index: 2; }
+#hero h1 {
+    max-width: 9ch;
+    font-size: clamp(3.8rem, 8.5vw, 7.4rem) !important;
+    line-height: .9 !important;
+    letter-spacing: -.035em !important;
+    text-wrap: balance;
+}
+#hero h1 span, #hero h1 strong { color: var(--c-accent); }
+#hero [class~="md:col-span-7"] > p {
+    max-width: 38rem;
+    font-size: clamp(1rem, 1.3vw, 1.2rem) !important;
+    line-height: 1.8 !important;
+}
+#hero [class~="md:col-span-7"] > a,
+#hero [class~="md:col-span-7"] a {
+    min-height: 48px;
+}
+#hero [class~="md:col-span-5"] { position: relative; z-index: 1; }
+#hero .relative.group.max-w-sm.w-full {
+    max-width: 27rem;
+    transform: rotate(1.2deg);
+}
+#hero .relative.group.max-w-sm.w-full img {
+    border-radius: 1rem !important;
+    filter: saturate(.86) contrast(1.04);
+}
+#hero .relative.group.max-w-sm.w-full::after {
+    content: "CRISTIANO RONALDO";
+    position: absolute;
+    right: -1.4rem;
+    bottom: 1.7rem;
+    writing-mode: vertical-rl;
+    letter-spacing: .2em;
+    font: 700 .62rem/1 Oswald, sans-serif;
+    color: var(--c-accent);
+}
+#hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] {
+    gap: 0 !important;
+    border-block: 1px solid var(--c-border);
+}
+#hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 1rem .8rem !important;
+}
+#hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div + div {
+    border-left: 1px solid var(--c-border) !important;
+}
+#hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div :is(span, strong) {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Section rhythm: editorial headings, quieter surfaces, readable measures. */
+#biography, #timeline, #trophies, #records, #siuuu, #quiz {
+    padding-block: clamp(4.5rem, 8vw, 7.5rem) !important;
+}
+#biography .max-w-7xl, #timeline .max-w-7xl, #trophies .max-w-7xl,
+#records .max-w-7xl, #siuuu .max-w-5xl, #quiz .max-w-3xl {
+    max-width: 78rem;
+}
+#biography .text-center.max-w-2xl,
+#timeline .text-center.max-w-2xl,
+#records .text-center.max-w-3xl,
+#quiz .text-center {
+    max-width: 48rem;
+    text-align: left !important;
+    margin: 0 0 clamp(2rem, 4vw, 3.5rem) !important;
+}
+#biography .text-center.max-w-2xl h2,
+#timeline .text-center.max-w-2xl h2,
+#trophies h2, #records h2, #quiz h2 {
+    font-size: clamp(2.25rem, 5vw, 4rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.025em !important;
+    text-wrap: balance;
+}
+#biography .text-center.max-w-2xl .w-24,
+#timeline .text-center.max-w-2xl .w-24,
+#records .text-center.max-w-3xl .w-24 { margin-left: 0 !important; }
+#biography p, #timeline p, #records p, #quiz p { text-wrap: pretty; }
+#biography .space-y-20 { gap: clamp(3rem, 7vw, 6rem) !important; }
+#biography .space-y-20 > .grid {
+    align-items: center;
+}
+#biography .space-y-20 img {
+    max-height: 34rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem !important;
+}
+#biography .space-y-20 > .grid > div:first-child {
+    border-radius: 1rem !important;
+    background: transparent !important;
+    border-color: var(--c-border) !important;
+}
+#timeline .grid.md\:grid-cols-3 { gap: 1px !important; background: var(--c-border); }
+#timeline .grid.md\:grid-cols-3 > div {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: clamp(1.25rem, 2.5vw, 2rem) !important;
+    background: var(--c-card) !important;
+}
+#timeline .grid.md\:grid-cols-3 > div h3 { font-size: 1.7rem !important; }
+#trophies #trophy-filters { gap: .5rem !important; }
+#trophy-filters button {
+    min-height: 44px;
+    border-radius: 999px !important;
+    padding-inline: 1.15rem !important;
+}
+#trophy-container { gap: 1px !important; background: var(--c-border); }
+#trophy-container > * {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: var(--c-card) !important;
+}
+#trophy-container > *:hover { transform: translateY(-2px); }
+#records .grid { gap: 1px !important; background: var(--c-border); }
+#records .grid > * {
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: var(--c-card) !important;
+}
+#siuuu {
+    background: color-mix(in srgb, var(--c-card) 70%, var(--c-bg)) !important;
+}
+#siuuu .max-w-5xl {
+    padding: clamp(2rem, 6vw, 5rem);
+    border-block: 1px solid var(--c-border);
+}
+#siuuu h2 { font-size: clamp(2.7rem, 7vw, 5.5rem) !important; }
+#siuuu button { width: clamp(9rem, 19vw, 13rem) !important; height: clamp(9rem, 19vw, 13rem) !important; }
+#quiz .max-w-3xl > .bg-tCard {
+    padding: clamp(1.25rem, 4vw, 2.75rem) !important;
+    border-radius: 1rem !important;
+    box-shadow: none !important;
+}
+#quiz-options button { min-height: 48px; text-align: left; }
+#quiz button { transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+footer { border-color: var(--c-border) !important; }
+
+/* Small screens keep the portrait, controls and reading order clear. */
+@media (max-width: 767px) {
+    header > div:first-child { min-height: 66px; }
+    header .theme-btn { min-width: 34px; min-height: 34px; }
+    #hero {
+        min-height: auto;
+        padding-block: 3rem 4rem !important;
+        background-position: 58% center !important;
+    }
+    #hero::after {
+        background: linear-gradient(0deg, var(--c-bg) 0%, color-mix(in srgb, var(--c-bg) 78%, transparent) 58%, transparent 100%);
+    }
+    #hero .max-w-7xl > .grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 2rem !important;
+    }
+    #hero [class~="md:col-span-7"] { order: 2; }
+    #hero [class~="md:col-span-5"] { order: 1; }
+    #hero .relative.group.max-w-sm.w-full {
+        width: min(72vw, 20rem);
+        margin: 0 auto;
+        transform: rotate(1deg);
+    }
+    #hero h1 { font-size: clamp(3.25rem, 16vw, 5.2rem) !important; }
+    #hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    #hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div:nth-child(3) {
+        border-left: 0 !important;
+        border-top: 1px solid var(--c-border) !important;
+    }
+    #hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div:nth-child(4) {
+        border-top: 1px solid var(--c-border) !important;
+    }
+    #timeline .grid.md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+    #trophies > .max-w-7xl > .flex { align-items: flex-start !important; }
+    #trophy-filters { overflow-x: auto; flex-wrap: nowrap !important; padding: .25rem 0 .75rem; }
+    #trophy-filters button { flex: 0 0 auto; }
+    #trophy-container { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+@media (max-width: 420px) {
+    #hero [class*="grid-cols-2"][class*="sm:grid-cols-4"] > div { padding: .75rem .45rem !important; }
+    #trophy-container { grid-template-columns: 1fr !important; }
+    #quiz-options button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
