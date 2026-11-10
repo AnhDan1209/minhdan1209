@@ -1010,3 +1010,141 @@ footer { border-color: var(--c-border) !important; }
         grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
     }
 }
+
+
+/* ================= CR7 WORDMARK & MUSIC PLAYLIST ================= */
+.cr7-brand {
+    gap: .8rem !important;
+    text-decoration: none;
+}
+.cr7-brand__mark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 2.7vw, 2.6rem);
+    font-weight: 800;
+    line-height: .9;
+    letter-spacing: -.07em;
+    color: var(--c-text);
+    text-shadow: none;
+}
+.cr7-brand__mark span { color: var(--c-accent); }
+.cr7-brand__subtitle {
+    max-width: 7rem;
+    margin-left: .25rem;
+    padding-left: .8rem;
+    border-left: 1px solid var(--c-border);
+    color: var(--c-text-muted);
+    font-size: .55rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+#music-playlist {
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+    border-block: 1px solid var(--c-border);
+    background: color-mix(in srgb, var(--c-card) 55%, var(--c-bg));
+}
+#music-playlist > .max-w-7xl {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(320px, 1.15fr);
+    align-items: start;
+    gap: clamp(2rem, 5vw, 5rem);
+}
+.music-playlist__intro { max-width: 32rem; }
+.music-playlist__eyebrow {
+    margin: 0 0 .65rem;
+    color: var(--c-accent);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+.music-playlist__intro h2 {
+    margin: 0 0 .85rem;
+    color: var(--c-text);
+    font: 800 clamp(2rem, 4vw, 3.35rem)/1.02 'Oswald', sans-serif;
+    letter-spacing: -.02em;
+}
+.music-playlist__intro > p:last-child {
+    max-width: 38ch;
+    color: var(--c-text-muted);
+    font-size: .95rem;
+    line-height: 1.7;
+}
+.music-playlist__panel {
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+    border-radius: 1rem;
+    background: var(--c-card);
+}
+.music-playlist__now-playing {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: 1rem 1.1rem;
+    border-bottom: 1px solid var(--c-border);
+}
+#bg-music-btn {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+}
+.music-playlist__current { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: .15rem; }
+.music-playlist__current-label {
+    color: var(--c-text-muted);
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+#track-title {
+    max-width: 100% !important;
+    color: var(--c-text);
+    font-size: .95rem !important;
+    line-height: 1.3;
+}
+#next-track-btn { flex: 0 0 44px; width: 44px; height: 44px; }
+#playlist-tracks { display: grid; }
+#playlist-tracks [data-track-index] {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr) 1.5rem;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+    min-height: 58px;
+    padding: .75rem 1.1rem;
+    border: 0;
+    border-bottom: 1px solid var(--c-border);
+    background: transparent;
+    color: var(--c-text);
+    text-align: left;
+    transition: background-color .18s ease, color .18s ease;
+}
+#playlist-tracks [data-track-index]:last-child { border-bottom: 0; }
+#playlist-tracks [data-track-index]:hover,
+#playlist-tracks [data-track-index][aria-pressed="true"] {
+    background: color-mix(in srgb, var(--c-accent) 10%, var(--c-card));
+}
+#playlist-tracks [data-track-index]:focus-visible {
+    position: relative;
+    z-index: 1;
+    outline: 2px solid var(--c-accent);
+    outline-offset: -3px;
+}
+.playlist-track__number {
+    color: var(--c-accent);
+    font: 700 1rem/1 'Oswald', sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+.playlist-track__title { overflow: hidden; font-size: .88rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.playlist-track__action { color: var(--c-text-muted); font-size: .75rem; text-align: center; }
+#playlist-tracks [data-track-index][aria-pressed="true"] .playlist-track__action { color: var(--c-accent); }
+@media (max-width: 767px) {
+    .cr7-brand__mark { font-size: 1.9rem; }
+    .cr7-brand__subtitle { display: none; }
+    #music-playlist > .max-w-7xl { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .music-playlist__intro h2 { font-size: clamp(2rem, 10vw, 2.7rem); }
+    #playlist-tracks [data-track-index] { min-height: 56px; }
+}
