@@ -516,3 +516,128 @@
 #club-modal-card #modal-bg-watermark {
     transition: none !important;
 }
+
+
+/* ================= REDESIGN: CR7 EDITORIAL EXPERIENCE ================= */
+:root, [data-theme="base"] {
+    --c-bg: #07090d;
+    --c-card: #10151d;
+    --c-text: #f7f5ef;
+    --c-text-muted: #a7a9ad;
+    --c-accent: #d8b45a;
+    --c-border: rgba(216, 180, 90, .22);
+}
+[data-theme="white"] {
+    --c-bg: #f7f5f0;
+    --c-card: #fffdfa;
+    --c-text: #191c20;
+    --c-text-muted: #5e6268;
+    --c-accent: #d94d20;
+    --c-border: rgba(217, 77, 32, .22);
+}
+body {
+    background-image: radial-gradient(ellipse at 50% -20%, rgba(216,180,90,.08), transparent 55%);
+    line-height: 1.65;
+}
+[data-theme="white"] body {
+    background-image: radial-gradient(ellipse at 50% -20%, rgba(217,77,32,.07), transparent 55%);
+}
+header {
+    background-color: color-mix(in srgb, var(--c-bg) 88%, transparent) !important;
+    border-color: var(--c-border) !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,.18) !important;
+}
+header > div:first-child { min-height: 76px; }
+header nav a {
+    letter-spacing: .12em;
+    transition: color .2s ease, opacity .2s ease;
+}
+header nav a:hover { opacity: .78; }
+#hero {
+    min-height: min(760px, 86vh);
+    display: flex;
+    align-items: center;
+    border-bottom-color: var(--c-border) !important;
+    background-position: center 38% !important;
+}
+#hero > .max-w-7xl { width: 100%; padding-top: clamp(3rem, 8vw, 7rem); padding-bottom: clamp(3rem, 8vw, 7rem); }
+#hero h1 {
+    max-width: 11ch;
+    font-size: clamp(3.25rem, 8vw, 7rem) !important;
+    line-height: .94 !important;
+    letter-spacing: -.045em;
+    text-wrap: balance;
+}
+#hero p { max-width: 56ch; color: var(--c-text-muted); line-height: 1.75; }
+section[id] { scroll-margin-top: 5.5rem; }
+#biography, #timeline, #trophies, #records, #quiz {
+    padding-top: clamp(4rem, 8vw, 7rem) !important;
+    padding-bottom: clamp(4rem, 8vw, 7rem) !important;
+    border-color: var(--c-border) !important;
+}
+#biography h2, #timeline h2, #trophies h2, #records h2, #quiz h2 {
+    letter-spacing: -.035em;
+    text-wrap: balance;
+}
+#biography .space-y-20 > div {
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+#biography img {
+    border-radius: 1.15rem;
+    transition: transform .45s ease;
+}
+#biography .group:hover img { transform: scale(1.025); }
+#timeline .grid > div,
+#records .grid > div,
+#trophy-container > div {
+    border-color: var(--c-border) !important;
+    border-radius: 1.1rem !important;
+    box-shadow: 0 16px 42px rgba(0,0,0,.14) !important;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease !important;
+}
+#timeline .grid > div:hover,
+#records .grid > div:hover,
+#trophy-container > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 48px rgba(0,0,0,.22) !important;
+}
+#trophy-filters { gap: .55rem !important; }
+#trophy-filters button, #quiz-options button {
+    min-height: 44px;
+    border-radius: 999px !important;
+    transition: transform .18s ease, background-color .18s ease, border-color .18s ease !important;
+}
+#trophy-filters button:hover, #quiz-options button:hover { transform: translateY(-2px); }
+#quiz > div > div:last-child {
+    border-color: var(--c-border) !important;
+    border-radius: 1.35rem !important;
+    box-shadow: 0 24px 60px rgba(0,0,0,.18) !important;
+}
+a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--c-accent) !important;
+    outline-offset: 3px;
+}
+button { touch-action: manipulation; }
+#club-modal-card { border-radius: 1.35rem !important; }
+footer { border-color: var(--c-border); }
+@media (max-width: 767px) {
+    header > div:first-child { min-height: 66px; }
+    #hero { min-height: 76svh; background-position: 58% center !important; }
+    #hero > .max-w-7xl { padding-top: 3rem; padding-bottom: 3rem; }
+    #hero h1 { font-size: clamp(3rem, 15vw, 5rem) !important; }
+    #biography, #timeline, #trophies, #records, #quiz {
+        padding-top: 3.75rem !important;
+        padding-bottom: 3.75rem !important;
+    }
+    #timeline .grid > div, #records .grid > div, #trophy-container > div {
+        box-shadow: 0 10px 28px rgba(0,0,0,.16) !important;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
