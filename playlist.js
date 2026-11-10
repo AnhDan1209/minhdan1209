@@ -1,5 +1,13 @@
-// Adds direct selection for the CR7 music playlist.
+// Small dropdown for selecting the tracks in the floating CR7 player.
 const playlistButtons = document.querySelectorAll("#playlist-tracks [data-track-index]");
+const playlistToggle = document.getElementById("toggle-playlist-btn");
+const playlistMenu = document.getElementById("playlist-tracks");
+
+function closePlaylistMenu() {
+    if (!playlistToggle || !playlistMenu) return;
+    playlistToggle.setAttribute("aria-expanded", "false");
+    playlistMenu.classList.add("hidden");
+}
 
 function syncPlaylistButtons(activeIndex) {
     playlistButtons.forEach((button, index) => {
@@ -11,7 +19,16 @@ const originalLoadTrack = loadTrack;
 loadTrack = function (index) {
     originalLoadTrack(index);
     syncPlaylistButtons(index);
+    closePlaylistMenu();
 };
+
+if (playlistToggle && playlistMenu) {
+    playlistToggle.addEventListener("click", () => {
+        const isOpen = playlistToggle.getAttribute("aria-expanded") === "true";
+        playlistToggle.setAttribute("aria-expanded", String(!isOpen));
+        playlistMenu.classList.toggle("hidden", isOpen);
+    });
+}
 
 syncPlaylistButtons(currentTrackIndex);
 
