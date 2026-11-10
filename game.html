@@ -38,6 +38,58 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
+
+    <style>
+        :root { color-scheme: dark; }
+        body {
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.13), transparent 48%),
+                #080b10 !important;
+            padding: clamp(12px, 3vw, 32px) !important;
+            gap: 1rem;
+        }
+        body > div:first-of-type {
+            max-width: 760px !important;
+            padding: 14px clamp(14px, 3vw, 24px) !important;
+            border-color: rgba(212,175,55,.28) !important;
+            box-shadow: 0 20px 55px rgba(0,0,0,.28) !important;
+        }
+        #gameCanvas {
+            background: linear-gradient(180deg, #0c1820, #10271f) !important;
+        }
+        .relative.w-full.max-w-xl.aspect-\[4\/3\] {
+            max-width: 760px !important;
+            border-color: rgba(212,175,55,.52) !important;
+            box-shadow: 0 28px 70px rgba(0,0,0,.4) !important;
+        }
+        body > div:last-of-type {
+            max-width: 760px !important;
+            border-color: rgba(212,175,55,.22) !important;
+            background: rgba(16,21,29,.88) !important;
+            box-shadow: 0 16px 40px rgba(0,0,0,.2);
+        }
+        #start-btn, #shoot-trigger { min-height: 52px; }
+        a, button { -webkit-tap-highlight-color: transparent; }
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #e8c96f;
+            outline-offset: 3px;
+        }
+        @media (max-width: 540px) {
+            body { min-height: 100svh !important; }
+            .relative.w-full.max-w-xl.aspect-\[4\/3\] { border-width: 1px !important; }
+            #start-screen { padding: 1rem !important; }
+            #start-screen h2 { font-size: clamp(1.65rem, 8vw, 2.25rem) !important; }
+            #shoot-trigger { font-size: 1rem !important; letter-spacing: .08em !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+
 </head>
 <body class="min-h-screen flex flex-col items-center justify-between p-3 sm:p-6 select-none">
 
